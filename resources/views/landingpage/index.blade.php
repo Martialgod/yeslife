@@ -1,6 +1,6 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife The highest absorbing natural CBD supplement on the market.')
+@section('title', 'YesLife The highest absorbing natural CBD supplement on the market')
 
 @section('meta')
 
