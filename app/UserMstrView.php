@@ -15,7 +15,9 @@ class UserMstrView extends Model
     protected $primaryKey = 'id';
 
 
-    public static function activeCustomers(){
+    //list of customers who purchased an order
+    //a.stat is commented out since in-active customers can still purchase an item
+    public static function purchaser(){
 
 
     	return DB::SELECT("
@@ -24,12 +26,12 @@ class UserMstrView extends Model
 			FROM vw_usermstr a 
 			WHERE a.id IN ( SELECT fk_users FROM ordermstr WHERE isapproved = 1 AND isdeclined = 0 AND stat = 1 )
 			AND a.id <> 1000 -- super admin
-			AND a.stat = 1
+			-- AND a.stat = 1
 			ORDER BY a.fullname;
 
 		");
 
-    }//END activeCustomers
+    }//END purchaser
 
 
     public static function leads(){
@@ -47,7 +49,7 @@ class UserMstrView extends Model
 		");
 
     }//END leads
-    
+
 
     public static function optout(){
 

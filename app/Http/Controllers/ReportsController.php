@@ -151,7 +151,7 @@ class ReportsController extends Controller
 
    			case 'customers':
 
-   				$result = UserMstrView::activeCustomers();
+   				$result = UserMstrView::purchaser();
 
    			break;
 
