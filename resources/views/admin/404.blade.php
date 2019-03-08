@@ -19,7 +19,7 @@
 				<img src="/adminpage/images/404.png" alt="">
 			</div>
 			<div class="error-right">
-		    	<h2>Oops! Page Not Open</h2>
+		    	<h2>Oops! Page Not found</h2>
 	    		<h4>Nothing Is Found Here!!</h4>
 		    	<a href="{{route('admin.home')}}">Go Back</a>
 			</div>

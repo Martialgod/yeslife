@@ -1,6 +1,9 @@
 @php
+  
+  //$search variable is returned for every Controller@index
+  $search = ( isset($search) ) ? $search : ''; //default value. avoid undefined variable
 
-   $filters = (isset($filters)) ? $filters : [];
+  $filters = (isset($filters)) ? $filters : [];
 
 @endphp
 
@@ -99,6 +102,46 @@
 
               @break
 
+
+              @case(10) {{--Reports List of customers type--}}
+
+                @php 
+                  //responses from the controller
+                  $type = (isset($type)) ? $type : 'customers';
+                @endphp 
+
+                <div class="col-md-3">
+
+                  <div class="form-group">
+                        <label for="type">Type</label>
+                        <select name="type" id="type" class="form-control">
+
+                          <option value="customers" {{ $type == 'customers' ? 'selected' : '' }} >
+                            Customer
+                          </option>
+
+                          <option value="leads" {{ $type == 'leads' ? 'selected' : '' }} >
+                            Leads
+                          </option>
+
+                          <option value="abandoned" {{ $type == 'abandoned' ? 'selected' : '' }} >
+                            Abandoned Cart
+                          </option>
+
+                          <option value="opt-out" {{ $type == 'opt-out' ? 'selected' : '' }} >
+                            Opt-out
+                          </option>
+
+
+                    </select>
+                      
+                    </div>
+
+                </div><!--END col-md-3 notified-->
+
+              @break
+
+
   						@default
 
   					@endswitch
@@ -108,6 +151,9 @@
 
 
 	  		</div><!--END row-->
+
+        {{--$search variable is returned for every Controller@index--}}
+        <input type="hidden" name="search" value="{{$search}}">
 
 
 	  		<button type="submit" class="btn btn-info btn-sm hvr-underline-from-left">Apply Filter</button>

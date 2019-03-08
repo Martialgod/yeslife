@@ -99,7 +99,7 @@ class OrderController extends Controller
             $orders->where(function ($query) use ($search) {
                 $query->where('billingfname', 'like', "%$search%")
                 ->orWhere('billinglname', 'like', "%$search%")
-                ->orWhere('pk_ordermstr', 'like', "%$search%");
+                ->orWhere('trxno', 'like', "%$search%");
             });
 
         }

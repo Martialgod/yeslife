@@ -22,7 +22,9 @@
 
 		      		@foreach ($main_menu as $key => $main)
 
-		      			@if( $main->type == 'A' )
+
+		      			{{--10000 = Reports --}}
+		      			@if( $main->type == 'A'  )
 
 		      				<li class="{{ session('parent_tab') == $main->family ? 'active' : '' }}" >
 
@@ -42,7 +44,11 @@
 
 					        		@foreach($main_menu as $key => $sub)
 
-					        			@if( $sub->type == 'B' && $sub->family == $main->family )
+					        			{{-- 
+					        				exclude reports  since we are displaying submenu of the reports in reports.index.blade
+					        			--}}
+
+					        			@if( $sub->type == 'B' && $sub->family == $main->family && $main->family != 'Reports' )
 
 							        		<li class="{{ session('child_tab') == $sub->route ? 'active' : '' }}">
 							            		<a href="{{route($sub->route)}}"> 

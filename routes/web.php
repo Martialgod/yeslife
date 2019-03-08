@@ -216,6 +216,10 @@ Route::resource('/admin/country', 'CountryController');
 Route::resource('/admin/states', 'StatesController');
 
 
+Route::get('/admin/reports', 'ReportsController@index')->name('reports.index');
+Route::get('/admin/reports/{id}', 'ReportsController@generate');
+
+
 //social login
 Route::get('/redirectfb', 'SocialAuthFacebookController@redirect');
 Route::get('/callbackfb', 'SocialAuthFacebookController@callback');

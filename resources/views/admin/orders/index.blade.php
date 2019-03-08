@@ -8,7 +8,7 @@
 
 
 @section('global-search')
-	@include('admin.layouts.globalsearch', ['placeholder'=> 'search id, billto'])
+	@include('admin.layouts.globalsearch', ['placeholder'=> 'search trxno, billto'])
 @endsection
 
 	
