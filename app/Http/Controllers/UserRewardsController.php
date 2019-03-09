@@ -83,7 +83,7 @@ class UserRewardsController extends Controller
         
         $mscrewardactions = RewardAction::all();
         
-        return view('admin.rewards.index', compact('sub_menu', 'rewards', 'mscrewardactions', 'search', 'fk_users', 'fullname'));
+        return view('admin.rewards.index', compact('sub_menu', 'rewards', 'actionname', 'mscrewardactions', 'search', 'fk_users', 'fullname'));
 
         
     }//END index
