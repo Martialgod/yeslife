@@ -46,6 +46,10 @@
 
     <script src="{{asset('/customjs/AppServices.js')}}?v={{time()}}"></script>
 
+        <link href="/select2/select2.min.css" rel="stylesheet" type="text/css" />
+
+
+
     <style type="text/css" media="screen">
         
         .label-required{
@@ -176,6 +180,12 @@
 
     <script src="/jqueryvalidate1.19.0/dist/jquery.validate.min.js"></script>
     <script src="/jqueryvalidate1.19.0/dist/additional-methods.min.js"></script>
+
+    
+    <!--select2-->
+    <script src="/select2/select2.min.js"></script>
+
+
 
 
     <script type="text/javascript">
