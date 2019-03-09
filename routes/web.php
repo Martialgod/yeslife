@@ -66,6 +66,9 @@ Route::get('/404', function(){
     return view('landingpage.404');
 });
 
+Route::get('/apisearchusers', 'UsersController@apisearchusers');
+
+
 // ?refno=33213 -- optional for refferal 
 Route::get('/', 'LandingPageController@index'); 
 // ?refno=33213 -- optional for refferal 
@@ -174,13 +177,14 @@ Route::put('/admin/profile', 'UsersController@updateprofile');
 Route::resource('/admin/users', 'UsersController');
 Route::get('/admin/users/{id}/downline', 'UsersController@downline')->name('users.downline');
 
-
 Route::resource('/admin/usertype', 'UserTypeController');
 
 Route::get('/admin/usertype/{id}/modules', 'UserTypeController@show_modules')->name('usertype.modules');
 
 Route::post('/admin/usertype/{id}/modules', 'UserTypeController@update_modules')->name('usertype.modules');
 
+
+Route::resource('/admin/rewards', 'UserRewardsController');
 
 
 Route::resource('/admin/orders', 'OrderController');
@@ -214,6 +218,8 @@ Route::resource('/admin/coupons', 'CouponsController');
 Route::resource('/admin/country', 'CountryController');
 
 Route::resource('/admin/states', 'StatesController');
+
+Route::resource('/admin/actions', 'RewardActionsController');
 
 
 Route::get('/admin/reports', 'ReportsController@index')->name('reports.index');

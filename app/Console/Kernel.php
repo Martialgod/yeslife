@@ -17,6 +17,9 @@ class Kernel extends ConsoleKernel
         'App\Console\Commands\BroadCastAbandonedCart',
         'App\Console\Commands\BroadCastRecurringOrders',
         'App\Console\Commands\DBEventInsertRecurringOrders', 
+        'App\Console\Commands\DBEventInsertOwnPurchaseRewards', 
+        'App\Console\Commands\DBEventInsertReferralPurchaseRewards', 
+        'App\Console\Commands\DBEventInsertReferralSignupRewards', 
     ];
 
     /**
@@ -31,12 +34,26 @@ class Kernel extends ConsoleKernel
         //$schedule->command('foo')->dailyAt('15:00');
         
         $schedule->command('dbevent:insertrecurringorders')->dailyAt('00:05')->withoutOverlapping();
+        
+        $schedule->command('dbevent:insertownpurchaserewards')->dailyAt('1:00')->withoutOverlapping();
+        
+        $schedule->command('dbevent:insertreferralpurchaserewards')->dailyAt('1:20')->withoutOverlapping();
+
+        $schedule->command('dbevent:insertreferralsignuprewards')->dailyAt('1:40')->withoutOverlapping();
+        
         $schedule->command('broadcast:neworders')->dailyAt('02:00')->withoutOverlapping();
+        
         $schedule->command('broadcast:abandonedcart')->dailyAt('04:00')->withoutOverlapping();
+        
         $schedule->command('broadcast:recurringorders')->dailyAt('05:00')->withoutOverlapping();
       
         //$schedule->command('broadcast:neworders')->everyMinute()->withoutOverlapping();
         //$schedule->command('broadcast:abandonedcart')->everyMinute()->withoutOverlapping();
+        
+        
+        /*$schedule->command('dbevent:insertownpurchaserewards')->everyMinute()->withoutOverlapping();
+        $schedule->command('dbevent:insertreferralpurchaserewards')->everyMinute()->withoutOverlapping();
+        $schedule->command('dbevent:insertreferralsignuprewards')->everyMinute()->withoutOverlapping();*/
 
         $schedule->command('queue:work --tries=3')->everyMinute()->withoutOverlapping();
     }

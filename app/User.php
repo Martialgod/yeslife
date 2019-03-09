@@ -182,6 +182,17 @@ class User extends Authenticatable
     }//END isUserHasAccess
 
 
+    public static function fullname($fk_users){
+
+        $user = static::where('id', $fk_users)->first();
+        if($user){
+            return $user->fullname;
+        }else{
+            return '';
+        }
+
+    }//END fullname
+
 
     //pass a request object
     public static function getReferrer($request){
@@ -191,29 +202,5 @@ class User extends Authenticatable
     }//END getReferrer
 
 
-
-    public static function retrieveDownLine($id){
-
-        $downline = [];
-
-        $downline = DB::SELECT("
-            SELECT a.id, a.uname, a.fullname, a.email, 
-            concat(a.state, ' ', a.city, ' ', a.zip) as address,
-            DATE_FORMAT(a.created_at, '%b %d, %Y %r') as created_at , a.stat,
-
-            ( 
-
-                SELECT count(id) FROM users where fk_referredby = a.id
-
-            ) as referralcount 
-
-            FROM users a
-            WHERE a.fk_referredby = '$id'
-            ORDER BY a.created_at;
-        ");
-
-        return $downline;
-
-    }//END retrieveDownLine
 
 }//END class

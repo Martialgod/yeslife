@@ -26,6 +26,8 @@ use App\OrderRecurringMstrView;
 use App\OrderCouponMstrView;
 
 use App\User;
+use App\UserMstrView;
+use App\UserDownlineView;
 
 use App\UserCCInfo;
 
@@ -670,7 +672,11 @@ class MyAccountController extends Controller
         //
 
         session()->flash('myaccount_tab', 'Affiliate');
-        $downline = User::retrieveDownLine(Auth::id());
+
+        $downline = UserDownlineView::select();
+
+        $downline = $downline->where('fk_referredby', Auth::id())->paginate(10);
+
         //$downline = [];
         return view('landingpage.myaccount.affiliate', compact('downline'));
 

@@ -73,6 +73,7 @@
                                                         <th>Address</th>
                                                         <th>Register</th>
                                                         <th>Referrals</th>
+                                                        <th>Purchases</th>
                                                     </tr>
                                                 </thead>
 
@@ -96,11 +97,15 @@
                                                             </td>
                                                             
                                                             <td>
-                                                                {{ $v->created_at }}
+                                                               {{$v->date}}
                                                             </td>
                                                             
                                                             <td>
                                                                 {{$v->referralcount}}
+                                                            </td>
+
+                                                            <td>
+                                                                {{$v->purchasecount}}
                                                             </td>
 
 
@@ -117,6 +122,13 @@
 
                                             
                                         <br>
+
+                                        @if(count($downline) > 0)
+                                            <div class="text-center" >
+                                                {{ $downline->appends([])->links() }}
+                                            </div>
+                                        @endif
+
 
                                     @else
 

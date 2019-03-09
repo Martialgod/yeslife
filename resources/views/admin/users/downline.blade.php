@@ -58,7 +58,8 @@
 				                   	<th>Name</th>
 	                                <th>Email</th>
 	                                <th>Register</th>
-	                                <th>Referrals</th>
+                                    <th>Referrals</th>
+                                    <th>Purchases</th>
 				              	</tr>
 
 				          	</thead>
@@ -79,13 +80,17 @@
 	                                        {{$v->email}}
 	                                    </td>
 
-	                                    <td>
-	                                        {{ $v->created_at }}
-	                                    </td>
-	                                    
-	                                    <td>
-	                                        {{$v->referralcount}}
-	                                    </td>
+                                        <td>
+                                           {{$v->date}}
+                                        </td>
+                                        
+                                        <td>
+                                            {{$v->referralcount}}
+                                        </td>
+
+                                        <td>
+                                            {{$v->purchasecount}}
+                                        </td>
 
 
 	                                </tr>
@@ -97,6 +102,8 @@
 					  	</table><!--END table table-hover-->
 
 					</div><!--END table-responsive-->
+
+					<br>
 
 
     		   	@else

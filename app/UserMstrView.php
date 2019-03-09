@@ -15,6 +15,40 @@ class UserMstrView extends Model
     protected $primaryKey = 'id';
 
 
+
+
+    public static function downline($id){
+
+        $downline = [];
+
+        $downline = DB::SELECT("
+            SELECT a.id, a.uname, a.fullname, a.email, 
+            concat(a.state, ' ', a.city, ' ', a.zip) as address,
+            DATE_FORMAT(a.created_at, '%b %d, %Y %r') as created_at , a.stat,
+
+            ( 
+
+                SELECT count(id) FROM users where fk_referredby = a.id
+
+            ) as referralcount,
+
+            ( 
+            	SELECT pk_ordermstr FROM ordermstr WHERE isapproved = 1 AND isdeclined = 0 
+            	AND stat = 1 AND fk_users = a.id
+
+            ) as purchasecount
+
+            FROM users a
+            WHERE a.fk_referredby = '$id'
+            ORDER BY a.created_at;
+        ");
+
+        return $downline;
+
+    }//END retrieveDownLine
+
+
+
     //list of customers who purchased an order
     //a.stat is commented out since in-active customers can still purchase an item
     public static function purchaser(){

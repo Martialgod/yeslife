@@ -94,7 +94,31 @@
                           <option value="No" {{ $notified == 'No' ? 'selected' : '' }} >No</option>
                           <option value="Yes" {{ $notified == 'Yes' ? 'selected' : '' }} >Yes</option>
 
-                    </select>
+                        </select>
+                      
+                    </div>
+
+                </div><!--END col-md-3 notified-->
+
+              @break
+
+
+              @case(4) {{--fk_users--}}
+
+                @php 
+                  //responses from the controller
+                  $fk_users = (isset($fk_users)) ? $fk_users : '-1';
+                @endphp 
+
+                <div class="col-md-3">
+
+                  {{--default value for select2 @GlobalScript.js--}}
+                  <div class="form-group">
+                      <label for="select2_fkusers">Customer</label>
+                      <select name="fk_users" id="select2_fkusers" class="form-control">
+                        {{--<option value="-1">Display All</option> --}}
+                        {{-- value will be loaded in select2 GlobalScript.js --}}
+                      </select>
                       
                     </div>
 

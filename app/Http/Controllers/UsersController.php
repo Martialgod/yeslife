@@ -22,6 +22,7 @@ use App\User;
 use App\UserType;
 
 use App\UserMstrView;
+use App\UserDownlineView;
 
 use App\Country;
 use App\State;
@@ -35,7 +36,7 @@ class UsersController extends Controller
     public $menu_group = 'users.index';
 
     public function __construct(){
-        $this->middleware(['auth']);
+        $this->middleware(['auth'])->except(['apisearchusers']);
         //$this->middleware(['issuperadmin'])->except(['profile', 'updateprofile']);
     }
 
@@ -465,12 +466,50 @@ class UsersController extends Controller
 
         $this->setActiveTab();
         $users = User::findOrFail($id);
-        $downline = User::retrieveDownLine($id);
+        
+        $downline = UserDownlineView::select();
+
+        $downline = $downline->where('fk_referredby', Auth::id())->get();
 
         return view('admin.users.downline', compact('users', 'downline'));
 
 
     }//END affiliate
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function apisearchusers()
+    {
+        //
+        if( !request()->ajax() ){
+            return '';
+        }
+
+        $users = UserMstrView::select();
+
+        $search = ( request()->search ) ? request()->search : null;
+
+        if( $search ){
+
+            $users->where(function ($query) use ($search) {
+                $query->where('fullname', 'like', "%$search%");
+            });
+
+
+        }
+
+        //do not include super admin account
+        $users->where('id', '<>', '1000'); 
+
+        $users = $users->orderBy('fullname', 'ASC')->paginate(20);
+
+        return response()->json($users, 200);
+
+    }//END apisearchusers
 
 
 

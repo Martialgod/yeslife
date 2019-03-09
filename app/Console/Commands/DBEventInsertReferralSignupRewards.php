@@ -6,30 +6,29 @@ use Illuminate\Console\Command;
 
 use Illuminate\Support\Facades\DB; //responsible for DB
 
-use App\OrderMstr;
+use App\UserReward;
 
 use Mail;
 use Log;
 
 use Carbon\Carbon;
 
-//can be done in mysql event but only if the user has root access
 
-class DBEventInsertRecurringOrders extends Command
+class DBEventInsertReferralSignupRewards extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'dbevent:insertrecurringorders';
+    protected $signature = 'dbevent:insertreferralsignuprewards';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Insert new recurring orders in the database around midnight';
+    protected $description = 'Insert referral signup rewards in the database around midnight';
 
     /**
      * Create a new command instance.
@@ -49,15 +48,11 @@ class DBEventInsertRecurringOrders extends Command
     public function handle()
     {
         //
-        
-        Log::info("Request cycle DBEventInsertRecurringOrders started");
+        Log::info("Request cycle DBEventInsertReferralSignupRewards started");
 
-        //retrieve orders for approval or recurring orders
-        OrderMstr::insertRecurringOrders();
+        UserReward::insertReferralSignupRewards();
 
-        Log::info("Request cycle DBEventInsertRecurringOrders finished");
-    
+        Log::info("Request cycle DBEventInsertReferralSignupRewards finished");
     }
-
 
 }//END class
