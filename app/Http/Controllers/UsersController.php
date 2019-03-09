@@ -469,7 +469,7 @@ class UsersController extends Controller
         
         $downline = UserDownlineView::select();
 
-        $downline = $downline->where('fk_referredby', Auth::id())->get();
+        $downline = $downline->where('fk_referredby', $id)->get();
 
         return view('admin.users.downline', compact('users', 'downline'));
 
