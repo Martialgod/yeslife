@@ -19,8 +19,8 @@
     @include('admin.layouts.submenus')
 
 
-   	{{--filters[4=fk_users]--}}
-   	@include('admin.layouts.filterpreferences', ['filters'=>[4]])
+   	{{--filters[4=fk_users, 5=rewardactions]--}}
+   	@include('admin.layouts.filterpreferences', ['filters'=>[4, 5]])
 
    	{{-- default value for select2. set @bottom script --}}
    	<input type="hidden" id="userid" value="{{$fk_users}}">

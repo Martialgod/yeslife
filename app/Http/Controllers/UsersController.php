@@ -496,7 +496,8 @@ class UsersController extends Controller
         if( $search ){
 
             $users->where(function ($query) use ($search) {
-                $query->where('fullname', 'like', "%$search%");
+                $query->where('fullname', 'like', "%$search%")
+                ->orWhere('email', 'like', "%$search%");
             });
 
 

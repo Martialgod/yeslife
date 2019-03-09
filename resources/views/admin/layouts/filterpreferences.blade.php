@@ -110,7 +110,7 @@
                   $fk_users = (isset($fk_users)) ? $fk_users : '-1';
                 @endphp 
 
-                <div class="col-md-3">
+                <div class="col-md-6">
 
                   {{--default value for select2 @GlobalScript.js--}}
                   <div class="form-group">
@@ -123,6 +123,34 @@
                     </div>
 
                 </div><!--END col-md-3 notified-->
+
+              @break
+
+              @case(5) {{--rewardactions--}}
+
+                @php 
+                  //responses from the controller
+                  $actionname = (isset($actionname)) ? $actionname : 'All';
+                  $mscrewardactions = (isset($mscrewardactions)) ? $mscrewardactions : [];
+                @endphp 
+
+                <div class="col-md-3">
+
+                  <div class="form-group">
+                        <label for="actionname">Action Name</label>
+                        <select name="actionname" id="actionname" class="form-control">
+                          
+                          <option value="All" {{ $actionname == 'All' ? 'selected' : '' }} >All</option>
+
+                          @foreach($mscrewardactions as $key=> $v)
+                            <option value="{{$v->name}}" {{ $actionname == $v->name ? 'selected' : '' }} >{{$v->name}}</option>
+                          @endforeach
+
+                    </select>
+                      
+                    </div>
+
+                </div><!--END col-md-3 paymentstatus-->
 
               @break
 

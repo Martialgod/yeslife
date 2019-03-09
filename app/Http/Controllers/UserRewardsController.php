@@ -54,6 +54,8 @@ class UserRewardsController extends Controller
         $search = ( request()->search ) ? request()->search : null;
 
         $fk_users = ( request()->fk_users ) ? request()->fk_users : '-1'; //all
+
+        $actionname = ( request()->actionname ) ? request()->actionname : 'All'; //all
        
         if( $search ){
 
@@ -67,14 +69,21 @@ class UserRewardsController extends Controller
             $rewards->where('fk_users', $fk_users);
         }
 
-        $fullname = User::fullname($fk_users);
+        if( $actionname != 'All' ){
+            $rewards->where('actionname', '=', $actionname);
+        }
+
+
+        $fullname = User::fullname($fk_users); //for select2 default value
 
         $rewards = $rewards->orderBy('fullname', 'ASC')->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
         
-        return view('admin.rewards.index', compact('sub_menu', 'rewards', 'search', 'fk_users', 'fullname'));
+        $mscrewardactions = RewardAction::all();
+        
+        return view('admin.rewards.index', compact('sub_menu', 'rewards', 'mscrewardactions', 'search', 'fk_users', 'fullname'));
 
         
     }//END index
