@@ -76,7 +76,7 @@ class UserRewardsController extends Controller
 
         $fullname = User::fullname($fk_users); //for select2 default value
 
-        $rewards = $rewards->orderBy('fullname', 'ASC')->paginate(10);
+        $rewards = $rewards->orderBy('created_at', 'DESC')->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
