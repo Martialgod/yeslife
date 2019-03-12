@@ -1,4 +1,12 @@
+{{--10001 = Customer List--}}
 @if(count($result) > 0)
+
+	<div class="">
+		<blockquote style="font-size: 14px">
+			Type: {{$type}}
+		</blockquote>
+	</div>
+
 
 	<div class="table-responsive">
 	        
@@ -54,6 +62,9 @@
 	  	</table><!--END table table-hover-->
 
 	</div><!--END table-responsive-->
+
+	@include('admin.reports.generated')
+
 
 @else
 

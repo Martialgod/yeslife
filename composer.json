@@ -7,10 +7,12 @@
     "require": {
         "php": ">=7.0.0",
         "cartalyst/stripe-laravel": "7.0.*",
+        "dompdf/dompdf": "^0.8.3",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/socialite": "~3.0",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

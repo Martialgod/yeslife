@@ -181,6 +181,8 @@ return [
 
         Laravel\Socialite\SocialiteServiceProvider::class,
 
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
     ],
 
@@ -234,6 +236,8 @@ return [
         'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

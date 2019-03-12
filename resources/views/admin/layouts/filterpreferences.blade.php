@@ -195,6 +195,37 @@
               @break
 
 
+              @case(11) {{--Reports summary of details--}}
+
+                @php 
+                  //responses from the controller
+                  $displaytype = (isset($displaytype)) ? $displaytype : 'summary';
+                @endphp 
+
+                <div class="col-md-3">
+
+                  <div class="form-group">
+                        <label for="displaytype">Display Type</label>
+                        <select name="displaytype" id="displaytype" class="form-control">
+
+                          <option value="summary" {{ $displaytype == 'summary' ? 'selected' : '' }} >
+                            Summary
+                          </option>
+
+                          <option value="details" {{ $displaytype == 'details' ? 'selected' : '' }} >
+                            Details 
+                          </option>
+
+
+                    </select>
+                      
+                    </div>
+
+                </div><!--END col-md-3 notified-->
+
+              @break
+
+
   						@default
 
   					@endswitch

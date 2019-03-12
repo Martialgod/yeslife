@@ -52,15 +52,7 @@
 		          		            
 		        </div>
 
-
-		        
-
-			</div><!--END col-md-4-->
-
-
-			<div class="col-md-4">
-
-				<div class="form-group">
+		        <div class="form-group">
 	                <label for="price">Default Price <span class="label-required">*</span> </label>
 	                <input type="number" min="0" step="any" class="form-control" id="price" name="price" placeholder="" required="" value="{{old('price') ? old('price') : 0 }}">
 		        </div>
@@ -77,12 +69,19 @@
 	                <input type="number" min="0" max="100"  step="any" class="form-control" id="taxrate" name="taxrate" placeholder="" required="" value="{{old('taxrate') ? old('taxrate') : 0}}">
 		        </div>
 
+		        
+
+			</div><!--END col-md-4-->
+
+
+			<div class="col-md-4">
+
+				
 
 		        <div class="form-group">
 	                <label for="shippingcost">Shipping Cost </label>
 	                <input type="number" min="0" step="any" class="form-control" id="shippingcost" name="shippingcost" placeholder="" required="" value="{{old('shippingcost') ? old('shippingcost') : 0}}">
 		        </div>
-
 
 
 				<div class="form-group">
@@ -95,6 +94,38 @@
 		            <input type="number" min="0" step="any" class="form-control" id="alertqty" name="alertqty" placeholder="" required="" value="{{old('alertqty') ? old('alertqty') : 0}}">
 		        </div>--}}
 
+
+		        <div class="form-group">
+		            <label for="sku">SKU </label>
+		            <input type="number" min="0" step="any" class="form-control" id="sku" name="sku" placeholder=""  value="{{old('sku') ? old('sku') : ''}}">
+		        </div>
+
+		        <div class="form-group">
+		            <label for="weight">Weight </label>
+		            <input type="number" min="0" step="any" class="form-control" id="weight" name="weight" placeholder=""  value="{{old('weight') ? old('weight') : 0.00}}">
+		        </div>
+
+		        <div class="form-group">
+		            <label for="length">Length </label>
+		            <input type="number" min="0" step="any" class="form-control" id="length" name="length" placeholder=""  value="{{old('length') ? old('length') : 0.00}}">
+		        </div>
+
+
+		        <div class="form-group">
+		            <label for="width">Width </label>
+		            <input type="number" min="0" step="any" class="form-control" id="width" name="width" placeholder=""  value="{{old('width') ? old('width') : 0.00}}">
+		        </div>
+
+		        <div class="form-group">
+		            <label for="height">Height </label>
+		            <input type="number" min="0" step="any" class="form-control" id="height" name="height" placeholder=""  value="{{old('height') ? old('height') : 0.00}}">
+		        </div>
+
+
+		        <div class="form-group">
+		            <label for="options">Options  </label>
+		            <input type="text" class="form-control" id="options" name="options" placeholder="" maxlength="255"  value="{{old('options') ? old('options') :''}}">
+		        </div>
 
 
 

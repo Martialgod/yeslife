@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
        
     	//manual seed for permalink
-    	DB::table('permalink')->insert([
+    	/*DB::table('permalink')->insert([
     		'pk_permalink'=> 7020,
     		'method'=> 'LIST',
     		'description'=> 'Actions',
@@ -94,9 +94,18 @@ class DatabaseSeeder extends Seeder
             'family'=> 'rewards.index',
             'indexno'=> 1,
             'stat'=>1
-        ]);
+        ]); */
 
-
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 10002,
+            'method'=> 'LIST',
+            'description'=> 'Sales Orders',
+            'route'=> null,
+            'type'=> 'B',
+            'family'=> 'Reports',
+            'indexno'=> 1,
+            'stat'=>1
+        ]); 
 
     }
 

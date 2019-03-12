@@ -189,6 +189,9 @@ Route::resource('/admin/rewards', 'UserRewardsController');
 
 Route::resource('/admin/orders', 'OrderController');
 
+Route::get('/admin/orders-export', 'OrderController@export');
+
+
 Route::get('/admin/orders/{id}/broadcast', 'OrderController@create_broadcast')->name('orders.broadcast');
 
 Route::post('/admin/orders/{id}/broadcast', 'OrderController@store_broadcast')->name('orders.broadcast');

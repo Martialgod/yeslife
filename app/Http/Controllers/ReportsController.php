@@ -22,6 +22,11 @@ use App\UserType;
 use App\UserMstrView;
 use App\UserAbandonedCartMstrView;
 
+use App\OrderMstrView;
+use App\ReportOrderDtls; // specefic view for reporting
+
+use App\Exports\ExportFromView;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class ReportsController extends Controller
@@ -104,39 +109,84 @@ class ReportsController extends Controller
 
 
     	$permalink = DB::select("SELECT * FROM permalink where pk_permalink = '$id'; ");
-        if( count($permalink) > 0 ){
-        	$permalink = $permalink[0];
-        }else{
-        	return redirect('/admin/404');
-        }
+
+      if( count($permalink) > 0 ){
+
+      	$permalink = $permalink[0];
+
+      }else{
+
+      	return redirect('/admin/404');
+
+      } 
+
+
+      $search = ( request()->search ) ? request()->search : null;
+
+      $datefrom = ( request()->datefrom ) ? request()->datefrom : date('Y-m-d');
+
+      $dateto = ( request()->dateto ) ? request()->dateto : date('Y-m-d');
+
+      $export = ( request()->export ) ? request()->export : 'false';
+
+
+      switch($id){
 
         //10001 = List of customers
-        if( $id == '10001' ){
+        case '10001':
+         
+          $type = ( request()->type ) ? request()->type : 'customers';
 
-        	$search = ( request()->search ) ? request()->search : null;
+          //10 = type
+          $filters = [10];
 
-        	$type = ( request()->type ) ? request()->type : 'customers';
+          $result = $this->reports_10001($search, $type);
 
-        	//10 = type
-        	$filters = [10];
-
-        	$result = $this->reports_10001($search, $type);
-
-        	//dd($result);
-
-        	return view("admin.reports.create", compact('permalink', 'result', 'search', 'filters', 'type'));
+          //dd($result);
+          
+          return view("admin.reports.create", compact('permalink', 'result', 'search', 'filters', 'type'));
 
 
-        }//END 10001
+        break;
 
-        else{
+        //Sales Orders
+        case '10002':
 
-        	//report id not found
-        	return redirect('/admin/404');
+          $displaytype = ( request()->displaytype ) ? request()->displaytype : 'summary';
 
-        }
+          //1  = [datefrom, dateto]
+          //11 = displaytype ['summary', 'details']
+          $filters = [1, 11];
 
-    
+          $result = $this->reports_10002($search, $displaytype, $datefrom, $dateto);
+
+          //dd($result);
+ 
+          if($export == 'true'){
+
+            return Excel::download(new ExportFromView('admin.reports.10002-'.$displaytype, [
+              'result'=> $result, 
+              'datefrom'=> $datefrom, 
+              'dateto'=> $dateto,
+              'displaytype'=> $displaytype
+            ]), "Order $displaytype - $datefrom to $dateto.csv");
+
+          }//END $export == 'true'
+
+          return view("admin.reports.create", compact('permalink', 'result', 'search', 'filters', 'displaytype', 'datefrom', 'dateto'));
+
+
+        break;
+
+        default:
+
+          //report id not found
+          return redirect('/admin/404');
+
+
+      }//END switch
+
+        
 
     }//END reports
 
@@ -183,6 +233,34 @@ class ReportsController extends Controller
 
    	}//END reports_10001
 
+
+    //10002 = Sales Orders
+    public function reports_10002($search, $displaytype, $datefrom, $dateto){
+
+      $result = [];
+
+      switch($displaytype){
+
+        case 'summary':
+
+          $result = OrderMstrView::ordersummary_date($datefrom, $dateto);
+
+        break;
+
+        case 'details':
+
+          $result = ReportOrderDtls::orderdtls_date($datefrom, $dateto);
+
+        break;
+
+        default:
+
+
+      }//END switch
+
+      return $result;
+
+    }//END reports_10002
 
 
 }//END class

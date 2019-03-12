@@ -50,6 +50,9 @@ use App\Mail\SendOrderConfirmation;
 
 use Illuminate\Support\Facades\Crypt;
 
+use App\Exports\OrdersExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class OrderController extends Controller
 {

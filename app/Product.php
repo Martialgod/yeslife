@@ -19,7 +19,7 @@ class Product extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['fk_category', 'name', 'description', 'slug', 'price', 'price2', 'discount', 'taxrate', 'shippingcost', 'uom', 'alertqty', 'pictxa', 'videoupload', 'videoshare', 'fk_createdby', 'fk_updatedby', 'isdeleted', 'fk_deletedby', 'deleted_at',  'stat'];
+    protected $fillable = ['fk_category', 'name', 'description', 'slug', 'price', 'price2', 'discount', 'taxrate', 'shippingcost', 'uom', 'alertqty', 'pictxa', 'sku', 'weight', 'length', 'width', 'height', 'options', 'videoupload', 'videoshare', 'fk_createdby', 'fk_updatedby', 'isdeleted', 'fk_deletedby', 'deleted_at',  'stat'];
 
 
 
