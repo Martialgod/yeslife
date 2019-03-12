@@ -2,8 +2,16 @@
 <html class="no-js" lang="en">
 
 <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <!-- Google Search Console  -->
+    <meta name="google-site-verification" 
+    content="SAaIoQrbzeyiUzsaMGLSY_3HEqRnGcS08eLh9MI8RDk" />
+
+
     <title>@yield('title')</title>
 
     @yield('meta')
@@ -105,6 +113,19 @@
   
 
     </style>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135977195-1"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-135977195-1');
+    </script>
+
+
 
 
     @yield('optional_styles')
