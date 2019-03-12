@@ -17,6 +17,17 @@ use Illuminate\Support\Facades\Crypt;
 
 use Carbon\Carbon;
 
+use Aloha\Twilio\Manager;
+use Aloha\Twilio\TwilioInterface;
+
+
+Route::get('/twilio', function(){
+
+    return Twilio::message('+639331655515', 'Test Message');
+   
+});
+
+
 //sample
 Route::get('/encrypt', function(){
     
@@ -26,8 +37,8 @@ Route::get('/encrypt', function(){
     dd(bcrypt('EZJLtAGyGy1017'));
 
     return [ $enc, $dec ];
-
 });
+
 
 //sample
 Route::get('/encryptable', 'UsersCCInfoController@index');

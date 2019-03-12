@@ -183,6 +183,7 @@ return [
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        'Aloha\Twilio\Support\Laravel\ServiceProvider',
 
     ],
 
@@ -238,6 +239,8 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        'Twilio' => 'Aloha\Twilio\Support\Laravel\Facade',
 
     ],
 

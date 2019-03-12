@@ -33,7 +33,7 @@ class SocialAuthFacebookController extends Controller
     public function callback(SocialFacebookAccountService $service)
     {
         
-         try {
+        try {
            
             //get the driver and set desired fields
             $driver = Socialite::driver('facebook')

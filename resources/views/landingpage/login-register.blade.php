@@ -206,7 +206,14 @@
                               	
                                 <label> 
                                 	<input type="checkbox" name="issubscribed" checked="" >
-                                   	Receive and get all latest news about our latest 
+                                   	Email me for latest news, 
+									products, promotions, offers and discount?
+
+                                </label>	
+
+                                 <label> 
+                                	<input type="checkbox" name="istext" checked="" >
+                                   	Send me a text for latest news,
 									products, promotions, offers and discount?
 
                                 </label>	

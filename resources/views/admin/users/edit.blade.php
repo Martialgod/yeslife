@@ -131,10 +131,18 @@
 
 
 				<div style="font-size:0.8em;color:#; text-align: left; " class="form-group">
-                  	
+                  		
+
                     <label> 
                     	<input type="checkbox" id="issubscribed" name="issubscribed" {{ $users->issubscribed == '1' ? 'checked' : '' }} >
-                       	Receive and get all latest news about our latest 
+                       	Email me for latest news, 
+						products, promotions, offers and discount?
+
+                    </label>	
+
+                    <label> 
+                    	<input type="checkbox" id="istext" name="istext" {{ $users->istext == '1' ? 'checked' : '' }} >
+                       	Send me a text for latest news,
 						products, promotions, offers and discount?
 
                     </label>	

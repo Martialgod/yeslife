@@ -90,9 +90,10 @@ class UserMstrView extends Model
 
     	return DB::SELECT("
 			SELECT a.utype, a.id, a.fullname, a.phone, a.email, 
-			CONCAT(a.address1,', ', a.city, ', ', a.state, ', ', a.zip,' ') AS `address`
+			CONCAT(a.address1,', ', a.city, ', ', a.state, ', ', a.zip,' ') AS `address`, 
+            a.issubscribed, a.istext
 			FROM vw_usermstr a 
-			WHERE a.issubscribed = 0
+			WHERE ( a.issubscribed = 0 or a.istext = 0 )
 			AND a.id <> 1000 -- super admin
 			AND a.stat = 1
 			ORDER BY a.fullname;

@@ -20,13 +20,18 @@
 	                <th>Email</th>
 	                <th>Address</th>
 
+	                @if($type == 'opt-out')
+
+	                	<th> Opt-out </th>
+
+	                @endif
+
 	                @if($type == 'abandoned')
 
 	                	<th> Item(s) </th>
 
 	                @endif
 
-	                <th></th>
 	          	</tr>
 
 	      	</thead>
@@ -43,6 +48,23 @@
 	                    <td> {{$a->email}} </td>
 
 	                    <td> {{$a->address}}  </td>
+
+	                    @if($type == 'opt-out')
+
+		                    <td>
+		                    	
+		                    	@if( $a->issubscribed == 0 )
+		                    		Email
+		                    	@endif
+
+		                    	@if( $a->istext == 0 )
+		                    		Text
+		                    	@endif
+
+		                    </td>
+
+		                @endif
+
 
 	                    @if($type == 'abandoned')
 

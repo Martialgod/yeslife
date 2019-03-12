@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fk_usertype', 'title', 'uname', 'fname', 'lname', 'fullname', 'birthdate', 'phone', 'email', 'activation_token', 'password', 'website', 'companyname', 'vatid', 'address1', 'address2', 'city', 'state', 'zip', 'fk_country', 'shippingfname', 'shippinglname', 'shippingphone', 'shippingaddress1', 'shippingaddress2', 'shippingcity', 'shippingstate', 'shippingzip', 'shippingcountry', 'affiliate_token', 'fk_referredby', 'fk_createdby', 'fk_updatedby', 'issubscribed', 'stat'
+        'fk_usertype', 'title', 'uname', 'fname', 'lname', 'fullname', 'birthdate', 'phone', 'email', 'activation_token', 'password', 'website', 'companyname', 'vatid', 'address1', 'address2', 'city', 'state', 'zip', 'fk_country', 'shippingfname', 'shippinglname', 'shippingphone', 'shippingaddress1', 'shippingaddress2', 'shippingcity', 'shippingstate', 'shippingzip', 'shippingcountry', 'affiliate_token', 'fk_referredby', 'fk_createdby', 'fk_updatedby', 'issubscribed', 'istext', 'stat'
     ];
 
     /**
@@ -114,6 +114,8 @@ class User extends Authenticatable
         }
 
         $request['issubscribed'] = ( $request->issubscribed && $request->issubscribed == 'on' ) ? 1 : 0;
+
+        $request['istext'] = ( $request->istext && $request->istext == 'on' ) ? 1 : 0;
 
 
         //dd($common_rule);
