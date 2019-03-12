@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /cartcheckout
+Disallow: /admin/login
+Disallow: /404
