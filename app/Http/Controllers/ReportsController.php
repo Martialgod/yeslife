@@ -144,6 +144,16 @@ class ReportsController extends Controller
 
           //dd($result);
           
+
+          if($export == 'true'){
+
+            return Excel::download(new ExportFromView('admin.reports.10001', [
+              'result'=> $result, 
+              'type'=> $type, 
+            ]), "$type list.csv");
+
+          }//END $export == 'true'
+          
           return view("admin.reports.create", compact('permalink', 'result', 'search', 'filters', 'type'));
 
 

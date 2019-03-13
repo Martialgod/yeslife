@@ -1,6 +1,10 @@
 {{--10001 = Customer List--}}
 @if(count($result) > 0)
 
+	<a href="{{url()->current()."?type=$type&export=true"}}" title="" > 
+	    Export Data
+	</a>
+
 	<div class="">
 		<blockquote style="font-size: 14px">
 			Type: {{$type}}

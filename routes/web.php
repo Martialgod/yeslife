@@ -22,7 +22,8 @@ use Aloha\Twilio\TwilioInterface;
 
 
 Route::get('/twilio', function(){
-
+    //+639331655515
+    //+639152693481
     return Twilio::message('+639331655515', 'Test Message');
    
 });

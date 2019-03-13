@@ -50,6 +50,10 @@
                     <div class="login-register-form">{{--login-register-form--}}
                         <h3>Forgot Password?</h3>
 
+
+                        @include('admin.layouts.alert')
+
+
                         <p>
                         	Enter your email address below, and we'll email instructions for setting a new one.
                         </p>

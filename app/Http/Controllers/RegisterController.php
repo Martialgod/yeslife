@@ -70,7 +70,7 @@ class RegisterController extends Controller
             $request['fk_referredby'] = session('yeslife_referrer_id'); //initialize @App/Providers/AppServiceProvider.php
 
             //check for existing email. need to know if email is just a subscriber
-            //if just a subscriber update the user, else email is already a member
+            //if just a subscriber update the user
             $users = User::where('email', $request->email)
                     ->where('fname', null)
                     ->where('lname', null)
@@ -83,6 +83,23 @@ class RegisterController extends Controller
                 return $this->registerSubscriber($request, $users); //@the bottom
 
             }//END $users
+
+
+
+            //check for existing email with in-active status
+            //applicable to the users who ordered something but did not agree to create an account
+            $users = User::where('email', $request->email)
+                    ->where('stat', 0)
+                    ->first();
+
+            //update existing user with in-active status
+            if( $users ){
+
+                //existing user with in-active status
+                return $this->registerSubscriber($request, $users); //@the bottom
+
+            }//END $users
+
 
             //new user
             return $this->registerNewUser($request); //@the bottom
@@ -154,9 +171,13 @@ class RegisterController extends Controller
      */
     public function sendemailreset(Request $request)
     {
-        //
-   
-        $users = User::where('email', $request->email)->first();
+        //only active account is allowed to reset the password
+        //possible in-active accounts, unverified subscription, checkout without creating an account
+        $users = User::where('email', $request->email)
+                ->where('stat', 1)
+                ->first();
+
+        //dd($users);
 
         if( $users ){
 
@@ -177,6 +198,14 @@ class RegisterController extends Controller
             });
 
   
+        }
+
+        else{
+
+
+            session()->flash('error', "Opps! Email not found...");
+            return redirect()->back();
+
         }
 
         return view('landingpage.password-reset.emailsent');
@@ -321,6 +350,7 @@ class RegisterController extends Controller
 
 
     //don't need to call User::validator
+    //also email should not be updated here.
     //needs manual validation since email already exist due to user subscription before
     public function registerSubscriber($request, $users){
 
@@ -357,10 +387,18 @@ class RegisterController extends Controller
                 'fname'=> $request->fname,
                 'lname'=> $request->lname,
                 'fullname'=> $request->fullname,
-                'fk_referredby'=> $request->fk_referredby,
+                //'fk_referredby'=> $request->fk_referredby,
                 'stat'=> 1
 
             ]);
+
+            //check if user is not currently referred by someone to avoid referral overwriting
+            //if not then update new referral if applicable
+            if( !$users->fk_referredby ){
+                $users->update([
+                    'fk_referredby'=> $request->fk_referredby,
+                ]);
+            }
 
 
             session()->flash('success', "Registration completed!");
