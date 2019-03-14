@@ -30,13 +30,13 @@
         		
         		<div class="form-group">
                     <label for="name">Name <span class="label-required">*</span> </label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="" required="" value="{{old('name')}}" maxlength="25">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="" required="" value="{{old('name')}}" maxlength="255">
                   
                 </div>
 
         		<div class="form-group">
                     <label for="description">Description <span class="label-required">*</span> </label>
-                    <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{old('description')}}" maxlength="25">
+                    <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{old('description')}}" maxlength="255">
                   
                 </div>
 
@@ -56,11 +56,6 @@
                   
                 </div>
 
-  
-			</div><!--END col-md-4-->
-
-
-			<div class="col-md-4">
 
 				<div class="form-group">
                     <label for="effective_at">Effective At <span class="label-required"></span> </label>
@@ -74,6 +69,31 @@
                     <input type="datetime-local" class="form-control" id="expired_at" name="expired_at" placeholder="" value="{{old('expired_at')}}" >
                   
                 </div>
+
+
+  
+			</div><!--END col-md-4-->
+
+
+			<div class="col-md-4">
+
+
+                <div class="form-group">
+                    <label for="applies_to">Applies To <span class="label-required">*</span> </label>
+                  	<select name="applies_to" id="applies_to" class="form-control">
+				        <option value="All" {{ old('applies_to') == 'All' ? 'selected' : '' }}>All User</option>
+				        <option value="Specific" {{  old('applies_to') == 'Specific' ? 'selected' : '' }}>Specific User</option>
+				    </select>
+
+ 
+                </div>
+
+                <div class="form-group">
+                    <label for="max_use">Max Use <span class="label-required">* (0 = unlimited) </span> </label>
+                    <input type="number" class="form-control" id="max_use" name="max_use" placeholder="" required="" value="{{old('max_use') ? old('max_use') : 0}}" min="0">
+                  
+                </div>
+
 
 
 				<br>

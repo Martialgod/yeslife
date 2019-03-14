@@ -30,13 +30,13 @@
 
         		<div class="form-group">
                     <label for="name">Name <span class="label-required">*</span> </label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="" required="" value="{{$coupons->name}}" maxlength="25">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="" required="" value="{{$coupons->name}}" maxlength="255">
                   
                 </div>
 
         		<div class="form-group">
                     <label for="description">Description <span class="label-required">*</span> </label>
-                    <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{$coupons->description}}" maxlength="25">
+                    <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{$coupons->description}}" maxlength="255">
                   
                 </div>
 
@@ -56,13 +56,8 @@
                   
                 </div>
 
-  
-			</div><!--END col-md-4-->
 
-
-			<div class="col-md-4">
-
-				{{--'Y-m-d\TH:i' = 2019-01-01T01:00--}}
+                {{--'Y-m-d\TH:i' = 2019-01-01T01:00--}}
 				
 				@php
                 	$efd = ( $coupons->effective_at ) ? date_format(date_create($coupons->effective_at), 'Y-m-d\TH:i' ) : null;
@@ -81,6 +76,29 @@
                     <input type="datetime-local" class="form-control" id="expired_at" name="expired_at" placeholder="" value="{{$exd}}" >
                   
                 </div>
+
+  
+			</div><!--END col-md-4-->
+
+
+			<div class="col-md-4">
+
+				<div class="form-group">
+                    <label for="applies_to">Applies To <span class="label-required">*</span> </label>
+                  	<select name="applies_to" id="applies_to" class="form-control">
+				        <option value="All" {{ $coupons->applies_to == 'All' ? 'selected' : '' }}>All User</option>
+				        <option value="Specific" {{  $coupons->applies_to == 'Specific' ? 'selected' : '' }}>Specific User</option>
+				    </select>
+
+ 
+                </div>
+
+                <div class="form-group">
+                    <label for="max_use">Max Use<span class="label-required">* (0 = unlimited) </span> </label>
+                    <input type="number" class="form-control" id="max_use" name="max_use" placeholder="" required="" value="{{$coupons->max_use}}" min="0">
+                  
+                </div>
+
 
 
                 @include('admin.layouts.selectstatus', ['source'=>$coupons])

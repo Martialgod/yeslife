@@ -314,8 +314,8 @@
                                             </button>
                                         </div>
                                     @else
-                                        <div class="product-action" lass="btn btn-default" >
-                                            <span class="badge badge-danger">Out of stock</span>
+                                        <div class="product-action" >
+                                            <span class="badge badge-danger ">Out of stock</span>
                                         </div>
                                     @endif
 		                           

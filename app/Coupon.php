@@ -25,7 +25,7 @@ class Coupon extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['code', 'name', 'description', 'type', 'amount', 'effective_at', 'expired_at', 'fk_createdby', 'fk_updatedby', 'stat'];
+    protected $fillable = ['code', 'name', 'description', 'type', 'amount', 'effective_at', 'expired_at', 'applies_to', 'max_use', 'fk_createdby', 'fk_updatedby', 'stat'];
 
 
 
@@ -41,6 +41,7 @@ class Coupon extends Model
             'amount'   		=>  ['required','numeric'],
             'effective_at'	=>  ['nullable', 'date'],
             'expired_at'	=>  ['nullable', 'date'],
+            'max_use'       =>  ['required','numeric'],
         ];
 
 
@@ -89,6 +90,8 @@ class Coupon extends Model
             'amount.required' => 'Amount is required',
             'amount.numeric' => 'Amount must be numeric',
             'amount.max' => 'Rated coupons only allows maximum amount of 100',
+            'max_use.required' => 'Number of use must be numeric',
+            'max_use.numeric' => 'Number of use is required',
         ];
     
     }//END messages

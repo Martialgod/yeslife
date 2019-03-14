@@ -167,7 +167,7 @@
                                 </button>
                                 </div>
 
-                                <div class="product-action" class="btn btn-default" ng-if="list.qty <=0">
+                                <div class="product-action"  ng-if="list.qty <=0">
                                     <span class="badge badge-danger">Out of stock</span>
                                 </div>
 

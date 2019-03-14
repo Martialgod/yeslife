@@ -42,6 +42,7 @@
 	                    <th>Type</th>
 	                    <th>Amount</th>
 	                    <th>Effectivity</th>
+	                    <th>Applies</th>
 	                    <th>Status</th>
 	                    <th></th>
 	              </tr>
@@ -57,9 +58,23 @@
 
 	                        <td> {{$a->code}} </td>
 
-	                        <td> {{$a->name}} </td>
+	                        <td> 
+	                        
+	                        	<span data-toggle="tooltip" title="{{$a->name}}" style="cursor: help;">
+                                    {{
+                                        (strlen($a->name)) > 20 ? substr($a->name,0,20).'..' : $a->name 
+                                    }}
+                                </span>
 
-	                        <td> {{$a->description}} </td>
+	                        </td>
+
+	                        <td> 
+	                        	<span data-toggle="tooltip" title="{{$a->description}}" style="cursor: help;">
+                                    {{
+                                        (strlen($a->description)) > 20 ? substr($a->description,0,20).'..' : $a->description 
+                                    }}
+                                </span>
+	                        </td>
 
 	                        <td> {{$a->type}} </td>
 
@@ -76,6 +91,12 @@
 	                        	{{ $a->effective_at }}
 	                        	<br>
 	                        	{{ $a->expired_at }}
+	                        </td>
+
+	                        <td>
+	                        	
+	                        	{{$a->applies_to}}
+
 	                        </td>
 
 	                        <td style="color:{{ $a->stat == '1' ? 'green' : 'red'}} ;"> 
