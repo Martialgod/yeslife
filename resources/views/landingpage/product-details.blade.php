@@ -122,7 +122,7 @@
                                         @if( $products->qty > 0 )
                                             <div class="product-action">
                                                 <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
-                                                    <span class="fa fa-shopping-cart" ></span> 
+                                                    Add To Cart
 
                                                 </button>
                                             </div>

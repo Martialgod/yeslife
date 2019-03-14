@@ -359,6 +359,22 @@
 
 		                                </div><!--END bottom-->
 
+                                        <br>
+                                        <!-- Product Action -->
+                                        @if( $v->qty > 0 )
+                                            <div class="product-action text-center">
+                                                <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                    Add to cart
+
+                                                </button>
+                                            </div>
+                                        @else
+                                            <div class="product-action" class="btn btn-default" >
+                                                <span class="badge badge-danger">Out of stock</span>
+                                            </div>
+                                        @endif
+
+
 		                            </div><!--END head-->
 
 		                        </div><!--END product-content-->

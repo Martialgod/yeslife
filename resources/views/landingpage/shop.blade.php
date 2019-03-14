@@ -157,6 +157,21 @@
 
                                 </div><!--END bottom-->
 
+
+                                <br>
+                                <!-- Product Action -->
+                                <div class="product-action text-center" ng-if="list.qty > 0">
+                                    <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
+                                    Add To Cart
+
+                                </button>
+                                </div>
+
+                                <div class="product-action" class="btn btn-default" ng-if="list.qty <=0">
+                                    <span class="badge badge-danger">Out of stock</span>
+                                </div>
+
+
                             </div><!--END head-->
 
                             <div class="body">
