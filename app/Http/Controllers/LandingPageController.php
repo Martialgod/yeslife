@@ -188,7 +188,7 @@ class LandingPageController extends Controller
         $contactemails = explode(",",env('CONTACT_EMAILS'));
 
         //using mail
-        Mail::raw("Name: $request->fullname \nEmail: $request->email \nPhone: $request->phone \nRequesting Url: $request->requesturl \n\n\nMessage: $request->message", function ($message) use ($request, $contactemails) {
+        Mail::raw("Name: $request->fullname \nEmail: $request->email \nPhone: $request->phone \nRequesting Url: $request->requesturl \n\n\nSubject: $request->subject \nMessage: $request->message", function ($message) use ($request, $contactemails) {
             //$message->to(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'))
             $message->to($contactemails)
             ->subject('Customer Inquiry');
