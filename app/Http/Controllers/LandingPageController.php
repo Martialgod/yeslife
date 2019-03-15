@@ -25,6 +25,10 @@ use App\User;
 
 use Mail;
 
+use App\Mail\SendSubsConfirmation;
+
+use App\Mail\SendSubsActivated;
+
 use Carbon\Carbon;
 
 use App\MyHelperClass;
@@ -248,34 +252,49 @@ class LandingPageController extends Controller
         }
 
 
-        $request['fk_usertype'] = 1008; //Normal User. Default User Access
-        $request['uname'] = $request->subemail;
-        $request['password'] = 'test';
-        $request['activation_token'] = str_random(60);
-        $request['fk_country'] = 229; //USA
-        $request['shippingcountry'] = 229; //USA default
-        $request['state'] = 'Alabama'; //default state from db
-        $request['city'] = 'Alabama';
-        $request['address1'] = 'Alabama';
-        $request['stat'] = 0;
+        //begin transaction
+        $transaction = DB::transaction(function() use($request) {
 
-        $users =  User::create($request->all());
 
-        $users->update([
-            'affiliate_token'=> MyHelperClass::generateRandomString(10).''.$users->id
-        ]);
+            $request['fk_usertype'] = 1008; //Normal User. Default User Access
+            $request['uname'] = $request->subemail;
+            $request['password'] = 'test';
+            $request['activation_token'] = str_random(60);
+            $request['fk_country'] = 229; //USA
+            $request['shippingcountry'] = 229; //USA default
+            $request['state'] = 'Alabama'; //default state from db
+            $request['city'] = 'Alabama';
+            $request['address1'] = 'Alabama';
+            $request['stat'] = 0;
 
-        $data = array('users'=>$users);
+            $users =  User::create($request->all());
 
-        $mail = Mail::send('landingpage.layouts.subscription-email-template', $data, function($message) use ($users)
-        {   
-            $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
-            $message->to($users->email, $users->email)
-            ->subject('Activate Subscription!');
-        });
+            $users->update([
+                'affiliate_token'=> MyHelperClass::generateRandomString(10).''.$users->id
+            ]);
 
-     
-        return 'success';
+            /*$data = array('users'=>$users);
+            $mail = Mail::send('landingpage.layouts.subscription-email-template', $data, function($message) use ($users)
+            {   
+                $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
+                $message->to($users->email, $users->email)
+                ->subject('Activate Subscription!');
+            }); */
+
+            //email to the customer
+            $when = Carbon::now()->addMinutes(1);
+            Mail::to($users->email, $users->email)->later($when, new SendSubsConfirmation($users));
+
+            //Mail::to($users->email, $users->email)->send(new SendSubsConfirmation($users));
+         
+            return 'success';
+
+
+
+        });//END $transaction
+
+
+        return $transaction;
     
     }//END apistoresubscribe
 
@@ -297,32 +316,49 @@ class LandingPageController extends Controller
 
         }
 
-        $user->activation_token = '';
-        $user->email_verified = Carbon::now();
-        $user->password = bcrypt($user->affiliate_token);
-        $user->stat = 1;
-        $user->save();
-
-        //return view('landingpage.layouts.subscription-coupon-template', compact('user'));
-
-        $data = array('user'=>$user);
-        $mail = Mail::send('landingpage.layouts.subscription-coupon-template', $data, function($message) use ($user)
-        {   
-            $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
-            $message->to($user->email, $user->email)
-            ->subject('20% Subscription Discount!');
-        });
+        //begin transaction
+        $transaction = DB::transaction(function() use($user) {
 
 
-        //login automatically
-        Auth::attempt([
-            //'utype'=> 'Admin',
-            'uname'  => $user->uname, 
-            'password'  => $user->affiliate_token,
-            'stat'      => 1
-        ]);
+            $user->activation_token = '';
+            $user->email_verified = Carbon::now();
+            $user->password = bcrypt($user->affiliate_token);
+            $user->stat = 1;
+            $user->save();
 
-        return view('landingpage.layouts.subscription-success-template');
+            //return view('landingpage.layouts.subscription-coupon-template', compact('user'));
+
+            /*$data = array('user'=>$user);
+            $mail = Mail::send('landingpage.layouts.subscription-coupon-template', $data, function($message) use ($user)
+            {   
+                $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
+                $message->to($user->email, $user->email)
+                ->subject('20% Subscription Discount!');
+            }); */
+
+            //email to the customer
+            $when = Carbon::now()->addMinutes(1);
+            Mail::to($user->email, $user->email)->later($when, new SendSubsActivated($user));
+
+
+            //login automatically
+            Auth::attempt([
+                //'utype'=> 'Admin',
+                'uname'  => $user->uname, 
+                'password'  => $user->affiliate_token,
+                'stat'      => 1
+            ]);
+
+            return view('landingpage.layouts.subscription-success-template');
+            
+
+
+
+        });//END $transaction
+
+
+        return $transaction;
+
         
 
     }//END activate_subscription
