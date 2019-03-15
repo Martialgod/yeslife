@@ -207,6 +207,24 @@ class LandingPageController extends Controller
     }//END apistorecontactus
 
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sample_subscription_template($id)
+    {
+        //
+
+        $users = User::findOrFail($id);
+
+        return view('landingpage.layouts.subscription-email-template', compact('users'));
+        
+
+    }//END apistoresubscribe
+
+
+
 
     /**
      * Display a listing of the resource.
@@ -281,11 +299,31 @@ class LandingPageController extends Controller
 
         $user->activation_token = '';
         $user->email_verified = Carbon::now();
+        $user->password = bcrypt($user->affiliate_token);
         $user->stat = 1;
         $user->save();
 
+        //return view('landingpage.layouts.subscription-coupon-template', compact('user'));
+
+        $data = array('user'=>$user);
+        $mail = Mail::send('landingpage.layouts.subscription-coupon-template', $data, function($message) use ($user)
+        {   
+            $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
+            $message->to($user->email, $user->email)
+            ->subject('20% Subscription Discount!');
+        });
+
+
+        //login automatically
+        Auth::attempt([
+            //'utype'=> 'Admin',
+            'uname'  => $user->uname, 
+            'password'  => $user->affiliate_token,
+            'stat'      => 1
+        ]);
+
         return view('landingpage.layouts.subscription-success-template');
-       
+        
 
     }//END activate_subscription
 

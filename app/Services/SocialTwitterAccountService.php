@@ -47,8 +47,10 @@ class SocialTwitterAccountService
                     'city'=> 'Alabama',
                     'shippingcountry'=>  229, //USA default,
                     'shippingstate'=> 'Alabama', //default state from db,
+                    'activation_token'=> null, //email automatically activated
                     'fk_referredby'=> session('yeslife_referrer_id'), //initialize @App/Providers/AppServiceProvider.php
                     'issubscribed'=> 1,
+                    'istext'=> 1,
                     'stat'=> 1
                 ]);
                     
@@ -69,6 +71,7 @@ class SocialTwitterAccountService
                     'lname'=> $providerUser->getName(),
                     'fullname'=>  $providerUser->getName(),
                     'issubscribed'=> 1,
+                    'istext'=> 1,
                     'stat'=> 1
                 ]);
 

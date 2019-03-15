@@ -81,8 +81,12 @@
                 <div class="form-group">
                     <label for="applies_to">Applies To <span class="label-required">*</span> </label>
                   	<select name="applies_to" id="applies_to" class="form-control">
-				        <option value="All" {{ old('applies_to') == 'All' ? 'selected' : '' }}>All User</option>
-				        <option value="Specific" {{  old('applies_to') == 'Specific' ? 'selected' : '' }}>Specific User</option>
+				        <option value="All" {{ old('applies_to') == 'All' ? 'selected' : '' }}>
+				        	All User  (Site login is not required)
+				        </option>
+				        <option value="Specific" {{  old('applies_to') == 'Specific' ? 'selected' : '' }}>
+				        	Specific User (Site login is required)
+				        </option>
 				    </select>
 
  

@@ -27,15 +27,25 @@
 		<div class="error-404">  	
 			<div class="error-page-left">
 				<br>
-				<h3>Success! Thank you for activating your email....</h3>
+
+				<h3>
+					Thank you for activating your email....
+				</h3>
+				
 				<br>
 			</div>
 			<div class="error-right">
 		    	
+		    	<p>
+		    		Please check your email for your default login credentials and your 20% subscription code.
+		    		
+		    	</p>
+
+		    	<br>
 		    	
 	    		<div class="col-12" style="text-align:center">
-	    			<a href="{{url('/')}}" class="btn btn-round btn-lg"> 
-	    				Go Back
+	    			<a href="{{url('/shop')}}" class="btn btn-round btn-lg"> 
+	    				Shop Now!
 	    			</a>
                    
                 </div>

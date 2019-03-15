@@ -46,8 +46,10 @@ class SocialFacebookAccountService
                     'city'=> 'Alabama',
                     'shippingcountry'=>  229, //USA default,
                     'shippingstate'=> 'Alabama', //default state from db,
+                    'activation_token'=> null, //email automatically activated
                     'fk_referredby'=> session('yeslife_referrer_id'), //initialize @App/Providers/AppServiceProvider.php
                     'issubscribed'=> 1,
+                    'istext'=> 1,
                     'stat'=> 1
                 ]);
                     
@@ -66,7 +68,9 @@ class SocialFacebookAccountService
                     'fname'=> $providerUser->user['first_name'],
                     'lname'=> $providerUser->user['last_name'],
                     'fullname'=>  $providerUser->getName(),
+                    'activation_token'=> null, //email automatically activated
                     'issubscribed'=> 1,
+                    'istext'=> 1,
                     'stat'=> 1
                 ]);
 

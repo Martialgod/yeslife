@@ -112,6 +112,9 @@ Route::get('/shop/{id}/reviews', 'ShopController@apireviews');
 Route::post('/shop/{id}/reviews', 'ShopController@post_reviews')->middleware(['auth']);
 
 
+//sample email template for testing
+Route::get('/sample-subscription-email-template/{id}', 'LandingPageController@sample_subscription_template');
+
 Route::get('/activate/subscription/{token}', 'LandingPageController@activate_subscription');
 Route::get('/activate/sample-subscription/user/{token}', 'LandingPageController@sample_subscription');
 

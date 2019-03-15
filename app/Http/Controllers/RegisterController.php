@@ -63,6 +63,7 @@ class RegisterController extends Controller
         if( $request->logtype == 'register' ){
 
             $request['fk_usertype'] = 1008; //Normal User. Default User Access
+            $request['activation_token'] = null; //email is now automatically activated
             $request['fk_country'] = 229; //USA default
             $request['shippingcountry'] = 229; //USA default
             $request['statesdropdown'] = 'Alabama'; //default state from db; converted to $request['states'] in User::custom_validation

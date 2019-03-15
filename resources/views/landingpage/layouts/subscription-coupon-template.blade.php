@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Subscription Activation</title>
+    <title>20% Subscription Coupon</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -355,21 +355,35 @@
                           Thank you for signing up for our newsletter and welcome to the Yes.Life family!  
                         </p>
 
+
                         <p>
-                          As a special gift to you today, please confirm your email address by clicking the link below, and we will immediately send you a one-time 20% OFF your first order coupon!!  
+                          You can now login to your Yes.Life account and avail your one-time subscription coupon using your default credentials.
+                        </p>
+
+                        <p>
+                          
+                          Username: <b>{{$user->uname}}</b>
+
+                          <br>
+                          Password: <b>{{$user->affiliate_token}}</b>
 
                         </p>
 
                         <p>
-                          Click the link below now to confirm your registration!...
+                          20% subscription coupon: <b> EBxG13 </b>
+                          
                         </p>
 
+
                         <p>
-                         
-                          <a href="{{url('/activate/subscription/'.$users->activation_token)}}" target="_blank" title="" style="text-decoration: none;"> 
-                            Confirm Account!
-                          </a>
+                          
+                            <a href="{{url('/myaccount')}}" target="_blank" title="" style="text-decoration: none;"> 
+                              Log in here...
+                            </a> 
+
                         </p>
+
+            
 
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
