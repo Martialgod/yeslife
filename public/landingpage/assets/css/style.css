@@ -629,7 +629,8 @@ input::placeholder, textarea::placeholder {
   @media only screen and (max-width: 479px) {
     .header-logo {
       text-align: center;
-      margin-top: 20px; } }
+      margin-top: 20px;
+      display: none;} }
   .header-logo a {
     display: inline-block; }
     .header-logo a img {

@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<link href="/adminpage/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 	<!-- Custom Theme files -->
-	<link href="/adminpage/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="/adminpage/css/style.css?{{time()}}" rel="stylesheet" type="text/css" media="all"/>
 	<!--js-->
 	<script src="/adminpage/js/jquery-2.1.1.min.js"></script> 
 	<!--icons-css-->
@@ -54,8 +54,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	.error{
     		color:red;
     	}
-  
 
+    
     </style>
 
 

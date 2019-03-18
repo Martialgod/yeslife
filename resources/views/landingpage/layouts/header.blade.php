@@ -1,7 +1,7 @@
 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
 <!-- Header Section Start -->
-<div class="header-section section bg-theme" style="margin-bottom: 10px;">
+<div class="header-section section bg-theme" style="">
     <div class="container">
         <div class="row">
             
@@ -30,7 +30,7 @@
             <!-- Header Action -->
             <div class="col">
 
-                <div class="header-action">
+                <div class="header-action" style="margin-top: 5px;">
 
                     <!-- Cart Wrap Start-->
                     <div class="header-cart-wrap" style="margin-right: 10px;font-size: 20px;" >

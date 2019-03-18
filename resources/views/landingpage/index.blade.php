@@ -31,7 +31,7 @@
     {{--$refnourl initialized at landingpage.master.blade.php--}}
 
 	<!-- Hero Section Start -->
-    <div class="hero-slider section">
+    <div class="hero-slider section" style="margin-top: -30px;">
 
         <div id="slider" class="carousel slide" data-ride="carousel" >
           
@@ -359,10 +359,11 @@
 
 		                                </div><!--END bottom-->
 
-                                        <br>
+                                       
                                         <!-- Product Action -->
                                         @if( $v->qty > 0 )
                                             <div class="product-action text-center">
+                                                <br>
                                                 <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
                                                     Add to cart
 

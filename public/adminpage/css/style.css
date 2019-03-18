@@ -28,7 +28,7 @@ a:hover {
 	top: 0;
 	 width:87%;
     margin: 0 auto;
-	z-index: 1;
+	z-index: 500; /*always top over other elements*/
 	background:#fff;
 }
 /*--header main start here--*/
