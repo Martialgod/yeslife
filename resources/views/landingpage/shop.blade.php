@@ -158,9 +158,10 @@
                                 </div><!--END bottom-->
 
 
-                                <br>
+                               
                                 <!-- Product Action -->
                                 <div class="product-action text-center" ng-if="list.qty > 0">
+                                    <br>
                                     <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
                                     Add To Cart
 
