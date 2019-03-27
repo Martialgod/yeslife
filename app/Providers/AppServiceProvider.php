@@ -70,7 +70,7 @@ class AppServiceProvider extends ServiceProvider
         //toastr order broadcast in master layout
         view()->composer('landingpage.layouts.master', function($view){
 
-            $toastrbroadcast = \App\OrderMstr::inRandomOrder()->first();
+            $toastrbroadcast = \App\OrderMstr::where('fk_users', '<>', '1000')->inRandomOrder()->first();
 
             //dd($toastrbroadcast);
             
