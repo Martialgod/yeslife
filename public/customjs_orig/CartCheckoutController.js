@@ -631,7 +631,7 @@
         	};
 
         	//rallypay
-        	/*vm.paymentapi = {
+        	vm.paymentapi = {
         		amount: 100,
             	currency: 'usd',
             	email: 'test@gmail.com',
@@ -648,7 +648,7 @@
 
 	        vm.SubmitCart();
 
-        	return; */
+        	return; 
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js

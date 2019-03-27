@@ -11,6 +11,8 @@
     <meta name="google-site-verification" 
     content="SAaIoQrbzeyiUzsaMGLSY_3HEqRnGcS08eLh9MI8RDk" />
 
+    <meta name="p:domain_verify" content="efbec8bf918ea4d0f429df5435959c51"/>
+
 
     <title>@yield('title')</title>
 
