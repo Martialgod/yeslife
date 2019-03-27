@@ -67,6 +67,43 @@ class AppServiceProvider extends ServiceProvider
         });
 
 
+        //toastr order broadcast in master layout
+        view()->composer('landingpage.layouts.master', function($view){
+
+            $toastrbroadcast = \App\OrderMstr::inRandomOrder()->first();
+
+            //dd($toastrbroadcast);
+            
+            $toastrbroadcastcount = 0;
+            $toastrbroadcastmstr = null;
+            $toastrbroadcastdtls = '';
+
+            if( $toastrbroadcast ){
+                
+                $toastrbroadcastcount = 1;
+
+                $toastrbroadcastmstr = $toastrbroadcast->billingfname.' '.ucfirst(substr($toastrbroadcast->billinglname, 0, 1)).' from '.ucfirst($toastrbroadcast->billingstate).' bought the following: <br> ';
+
+                $tempdtls = \App\OrderDtlView::where('fk_ordermstr', $toastrbroadcast->pk_ordermstr)->get();
+
+                foreach($tempdtls as $key => $v){
+
+                    $toastrbroadcastdtls.= round($tempdtls[0]->qty).' bottle(s) of '.$tempdtls[0]->name.'<br>';
+
+                }
+
+                if( count($tempdtls) > 0 ){
+                   
+                }
+                
+
+            }
+
+            $view->with(compact('toastrbroadcastcount', 'toastrbroadcastmstr', 'toastrbroadcastdtls'));
+
+        });
+
+
         //header for landing page
         view()->composer('landingpage.layouts.header', function($view){
            

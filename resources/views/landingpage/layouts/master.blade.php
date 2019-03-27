@@ -113,6 +113,23 @@
             }
 
 
+            .toast-broadcast {
+                background-color: #ffffff;
+                color: #000;
+                font-size: 14px;
+            }
+
+            .toast-broadcast .toast-title {
+              color: #000;
+            }
+
+            .toast-broadcast .toast-message {
+              color: #000;
+            }
+
+
+
+
 
     </style>
 
@@ -149,6 +166,15 @@
     <div class="form-group" hidden >
         <input type="hidden" id="isloggedin" value="{{ (Auth::check()) ? Auth::id() : 'no' }}">
     </div>
+
+    {{--
+        @AppServiceProvider.php
+    --}}
+    <span hidden >
+        <i id="toastrbroadcastcount" hidden>{{$toastrbroadcastcount}}</i>
+        <i id="toastrbroadcasttitle" hidden>{!!$toastrbroadcastmstr!!}</i>
+        <i id="toastrbroadcastmessage" hidden>{!!$toastrbroadcastdtls!!}</i>
+    </span>
 
     <div class="main-wrapper">
 
@@ -244,13 +270,17 @@
 
 
         toastr.options = {
-          "debug": false,
-          "positionClass": "toast-bottom-right",
-          "onclick": null,
-          "fadeIn": 300,
-          "fadeOut": 1000,
-          "timeOut": 5000,
-          "extendedTimeOut": 1000
+            "debug": false,
+            "positionClass": "toast-bottom-right",
+            "onclick": null,
+            "fadeIn": 1000,
+            "fadeOut": 1000,
+            "timeOut": 5000,
+            "extendedTimeOut": 1000,
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "slideDown",
+            "hideMethod": "slideUp"
         }
 
 
@@ -280,6 +310,35 @@
 
       return t;
     }(document, "script", "twitter-wjs"));</script>
+
+
+
+    <script type="text/javascript">
+        //broadcast toastr
+        $(document).ready(function(){
+
+            if( $('#toastrbroadcastcount').html() == 1 ){
+
+                setTimeout(function(){
+
+                    toastr.clear();
+
+                    var temptitle = $('#toastrbroadcasttitle').html();
+                    var tempmessage = $('#toastrbroadcastmessage').html();
+
+                    toastr.success(tempmessage, temptitle, {
+                        'iconClass': 'toast-broadcast'
+                    }).css("width","100%");
+
+                }, 1000);
+
+            }
+           
+
+        });
+
+
+    </script>
     
 
     @yield('optional_scripts')

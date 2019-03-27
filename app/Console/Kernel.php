@@ -41,7 +41,9 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('dbevent:insertreferralsignuprewards')->dailyAt('1:40')->withoutOverlapping();
         
-        $schedule->command('broadcast:neworders')->dailyAt('02:00')->withoutOverlapping();
+        //disabled @March 28 2019
+        //broadcast is done in the homepage via toastr popup
+        //$schedule->command('broadcast:neworders')->dailyAt('02:00')->withoutOverlapping();
         
         $schedule->command('broadcast:abandonedcart')->dailyAt('04:00')->withoutOverlapping();
         

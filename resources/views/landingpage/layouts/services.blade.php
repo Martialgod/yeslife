@@ -1,12 +1,13 @@
 <!-- Service Section Start -->
 <div class="service-section section pl-15 pr-15 pl-lg-30 pr-lg-30 pl-md-30 pr-md-30">
     <div class="service-container">
+        <br>
         <div class="row ml-0 mr-0">
            
             <div class="service col-xl-3 col-md-6 col-12">
                 <div class="icon"></div>
                 <div class="content">
-                    <br>
+                  
                     <h3>Free home delivery</h3>
                     <p>Provide free home delivery for all product over $100</p>
                 </div>
