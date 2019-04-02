@@ -88,7 +88,7 @@
                                     @else
 
                                         {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
-                                        <!-- Your share button code -->
+                                        <!-- Your share button code --> 
                                         <div class="fb-share-button" data-href="{{url()->current()}}{{$refnourl}}" data-layout="button_count" data-size="large">
                                         </div>
 
