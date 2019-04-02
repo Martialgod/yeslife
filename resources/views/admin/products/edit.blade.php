@@ -22,7 +22,7 @@
 
 	<div class="row">
 
-		<form method="POST" class="swa-confirm" action="{{route('products.update', $products->pk_products)}}" enctype="multipart/form-data" >
+		<form method="POST" class="jqvalidate-form swa-confirm" action="{{route('products.update', $products->pk_products)}}" enctype="multipart/form-data" >
 
 		    {{method_field('PUT')}}
 	        {{ csrf_field() }}
@@ -32,14 +32,14 @@
 
 		        <div class="form-group">
 	                <label for="name">Product Name <span class="label-required">*</span> </label>
-	                <input type="text" class="form-control" id="name" name="name" placeholder="" required="" max="255" value="{{$products->name}}">
+	                <input type="text" class="form-control" id="name" name="name" placeholder="" required="" maxlength="255" value="{{$products->name}}">
 		        </div>
 
 
 
 		        <div class="form-group">
 	                <label for="slug">Slug <span class="label-required">*</span> </label>
-	                <input type="text" class="form-control" id="slug" name="slug" placeholder="" required="" max="255" value="{{$products->slug}}">
+	                <input type="text" class="form-control" id="slug" name="slug" placeholder="" required="" maxlength="255" value="{{$products->slug}}">
 		            
 		        </div>
 
@@ -127,7 +127,7 @@
 
 		        <div class="form-group">
 		            <label for="uom">Unit of Measure <span class="label-required">*</span> </label>
-		            <input type="text" class="form-control" id="uom" name="uom" placeholder="" required="" max="6" value="{{$products->uom}}">
+		            <input type="text" class="form-control" id="uom" name="uom" placeholder="" required="" maxlength="6" value="{{$products->uom}}">
 		        </div>
 
 		        <div class="form-group">

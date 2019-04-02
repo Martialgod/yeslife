@@ -98,7 +98,7 @@ class AppServiceProvider extends ServiceProvider
                 
 
             }
-
+            
             $view->with(compact('toastrbroadcastcount', 'toastrbroadcastmstr', 'toastrbroadcastdtls'));
 
         });

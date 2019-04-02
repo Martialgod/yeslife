@@ -47,18 +47,38 @@
                                     <h3>Account Details</h3>
 
                                     <!-- Checkout Form-->
-                                    <form id="form-account-details" class="jqvalidate-form "  method="POST" action="{{url('/myaccount/details')}}" >
+                                    <form id="form-account-details" class="jqvalidate-form "  method="POST" action="{{url('/myaccount/details')}}" enctype="multipart/form-data">
 
                                         {{method_field('PUT')}}
                                         {{ csrf_field() }}
                                         
                                     
-                                        <div class="account-details-form">
+                                        <div class="">{{--account-details-form--}}
 
                                             @include('admin.layouts.alert')
                                             
                                             
                                             <div class="row">
+
+                                                <div class="col-lg-12 col-12 mb-30">
+                                                    <label for="picta">Profile Photo </label> <br>
+                                                    <input type="file" class="" id="pictx" name="pictx" placeholder=""  value="">
+
+                                                    @if( $users->pictx )
+                                                        <br><br>
+                                                        <div class="card" style="width:100px;height:50px" id="spanqpix">
+                                                            <img src="{{asset('/storagelink/'.$users->pictx)}}" alt="" style="width:80px;height:50px">
+                                                        </div>
+                                                        <br>
+                                                        <input type="checkbox" name="removepictx" id="removepictx"  >
+                                                        <label for="removepictx">Remove Photo</label> <br>
+                                                        
+                                                    @endif
+
+                                                </div>
+
+                                            
+
 
                                                 <div class="col-lg-6 col-12 mb-30">
                                                     <label for="title">Salutation</label>

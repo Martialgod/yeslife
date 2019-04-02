@@ -164,9 +164,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 	<!--scrolling js-->
-	<script src="/adminpage/js/jquery.nicescroll.js"></script>
-	<script src="/adminpage/js/scripts.js"></script>
-	<!--//scrolling js-->
+	{{--<script src="/adminpage/js/jquery.nicescroll.js"></script>
+	<script src="/adminpage/js/scripts.js"></script>--}}
+	<!--//scrolling js--> 
+	
 	<script src="/adminpage/js/bootstrap.js"> </script>
 	<!-- mother grid end here-->
 

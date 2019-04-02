@@ -112,6 +112,11 @@ Route::get('/shop/{id}/reviews', 'ShopController@apireviews');
 Route::post('/shop/{id}/reviews', 'ShopController@post_reviews')->middleware(['auth']);
 
 
+// ?refno=33213 -- optional for refferal 
+Route::get('/blog', 'PublicBlogController@index');
+Route::get('/blog/{slug}', 'PublicBlogController@show');
+
+
 //sample email template for testing
 Route::get('/sample-subscription-email-template/{id}', 'LandingPageController@sample_subscription_template');
 
@@ -228,6 +233,8 @@ Route::delete('/admin/products/{id}/softdelete', 'ProductsController@softdelete'
 Route::get('/admin/products/{id}/pricelist', 'ProductPriceListController@create')->name('products.pricelist');
 Route::post('/admin/products/{id}/pricelist', 'ProductPriceListController@store')->name('products.pricelist');
 
+
+Route::resource('admin/blogs', 'BlogsController');
 
 Route::resource('/admin/category', 'CategoryController');
 

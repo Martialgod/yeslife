@@ -12,6 +12,8 @@ use Exception;
 
 use App\PDOErr;
 
+use App\AppStorage;
+
 use Carbon\Carbon;
 
 use App\OrderMstr;
@@ -622,9 +624,14 @@ class MyAccountController extends Controller
         //check if $validator is true && record is found
         if( $validator === true ){
 
+            //dd($request->all());
+
             //begin transaction
             $transaction = DB::transaction(function() use($request, $users) {
 
+                //to be remove from storage
+                $oldfilename = $users->pictx; 
+        
                 $newpword = $request->password; //temporary storage for empty password checking
                 $oldpword = $users->password; //retrieve old password for security
                 
@@ -633,6 +640,30 @@ class MyAccountController extends Controller
                 $request['password'] = bcrypt($request->password); //might contain empty password
 
                 $users->update($request->all()); //mass update. empty password will still be updated
+
+                //check if user removed the logo
+                if( $request->removepictx && $request->removepictx == 'on' ){
+                                       
+                    AppStorage::remove($oldfilename);
+
+                    //update DB for correct filename @pictx
+                    $users->update([
+                        'pictx'=> null
+                    ]);
+
+                }//END check if user removed the logo
+
+                //if request uploaded logo
+                if( $request->pictx ){
+
+                    AppStorage::remove($oldfilename);
+                    
+                    //update DB for correct filename @pictx
+                    $users->update([
+                        'pictx'=> AppStorage::store('avatar', $request->pictx)
+                    ]);
+
+                }//END check if request uploaded logo
 
                 //check if new password is empty. rollback password
                 if( !$newpword  ){

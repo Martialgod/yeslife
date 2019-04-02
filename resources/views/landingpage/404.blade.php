@@ -24,26 +24,13 @@
 	<div class="" style="text-align: center;">
 
 		
-		<div class="error-404">  	
-			<div class="error-page-left">
-				<br>
-				{{--<img src="/adminpage/images/nosearchfound.png" alt="">--}}
-				<h3>Nothing to display....</h3>
-				<br>
-			</div>
-			<div class="error-right">
-		    	
-		    	
-	    		<div class="col-12" style="text-align:center">
-	    			<a href="{{url('/')}}" class="btn btn-round btn-lg"> 
-	    				Go Back
-	    			</a>
-                   
-                </div>
-		    	
-
-			</div>
-		</div>
+	<div class="col-md-4"></div>                   
+    	<div class="">     
+    		<h1>404 Page</h1>
+        	<img src="/adminpage/images/nosearchfound.png" alt="">
+    	</div>
+    	<br>
+    </div>
 
 
 	</div><!--END row-->

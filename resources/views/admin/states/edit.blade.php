@@ -19,7 +19,7 @@
 	
 	<div class="row">
 
-		<form method="POST" class="swa-confirm"  action="{{route('states.update', $states->pk_states)}}" enctype="multipart/form-data" >
+		<form method="POST" class="jqvalidate-form swa-confirm"  action="{{route('states.update', $states->pk_states)}}" enctype="multipart/form-data" >
 
 		    {{method_field('PUT')}}
 	        {{ csrf_field() }}

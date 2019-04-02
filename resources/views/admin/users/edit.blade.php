@@ -20,7 +20,7 @@
 
 	<div class="row" id="main-div">
 
-		<form method="POST" class="swa-confirm"  action="{{route('users.update', $users->id)}}" enctype="multipart/form-data" >
+		<form method="POST" class="jqvalidate-form swa-confirm"  action="{{route('users.update', $users->id)}}" enctype="multipart/form-data" >
 
 		    {{method_field('PUT')}}
 	        {{ csrf_field() }}

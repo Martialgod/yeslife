@@ -5,7 +5,7 @@
 		
 		<div class="logo-name">
 				<a href="{{url('/admin/home')}}"> 
-					<h1>Yes.Life</h1> 
+					<h1>YesLife</h1> 
 				</a> 								
 		</div>
 

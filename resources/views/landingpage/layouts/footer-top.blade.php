@@ -46,7 +46,7 @@
                         <li><a href="{{url('/about-us')}}{{$refnourl}}">About CBD</a></li>
                         <li><a href="#">Benefits</a></li>
                         <li><a href="{{url('/shop')}}{{$refnourl}}">Shop</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="{{url('/blog')}}{{$refnourl}}">Blog</a></li>
                         <li><a href="{{url('/cartcheckout')}}{{$refnourl}}">Cart</a></li>
                         <li><a href="{{url('/contact-us')}}{{$refnourl}}">Contact</a></li>
                     </ul>

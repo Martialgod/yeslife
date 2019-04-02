@@ -18,7 +18,7 @@
 
 	<div class="row">
 
-		<form method="POST" class="swa-confirm" action="{{url('/admin/profile')}}" >
+		<form method="POST" class="jqvalidate-form swa-confirm" action="{{url('/admin/profile')}}" >
 
 		    {{method_field('PUT')}}
 	        {{ csrf_field() }}

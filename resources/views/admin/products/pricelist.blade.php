@@ -69,7 +69,7 @@
             </div><!--END col-md-4-->
 
 
-            <form method="POST" id="pricelist-form" name="pricelist-form" class="swa-confirm"  action="{{route('products.pricelist', $products->pk_products)}}" enctype="multipart/form-data" >
+            <form method="POST" id="jqvalidate-form pricelist-form" name="pricelist-form" class="swa-confirm"  action="{{route('products.pricelist', $products->pk_products)}}" enctype="multipart/form-data" >
 
 			    {{method_field('POST')}}
 		        {{ csrf_field() }}

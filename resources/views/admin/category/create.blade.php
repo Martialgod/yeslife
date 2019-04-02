@@ -19,7 +19,7 @@
 	
 	<div class="row">
 
-		<form method="POST" class="swa-confirm"  action="{{route('category.store')}}" enctype="multipart/form-data" >
+		<form method="POST" class="jqvalidate-form swa-confirm"  action="{{route('category.store')}}" enctype="multipart/form-data" >
 
 		    {{method_field('POST')}}
 	        {{ csrf_field() }}

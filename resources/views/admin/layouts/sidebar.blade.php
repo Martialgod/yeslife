@@ -78,7 +78,7 @@
 		        	<a href="{{url('/')}}">
 		        		<img src="/landingpage/assets/images/favicon.png" alt="" style="width: 20px;" >
 		        		<br>
-		        		<span>Yes.Life</span>
+		        		<span>YesLife</span>
 		        	</a>
 		        </li>
 

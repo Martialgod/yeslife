@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fk_usertype', 'title', 'uname', 'fname', 'lname', 'fullname', 'birthdate', 'phone', 'email', 'activation_token', 'password', 'website', 'companyname', 'vatid', 'address1', 'address2', 'city', 'state', 'zip', 'fk_country', 'shippingfname', 'shippinglname', 'shippingphone', 'shippingaddress1', 'shippingaddress2', 'shippingcity', 'shippingstate', 'shippingzip', 'shippingcountry', 'affiliate_token', 'fk_referredby', 'fk_createdby', 'fk_updatedby', 'issubscribed', 'istext', 'stat'
+        'fk_usertype', 'title', 'uname', 'fname', 'lname', 'fullname', 'birthdate', 'phone', 'email', 'activation_token', 'password', 'website', 'companyname', 'vatid', 'address1', 'address2', 'city', 'state', 'zip', 'fk_country', 'shippingfname', 'shippinglname', 'shippingphone', 'shippingaddress1', 'shippingaddress2', 'shippingcity', 'shippingstate', 'shippingzip', 'shippingcountry', 'affiliate_token', 'fk_referredby', 'fk_createdby', 'fk_updatedby', 'issubscribed', 'istext', 'pictx', 'stat'
     ];
 
     /**
@@ -60,6 +60,7 @@ class User extends Authenticatable
             'state'     =>  ['required', 'max:255'],
             'zip'       =>  ['max:50'],
             'fk_country'    =>  ['required'],
+            'pictx'        =>  [ 'image', 'mimes:jpg,jpeg,png,', 'max:1000kb' ], //500kb
        
         ];
 
@@ -143,7 +144,10 @@ class User extends Authenticatable
             'password.required' => 'Password is required',
             'password.confirmed' => 'Password does not match',
             'state.required'=> 'State is required',
-            'fk_country.required'=> 'Country is required'
+            'fk_country.required'=> 'Country is required',
+            'pictx.image' => 'Profile photo must be an image',
+            'pictx.mimes' => 'Profile photo must be a type of jpeg,jpg,png',
+            'pictx.max'=> 'Profile photo size must be under 1000kb',
         ];
     }
 

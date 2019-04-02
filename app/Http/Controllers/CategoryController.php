@@ -68,7 +68,7 @@ class CategoryController extends Controller
         
         return view('admin.category.index', compact('sub_menu', 'category', 'search'));
 
-    }
+    }//END index
 
     /**
      * Show the form for creating a new resource.
