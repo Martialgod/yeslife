@@ -11,6 +11,9 @@ use Carbon\Carbon;
 use App\Post;
 use App\PostMstrView;
 
+use App\PostTag;
+use App\Tag;
+
 use App\User;
 
 
@@ -64,10 +67,15 @@ class PublicBlogController extends Controller
         		->paginate(10);
 
 
-        $recentposts = PostMstrView::recentPosts($this->posttype, null);
+        $posttags = Tag::where('stat',1)->orderBy('name', 'ASC')->pluck('name')->toArray();
+        $hreftags = [];
+        foreach($posttags as $key=> $v){
+            $hreftags [] = "<a href='/blog?tags=$v'> $v </a>";
+        }
 
+        $stringtags = implode(', &nbsp;', $hreftags);
 
-        return view('landingpage.blog', compact('blogs', 'search', 'tags', 'recentposts'));
+        return view('landingpage.blog', compact('blogs', 'search', 'tags', 'stringtags'));
 
     }//END index
 

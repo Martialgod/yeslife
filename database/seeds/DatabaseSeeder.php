@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
 
         //unseeded here
 
-        DB::table('permalink')->insert([
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 3000,
             'method'=> null,
             'description'=> 'Posts',
@@ -198,7 +198,7 @@ class DatabaseSeeder extends Seeder
             'family'=> 'tags.index',
             'indexno'=> 2,
             'stat'=>1
-        ]);
+        ]); */
 
 
     }
