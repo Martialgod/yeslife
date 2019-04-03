@@ -38,21 +38,36 @@ class PublicBlogController extends Controller
 
         $search = ( request()->search ) ? request()->search : null;
 
-        /*if( $search ){
+        $tags = ( request()->tags ) ? request()->tags : null;
+
+        if( $search ){
 
             $blogs->where(function ($query) use ($search) {
                 $query->where('name', 'like', "%$search%");
             });
 
-        }*/
+        }
+
+
+        if( $tags ){
+
+            $blogs->where(function ($query) use ($tags) {
+                $query->where('tags', 'like', "%$tags%");
+            });
+
+        }
 
         $blogs->where('type', $this->posttype);
 
         $blogs = $blogs->orderBy('sourcedate', 'DESC')
         		->where('stat', 'Posted')
-        		->orderBy('name', 'ASC')->paginate(10);
+        		->paginate(10);
 
-        return view('landingpage.blog', compact('blogs', 'search'));
+
+        $recentposts = PostMstrView::recentPosts($this->posttype, null);
+
+
+        return view('landingpage.blog', compact('blogs', 'search', 'tags', 'recentposts'));
 
     }//END index
 
@@ -66,18 +81,30 @@ class PublicBlogController extends Controller
     public function show($slug)
     {
    
-        $blogs = Post::where('slug', $slug)
+        $blogs = PostMstrView::where('slug', $slug)
         		->where('type', $this->posttype)
         		->where('stat', 'Posted')
         		->first();
 
-
-        if( !$blogs ){
+       	if( !$blogs ){
             return redirect('/404');
         }
 
+        $search = ( request()->search ) ? request()->search : null;
 
-        return view('landingpage.blog-details', compact('blogs'));
+
+        $tagsarray = explode(',', $blogs->tags);
+        $tags = [];
+        foreach($tagsarray as $key => $v){
+            $tags[] = "<a href='/blog?tags=$v'> $v </a>";
+        }
+
+        $recentposts = PostMstrView::recentPosts($this->posttype, $blogs->pk_posts);
+
+        $cursor = PostMstrView::cursor($this->posttype, $blogs, 'prev');
+        //dd($cursor);
+
+        return view('landingpage.blog-details', compact('blogs', 'search', 'tags', 'recentposts', 'cursor'));
 
     }//END show
 

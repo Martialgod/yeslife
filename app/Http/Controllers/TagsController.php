@@ -14,25 +14,25 @@ use App\PDOErr;
 
 use Carbon\Carbon;
 
-use App\Category;
+use App\Tag;
 
 use App\User;
 
 
-class CategoryController extends Controller
+class TagsController extends Controller
 {
+    //
     
-    public $menu_group = 'category.index';
+    public $menu_group = 'tags.index';
 
     public function __construct(){
         $this->middleware(['auth'])->except([]);
     }
 
     public function setActiveTab(){
-        session()->flash('parent_tab', 'Products');
+        session()->flash('parent_tab', 'Settings');
         session()->flash('child_tab', $this->menu_group);
     }
-
 
     /**
      * Display a listing of the resource.
@@ -43,32 +43,34 @@ class CategoryController extends Controller
     {
         //
         //check if user has access
-        if(!User::isUserHasAccess(1030)){
+        if(!User::isUserHasAccess(7030)){
             return redirect('/admin/404');
         }
 
         $this->setActiveTab();
 
-        $category = Category::select();
+        $tags = Tag::select();
 
         $search = ( request()->search ) ? request()->search : null;
 
         if( $search ){
 
-            $category->where(function ($query) use ($search) {
-                $query->where('description', 'like', "%$search%");
+            $tags->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%$search%");
             });
 
         }
 
-        $category = $category->orderBy('description', 'ASC')->paginate(10);
+        $tags = $tags->orderBy('name', 'ASC')->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
         
-        return view('admin.category.index', compact('sub_menu', 'category', 'search'));
+        return view('admin.tags.index', compact('sub_menu', 'tags', 'search'));
 
     }//END index
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -79,14 +81,15 @@ class CategoryController extends Controller
     {
         //
         //check if user has access
-        if(!User::isUserHasAccess(1031)){
+        if(!User::isUserHasAccess(7031)){
             return redirect('/admin/404');
         }
 
         $this->setActiveTab();
-        return view('admin.category.create');
+        return view('admin.tags.create');
 
     }//END create
+
 
 
     /**
@@ -99,13 +102,13 @@ class CategoryController extends Controller
     {
         //
         //check if user has access
-        if(!User::isUserHasAccess(1031)){
+        if(!User::isUserHasAccess(7031)){
             return redirect('/admin/404');
         }
 
         $this->setActiveTab();
         //dd($request->all());
-        $validator = Category::custom_validation($request, 'store');
+        $validator = Tag::custom_validation($request, 'store');
 
         if( $validator === true ){
 
@@ -117,9 +120,9 @@ class CategoryController extends Controller
                 $request['stat'] = 1;
          
                 //create will return the newly created object
-                $category = Category::create($request->all()); //insert all $request
+                $tags = Tag::create($request->all()); //insert all $request
 
-                session()->flash('success', "$request->description has been created!");
+                session()->flash('success', "$request->name has been created!");
                 return redirect()->back();
 
 
@@ -128,7 +131,6 @@ class CategoryController extends Controller
 
             return $transaction;
 
-          
         }
         else{
 
@@ -137,20 +139,6 @@ class CategoryController extends Controller
 
     }//END store
 
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-        return redirect('/admin/category');
-   
-    }//END show
 
 
     /**
@@ -163,13 +151,13 @@ class CategoryController extends Controller
     {
         //
         //check if user has access
-        if(!User::isUserHasAccess(1032)){
+        if(!User::isUserHasAccess(7032)){
             return redirect('/admin/404');
         }
 
         $this->setActiveTab();
-        $category = Category::findOrFail($id);
-        return view('admin.category.edit', compact('category'));
+        $tags = Tag::findOrFail($id);
+        return view('admin.tags.edit', compact('tags'));
     }
 
     /**
@@ -183,24 +171,24 @@ class CategoryController extends Controller
     {
        
         //check if user has access
-        if(!User::isUserHasAccess(1032)){
+        if(!User::isUserHasAccess(7032)){
             return redirect('/admin/404');
         }
         
         $this->setActiveTab();
         
-        $category = Category::findOrFail($id);
+        $tags = Tag::findOrFail($id);
 
-        $request['pk_category'] = $category->pk_category;
+        $request['pk_tags'] = $tags->pk_tags;
 
-        $validator = Category::custom_validation($request, 'update');
+        $validator = Tag::custom_validation($request, 'update');
 
         if( $validator === true ){
 
             $request['fk_updatedby'] = Auth::id();
-            $category->update($request->all());
+            $tags->update($request->all());
 
-            session()->flash('success', "$request->description has been updated!");
+            session()->flash('success', "$request->name has been updated!");
             return redirect()->back();
 
         }
@@ -211,6 +199,7 @@ class CategoryController extends Controller
         }
 
     }//END update
+
 
 
     /**
@@ -224,25 +213,25 @@ class CategoryController extends Controller
         //
         
         //check if user has access
-        if(!User::isUserHasAccess(1033)){
+        if(!User::isUserHasAccess(7033)){
             return redirect('/admin/404');
         }
 
         $this->setActiveTab();
         
-        $category = Category::findOrFail($id);
+        $tags = Tag::findOrFail($id);
 
         //catch exception posible for foriegn key constraint
         try{  
 
             //begin transaction
-            $transaction = DB::transaction(function() use($category, $id) {
+            $transaction = DB::transaction(function() use($tags, $id) {
 
-                $description = $category->description;
+                $name = $tags->name;
 
-                $category->delete(); //delete category
+                $tags->delete(); //delete category
 
-                session()->flash('success', "$description has been deleted!");
+                session()->flash('success', "$name has been deleted!");
                 
                 return redirect()->back();
 

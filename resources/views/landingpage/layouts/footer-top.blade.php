@@ -70,12 +70,12 @@
                 <div class="footer-widget">
                     <h3 class="title">Follow us</h3>
                     <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/iamyeslife" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/iamyeslife" target="_blank">Twitter</a></li>
                         {{--<li><a href="#">Linkedin</a></li>
                         <li><a href="#">Google Plus</a></li>--}}
-                        <li><a href="#">Youtube</a></li>
+                        <li><a href="https://www.pinterest.com/iamyeslife/" target="_blank">Pinterest</a>
+                        <li><a href="https://www.youtube.com/channel/UCT1-KDYOP0RsLRlwucHUIYA" target="_blank">Youtube</a></li>
                     </ul>
                 </div>
             </div>

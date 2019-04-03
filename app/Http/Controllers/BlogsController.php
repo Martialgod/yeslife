@@ -17,7 +17,10 @@ use App\AppStorage;
 use Carbon\Carbon;
 
 use App\Post;
+use App\PostTag;
 use App\PostMstrView;
+
+use App\Tag;
 
 use App\User;
 
@@ -95,7 +98,8 @@ class BlogsController extends Controller
         }
 
         $this->setActiveTab();
-        return view('admin.blogs.create');
+        $msctags = Tag::getActiveTags();
+        return view('admin.blogs.create', compact('msctags'));
 
     }//END create
 
@@ -117,8 +121,10 @@ class BlogsController extends Controller
 
         $this->setActiveTab();
         //dd($request->all());
+        //dd($request->tags);
         
         $request['type'] = $this->posttype;
+
         $validator = Post::custom_validation($request, 'store');
 
         if( $validator === true ){
@@ -142,6 +148,7 @@ class BlogsController extends Controller
                     return redirect()->back()->withInput()->withErrors(['Blog name already exists']);
                 }
 
+
                 $request['fk_createdby'] = Auth::id();
 
                 //create will return the newly created object
@@ -156,6 +163,24 @@ class BlogsController extends Controller
                     ]);
 
                 }//END check if request uploaded picture
+
+
+                //insert new tags
+                if( $request->tags ){
+
+                    foreach($request->tags as $key=> $v){
+
+                        PostTag::create([
+                            'fk_posts'=> $blogs->pk_posts,
+                            'fk_tags'=> $v,
+                            'created_at'=> Carbon::now(),
+                            'fk_createdby'=> Auth::id()
+                        ]);
+
+                    }
+
+                }//END $request->tags
+
 
                 session()->flash('success', "$request->name has been created!");
                 return redirect()->back();
@@ -213,8 +238,11 @@ class BlogsController extends Controller
             return redirect('/admin/404');
         }
 
+        $msctags = PostTag::getActiveTags($id);
 
-        return view('admin.blogs.edit', compact('blogs'));
+        //dd($msctags);
+
+        return view('admin.blogs.edit', compact('blogs', 'msctags'));
 
     }//END edit
 
@@ -228,7 +256,8 @@ class BlogsController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+        //dd($request->all());
+
         //check if user has access
         if(!User::isUserHasAccess(3003)){
             return redirect('/admin/404');
@@ -240,6 +269,7 @@ class BlogsController extends Controller
 
         $request['pk_posts'] = $blogs->pk_posts;
         $request['type'] = $this->posttype;
+
 
         $validator = Post::custom_validation($request, 'update');
 
@@ -267,6 +297,9 @@ class BlogsController extends Controller
                     return redirect()->back()->withInput()->withErrors(['Blog name already exists']);
                 }
 
+
+                //dd($request->all());
+
                 $request['fk_updatedby'] = Auth::id();
                 $blogs->update($request->all());
 
@@ -279,6 +312,24 @@ class BlogsController extends Controller
                     ]);
 
                 }//END check if request uploaded picture
+
+                //delete old tags
+                PostTag::where('fk_posts', $id)->delete();
+                //insert new tags
+                if( $request->tags ){
+
+                    foreach($request->tags as $key=> $v){
+
+                        PostTag::create([
+                            'fk_posts'=> $id,
+                            'fk_tags'=> $v,
+                            'created_at'=> Carbon::now(),
+                            'fk_createdby'=> Auth::id()
+                        ]);
+
+                    }
+
+                }//END $request->tags
 
 
                 session()->flash('success', "$request->name has been updated!");

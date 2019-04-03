@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Validation\Rule;
 
+use Illuminate\Support\Facades\DB; //responsible for DB
+
+
+use Carbon\Carbon;
+
+
 use Validator;
 
 
@@ -49,6 +55,12 @@ class Post extends Model
       
 
         }
+
+
+        //format our date into timestamp; to avoid same date issues in using "prev" and "next" controls in our blog details page
+        $now =  explode(' ', Carbon::now()->toDateTimeString()); //2019-04-03 01:13:32
+        $request['sourcedate'] = $request['sourcedate'].' '.$now[1];
+
 
         //dd($common_rule);
 

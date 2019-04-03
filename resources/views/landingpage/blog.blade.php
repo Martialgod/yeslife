@@ -35,80 +35,95 @@
 
             <div class="row">
 
-                @if( count($blogs) > 0 )
+                <div class="col-lg-8 col-12 order-1 mb-sm-50 mb-xs-50">
 
-                    @foreach( $blogs as $key=> $a )
 
-                        <div class="col-lg-6 col-12 mb-30" >
+                    <div class="row">
 
-                            <div class="blog-item" style="background-color: #e1f5e7;">
-                               
-                                <a class="image" href="{{url('/blog/'.$a->slug)}}" style="background-image: url(storagelink/{{$a->pictx}}); width: 243px; height: 285px;" >
-                                    <img src="{{asset('/storagelink/'.$a->pictx)}}" style="width: 243px; height: 285px;" alt="">
-                                </a>
+                        @if( count($blogs) > 0 )
 
-                              
-                                <div class="content">
+                            @foreach( $blogs as $key=> $a )
 
-                                    <h3 class="title">
-                                        <a href="{{url('/blog/'.$a->slug)}}" style="color:#222222 !important;">
-                                            {{$a->name}}
+                                <div class="col-lg-12 col-12 mb-30" >
+
+                                    <div class="blog-item" style="background-color: #e1f5e7;">
+                                       
+                                        <a class="image" href="{{url('/blog/'.$a->slug)}}" style="background-image: url(storagelink/{{$a->pictx}});" >
+                                            <img src="{{asset('/storagelink/'.$a->pictx)}}" alt="">
                                         </a>
-                                    </h3>
 
-                                    <ul class="blog-meta" >
-                                        <li style="color:#222222 !important;">
-                                            By - {{$a->sourcename}}
-                                        </li>
-                                        <li style="color:#222222 !important;">
-                                            {{ date_format( date_create($a->sourcedate), 'd M, Y' ) }}
-                                        </li>
-                                    </ul>
+                                      
+                                        <div class="content">
 
-                                    <p style="color:#222222 !important;">
+                                            <h3 class="title">
+                                                <a href="{{url('/blog/'.$a->slug)}}" style="color:#222222 !important;">
+                                                    {{$a->name}}
+                                                </a>
+                                            </h3>
 
-                                        {!! $a->summary !!}
+                                            <ul class="blog-meta" >
+                                                <li style="color:#222222 !important;">
+                                                    By - {{$a->sourcename}}
+                                                </li>
+                                                <li style="color:#222222 !important;">
+                                                    {{ date_format( date_create($a->sourcedate), 'd M, Y' ) }}
+                                                </li>
+                                            </ul>
 
-                                    </p>
+                                            <p style="color:#222222 !important;">
 
-                                    <a href="{{url('/blog/'.$a->slug)}}" class="read-more" style="color:#222222 !important;">read more...</a>
+                                                {!! $a->summary !!}
 
-                                </div><!--END content-->
-
-                            </div><!--END blog-item-->
-
-                        </div><!--END col-lg-6 col-12 mb-30-->
+                                            </p>
 
 
 
-                    @endforeach
-                    
-                @else
+                                            <a href="{{url('/blog/'.$a->slug)}}" class="read-more" style="color:#222222 !important;">read more...</a>
 
-                    <div class="col-md-4"></div>                   
-                    <div class="">     
-                        <img src="/adminpage/images/nosearchfound.png" alt="">
+                                        </div><!--END content-->
+
+                                    </div><!--END blog-item-->
+
+                                </div><!--END col-lg-6 col-12 mb-30-->
+
+
+
+                            @endforeach
+                            
+                        @else
+
+                            <div class="col-md-2"></div>                   
+                            <div class="">     
+                                <img src="/adminpage/images/nosearchfound.png" alt="">
+                            </div>
+
+                        @endif
+                      
+                        
+                    </div><!--END row-->
+
+
+                    <div class="">
+
+                        @if(count($blogs) > 0)
+                     
+                            {{ $blogs->appends(
+                                ['search' => $search,'tags'=> $tags]
+                            )->links() }}
+                         
+                        @endif
+                   
                     </div>
 
-                @endif
-              
+
+                </div><!--END col-lg-8 col-12 order-1 mb-sm-50 mb-xs-50-->
+
+
+                @include('landingpage.blog-search')
+
                 
             </div><!--END row-->
 
-
-            <div class="">
-
-                @if(count($blogs) > 0)
-             
-                    {{ $blogs->appends(
-                        ['search' => $search,]
-                    )->links() }}
-                 
-                @endif
-           
-            </div>
-
-        
 
         </div><!--END container-->
 

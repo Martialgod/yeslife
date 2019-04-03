@@ -364,22 +364,7 @@
                         </div>
                     </div>
 
-                    {{--<div class="sidebar">
-                        <h4 class="sidebar-title">Tags</h4>
-                        <div class="tag-cloud">
-                            <a href="#">Oil</a>
-                            <a href="#">Beard oil</a>
-                            <a href="#">Beard</a>
-                            <a href="#">Stylish</a>
-                            <a href="#">Ecommerce</a>
-                            <a href="#">Shop</a>
-                            <a href="#">Shopping</a>
-                            <a href="#">Store</a>
-                            <a href="#">Online Store</a>
-
-                        </div><!--END tag-cloud-->
-
-                    </div><!--END sidebar--> --}}
+ 
 
                 </div><!--END col-xl-3 col-lg-4 col-12 order-2-->
 

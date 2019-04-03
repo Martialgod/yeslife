@@ -81,7 +81,7 @@
 
                 <div class="form-group">
                     <label for="sourcedate">Blog Date <span class="label-required">* (Blog date displayed in home page)</span> </label>
-                    <input type="date" class="form-control" id="sourcedate" name="sourcedate" placeholder="" required="" value="{{$blogs->sourcedate}}" >
+                    <input type="date" class="form-control" id="sourcedate" name="sourcedate" placeholder="" required="" value="{{ date_format( date_create($blogs->sourcedate), 'Y-m-d')}}" >
                   
                 </div>
 
@@ -97,6 +97,23 @@
 				        <option value="In-Active" {{ $blogs->stat == 'In-Active' ? 'selected' : '' }}>	
 				        	In-Active
 				        </option>
+				    </select>
+
+				</div>
+
+
+				<div class="form-group">
+				    <label for="tags">Tags <span class="label-required"></span> </label>
+				    <select name="tags[]" id="tags" class="form-control" multiple="">
+
+				    	@foreach($msctags as $k1=> $v1)
+
+				    		<option value="{{$v1->pk_tags}}" {{ $v1->selected }} > 
+				    			{{$v1->name}} 
+				    		</option>
+
+				    	@endforeach
+
 				    </select>
 
 				</div>
@@ -127,7 +144,11 @@
 	<script src="/trumbowyg/dist/trumbowyg.min.js"></script>
 
     <script type="text/javascript">
+
         $('.trumbowyg').trumbowyg();
+
+        $('#tags').select2();
+
     </script>
 
 @endsection

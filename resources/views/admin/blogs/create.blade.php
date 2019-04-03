@@ -93,6 +93,27 @@
 
 				</div>
 
+
+				<div class="form-group">
+				    <label for="tags">Tags <span class="label-required"></span> </label>
+				    <select name="tags[]" id="tags" class="form-control" multiple="">
+
+				    	@php
+				    		$selectedtags = old('tags') ? old('tags') : [];
+				    	@endphp
+
+				    	@foreach($msctags as $k1=> $v1)
+
+				    		<option value="{{$v1->pk_tags}}" {{ in_array($v1->pk_tags, $selectedtags) ? 'selected' : '' }} > 
+				    			{{$v1->name}} 
+				    		</option>
+
+				    	@endforeach
+
+				    </select>
+
+				</div>
+
                 <br>
 		    	@include('admin.layouts.buttonsubmit')
 		
@@ -120,6 +141,7 @@
 
     <script type="text/javascript">
         $('.trumbowyg').trumbowyg();
+        $('#tags').select2();
     </script>
 
 @endsection

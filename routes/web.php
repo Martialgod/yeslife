@@ -116,6 +116,9 @@ Route::post('/shop/{id}/reviews', 'ShopController@post_reviews')->middleware(['a
 Route::get('/blog', 'PublicBlogController@index');
 Route::get('/blog/{slug}', 'PublicBlogController@show');
 
+Route::get('/blog/{id}/reviews', 'PostCommentsController@apireviews');
+Route::post('/blog/{id}/reviews', 'PostCommentsController@post_reviews');
+
 
 //sample email template for testing
 Route::get('/sample-subscription-email-template/{id}', 'LandingPageController@sample_subscription_template');
@@ -245,6 +248,8 @@ Route::resource('/admin/country', 'CountryController');
 Route::resource('/admin/states', 'StatesController');
 
 Route::resource('/admin/actions', 'RewardActionsController');
+
+Route::resource('admin/tags', 'TagsController');
 
 
 Route::get('/admin/reports', 'ReportsController@index')->name('reports.index');

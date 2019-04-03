@@ -107,6 +107,9 @@ class DatabaseSeeder extends Seeder
             'stat'=>1
         ]); */
 
+
+        //unseeded here
+
         DB::table('permalink')->insert([
             'pk_permalink'=> 3000,
             'method'=> null,
@@ -151,6 +154,51 @@ class DatabaseSeeder extends Seeder
             'indexno'=> 1,
             'stat'=>1
         ]); 
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7030,
+            'method'=> 'LIST',
+            'description'=> 'Tags',
+            'route'=> 'tags.index',
+            'type'=> 'B',
+            'family'=> 'Settings',
+            'indexno'=> 3,
+            'stat'=>1
+        ]);
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7031,
+            'method'=> 'POST',
+            'description'=> 'Add New',
+            'route'=> 'tags.create',
+            'type'=> 'C',
+            'family'=> 'tags.index',
+            'indexno'=> 0,
+            'stat'=>1
+        ]);
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7032,
+            'method'=> 'PUT',
+            'description'=> 'Edit',
+            'route'=> 'tags.edit',
+            'type'=> 'C',
+            'family'=> 'tags.index',
+            'indexno'=> 1,
+            'stat'=>1
+        ]);
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7033,
+            'method'=> 'DELETE',
+            'description'=> 'Delete',
+            'route'=> 'tags.delete',
+            'type'=> 'C',
+            'family'=> 'tags.index',
+            'indexno'=> 2,
+            'stat'=>1
+        ]);
 
 
     }

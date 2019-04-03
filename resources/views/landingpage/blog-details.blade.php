@@ -14,6 +14,9 @@
 @section('optional_styles')
     
 
+    <script src="/customjs/BlogDetailsController.js?v={{time()}}" type="text/javascript"></script>
+
+
 @endsection
 
     
@@ -24,12 +27,12 @@
       'bannerheader'=> 'Blog', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> $blogs->name
+      'bannercontent'=> 'Blog'
     ])
 
 
 
-    <div class="blog-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50">
+    <div class="blog-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50" ng-app="app" ng-controller="BlogDetailsController as vm" >
 
         <div class="container">
 
@@ -39,17 +42,23 @@
                     
                     <div class="single-blog-item">
 
+                        <input type="hidden" id="postid" name="postid" value="{{$blogs->pk_posts}}">
+
                         <div class="image" >
-                            <img src="{{asset('/storagelink/'.$blogs->pictx)}}" style="width: 870px; height: 462px;" alt="">
+                            <img src="{{asset('/storagelink/'.$blogs->pictx)}}"  alt="">
                         </div>
                         
                         <div class="content">
 
+                            <div>
+                               <h2> {{$blogs->name}} </h2>
+                            </div>
+
                             <ul class="blog-meta">
-                                <li style="color:#222222 !important;">
+                                <li>
                                     By - {{$blogs->sourcename}}
                                 </li>
-                                <li style="color:#222222 !important;">
+                                <li >
                                     {{ date_format( date_create($blogs->sourcedate), 'd M, Y' ) }}
                                 </li>
                             </ul>
@@ -61,6 +70,15 @@
                             </div><!--END desc-->
 
                             <div class="blog-footer">
+
+                                <div class="tags">
+                                    <span>Tags:</span> 
+                                    @foreach($tags as $v)
+                                        {!! $v !!}
+                                    @endforeach
+                                    
+                                </div>
+
 
                       
                                 <div class="share">
@@ -122,9 +140,6 @@
 
                                 </div>
 
-                                <div class="tags">
-                             
-                                </div>
 
 
                             </div><!--END blog-footer-->
@@ -132,10 +147,41 @@
                         </div><!--END content-->
 
                     </div><!--END single-blog-item-->
+
                     
                     <div class="blog-navigation">
-                        <a href="#" class="prev-blog"><i class="fa fa-long-arrow-left"></i>Previous</a>
-                        <a href="#" class="next-blog"><i class="fa fa-long-arrow-right"></i>Next</a>
+
+                        @if( $cursor['prev'] )
+
+                            <a href="{{url('/blog/'.$cursor['prev']->slug)}}" class="next-blog">
+                                 <i class="fa fa-long-arrow-left"></i>Previous
+                            </a>
+
+                        @else 
+
+                            <span class="next-blog">
+                               ..
+                            </span>
+
+                        @endif
+
+
+                        @if( $cursor['next'] )
+
+                            <a href="{{url('/blog/'.$cursor['next']->slug)}}" class="next-blog">
+                                <i class="fa fa-long-arrow-right"></i>Next
+                            </a>
+
+                        @else 
+
+                            <span class="next-blog">
+                               ..
+                            </span>
+
+                        @endif
+                    
+                      
+                       
                     </div>
                     
                     <div class="comment-wrap pt-90 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
@@ -143,114 +189,116 @@
                         <h3>Comments</h3>
                         
                         <ul class="comment-list">
-                            <li>
+
+                            <li ng-repeat="list in vm.mscreviews">
+                                
                                 <div class="comment">
-                                    <div class="image"><img src="assets/images/comment/comment-1.jpg" alt=""></div>
+                                    
+                                    {{--<div class="image">
+                                        <img src="assets/images/comment/comment-1.jpg" alt="">
+                                    </div> --}}
+
                                     <div class="content">
-                                        <h5>Alvaro Santos</h5>
+                                        
+                                        <h5> @{{list.name}} </h5>
+                                        
                                         <div class="d-flex flex-wrap justify-content-between">
-                                            <span class="time">10 August, 2018  |  10 Min ago</span>
-                                            <a href="#" class="reply">reply</a>
-                                        </div>
+
+                                            <span class="time"> @{{list.created_at_formatted}} | @{{list.timeago}} </span>
+
+                                        </div><!--END d-flex flex-wrap justify-content-between-->
+                                        
                                         <div class="decs">
-                                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and ising pain  borand I will give you a complete account of the system</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="child-comment">
-                                    <li>
-                                        <div class="comment">
-                                            <div class="image"><img src="assets/images/comment/comment-2.jpg" alt=""></div>
-                                            <div class="content">
-                                                <h5>Silvia Anderson</h5>
-                                                <div class="d-flex flex-wrap justify-content-between">
-                                                    <span class="time">10 August, 2018  |  25 Min ago</span>
-                                                    <a href="#" class="reply">reply</a>
-                                                </div>
-                                                <div class="decs">
-                                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and ising pain  borand I will give you a complete account of the system</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                            <p>
+                                                @{{list.comments}}
+                                            </p>
+                                        </div><!--END decs-->
+
+                                    </div><!--END content-->
+
+                                </div><!--END comment-->
+
                             </li>
-                            <li>
-                                <div class="comment">
-                                    <div class="image"><img src="assets/images/comment/comment-3.jpg" alt=""></div>
-                                    <div class="content">
-                                        <h5>Nicolus Christopher</h5>
-                                        <div class="d-flex flex-wrap justify-content-between">
-                                            <span class="time">10 August, 2018  |  35 Min ago</span>
-                                            <a href="#" class="reply">reply</a>
-                                        </div>
-                                        <div class="decs">
-                                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and ising pain  borand I will give you a complete account of the system</p>
-                                        </div>
-                                    </div>
-                                </div>
+
+                            <li ng-if="vm.mscreviews.length<=0" >
+                                No comments yet...
                             </li>
+                      
                         </ul>
+
+
+                        <div class="row mt-20" style="" ng-if="vm.mscreviews.length>0">
+            
+                            <div class="">
+
+                                <ul class="page-pagination">
+                                    
+                                    <li>
+                                        <button class="btn btn-default btn-sm custom-default-btn" ng-disabled="!vm.navlinks.prev" ng-click="vm.LoadReviews(vm.navlinks.prev)">
+                                            <i class="fa fa-angle-left"></i>
+                                            Back
+                                        </button>
+                                    </li>
+
+                                    <li>..</li>
+
+                                    <li>
+                                        <button class="btn btn-default btn-sm custom-default-btn" ng-disabled="!vm.navlinks.next" ng-click="vm.LoadReviews(vm.navlinks.next)">
+                                            <i class="fa fa-angle-right"></i>
+                                            Next
+                                        </button>
+                                    </li>
+
+                                </ul><!--END page-pagination-->
+
+                            </div><!--END col-->
+
+                        </div><!--END row mt-20-->
+
+                        <br><br>
                         
                         <h3>Leave a Comment</h3>
                         
                         <div class="comment-form">
-                            <form action="#">
+
+
+                            <form method="POST" id="form-reviews" ng-submit="vm.PostReviews($event)" class="jqvalidate-form">
+
+                                {{method_field('POST')}}
+                                {{ csrf_field() }}
+
                                 <div class="row">
-                                    <div class="col-md-6 col-12"><input type="text" placeholder="Name"></div>
-                                    <div class="col-md-6 col-12"><input type="email" placeholder="Email"></div>
-                                    <div class="col-12"><textarea placeholder="Message"></textarea></div>
-                                    <div class="col-12"><button>SEND NOW</button></div>
+
+                                    <div class="col-md-6 col-12">
+                                        <input type="text" id="name" name="name" placeholder="Name" required="" maxlength="255" >
+                                    </div>
+
+
+                                    <div class="col-md-6 col-12">
+                                        <input type="email" id="email" name="email" placeholder="Email" required="" maxlength="255" >
+                                    </div>
+
+                                    <div class="col-12">
+                                        <textarea placeholder="Message" id="comments" name="comments" required="" ></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit">POST</button>
+                                    </div>
+
                                 </div>
+
                             </form>
-                        </div>
+
+
+                        </div><!--END comment-form-->
                         
                     </div><!--END comment-wrap pt-90 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50-->
 
                 </div><!--END col-lg-8 col-12 order-1 mb-sm-50 mb-xs-50-->
 
-                <div class="col-lg-4 col-12 order-2 pl-30 pl-sm-15 pl-md-15 pl-xs-15">
+                @include('landingpage.blog-search')
 
-                    <div class="sidebar">
-                        <h4 class="sidebar-title">Search</h4>
-                        <div class="sidebar-search">
-                            <form action="#">
-                                <input type="text" placeholder="Enter key words">
-                                <input type="submit" value="search">
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div class="sidebar">
-                        <h4 class="sidebar-title">Recent Post</h4>
-                        <ul class="sidebar-post-list">
-                            <li class="sidebar-post">
-                                <a href="blog-details.html" class="image"><img src="assets/images/blog/sidebar-blog-1.jpg" alt=""></a>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">New CBD Oil</a></h4>
-                                    <p>Some of our customer say’s that they trus </p>
-                                </div>
-                            </li>
-                            <li class="sidebar-post">
-                                <a href="blog-details.html" class="image"><img src="assets/images/blog/sidebar-blog-2.jpg" alt=""></a>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">CBD Oil Benefits</a></h4>
-                                    <p>Some of our customer say’s that they trus </p>
-                                </div>
-                            </li>
-                            <li class="sidebar-post">
-                                <a href="blog-details.html" class="image"><img src="assets/images/blog/sidebar-blog-3.jpg" alt=""></a>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Side Effects of CBD Oil</a></h4>
-                                    <p>Some of our customer say’s that they trus </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div><!--END col-lg-4 col-12 order-2 pl-30 pl-sm-15 pl-md-15 pl-xs-15-->
-              
-                
             </div><!--END row-->
 
 
