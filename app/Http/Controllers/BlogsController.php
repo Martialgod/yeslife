@@ -299,6 +299,10 @@ class BlogsController extends Controller
 
 
                 //dd($request->all());
+                
+                //to be remove from storage
+                $oldfilename = $blogs->pictx; 
+
 
                 $request['fk_updatedby'] = Auth::id();
                 $blogs->update($request->all());
@@ -306,6 +310,8 @@ class BlogsController extends Controller
                 //if request uploaded picture
                 if( $request->pictx ){
 
+                    AppStorage::remove($oldfilename);
+                    
                     //update DB for correct filename @pictx
                     $blogs->update([
                         'pictx'=> AppStorage::store('blogs', $request->pictx)

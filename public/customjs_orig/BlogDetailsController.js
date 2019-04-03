@@ -78,7 +78,7 @@
             .then(function(response){
 
                 console.log(response);
-                //var data = response.data;
+                var data = response.data;
                 //console.log(data);
 
                 vm.navlinks = data.links;
