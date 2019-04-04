@@ -151,6 +151,11 @@ class AppServiceProvider extends ServiceProvider
                 //count the cart in the database
                 //$usercart = UserCart::where('fk_users', $uid)->pluck('fk_products');
                 
+                //check for admin login-as virtual user
+                if( session('yeslife_virtual_user_id') ){
+                    $uid = session('yeslife_virtual_user_id');
+                }
+                
                 $usercart = DB::SELECT("
                     SELECT a.fk_products 
                     FROM userscart a 
