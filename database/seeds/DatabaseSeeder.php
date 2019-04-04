@@ -201,7 +201,7 @@ class DatabaseSeeder extends Seeder
         ]); */
 
 
-        DB::table('permalink')->insert([
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 5006,
             'method'=> 'POST',
             'description'=> 'Login-As',
@@ -210,7 +210,7 @@ class DatabaseSeeder extends Seeder
             'family'=> 'users.index',
             'indexno'=> 4,
             'stat'=>1
-        ]); 
+        ]); */
 
 
 
