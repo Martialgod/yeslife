@@ -474,7 +474,40 @@ class UsersController extends Controller
         return view('admin.users.downline', compact('users', 'downline'));
 
 
-    }//END affiliate
+    }//END downline
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    //Login-As virtual user
+    public function virtual($id)
+    {
+        //
+
+        //check if user has access
+        if(!User::isUserHasAccess(5006)){
+            return redirect('/admin/404');
+        }
+
+        $this->setActiveTab();
+        $users = User::where('id',  $id)->where('stat', 1)->first();
+
+        if(!$users){
+            return redirect('/admin/404');
+        }
+        
+        //declare global session currently logged in virtual user; used in virtual simulation to allow admin to purchase something using the selected user id
+        session()->put('yeslife_virtual_user_id', $id);
+
+        //redirect to shop page
+        
+        return redirect('/shop');
+
+
+    }//END virtual
 
 
     /**

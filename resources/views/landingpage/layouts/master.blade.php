@@ -158,13 +158,14 @@
 
 
     {{--
+        Generated @AppServiceProvider.php
         required to all page; determine if user is currently logged in. 
         @GlobalScript.js addCartCookie,  if user is logged in then save cart to DB encase 
         customer abandons the cart. The system will have a record to followup through email
     --}}
 
     <div class="form-group" hidden >
-        <input type="hidden" id="isloggedin" value="{{ (Auth::check()) ? Auth::id() : 'no' }}">
+        <input type="hidden" id="isloggedin" value="{{$isloggedin}}">
     </div>
 
     {{--

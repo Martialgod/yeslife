@@ -48,6 +48,14 @@
 
         			@endif
 
+
+        		{{--Login as virtual user--}}
+        		@elseif( $sub->pk_permalink == 5006 )
+
+		        	<a href="{{route($sub->route, $data_id)}}" class="btn btn-default btn-sm hvr-underline-from-left" target="_blank">
+		               {{$sub->description}}
+		            </a>	 
+
         		@else
 
         			{{--default. display all menu--}}

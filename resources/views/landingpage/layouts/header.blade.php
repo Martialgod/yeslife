@@ -57,8 +57,43 @@
                         
                     </div>
 
+                    {{-- 
+                        check for admin login-as virtual user 
+                        Generated @AppServiceProvider.php
+                    --}}
+                    @if( session('yeslife_virtual_user_id') )
 
-                    @if( Auth::check() )
+                        <div class="dropdown" >
+
+                            <button class="btn btn-secondary dropdown-toggle custom-default-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                {{$virtualuser->fname}} - (Virtual User)
+                                <span class="fa fa-user fa"></span>
+
+                            </button>
+                              
+                            <div style="text-align: center;" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    
+                                <a href="#" title="" class="dropdown-item">
+                                    {{$virtualuser->email}}
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+                                <div style="">
+
+                                    <a href="{{url('/logout')}}" title="" class="dropdown-item">
+                                        Logout
+                                    </a>
+                                    
+                                </div>
+
+
+                            </div><!--END dropdown-menu-->
+
+                        </div><!--END dropdown-->
+
+
+                    @elseif( Auth::check() )
 
                         <div class="dropdown" >
 

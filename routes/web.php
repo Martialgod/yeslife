@@ -199,6 +199,8 @@ Route::put('/admin/profile', 'UsersController@updateprofile');
 
 Route::resource('/admin/users', 'UsersController');
 Route::get('/admin/users/{id}/downline', 'UsersController@downline')->name('users.downline');
+Route::get('/admin/users/{id}/login-as', 'UsersController@virtual')->name('users.virtual');
+
 
 Route::resource('/admin/usertype', 'UserTypeController');
 

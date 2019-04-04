@@ -98,10 +98,20 @@ class CartController extends Controller
         //recurring = order trxno
         $recurring = ( request()->recurring ) ? request()->recurring : null; 
 
-        //check if user is logged in
-        if( Auth::check() ){
 
-            $dbusers = UserMstrView::findOrFail(Auth::id());
+        //check if user is logged in
+        if( session('yeslife_virtual_user_id') || Auth::check() ){
+
+            //check for admin login-as virtual user 
+            //Generated @AppServiceProvider.php
+            if( session('yeslife_virtual_user_id') ){
+                //use credentials for virtual user
+                $dbusers = UserMstrView::findOrFail(session('yeslife_virtual_user_id'));
+            }else{
+                //use default logged in user
+                $dbusers = UserMstrView::findOrFail(Auth::id());
+            }
+
             $states = State::getStateByCountry($dbusers->fk_country);
             $iscustomstate = State::isCustomState($dbusers->state);
 

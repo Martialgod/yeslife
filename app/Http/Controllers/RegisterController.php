@@ -143,6 +143,16 @@ class RegisterController extends Controller
     public function destroy()
     {
         //
+        
+        //check for admin login-as virtual user
+        if( session('yeslife_virtual_user_id') ){
+
+            session()->forget('yeslife_virtual_user_id');
+
+            return redirect('/');
+
+        }
+
         Auth::logout();
 
         session()->flush();

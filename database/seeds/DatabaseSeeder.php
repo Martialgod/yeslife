@@ -201,6 +201,19 @@ class DatabaseSeeder extends Seeder
         ]); */
 
 
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 5006,
+            'method'=> 'POST',
+            'description'=> 'Login-As',
+            'route'=> 'users.virtual',
+            'type'=> 'C',
+            'family'=> 'users.index',
+            'indexno'=> 4,
+            'stat'=>1
+        ]); 
+
+
+
     }
 
 }//END class

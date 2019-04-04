@@ -200,7 +200,22 @@ class AppServiceProvider extends ServiceProvider
 
             //dd(session('yeslife_referrer_id'));
             
-            $view->with('referrer', $referrer)->with('refnourl', $refnourl);
+            //declare global curent logged in id
+            //check for admin login-as virtual user
+            $isloggedin = 'no';
+            $virtualuser;
+            if( session('yeslife_virtual_user_id') ){
+                
+                $isloggedin = session('yeslife_virtual_user_id');
+
+                $virtualuser = User::findOrFail(session('yeslife_virtual_user_id'));
+
+            }else{
+                //check for normal logged in user; no virtual session
+                $isloggedin = (Auth::check()) ? Auth::id() : 'no';
+            }
+            
+            $view->with(compact('referrer', 'refnourl', 'isloggedin', 'virtualuser'));
 
         });
 
