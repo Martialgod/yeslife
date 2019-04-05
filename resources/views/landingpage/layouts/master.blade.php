@@ -13,6 +13,8 @@
 
     <meta name="p:domain_verify" content="efbec8bf918ea4d0f429df5435959c51"/>
 
+    <meta name="msvalidate.01" content="1D5F67923C25997C33F9A152A689FFEA" />
+
 
     <title>@yield('title')</title>
 
