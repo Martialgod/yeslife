@@ -15,6 +15,26 @@
 
     <meta name="msvalidate.01" content="1D5F67923C25997C33F9A152A689FFEA" />
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M82X8X4');</script>
+    <!-- End Google Tag Manager -->
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135977195-1"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-135977195-1');
+    </script>
+
+
 
     <title>@yield('title')</title>
 
@@ -58,7 +78,7 @@
 
     <script src="{{asset('/customjs/AppServices.js')}}?v={{time()}}"></script>
 
-        <link href="/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="/select2/select2.min.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -136,19 +156,6 @@
     </style>
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics --> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135977195-1"></script>
-    <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'UA-135977195-1');
-    </script>
-
-
-
-
     @yield('optional_styles')
 
 
@@ -157,8 +164,13 @@
 
 <body style="background-color:;"><!--#f5f7f9-->
 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M82X8X4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
 
+    
     {{--
         Generated @AppServiceProvider.php
         required to all page; determine if user is currently logged in. 
