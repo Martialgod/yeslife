@@ -113,6 +113,12 @@
 
 		};//END AddToCart
 
+		vm.GlobalBuyNow = function(list){
+
+			GlobalBuyNow(list.productid,1); //@GlobalScript.js
+
+		};//END GlobalBuyNow
+
 
 		vm.RemoveFromCart = function(list){
 

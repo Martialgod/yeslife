@@ -121,10 +121,19 @@
                                         <!-- Product Action -->
                                         @if( $products->qty > 0 )
                                             <div class="product-action">
+                                                
                                                 <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
                                                     Add To Cart
 
                                                 </button>
+
+
+                                                
+                                                <button type="button" onclick="GlobalBuyNow('{{$products->pk_products}}', '1')" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                    Buy Now
+                                                </button>
+
+
                                             </div>
                                         @else
                                             <div class="product-action" lass="btn btn-default" >
@@ -399,6 +408,36 @@
 		});//END #billingcantfindstate on change
 		
 	</script>
+
+    
+    <script type="text/javascript">
+        //broadcast toastr
+        $(document).ready(function(){
+
+            if( $('#toastrbroadcastcount').html() == 1 ){
+
+                setTimeout(function(){
+
+                    toastr.clear();
+
+                    var temptitle = $('#toastrbroadcasttitle').html();
+                    var tempmessage = $('#toastrbroadcastmessage').html();
+
+                    toastr.success(tempmessage, temptitle, {
+                        'iconClass': 'toast-broadcast'
+                    }).css("width","100%");
+
+                }, 1000);
+
+            }
+           
+
+        });
+
+
+    </script>
+    
+
 
 @endsection
 

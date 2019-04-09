@@ -11,7 +11,7 @@
                     
                     <h3>Special <span>Offers</span> for Subscription</h3>
                     <h1>GET INSTANT DISCOUNT FOR MEMBERSHIP</h1>
-                    <p>Subscribe to our newsletter and get all latest news about our latest <br> products, promotions, offers and discount</p>
+                    <p>Subscribe to our newsletter and get all fresh information about our latest products, promotions, offers and discounts.</p>
                     
                     {{--id:mc-form  class:--}}
                     <form id="form-subscription" id="form-subscription" class="subscribe-form"  method="POST" action="#" >

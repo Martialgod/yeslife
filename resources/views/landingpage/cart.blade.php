@@ -268,6 +268,36 @@
     </script>
 
 
+    
+    <script type="text/javascript">
+        //broadcast toastr
+        $(document).ready(function(){
+
+            if( $('#toastrbroadcastcount').html() == 1 ){
+
+                setTimeout(function(){
+
+                    toastr.clear();
+
+                    var temptitle = $('#toastrbroadcasttitle').html();
+                    var tempmessage = $('#toastrbroadcastmessage').html();
+
+                    toastr.success(tempmessage, temptitle, {
+                        'iconClass': 'toast-broadcast'
+                    }).css("width","100%");
+
+                }, 1000);
+
+            }
+           
+
+        });
+
+
+    </script>
+    
+
+
   
    
 @endsection

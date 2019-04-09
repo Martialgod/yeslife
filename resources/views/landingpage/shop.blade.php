@@ -46,12 +46,34 @@
             </div>--}}
 
 
-            <div class="search">
-                <form class="search-form" ng-submit="vm.SearchProducts()">
-                    <input type="text" placeholder="search here..." class="" ng-model="vm.search" ng-change="vm.SearchProducts()" ng-model-options="{debounce: 500}"  >
-                    <input type="submit" value="Search">
-                </form>
-            </div><br/>
+            {{--<div class="search">
+               
+               <div class="">
+                    <form class="search-form" ng-submit="vm.SearchProducts()">
+                        <input type="text" placeholder="search here..." class="" ng-model="vm.search" ng-change="vm.SearchProducts()" ng-model-options="{debounce: 500}"  >
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+
+              
+            </div> --}}
+
+            <div class="row col-md-4 pull-right" >
+
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="search here..."  ng-model="vm.search" ng-change="vm.SearchProducts()" ng-model-options="{debounce: 500}" >
+                  <div class="input-group-append">
+                    <button class="btn btn-default" style="background-color: #286700;" type="button"  ng-click="vm.SearchProducts()" >
+                        Search
+                    </button>
+                  </div>
+                </div>
+
+                
+            </div>
+            <br/> <br><br>
+
+          
 
     
 
@@ -163,9 +185,15 @@
                                 <div class="product-action text-center" ng-if="list.qty > 0">
                                     <br>
                                     <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
-                                    Add To Cart
+                                        Add To Cart
 
-                                </button>
+                                    </button>
+
+
+                                    <button type="button" ng-click="vm.GlobalBuyNow(list)" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                        Buy Now
+                                    </button>
+
                                 </div>
 
                                 <div class="product-action"  ng-if="list.qty <=0">
@@ -243,6 +271,36 @@
 	<script type="text/javascript">
 		
 	</script>
+
+    
+    <script type="text/javascript">
+        //broadcast toastr
+        $(document).ready(function(){
+
+            if( $('#toastrbroadcastcount').html() == 1 ){
+
+                setTimeout(function(){
+
+                    toastr.clear();
+
+                    var temptitle = $('#toastrbroadcasttitle').html();
+                    var tempmessage = $('#toastrbroadcastmessage').html();
+
+                    toastr.success(tempmessage, temptitle, {
+                        'iconClass': 'toast-broadcast'
+                    }).css("width","100%");
+
+                }, 1000);
+
+            }
+           
+
+        });
+
+
+    </script>
+    
+
 
 @endsection
 

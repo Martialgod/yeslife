@@ -8,8 +8,8 @@
                 <div class="icon"></div>
                 <div class="content">
                   
-                    <h3>Free home delivery</h3>
-                    <p>Provide free home delivery for all product over $100</p>
+                    <h3>Free Home Delivery</h3>
+                    <p>Provide free home delivery for all products.</p>
                 </div>
             </div>
             
@@ -17,15 +17,15 @@
                 <div class="icon"></div>
                 <div class="content">
                     <h3>Quality Products</h3>
-                    <p>We ensure the product quality that is our main goal</p>
+                    <p>Our main goal is to ensure quality on all of our products.</p>
                 </div>
             </div>
             
             <div class="service col-xl-3 col-md-6 col-12">
                 <div class="icon"></div>
                 <div class="content">
-                    <h3>3 Days Return</h3>
-                    <p>Return product within 3 days for any product you buy</p>
+                    <h3>30-Day Return Policy</h3>
+                    <p>Return product within 3 days for any product you buy.</p>
                 </div>
             </div>
             

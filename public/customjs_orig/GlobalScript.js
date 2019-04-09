@@ -325,6 +325,79 @@ $('.add-to-cart').submit(function(e){
 });//END add-to-cart
 
 
+function GlobalBuyNow(productid, qty){
+
+  console.log(productid);
+  console.log(qty);
+
+  var products = {
+
+    'productid': productid,
+    'qty': qty,
+
+  };
+
+  products = initializeCartCookie(products);
+
+  //initialize @the top of the page
+  if( isloggedin != 'no'){
+
+    //save to db to track abandoned cart
+    var cart = {
+      'fk_products': products.productid,
+      'qty': products.qty,
+      'fk_users': isloggedin,
+    };
+
+    //$.blockUI('#main-div');
+    showCustomizeLoading();
+
+    $.ajax({
+       type: "POST",
+       url: '/api/add-cart', //store on post; calling api.php; removes authentication
+       data: cart, // 
+       success: function(data){
+            
+          console.log(data);
+
+          if( data == 'success' ){
+
+
+          }else{
+
+          
+          }
+
+        
+          //hideCustomizeLoading();
+          
+          //redirect to checkout
+          location.href="/cartcheckout";
+
+
+       },
+       error: function(data){
+          console.log(data);
+          console.log('error');
+
+          hideCustomizeLoading();
+
+       }
+
+    });//END $.ajax
+    
+
+  }else{
+
+    //redirect to checkout
+    location.href="/cartcheckout";
+
+  }//END if isloggedin
+
+
+
+}//END GlobalBuyNow
+
 
 function countCartCookies() {
   var count = 0;
@@ -335,13 +408,42 @@ function countCartCookies() {
     //count cookies with cart
     if( key[0].indexOf('yeslifecart_') !== -1 ){
       count++;
+      //count+= ( !isNaN(key[1]) ) ? parseFloat(key[1]) : 0;
     }
 
   }//END for
   //console.log(count);
   return count;
+
+
 }//END countCartCookies
 
+
+function initializeCartCookie(products){
+
+  //adding yeslifecart_ to determine this is a cart cookie
+  var res = document.cookie;
+  var multiple = res.split(";");
+  for(var i = 0; i < multiple.length; i++) {
+    var key = multiple[i].split("=");
+    //console.log(key[0]); //cookie name
+    //check if cookie is existing
+    if( key[0].indexOf('yeslifecart_'+products.productid) !== -1 ){
+      products.qty = parseFloat(products.qty) +  parseFloat(key[1]);  //set qty
+    }
+    
+  }//END for
+
+  if( products.productid !== undefined ){
+    document.cookie = "yeslifecart_"+products.productid+"="+products.qty+"; path=/";
+  }
+  
+  //console.log( document.cookie );
+  
+
+  return products;
+
+}//END 
 
 
 function addCartCookie(products){
@@ -351,22 +453,7 @@ function addCartCookie(products){
 
     updateCartCookieCount(products);
     
-    //adding yeslifecart_ to determine this is a cart cookie
-    var res = document.cookie;
-    var multiple = res.split(";");
-    for(var i = 0; i < multiple.length; i++) {
-      var key = multiple[i].split("=");
-      //console.log(key[0]); //cookie name
-      //check if cookie is existing
-      if( key[0].indexOf('yeslifecart_'+products.productid) !== -1 ){
-        products.qty = parseFloat(products.qty) +  parseFloat(key[1]);  //set qty
-      }
-      
-    }//END for
-
-    
-    document.cookie = "yeslifecart_"+products.productid+"="+products.qty+"; path=/";
-    //console.log( document.cookie );
+    products = initializeCartCookie(products);
 
     //initialize @the top of the page
     if( isloggedin != 'no'){
@@ -425,6 +512,8 @@ function addCartCookie(products){
 
 function updateCartCookieCount(products){
 
+  //$('#headercartcount').html(countCartCookies());
+
   var isfound = false;
   var res = document.cookie;
   var multiple = res.split(";");
@@ -446,7 +535,7 @@ function updateCartCookieCount(products){
     $('#headercartcount').html( parseFloat($('#headercartcount').html().trim()) + 1 );
   }else{
     toastr.success('cart updated');
-  }
+  } 
 
 }//END updateCartCookieCount
 

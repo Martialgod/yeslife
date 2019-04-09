@@ -156,6 +156,18 @@ class AppServiceProvider extends ServiceProvider
                     $uid = session('yeslife_virtual_user_id');
                 }
                 
+                /*$usercart = DB::SELECT("
+                    SELECT ROUND(sum(a.qty))  as qty
+                    FROM userscart a 
+                    INNER JOIN products b 
+                    ON a.fk_products = b.pk_products 
+                    WHERE b.stat = 1 AND a.fk_users = '$uid'
+                ");
+
+                if( count($usercart) > 0 ){
+                    $yeslifecartcount = $usercart[0]->qty;
+                } */
+
                 $usercart = DB::SELECT("
                     SELECT a.fk_products 
                     FROM userscart a 
@@ -163,7 +175,7 @@ class AppServiceProvider extends ServiceProvider
                     ON a.fk_products = b.pk_products 
                     WHERE b.stat = 1 AND a.fk_users = '$uid'
                 ");
-
+                
                 $yeslifecartcount = count($usercart);
 
             }//END $uid != -1

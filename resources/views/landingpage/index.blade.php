@@ -66,15 +66,19 @@
                                             Don't Settle For<br/>Inferior CBD Oil! 
                                         </h1>
 
+
                                         <p id="" style="color:#000; text-align:left">
-                                            #1 Most-Stable, Longest-Lasting, Highest-Absorbing CBD on the <br/>Market! 
-                                            NO addictive chemicals. Available in all 50 States.  Water Soluble!
-                                            <br/>
+                                            ✓ #1 Most-stable, 
+                                            ✓ Water-soluble, ✓ highest-absorbing ,
+                                            ✓ Fast-acting, <br> 
+                                            ✓ NO addictive chemicals added, 
+                                            ✓ Available on all 50 States  <br>
+
                                             <a href="{{url('/shop')}}{{$refnourl}}">
                                                 <img src="/landingpage/assets/images/main-button.png" alt="" />
                                             </a>
-                                            <br/>
-                                            YES.LIFE CBD retails for $49.95 Get up to 20% OFF Today!!! With our 100% NO-RISK Promise
+                                            <br>
+                                            Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
@@ -110,14 +114,18 @@
                                         </h1>
 
                                         <p id="" style="color:#000; text-align:left">
-                                            #1 Most-Stable, Longest-Lasting, Highest-Absorbing CBD on the <br/>Market! 
-                                            NO addictive chemicals. Available in all 50 States.  Water Soluble!
-                                            <br/>
+                                            
+                                            ✓ #1 Most-stable, 
+                                            ✓ Water-soluble, ✓ highest-absorbing ,
+                                            ✓ Fast-acting, <br> 
+                                            ✓ NO addictive chemicals added, 
+                                            ✓ Available on all 50 States  <br>
+
                                             <a href="{{url('/shop')}}{{$refnourl}}">
                                                 <img src="/landingpage/assets/images/main-button.png" alt="" />
                                             </a>
                                             <br/>
-                                            YES.LIFE CBD retails for $49.95 Get up to 20% OFF Today!!! With our 100% NO-RISK Promise
+                                            Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
@@ -154,14 +162,19 @@
                                         </h1>
 
                                         <p id="" style="color:#000; text-align:left">
-                                            #1 Most-Stable, Longest-Lasting, Highest-Absorbing CBD on the <br/>Market! 
-                                            NO addictive chemicals. Available in all 50 States.  Water Soluble!
+                                            
+                                            ✓ #1 Most-stable, 
+                                            ✓ Water-soluble, ✓ highest-absorbing ,
+                                            ✓ Fast-acting, <br> 
+                                            ✓ NO addictive chemicals added, 
+                                            ✓ Available on all 50 States
+
                                             <br/>
                                             <a href="{{url('/shop')}}{{$refnourl}}">
                                                 <img src="/landingpage/assets/images/main-button.png" alt="" />
                                             </a>
                                             <br/>
-                                            YES.LIFE CBD retails for $49.95 Get up to 20% OFF Today!!! With our 100% NO-RISK Promise
+                                            Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
@@ -368,7 +381,15 @@
                                                     Add to cart
 
                                                 </button>
+
+                                                <button type="button" onclick="GlobalBuyNow('{{$v->pk_products}}', '1')" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                    Buy Now
+                                                </button>
+
                                             </div>
+
+                                    
+
                                         @else
                                             <div class="product-action" class="btn btn-default" >
                                                 <span class="badge badge-danger">Out of stock</span>
