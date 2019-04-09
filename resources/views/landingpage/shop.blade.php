@@ -58,7 +58,7 @@
               
             </div> --}}
 
-            <div class="row col-md-4 pull-right" >
+            <div class="row pull-right" >
 
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="search here..."  ng-model="vm.search" ng-change="vm.SearchProducts()" ng-model-options="{debounce: 500}" >
