@@ -41,7 +41,7 @@
     @yield('meta')
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/landingpage/assets/images/faviconv2.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/landingpage/assets/images/faviconv3.png">
     
     <!-- CSS
     ============================================ -->
@@ -278,9 +278,7 @@
             $(".jqvalidate-form-2").validate({
                 onfocusout: injectTrim($.validator.defaults.onfocusout)
             });
-            
-            //deleteAllCartCookies();
-            //console.log( getCartCookies() );
+
         });
 
 
@@ -299,10 +297,23 @@
         }
 
 
+        $(document).ready(function(){
 
-        //$('#headercartcount').html(getCartCookies().length); //GlobalScript.js
+            //reset cart count based on cookie if user is not loggedin
+            //if loggedin then cart count is equals to db qty
+            if( $("#isloggedin").val() == 'no' ){
+
+                updateCartCookieCount();//GlobalScript.js
+
+            }
+           
+            //deleteAllCartCookies();
+            //console.log( getCartCookies() );
+        });
+
 
     </script>
+
 
 
 

@@ -405,10 +405,11 @@ function countCartCookies() {
   var multiple = res.split(";");
   for(var i = 0; i < multiple.length; i++) {
     var key = multiple[i].split("=");
+    //console.log( key[0] + ' = ' + key[1]);
     //count cookies with cart
     if( key[0].indexOf('yeslifecart_') !== -1 ){
-      count++;
-      //count+= ( !isNaN(key[1]) ) ? parseFloat(key[1]) : 0;
+      //count++;
+      count+= ( !isNaN(key[1]) ) ? parseFloat(key[1]) : 0;
     }
 
   }//END for
@@ -440,7 +441,8 @@ function initializeCartCookie(products){
   
   //console.log( document.cookie );
   
-
+  updateCartCookieCount(products);
+    
   return products;
 
 }//END 
@@ -451,8 +453,6 @@ function addCartCookie(products){
     //console.log(products);
     toastr.clear();
 
-    updateCartCookieCount(products);
-    
     products = initializeCartCookie(products);
 
     //initialize @the top of the page
@@ -512,9 +512,11 @@ function addCartCookie(products){
 
 function updateCartCookieCount(products){
 
+  $('#headercartcount').html(countCartCookies());
+
   //$('#headercartcount').html(countCartCookies());
 
-  var isfound = false;
+  /*var isfound = false;
   var res = document.cookie;
   var multiple = res.split(";");
   for(var i = 0; i < multiple.length; i++) {
@@ -531,11 +533,11 @@ function updateCartCookieCount(products){
   //console.log(isfound);
 
   if(!isfound){
-    toastr.success('item added to the cart');
+    //toastr.success('item added to the cart');
     $('#headercartcount').html( parseFloat($('#headercartcount').html().trim()) + 1 );
   }else{
-    toastr.success('cart updated');
-  } 
+   // toastr.success('cart updated');
+  } */
 
 }//END updateCartCookieCount
 
@@ -625,15 +627,15 @@ function removeCartCookie(productid) {
   }//END if isloggedin
 
 
-  toastr.error('item removed from cart');
+  //toastr.error('item removed from cart');
 
-  if( getCartCookies().length > 0){
+  /*if( getCartCookies().length > 0){
     $('#headercartcount').html( parseFloat($('#headercartcount').html().trim()) - 1 );
   }else{
     $('#headercartcount').html('0');
-  }
+  } */
 
- 
+  $('#headercartcount').html(countCartCookies());
 
   //console.log( getCartCookies() );
 }//END removeCartCookie

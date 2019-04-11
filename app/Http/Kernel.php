@@ -28,7 +28,12 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+
+            //disable EncryptCookies for now. cant find a solution yet to properly retrieve uprx_cart values
+            //values are encrypted an becomes null
+            
             \App\Http\Middleware\EncryptCookies::class,
+           
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,

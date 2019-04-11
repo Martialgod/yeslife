@@ -57,8 +57,8 @@
 
                 <h3>Your cart is empty....</h3>
                 <br>
-                <a href="{{url('/')}}{{$refnourl}}" class="btn btn-round btn-lg"> 
-                    Go Back
+                <a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-round btn-lg"> 
+                    Shop Now
                 </a>
                
             </div>

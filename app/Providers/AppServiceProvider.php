@@ -168,7 +168,22 @@ class AppServiceProvider extends ServiceProvider
                     $yeslifecartcount = $usercart[0]->qty;
                 } */
 
-                $usercart = DB::SELECT("
+                //count the cart in the database
+                $accountcart = DB::SELECT("
+                    SELECT ROUND(coalesce(sum(a.qty), 0)) as totalqty
+                    FROM userscart a 
+                    INNER JOIN products b 
+                    ON a.fk_products = b.pk_products 
+                    WHERE b.stat = 1 AND a.fk_users = '$uid'
+                ");
+
+                if( count($accountcart) > 0 ){
+
+                    $yeslifecartcount = $accountcart[0]->totalqty;
+                
+                }
+
+                /*$usercart = DB::SELECT("
                     SELECT a.fk_products 
                     FROM userscart a 
                     INNER JOIN products b 
@@ -176,7 +191,7 @@ class AppServiceProvider extends ServiceProvider
                     WHERE b.stat = 1 AND a.fk_users = '$uid'
                 ");
                 
-                $yeslifecartcount = count($usercart);
+                $yeslifecartcount = count($usercart); */
 
             }//END $uid != -1
 
