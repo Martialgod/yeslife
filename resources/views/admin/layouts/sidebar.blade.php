@@ -76,7 +76,7 @@
 
 		        <li class="{{ session('active_tab') == 'Home' ? 'active' : '' }}" id="menu-home" >
 		        	<a href="{{url('/')}}">
-		        		<img src="/landingpage/assets/images/favicon.png" alt="" style="width: 20px;" >
+		        		<img src="/landingpage/assets/images/faviconv2.png" alt="" style="width: 20px;" >
 		        		<br>
 		        		<span>YesLife</span>
 		        	</a>

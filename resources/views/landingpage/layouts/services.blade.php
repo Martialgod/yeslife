@@ -25,7 +25,7 @@
                 <div class="icon"></div>
                 <div class="content">
                     <h3>30-Day Return Policy</h3>
-                    <p>Return product within 3 days for any product you buy.</p>
+                    <p>Return product within 30 days for any product you buy.</p>
                 </div>
             </div>
             

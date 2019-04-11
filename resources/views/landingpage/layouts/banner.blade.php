@@ -7,10 +7,12 @@
             <div class="col">
                 
                 <div class="page-banner text-center">
-                    <h1 style="color:#;"> {{$bannerheader}} </h1>
+                    <h1 style="color:#3295c3;"> {{$bannerheader}} </h1>
                     <ul class="page-breadcrumb">
-                        <li style="color:#fff;"><a href="{{url($bannerurl)}}{{$refnourl}}">{{$bannerback}}</a></li>
-                        <li style="color:#fff;">{{$bannercontent}}</li>
+                        <li style="color:#3295c3;">
+                            <a href="{{url($bannerurl)}}{{$refnourl}}">{{$bannerback}}</a>
+                        </li>
+                        <li style="color:#3295c3;"><b> {{$bannercontent}} </b></li>
                     </ul>
                 </div><!--END page-banner-->
                 

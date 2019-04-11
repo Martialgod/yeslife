@@ -43,11 +43,11 @@
 
             <div class="carousel-inner">
 
-                <div class="carousel-item active">
+                <div class="carousel-item">
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slider-bg-3.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
@@ -59,15 +59,15 @@
 
                                     <div class="hero-content text-center" >
                                         <h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo.png"/>
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
                                         </h2>
 
-                                        <h1 id="" style="color:#06C;">
+                                        <h1 id="" style="color:#fff;">
                                             Don't Settle For<br/>Inferior CBD Oil! 
                                         </h1>
 
 
-                                        <p id="" style="color:#000; text-align:left">
+                                        <p id="" style="color:#fff; text-align:left">
                                             ✓ #1 Most-stable, 
                                             ✓ Water-soluble, ✓ highest-absorbing ,
                                             ✓ Fast-acting, <br> 
@@ -90,11 +90,11 @@
                   
                 </div><!--END carousel-item active-->
 
-                <div class="carousel-item">
+                <div class="carousel-item active">
                   
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slider-bg-4.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
@@ -106,14 +106,14 @@
 
                                     <div class="hero-content text-center" >
                                         <h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo.png"/>
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
                                         </h2>
 
-                                        <h1 id="" style="color:#06C;">
+                                        <h1 id="" style="color:#fff;">
                                             Don't Settle For<br/>Inferior CBD Oil! 
                                         </h1>
 
-                                        <p id="" style="color:#000; text-align:left">
+                                        <p id="" style="color:#fff; text-align:left">
                                             
                                             ✓ #1 Most-stable, 
                                             ✓ Water-soluble, ✓ highest-absorbing ,
@@ -142,7 +142,7 @@
                   
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slider-bg-5.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-03.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
@@ -154,10 +154,10 @@
 
                                     <div class="hero-content text-center"  >
                                         <h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo.png"/ >
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2>
 
-                                        <h1 id="" style="color:#06C;">
+                                        <h1 id="" style="color:#1d1f23;">
                                             Don't Settle For<br/>Inferior CBD Oil! 
                                         </h1>
 
@@ -231,7 +231,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/product-2a.png" alt="">
+                        <img src="/landingpage/assets/images/product/highest-quality-hemp.png" alt="">
                         <h4 class="title">Highest Quality Hemp</h4>
                         
                     </div>
@@ -243,7 +243,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/product-2b.png" alt="">
+                        <img src="/landingpage/assets/images/product/most-water-soluble.png" alt="">
                         <h4 class="title">Most Water Soluble</h4>
                         
                     </div>
@@ -255,7 +255,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/product-2c.png" alt="">
+                        <img src="/landingpage/assets/images/product/highest-absortion.png" alt="">
                         <h4 class="title">Highest Absortion</h4>
                         
                     </div>
@@ -267,7 +267,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/product-2d.png" alt="">
+                        <img src="/landingpage/assets/images/product/source-in-usa.png" alt="">
                         <h4 class="title">Souced in USA</h4>
                         
                     </div>
@@ -434,7 +434,7 @@
                 <div class="col-12">
                     <div class="banner">
                     	<a href="{{url('/shop')}}{{$refnourl}}">
-                    		<img src="/landingpage/assets/images/banner/banner-4.jpg" alt="">
+                    		<img src="/landingpage/assets/images/banner/offer_page-V2.jpg" alt="">
                     	</a>
                     </div>
                 </div>

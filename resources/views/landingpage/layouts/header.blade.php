@@ -9,7 +9,7 @@
             <div class="col">
                 <div class="header-logo">
                     <a href="{{url('/')}}{{$refnourl}}">
-                        <img src="/landingpage/assets/images/logo.png" alt="">
+                        <img src="/landingpage/assets/images/main-logo.png" alt="">
                     </a>
                 </div>
             </div>
@@ -39,9 +39,9 @@
                         <a href="{{url('/cartcheckout')}}{{$refnourl}}" title="">
                             <button type="button" class="btn btn-info custom-default-btn" >
 
-                                <i class="fa fa-shopping-cart" style="color:green;" aria-hidden="true"></i>
+                                <i class="fa fa-shopping-cart" style="color:#faaf54;" aria-hidden="true"></i>
 
-                                <span class="badge badge-success" style="margin-left: -10px;font-size: 10px;" id="headercartcount" > 
+                                <span class="badge badge-warning" style="margin-left: -10px;font-size: 10px;" id="headercartcount" > 
                                     
                                     {{--@AppServiceProvider global variable for layouts.header--}}
                                     {{$yeslifecartcount}} 

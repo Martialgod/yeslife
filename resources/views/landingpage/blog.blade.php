@@ -46,7 +46,7 @@
 
                                 <div class="col-lg-12 col-12 mb-30" >
 
-                                    <div class="blog-item" style="background-color: #e1f5e7;">
+                                    <div class="blog-item" style="background-color: #f7eadc;">
                                        
                                         <a class="image" href="{{url('/blog/'.$a->slug)}}" style="background-image: url(storagelink/{{$a->pictx}});" >
                                             <img src="{{asset('/storagelink/'.$a->pictx)}}" alt="">

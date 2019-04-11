@@ -63,7 +63,7 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="search here..."  ng-model="vm.search" ng-change="vm.SearchProducts()" ng-model-options="{debounce: 500}" >
                   <div class="input-group-append">
-                    <button class="btn btn-default" style="background-color: #286700;" type="button"  ng-click="vm.SearchProducts()" >
+                    <button class="btn btn-default" style="background-color: #faaf54;" type="button"  ng-click="vm.SearchProducts()" >
                         Search
                     </button>
                   </div>

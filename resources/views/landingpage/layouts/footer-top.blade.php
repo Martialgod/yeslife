@@ -7,7 +7,7 @@
             
             <div class="col mb-40">
                 <div class="footer-widget">
-                    <img src="/landingpage/assets/images/logo-light.png" alt="">
+                    <img src="/landingpage/assets/images/b&w-top-logo_slide.png" alt="">
                     <p>
                         We provide the best CBD oil in almost all US states.
                     </p>

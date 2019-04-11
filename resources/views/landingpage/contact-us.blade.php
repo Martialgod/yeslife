@@ -22,7 +22,7 @@
 
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Home', 
+      'bannerheader'=>'Contact Us', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Contact Us'

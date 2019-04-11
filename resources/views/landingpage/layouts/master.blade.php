@@ -41,7 +41,7 @@
     @yield('meta')
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/landingpage/assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/landingpage/assets/images/faviconv2.png">
     
     <!-- CSS
     ============================================ -->

@@ -2,7 +2,7 @@
 
     CSS INDEX
     ===================
-  
+	
     01. Theme default CSS
     02. Header CSS
     03. Hero CSS
@@ -215,7 +215,7 @@ input::placeholder, textarea::placeholder {
 
 .bg-dark {
   /*-- background-color: #222222 !important; ---*/
-  background-image:url('../images/bg/footerbg-middle.jpg');
+  background-image:url('../images/bg/footer-bg.jpg');
   background-repeat:no-repeat;  
   }
 
@@ -270,7 +270,7 @@ input::placeholder, textarea::placeholder {
     content: "";
     height: 8px;
     width: 100%;
-    background-color: #faaf54;
+    background-color: #95dc00;
     z-index: -1; }
 
 .section-title p {
@@ -310,7 +310,7 @@ input::placeholder, textarea::placeholder {
 ------------------------------------------*/
 .page-banner-section {
   background-color: #0b1521;
-  background-image:url('../images/sub-page-header-v2.jpg');
+  background-image:url('../images/sub-page-header-image.png');
   background-repeat:no-repeat;
   background-size: cover;
   padding: 150px 0 90px; }
@@ -430,8 +430,8 @@ input::placeholder, textarea::placeholder {
 
 .btn {
   display: inline-block;
-  background-color: #faaf54;
-  border-color: #faaf54;
+  background-color: #8ecf00;
+  border-color: #166300;
   color: #ffffff;
   font-family: "Oswald", sans-serif;
   border-radius: 4px;
@@ -598,8 +598,8 @@ input::placeholder, textarea::placeholder {
   position:fixed;
   clear:both;
   display:block;
-  border-bottom: #3295c3 3px solid;
-  /*background: linear-gradient(to right, #d9d9d9, #e1f5e7); */
+  border-bottom: #06C 4px solid;
+  background: linear-gradient(to right, #d9d9d9, #e1f5e7);
 }
 
   .header-section > .container > .row {
@@ -1412,7 +1412,7 @@ input::placeholder, textarea::placeholder {
     background-color: #222222;
     border-color: #222222;
     color: #d0a97e; }
-  
+	
 #demotext {
 text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 }
@@ -2455,13 +2455,13 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
               display: flex;
               line-height: 25px;
               padding: 10px 20px;
-              background-color: #faaf54;
+              background-color: #8ecf00;
               font-weight: 600;
               font-family: "Oswald", sans-serif;
               letter-spacing: 0.5px; }
               .product-details .product-content .product-content-inner .body .product-action a.buy:hover, .product-details .product-content .product-content-inner .body .product-action button.buy:hover {
                 background-color: #222222;
-                color: #faaf54; }
+                color: #8ecf00; }
               .product-details .product-content .product-content-inner .body .product-action a.buy span, .product-details .product-content .product-content-inner .body .product-action button.buy span {
                 margin-right: 15px; }
             .product-details .product-content .product-content-inner .body .product-action a.cart span, .product-details .product-content .product-content-inner .body .product-action a.buy span, .product-details .product-content .product-content-inner .body .product-action button.cart span, .product-details .product-content .product-content-inner .body .product-action button.buy span {
@@ -2576,7 +2576,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       font-weight: 500;
       letter-spacing: 0.25px; }
       .product-details-tab-list li a.active {
-        background-color: #faaf54;
+        background-color: #8ecf00;
         color: #222222; }
 
 /*-- Single Product Details Tab Content --*/
@@ -2625,7 +2625,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       margin-bottom: 10px; }
       .review-list .review .ratting i {
         font-size: 13px;
-        color: #faaf54;
+        color: #8ecf00;
         margin-right: 6px; }
         .review-list .review .ratting i:last-child {
           margin-right: 0; }
@@ -2696,7 +2696,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     .sidebar-search input[type="submit"] {
       width: auto;
       border: none;
-      background-color: #faaf54;
+      background-color: #8ecf00;
       color: #222222;
       text-transform: uppercase;
       position: absolute;
@@ -2874,7 +2874,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 /*  09. Subscribe CSS
 /*----------------------------------------*/
 .subscribe-section {
-  background-image: url(../images/bg/promo-bg.jpg);
+  background-image: url(../images/bg/subscribe-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
@@ -2888,7 +2888,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     letter-spacing: 0.1px;
     margin-bottom: 10px; }
     .subscribe-wrap h3 span {
-      color: #faaf54;
+      color: #8ecf00;
       font-weight: 600; }
   .subscribe-wrap h1 {
     font-weight: 600;
@@ -2945,7 +2945,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     line-height: 24px;
     padding: 13px 30px;
     border-radius: 50px;
-    background-color: #faaf54;
+    background-color: #8ecf00;
     border: none;
     font-weight: 600;
     text-transform: uppercase; }
@@ -3745,7 +3745,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   line-height: 25px;
   padding: 10px 30px;
   text-transform: uppercase;
-  background-color: #faaf54;
+  background-color: #8ecf00;
   color: #222222;
   border: none;
   border-radius: 50px;
@@ -3953,8 +3953,8 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   .discount-coupon form input[type="submit"] {
     font-weight: 700;
     color: #ffffff;
-    background-color: #faaf54;
-    border-color: none;;
+    background-color: #8ecf00;
+    border-color: #166300;
     width: 140px; }
     .discount-coupon form input[type="submit"]:hover {
       background-color: #222222;
@@ -4001,7 +4001,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       font-size: 18px;
       line-height: 23px;
       font-weight: 700;
-      color: #faaf54;
+      color: #8ecf00;
       margin: 0; }
       .cart-summary .cart-summary-wrap h2 span {
         float: right; }
@@ -4041,8 +4041,8 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
         margin-left: 0; }
       .cart-summary .cart-summary-button button.checkout-btn {
         color: #ffffff;
-        background-color: #faaf54;
-        border-color: none;; }
+        background-color: #8ecf00;
+        border-color: #166300; }
       .cart-summary .cart-summary-button button:hover {
         background-color: #222222;
         border-color: #222222;
@@ -4413,7 +4413,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     .myaccount-tab-menu a:last-child {
       border-bottom: 1px solid #eeeeee; }
     .myaccount-tab-menu a:hover, .myaccount-tab-menu a.active {
-      background-color: #faaf54;
+      background-color: #8ecf00;
       color: #ffffff; }
     .myaccount-tab-menu a i {
       font-size: 16px;
@@ -4586,44 +4586,44 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 
 
 .myButton {
-  -moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
-  box-shadow:inset 0px 1px 0px 0px #a4e271;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
-  background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
-  background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
-  background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
-  background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
-  background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
-  background-color:#89c403;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  border:1px solid #74b807;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Arial;
-  font-size:15px;
-  font-weight:bold;
-  padding:6px 24px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #528009;
+	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+	background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+	background-color:#89c403;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
 }
 .myButton:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
-  background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
-  background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
-  background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
-  background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
-  background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
-  background-color:#77a809;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+	background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+	background-color:#77a809;
 }
 .myButton:active {
-  position:relative;
-  top:1px;
+	position:relative;
+	top:1px;
 }
 
 /*---------------- Search Box -----------------
@@ -4702,40 +4702,40 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 
 .search
 {
-  border: 2px solid #307b00;
-  overflow: auto;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  margin-bottom: 67px;
+	border: 2px solid #307b00;
+	overflow: auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-bottom: 67px;
 }
 
 .search input[type="text"]
 {
-  border: 0;
-  width: 67%;
-  padding: 10px 10px;
+	border: 0;
+	width: 67%;
+	padding: 10px 10px;
 }
 
 .search input[type="text"]:focus
 {
-  outline: 0;
+	outline: 0;
 }
 
 .search input[type="submit"]
 {
-  border: 0px;
-  background: none;
-  background-color: #286700;
-  color: #fff;
-  float: right;
-  padding: 10px;
-  border-radius-top-right: 5px;
-  -moz-border-radius-top-right: 5px;
-  -webkit-border-radius-top-right: 5px;
-  border-radius-bottom-right: 5px;
-  -moz-border-radius-bottom-right: 5px;
-  -webkit-border-radius-bottom-right: 5px;
+	border: 0px;
+	background: none;
+	background-color: #286700;
+	color: #fff;
+	float: right;
+	padding: 10px;
+	border-radius-top-right: 5px;
+	-moz-border-radius-top-right: 5px;
+	-webkit-border-radius-top-right: 5px;
+	border-radius-bottom-right: 5px;
+	-moz-border-radius-bottom-right: 5px;
+	-webkit-border-radius-bottom-right: 5px;
         cursor:pointer;
 }
 
@@ -4745,16 +4745,13 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 
 @media only screen and (min-width : 150px) and (max-width : 780px)
 {
-  {}
-  .search
-  {
-    width: 95%;
-    margin: 0 auto;
-  }
+	{}
+	.search
+	{
+		width: 95%;
+		margin: 0 auto;
+	}
 
 }
 
-.bg-dark{
-  background-color:#076b99!important;
-
-}
+.bg-dark{background-color:#06481b!important
