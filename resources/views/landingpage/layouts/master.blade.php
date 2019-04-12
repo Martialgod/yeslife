@@ -162,7 +162,7 @@
 
 </head>
 
-<body style="background-color:;"><!--#f5f7f9-->
+<body style="" ><!--#f5f7f9-->
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M82X8X4"

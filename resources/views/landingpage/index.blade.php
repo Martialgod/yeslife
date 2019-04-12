@@ -70,12 +70,13 @@
                                         <p id="" style="color:#fff; text-align:left">
                                             ✓ #1 Most-stable, 
                                             ✓ Water-soluble, ✓ highest-absorbing ,
-                                            ✓ Fast-acting, <br> 
-                                            ✓ NO addictive chemicals added, 
-                                            ✓ Available on all 50 States  <br>
+                                            <br> 
+                                            ✓ Fast-acting, 
+                                            ✓ NO addictive chemicals added
+                                            <br>
 
                                             <a href="{{url('/shop')}}{{$refnourl}}">
-                                                <img src="/landingpage/assets/images/main-button.png" alt="" />
+                                                <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
                                             </a>
                                             <br>
                                             Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
@@ -94,7 +95,7 @@
                   
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02-v2.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02-v3.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
@@ -117,12 +118,13 @@
                                             
                                             ✓ #1 Most-stable, 
                                             ✓ Water-soluble, ✓ highest-absorbing ,
-                                            ✓ Fast-acting, <br> 
-                                            ✓ NO addictive chemicals added, 
-                                            ✓ Available on all 50 States  <br>
+                                            <br> 
+                                            ✓ Fast-acting, 
+                                            ✓ NO addictive chemicals added 
+                                            <br>
 
                                             <a href="{{url('/shop')}}{{$refnourl}}">
-                                                <img src="/landingpage/assets/images/main-button.png" alt="" />
+                                                <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
                                             </a>
                                             <br/>
                                             Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
@@ -165,13 +167,13 @@
                                             
                                             ✓ #1 Most-stable, 
                                             ✓ Water-soluble, ✓ highest-absorbing ,
-                                            ✓ Fast-acting, <br> 
-                                            ✓ NO addictive chemicals added, 
-                                            ✓ Available on all 50 States
+                                            <br> 
+                                            ✓ Fast-acting, 
+                                            ✓ NO addictive chemicals added
 
                                             <br/>
                                             <a href="{{url('/shop')}}{{$refnourl}}">
-                                                <img src="/landingpage/assets/images/main-button.png" alt="" />
+                                                <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
                                             </a>
                                             <br/>
                                             Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
@@ -215,7 +217,7 @@
                     <div class="section-title-2">
                         <h1>Do You Know HEMP?</h1>
                         <p>It is a simple, unassuming plant and has been known for centuries for its amazing medical properties.</p>
-                        <p>At YES.LIFE we have found the best way to deliver these properties, with <strong>The Most Water Soluble</strong>CBD on the 
+                        <p>At YES.LIFE we have found the best way to deliver these properties, with <strong>The Most Water Soluble</strong> CBD on the 
                            market our CBD doesn't get flushed out of your intricate system, it gets delivered right where it should.</p>
                         <p>Your Body</p>
                     </div>
