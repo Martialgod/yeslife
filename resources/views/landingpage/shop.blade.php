@@ -153,9 +153,9 @@
                         <!-- Content -->
                         <div class="product-content">
                             
-                            <div class="head">
+                            <div class="head" >
                                 <!-- Title-->
-                                <div class="top">
+                                <div class="top" style="height: 60px;">
                                     <h4 class="title">
                                         <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}"> 
                                             @{{list.name}} 
@@ -164,16 +164,19 @@
                                 </div>
                                 
                                 <!-- Price & Ratting -->
-                                <div class="bottom">
+                                <div class="bottom" >
                                     
                                     <span class="price">
+
                                         $@{{list.cartdiscountedprice}}
-                                        <span ng-if="list.cartdiscountedprice < list.cartprice" class="old">$@{{list.cartprice}}</span>
+
+                                        <span ng-if="list.cartdiscountedprice < list.cartprice" class="old">$@{{list.cartprice}}</span> 
+
+
                                     </span>
 
-
-                                    
                                     <span class="ratting">
+                                        <br>
                                         <span ng-bind-html="list.stars_string"></span>
                                     </span>
 

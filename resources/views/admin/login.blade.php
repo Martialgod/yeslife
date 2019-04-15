@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<link href="/adminpage/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 	<!-- Custom Theme files -->
-	<link href="/adminpage/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="/adminpage/css/style.css?v={{time()}}" rel="stylesheet" type="text/css" media="all"/>
 	<!--js-->
 	<script src="/adminpage/js/jquery-2.1.1.min.js"></script> 
 	<!--icons-css-->
@@ -32,9 +32,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>	
 	
 	<div class="login-page">
-	    <div class="login-main">  	
-	    	 <div class="login-head">
-					<h1>Yes.Life Login</h1>
+	    <div class="login-main" >  	
+	    	 	<div class="login-head">
+					<h1> <img src="/adminpage/images/main-logo.png"> </h1>
 				</div>
 				<div class="login-block">
 

@@ -79,13 +79,20 @@
 
 	                        	<span data-toggle="tooltip" title="{{$a->slug}}" style="cursor: help;">
                                     {{
-                                        (strlen($a->slug)) > 20 ? substr($a->slug,0,20).'..' : $a->slug 
+                                        (strlen($a->slug)) > 10 ? substr($a->slug,0,10).'..' : $a->slug 
                                     }}
                                 </span>
 
 	                        </td>
 
-	                        <td> {{$a->category}} </td>
+	                        <td> 
+	                        	<span data-toggle="tooltip" title="{{$a->category}}" style="cursor: help;">
+                                    {{
+                                        (strlen($a->category)) > 10 ? substr($a->category,0,10).'..' : $a->category 
+                                    }}
+                                </span>
+
+	                        </td>
 
 	                        <td width="">
 

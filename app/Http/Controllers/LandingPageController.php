@@ -55,7 +55,7 @@ class LandingPageController extends Controller
 
        	$products = ProductMstrView::where('stat', 1)
        				->inRandomOrder()
-       				->paginate(10);
+       				->paginate(4);
 
         if( count($products) == 0 ){
             return view('landingpage.index', compact('products'));

@@ -821,7 +821,7 @@ input::placeholder, textarea::placeholder {
     width: 27px;
     height: 25px;
     background-repeat: no-repeat;
-    background-image: url(../images/icons/action-sprites.png);
+    background-image: url(../images/icons/action-sprites-v2.png);
     background-position: -81px 0; }
 
 /*-- Header Cart Wrap --*/
@@ -858,7 +858,7 @@ input::placeholder, textarea::placeholder {
       height: 25px;
       margin-right: 9px;
       background-repeat: no-repeat;
-      background-image: url(../images/icons/action-sprites.png);
+      background-image: url(../images/icons/action-sprites-v2.png);
       background-position: 0 0; }
     .header-cart-toggle span.number {
       margin-right: 5px; }
@@ -1677,7 +1677,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       width: 21px;
       height: 21px;
       text-indent: -9999px;
-      background-image: url(../images/icons/view-mode-sprites.png); }
+      background-image: url(../images/icons/view-mode-sprites-v2.png); }
     .product-view-mode button.grid span {
       background-position: 0 0;
       width: 21px; }
@@ -1888,7 +1888,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
           width: 20px;
           height: 19px;
           background-repeat: no-repeat;
-          background-image: url(../images/icons/action-small-sprites.png); }
+          background-image: url(../images/icons/action-small-sprites-v2.png); }
         .product-item .product-image .product-action a.cart span, .product-item .product-image .product-action button.cart span {
           background-position: 0 0; }
         .product-item .product-image .product-action a.compare span, .product-item .product-image .product-action button.compare span {
@@ -2076,7 +2076,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
               width: 27px;
               height: 25px;
               background-repeat: no-repeat;
-              background-image: url(../images/icons/action-sprites.png); }
+              background-image: url(../images/icons/action-sprites-v2.png); }
             .product-item.list .product-content .body .product-action a.cart span, .product-item.list .product-content .body .product-action button.cart span {
               background-position: 0 0; }
             .product-item.list .product-content .body .product-action a.compare span, .product-item.list .product-content .body .product-action button.compare span {
@@ -2448,7 +2448,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
               width: 27px;
               height: 25px;
               background-repeat: no-repeat;
-              background-image: url(../images/icons/action-sprites.png); }
+              background-image: url(../images/icons/action-sprites-v2.png); }
             .product-details .product-content .product-content-inner .body .product-action a.buy, .product-details .product-content .product-content-inner .body .product-action button.buy {
               display: -webkit-box;
               display: -ms-flexbox;
@@ -3187,7 +3187,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    background-image: url(../images/icons/service-sprites.png); }
+    background-image: url(../images/icons/service-sprites-v2.png); }
   .service:nth-child(1) .icon {
     background-position: 0 0; }
   .service:nth-child(2) .icon {

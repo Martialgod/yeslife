@@ -342,7 +342,7 @@
 		                            <div class="head">
 		                                
 		                                <!-- Title -->
-		                                <div class="top">
+		                                <div class="top" style="height: 60px;">
 		                                    <h4 class="title">
 		                                    	<a href="{{url('/shop/'.$v->slug)}}{{$refnourl}}"> 
 		                                    		{{$v->name}} 
@@ -365,7 +365,7 @@
 
 
 		                                    <span class="ratting">
-
+                                                <br>
 		                                    	@for( $i=0; $i<$v->ratings; $i++ )
 		                                    		<i class="fa fa-star"></i>
 		                                    	@endfor
