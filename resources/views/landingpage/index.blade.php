@@ -33,7 +33,7 @@
 	<!-- Hero Section Start -->
     <div class="hero-slider section" style="margin-top: -30px;">
 
-        <div id="slider" class="carousel slide" data-ride="carousel" >
+        <div class="carousel slide" data-ride="carousel" data-interval="8000" id="slider"   > {{--class="carousel slide" data-ride="carousel"--}}
           
             <ol class="carousel-indicators">
                 <li data-target="#slider" data-slide-to="0" class="active"></li>
@@ -43,66 +43,18 @@
 
             <div class="carousel-inner">
 
-                <div class="carousel-item">
-
-                    <!-- Hero Item Start -->
-                    {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01-v2.jpg); margin-top: 80px;">
-                        <div class="container">
-                            <div class="row">
-                              
-                                <div class="hero-content-wrap col">
-                                    
-                                    <div class="hero-image" style="width:100%">
-                                        {{--<img src="/landingpage/assets/images/slider/slider-product-1.png" alt=""> --}}
-                                    </div>
-
-                                    <div class="hero-content text-center" >
-                                        <h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
-                                        </h2>
-
-                                        <h1 id="" style="color:#fff;">
-                                            Don't Settle For<br/>Inferior CBD Oil! 
-                                        </h1>
-
-
-                                        <p id="" style="color:#fff; text-align:left">
-                                            ✓ #1 Most-stable, 
-                                            ✓ Water-soluble, ✓ highest-absorbing ,
-                                            <br> 
-                                            ✓ Fast-acting, 
-                                            ✓ NO addictive chemicals added
-                                            <br>
-
-                                            <a href="{{url('/shop')}}{{$refnourl}}">
-                                                <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
-                                            </a>
-                                            <br>
-                                            Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
-                                        </p>
-                                    </div><!--END hero-content text-center-->
-                                    
-                                </div><!--END hero-content-wrap col-->
-                                
-                            </div><!--END row -->
-                        </div><!--END container-->
-                    </div><!-- Hero Item End -->
-                  
-                </div><!--END carousel-item active-->
-
                 <div class="carousel-item active">
-                  
+
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02-v4.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01-v1.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
                                 <div class="hero-content-wrap col">
                                     
-                                    <div class="hero-image" style="width:35%">
-                                        {{--<img src="/landingpage/assets/images/slider/slider-product-1.png" alt=""> --}}
+                                    <div class="hero-image" style="width:35%;">
+                                        <img src="/landingpage/assets/images/slider/cbd-circle-flavor.png" alt=""  > 
                                     </div>
 
                                     <div class="hero-content text-center" >
@@ -116,10 +68,10 @@
 
                                         <p id="" style="color:#fff; text-align:left">
                                             
-                                            ✓ #1 Most-stable, 
-                                            ✓ Water-soluble, ✓ highest-absorbing ,
+                                            ✓ #1 Most-stable
+                                            ✓ Water-soluble ✓ highest-absorbing
                                             <br> 
-                                            ✓ Fast-acting, 
+                                            ✓ Fast-acting
                                             ✓ NO addictive chemicals added 
                                             <br>
 
@@ -137,14 +89,60 @@
                         </div><!--END container-->
                     </div><!-- Hero Item End -->
 
+           
+                </div><!--END carousel-item active-->
+
+                <div class="carousel-item ">
+
+                    <!-- Hero Item Start -->
+                    {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02-v1.jpg); margin-top: 80px;">
+                        <div class="container">
+                            <div class="row">
+                              
+                                <div class="hero-content-wrap col">
+                                    
+                                    <div class="hero-image" style="width:35%">
+                                        <img src="/landingpage/assets/images/slider/cbd-product-2.png" alt="">
+                                    </div>
+
+                                    <div class="hero-content text-center"  >
+                                        <h2>
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
+                                        </h2>
+
+                                        <h1 id="" style="color:#1d1f23;">
+                                            Honest. Simple.  <br> Natural.  Yes.Life
+
+                                        </h1>
+
+                                        <p id="" style="color:#000; text-align:left">
+                                            
+                                            We offer the most effective cbd that is engineered  to work <br> with your body and can help you take back your health, with the best nature as to offer.
+
+                                            <br/>
+                                            <a href="{{url('/shop')}}{{$refnourl}}">
+                                                <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
+                                            </a>
+                                            <br/>
+                                            Nourish your body with nature and life your best life.
+                                        </p>
+                                    </div><!--END hero-content text-center-->
+                                    
+                                </div><!--END hero-content-wrap col-->
+                                
+                            </div><!--END row -->
+                        </div><!--END container-->
+                    </div><!-- Hero Item End -->
+ 
                 </div><!--END carousel-item-->
 
 
                  <div class="carousel-item">
-                  
+
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-03.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01-v2.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
@@ -154,29 +152,25 @@
                                         {{--<img src="/landingpage/assets/images/slider/slider-product-1.png" alt=""> --}}
                                     </div>
 
-                                    <div class="hero-content text-center"  >
+                                    <div class="hero-content text-center" >
                                         <h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
                                         </h2>
 
-                                        <h1 id="" style="color:#1d1f23;">
-                                            Don't Settle For<br/>Inferior CBD Oil! 
+                                        <h1 id="" style="color:#fff;">
+                                            Hand in hand with <br> nature and science
                                         </h1>
 
-                                        <p id="" style="color:#000; text-align:left">
-                                            
-                                            ✓ #1 Most-stable, 
-                                            ✓ Water-soluble, ✓ highest-absorbing ,
-                                            <br> 
-                                            ✓ Fast-acting, 
-                                            ✓ NO addictive chemicals added
 
-                                            <br/>
+                                        <p id="" style="color:#fff; text-align:left">
+                                            YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
+                                            <br>
+
                                             <a href="{{url('/shop')}}{{$refnourl}}">
                                                 <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
                                             </a>
-                                            <br/>
-                                            Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
+                                            <br>
+                                            Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life.
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
@@ -185,6 +179,9 @@
                             </div><!--END row -->
                         </div><!--END container-->
                     </div><!-- Hero Item End -->
+                  
+               
+                  
 
                 </div><!--END carousel-item-->
 
