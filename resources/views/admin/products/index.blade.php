@@ -42,6 +42,7 @@
 	                    {{--<th>Description</th>--}}
 	                    <th>Slug</th>
 	                    <th>Category</th>
+	                    <th>Indexno</th>
 	                    <th>Default Price</th>
 	                    <th>Qty</th>
 	                    <th>Status</th>
@@ -92,6 +93,10 @@
                                     }}
                                 </span>
 
+	                        </td>
+
+	                        <td>
+	                           {{$a->indexno}}
 	                        </td>
 
 	                        <td width="">

@@ -53,9 +53,14 @@ class LandingPageController extends Controller
        
        	$this->setActiveTab();
 
-       	$products = ProductMstrView::where('stat', 1)
+       	/*$products = ProductMstrView::where('stat', 1)
        				->inRandomOrder()
-       				->paginate(4);
+       				->paginate(4); */
+
+        $products = ProductMstrView::where('stat', 1)
+                ->orderBy('totalsalesqty', 'DESC')
+                ->paginate(4);
+
 
         if( count($products) == 0 ){
             return view('landingpage.index', compact('products'));

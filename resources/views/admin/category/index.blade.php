@@ -37,6 +37,7 @@
 	                <tr>
 	                   	<th>ID</th>
 	                    <th>Name</th>
+	                    <th>Indexno</th>
 	                    <th>Status</th>
 	                    <th></th>
 	              </tr>
@@ -51,6 +52,8 @@
 	                        <td> {{$a->pk_category}}  </td>
 
 	                        <td> {{$a->description}} </td>
+
+	                        <td> {{$a->indexno}} </td>
 
 	                        <td style="color:{{ $a->stat == '1' ? 'green' : 'red'}} ;"> 
 	                            &nbsp;

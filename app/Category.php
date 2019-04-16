@@ -18,7 +18,7 @@ class Category extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['description', 'fk_createdby', 'fk_updatedby', 'stat'];
+    protected $fillable = ['description', 'fk_createdby', 'fk_updatedby', 'indexno', 'stat'];
 
 
     /**
@@ -28,6 +28,7 @@ class Category extends Model
   
         $common_rule = [
             'description'   =>  ['required','max:25'],
+            'indexno'       =>  ['required', 'numeric', 'min:0'],
         ];
 
 

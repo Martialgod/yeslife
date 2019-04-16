@@ -61,7 +61,7 @@ class CategoryController extends Controller
 
         }
 
-        $category = $category->orderBy('description', 'ASC')->paginate(10);
+        $category = $category->orderBy('indexno', 'ASC')->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
@@ -84,7 +84,12 @@ class CategoryController extends Controller
         }
 
         $this->setActiveTab();
-        return view('admin.category.create');
+
+        $maxindexno = DB::select("SELECT coalesce(max(indexno),0)+1 as indexno
+                    FROM category;
+                ");
+        $maxindexno = (count($maxindexno ) > 0) ? $maxindexno[0]->indexno : 0;
+        return view('admin.category.create', compact('maxindexno'));
 
     }//END create
 

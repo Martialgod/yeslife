@@ -258,21 +258,6 @@
                     <table style="" class="table"> 
 
                         <tbody>
-                        
-                            <tr ng-repeat="list in vm.msccategories">
-                                <td>
-                                    <span class="col-md-12" >
-
-                                        <input style="cursor: pointer;" id="cat_@{{$index}}" type="radio" name="category" ng-model="vm.category" value="@{{list.pk_category}}"  ng-change="vm.SearchProducts()"  >
-                                        
-                                        <label style="cursor: pointer;" for="cat_@{{$index}}"> 
-                                            @{{list.description}} 
-                                        </label> 
-
-                                    </span>
- 
-                                </td>
-                            </tr>
 
                             <tr>
                                 <td>
@@ -289,6 +274,23 @@
                                 </td>
                             </tr>
 
+                        
+                            <tr ng-repeat="list in vm.msccategories">
+                                <td>
+                                    <span class="col-md-12" >
+
+                                        <input style="cursor: pointer;" id="cat_@{{$index}}" type="radio" name="category" ng-model="vm.category" value="@{{list.pk_category}}"  ng-change="vm.SearchProducts()"  >
+                                        
+                                        <label style="cursor: pointer;" for="cat_@{{$index}}"> 
+                                            @{{list.description}} 
+                                        </label> 
+
+                                    </span>
+ 
+                                </td>
+                            </tr>
+
+                          
 
                         </tbody>
 

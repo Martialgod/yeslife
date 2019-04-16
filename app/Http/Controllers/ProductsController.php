@@ -77,7 +77,7 @@ class ProductsController extends Controller
 
         $products->where('isdeleted', 0);
 
-        $products = $products->orderBy('name', 'ASC')->paginate(10);
+        $products = $products->orderBy('indexno', 'ASC')->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
@@ -111,7 +111,14 @@ class ProductsController extends Controller
 
         $this->setActiveTab();
         $category = Category::getActiveCategory();
-        return view('admin.products.create', compact('category'));
+        $maxindexno = DB::select("SELECT coalesce(max(indexno),0)+1 as indexno
+                        FROM products 
+                        where isdeleted = 0;
+                    ");
+
+        $maxindexno = (count($maxindexno ) > 0) ? $maxindexno[0]->indexno : 0;
+        //dd($maxindexno);
+        return view('admin.products.create', compact('category', 'maxindexno'));
     
     }//END create
 

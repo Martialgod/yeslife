@@ -19,7 +19,7 @@ class Product extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['fk_category', 'name', 'description', 'slug', 'price', 'price2', 'discount', 'taxrate', 'shippingcost', 'uom', 'alertqty', 'pictxa', 'sku', 'weight', 'length', 'width', 'height', 'options', 'videoupload', 'videoshare', 'fk_createdby', 'fk_updatedby', 'isdeleted', 'fk_deletedby', 'deleted_at',  'stat'];
+    protected $fillable = ['fk_category', 'name', 'description', 'slug', 'price', 'price2', 'discount', 'taxrate', 'shippingcost', 'uom', 'alertqty', 'pictxa', 'sku', 'weight', 'length', 'width', 'height', 'options', 'videoupload', 'videoshare', 'fk_createdby', 'fk_updatedby', 'isdeleted', 'fk_deletedby', 'deleted_at', 'indexno', 'stat'];
 
 
 
@@ -34,6 +34,7 @@ class Product extends Model
             'slug'          =>  ['required','max:255'],
             'price'         =>  ['required','numeric', 'min:0'],
             'qty'           =>  ['required', 'numeric', 'min:0'],
+            'indexno'       =>  ['required', 'numeric', 'min:0'],
             //'alertqty'      =>  ['required', 'numeric', 'min:0'],
             'uom'           =>  ['required', 'max:6'],
             'discount'      =>  ['required','numeric', 'min:0', 'max:100'],

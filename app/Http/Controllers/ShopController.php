@@ -98,7 +98,7 @@ class ShopController extends Controller
             $products->orderBy('ratings', 'DESC');
         }
 
-        $products->orderBy('name', 'ASC');
+        $products->orderBy('indexno', 'ASC');
 
         $products = $products->paginate(20);
         
@@ -141,7 +141,7 @@ class ShopController extends Controller
     public function apishowcategories(Request $request)
     {
         //
-        $mscategory = Category::getActiveCategory();
+        $mscategory = Category::where('stat', 1)->orderBy('indexno', 'ASC')->get();
 
         return $mscategory;
    
