@@ -106,6 +106,8 @@ Route::get('/shop', 'ShopController@index');
 //search through post, since it will contain lots of params
 Route::post('/shop-search', 'ShopController@apisearch'); 
 
+Route::get('/shop-categories', 'ShopController@apishowcategories'); 
+
 // ?refid=33213 -- optional for refferal 
 Route::get('/shop/{slug}', 'ShopController@show_product');
 Route::get('/shop/{id}/reviews', 'ShopController@apireviews');

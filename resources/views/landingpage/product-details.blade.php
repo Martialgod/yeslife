@@ -338,7 +338,7 @@
                                 {{--hidden when angular search is activated--}}
                                 <tbody id="searchresultbody">
 
-                                     @foreach( $defaultproducts as $key => $v )
+                                    @foreach( $defaultproducts as $key => $v )
                                         <tr>
                                             <td>
 
@@ -373,7 +373,6 @@
                         </div>
                     </div>
 
- 
 
                 </div><!--END col-xl-3 col-lg-4 col-12 order-2-->
 

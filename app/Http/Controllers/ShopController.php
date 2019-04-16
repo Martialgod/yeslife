@@ -24,6 +24,9 @@ use App\ProductPriceListMstrView;
 use App\ProductReview;
 use App\ProductReviewMstrView;
 
+
+use App\Category;
+
 use App\User;
 
 class ShopController extends Controller
@@ -46,6 +49,7 @@ class ShopController extends Controller
 
         $this->setActiveTab();
 
+
         //products will be fetched through ajax request
         return view('landingpage.shop');
 
@@ -67,16 +71,36 @@ class ShopController extends Controller
         //return $request->all();
         $search = ( $request->search ) ? $request->search : null;
 
+        $category = ( $request->category ) ? $request->category : 'All';
+
+        $sortby = ( $request->sortby ) ? $request->sortby : 'bestsellers';
+
         $products = ProductMstrView::select();
 
         if( $search){
             $products->where('name', 'like', "%$search%");
         }
 
+        if( $category != 'All' ){
+            $products->where('fk_category', $category);
+        }
 
+   
         $products->where('stat', 1);
 
-        $products = $products->orderBy('name')->paginate(10);
+       
+        if( $sortby == 'bestsellers' ){
+            $products->orderBy('totalsalesqty', 'DESC');
+        }
+
+
+        if( $sortby == 'bestrated' ){
+            $products->orderBy('ratings', 'DESC');
+        }
+
+        $products->orderBy('name', 'ASC');
+
+        $products = $products->paginate(20);
         
         if( count($products) == 0 ){
             return ProductResource::collection($products);
@@ -86,12 +110,45 @@ class ShopController extends Controller
 
         $products = ProductPriceListMstrView::mapProductPriceList($products, $pricelist);
 
+
+        if( $sortby == 'priceasc' ){
+
+            $products = ProductPriceListMstrView::sortProductByPrice($products, 'asc');
+
+        }   
+
+        if( $sortby == 'pricedesc' ){
+
+            $products = ProductPriceListMstrView::sortProductByPrice($products, 'desc');
+
+        }
+
+       
  
         return ProductResource::collection($products);
    
     }//END apisearch
 
 
+
+    //call through api
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function apishowcategories(Request $request)
+    {
+        //
+        $mscategory = Category::getActiveCategory();
+
+        return $mscategory;
+   
+    }//END apishowcategoreis
+
+
+    
 
 
     /**

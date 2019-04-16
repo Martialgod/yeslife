@@ -151,4 +151,44 @@ class ProductPriceListMstrView extends Model
 
     }//END mapProductPriceListOneObject
 
+
+
+    public static function sortProductByPrice($products, $type){
+
+        $size =count($products);
+        for($i=0; $i<$size; $i++){
+            /* 
+             * Place currently selected element array[i]
+             * to its correct place.
+             */
+            for($j=$i+1; $j<$size; $j++)
+            {
+                /* 
+                 * Swap if currently selected array element
+                 * is not at its correct position.
+                 */
+                if( $type == 'asc'  && $products[$i]->cartprice > $products[$j]->cartprice ){
+
+                    $temp     = $products[$i];
+                    $products[$i] = $products[$j];
+                    $products[$j] = $temp;
+
+                }
+
+                elseif( $type == 'desc' && $products[$i]->cartprice < $products[$j]->cartprice  ){
+
+                    $temp     = $products[$j];
+                    $products[$j] = $products[$i];
+                    $products[$i] = $temp;
+
+                }
+                
+            }//END for
+
+        }//END for
+
+        return $products;
+
+    }//END sortProductByPrice
+
 }//END class

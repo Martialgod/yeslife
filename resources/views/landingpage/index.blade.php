@@ -53,7 +53,7 @@
                               
                                 <div class="hero-content-wrap col">
                                     
-                                    <div class="hero-image" style="width:35%">
+                                    <div class="hero-image" style="width:100%">
                                         {{--<img src="/landingpage/assets/images/slider/slider-product-1.png" alt=""> --}}
                                     </div>
 
@@ -95,7 +95,7 @@
                   
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02-v3.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02-v4.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               

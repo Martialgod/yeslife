@@ -13,6 +13,8 @@
 		var vm = this;
 
 		vm.search = null;
+		vm.category = 'All';
+		vm.sortby = 'bestsellers';
 		vm.mscproducts = [];
 		vm.navlinks = {};
 		vm.meta = {};
@@ -32,11 +34,43 @@
 
 		};
 
+		vm.LoadCategories = function(){
+
+			$http.get('/shop-categories?v='+Math.random(), {
+			}).then(function(response){
+				
+				//success
+				//console.log(response);
+
+				var data = response.data;
+
+				vm.msccategories = data;
+
+				hideCustomizeLoading(); //@GlobalScript.js
+
+
+			}, function(response){
+
+				//error
+				swal('Opps!', 'Something went wrong!', 'error');
+				console.log(response);
+
+			});
+
+		}; //END LoadCategories
+
 		vm.LoadProducts = function(url){
 
 			//showCustomizeLoading(); //@GlobalScript.js
 
 			var url = ( url ) ? url : '/shop-search?v='+Math.random();
+
+			//console.log(vm.sortby);
+
+
+			$('#btn-view-mode-list').removeClass('active');
+			$('#btn-view-mode-grid').removeClass('grid active');
+			$('#btn-view-mode-grid').addClass('grid active');
 
 			//console.log(url);
 			vm.mscproducts = [];
@@ -45,6 +79,8 @@
 
 			$http.post(url, {
 				'search': vm.search,
+				'category': vm.category,
+				'sortby': vm.sortby,
 			}).then(function(response){
 				
 				//success
@@ -142,9 +178,17 @@
 		//showCustomizeLoading(); //@GlobalScript.js
 		showCustomizeLoadingNoIcon(); //@GlobalScript.js
 		setTimeout(function(){
+
 			vm.LoadProducts(); //default load
+
+			setTimeout(function(){
+				vm.LoadCategories(); //default load
+			},500);//END setTimeout
+
+
 		},500);//END setTimeout
 
+		
 
 
 	}]);//END ShopController
