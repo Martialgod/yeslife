@@ -73,7 +73,7 @@ class ShopController extends Controller
 
         $category = ( $request->category ) ? $request->category : 'All';
 
-        $sortby = ( $request->sortby ) ? $request->sortby : 'bestsellers';
+        $sortby = ( $request->sortby ) ? $request->sortby : 'category'; //default
 
         $products = ProductMstrView::select();
 
@@ -98,7 +98,7 @@ class ShopController extends Controller
             $products->orderBy('ratings', 'DESC');
         }
 
-        $products->orderBy('indexno', 'ASC')->orderBy('name', 'DESC');
+        $products->orderBy('indexno', 'ASC')->orderBy('name', 'DESC'); //default
 
         $products = $products->paginate(20);
         

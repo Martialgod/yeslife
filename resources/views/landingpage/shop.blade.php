@@ -53,6 +53,7 @@
                                 <div class="product-short">
                                     <p>Sort by</p>
                                     <select class="nice-select" ng-model="vm.sortby" ng-change="vm.LoadProducts()">
+                                        <option value="category">Category</option>
                                         <option value="bestsellers">Best sellers</option>
                                         <option value="bestrated">Best rated</option>
                                         <option value="priceasc">Price: low to high</option>

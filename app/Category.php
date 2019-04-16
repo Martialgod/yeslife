@@ -28,7 +28,7 @@ class Category extends Model
   
         $common_rule = [
             'description'   =>  ['required','max:25'],
-            'indexno'       =>  ['required', 'numeric', 'min:0'],
+            'indexno'       =>  ['required', 'numeric'],
         ];
 
 

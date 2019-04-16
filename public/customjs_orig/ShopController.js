@@ -14,7 +14,7 @@
 
 		vm.search = null;
 		vm.category = 'All';
-		vm.sortby = 'bestsellers';
+		vm.sortby = 'category';
 		vm.mscproducts = [];
 		vm.navlinks = {};
 		vm.meta = {};

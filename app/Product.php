@@ -34,7 +34,7 @@ class Product extends Model
             'slug'          =>  ['required','max:255'],
             'price'         =>  ['required','numeric', 'min:0'],
             'qty'           =>  ['required', 'numeric', 'min:0'],
-            'indexno'       =>  ['required', 'numeric', 'min:0'],
+            'indexno'       =>  ['required', 'numeric'],
             //'alertqty'      =>  ['required', 'numeric', 'min:0'],
             'uom'           =>  ['required', 'max:6'],
             'discount'      =>  ['required','numeric', 'min:0', 'max:100'],
