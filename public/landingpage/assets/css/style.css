@@ -216,7 +216,7 @@ input::placeholder, textarea::placeholder {
 .bg-dark {
   /*-- background-color: #222222 !important; ---*/
   background-image:url('../images/bg/footerbg-middle.jpg');
-  background-repeat:no-repeat;  
+  background-repeat: repeat-x;  
   }
 
 .bg-theme {
