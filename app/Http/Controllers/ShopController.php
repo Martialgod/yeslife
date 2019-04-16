@@ -98,7 +98,7 @@ class ShopController extends Controller
             $products->orderBy('ratings', 'DESC');
         }
 
-        $products->orderBy('indexno', 'ASC');
+        $products->orderBy('indexno', 'ASC')->orderBy('name', 'DESC');
 
         $products = $products->paginate(20);
         

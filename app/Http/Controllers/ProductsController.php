@@ -77,7 +77,7 @@ class ProductsController extends Controller
 
         $products->where('isdeleted', 0);
 
-        $products = $products->orderBy('indexno', 'ASC')->paginate(10);
+        $products = $products->orderBy('indexno', 'ASC')->orderBy('name', 'DESC')->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);

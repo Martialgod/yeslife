@@ -61,7 +61,7 @@ class CategoryController extends Controller
 
         }
 
-        $category = $category->orderBy('indexno', 'ASC')->paginate(10);
+        $category = $category->orderBy('indexno', 'ASC')->orderBy('description', 'DESC')->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
