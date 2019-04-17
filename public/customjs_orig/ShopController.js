@@ -14,13 +14,13 @@
 
 		vm.search = null;
 		vm.category = 'All';
-		vm.sortby = 'category';
+		vm.sortby = 'default';
 		vm.mscproducts = [];
 		vm.navlinks = {};
 		vm.meta = {};
 
-		$('#div-toolbar').prop('hidden', true);
-		$('#div-products').prop('hidden', true);
+		//$('#div-toolbar').prop('hidden', true);
+		//$('#div-products').prop('hidden', true);
 
 		vm.StringifyStars = function(){
 
@@ -74,8 +74,8 @@
 
 			//console.log(url);
 			vm.mscproducts = [];
-			$('#div-toolbar').prop('hidden', true);
-			$('#div-products').prop('hidden', true);
+			//$('#div-toolbar').prop('hidden', true);
+			//$('#div-products').prop('hidden', true);
 
 			$http.post(url, {
 				'search': vm.search,
@@ -118,8 +118,9 @@
 				//@customjs/AppServices.js
 				//GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
 				hideCustomizeLoading(); //@GlobalScript.js
-				$('#div-toolbar').prop('hidden', false);
-				$('#div-products').prop('hidden', false);
+				//$('#div-toolbar').prop('hidden', false);
+				//$('#div-products').prop('hidden', false);
+
 
 			}, function(response){
 
@@ -130,8 +131,8 @@
 				//@customjs/AppServices.js
 				//GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
 				hideCustomizeLoading(); //@GlobalScript.js
-				$('#div-toolbar').prop('hidden', false);
-				$('#div-products').prop('hidden', false);
+				//$('#div-toolbar').prop('hidden', false);
+				//$('#div-products').prop('hidden', false);
 
 			});
 
@@ -183,7 +184,7 @@
 
 			setTimeout(function(){
 				vm.LoadCategories(); //default load
-			},500);//END setTimeout
+			},1000);//END setTimeout
 
 
 		},500);//END setTimeout

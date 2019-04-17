@@ -73,7 +73,7 @@ class ShopController extends Controller
 
         $category = ( $request->category ) ? $request->category : 'All';
 
-        $sortby = ( $request->sortby ) ? $request->sortby : 'category'; //default
+        $sortby = ( $request->sortby ) ? $request->sortby : 'default'; //default
 
         $products = ProductMstrView::select();
 

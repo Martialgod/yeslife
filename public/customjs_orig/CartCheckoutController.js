@@ -16,7 +16,7 @@
 		vm.statusmsg = 'retrieving cart...';
 
 		vm.isoncart = true; //tregger show or hide cart and checkout forms
-		//$('#divcheckout').hide();
+		$('#divcheckout').hide();
 		$('#nodisplay-div').prop('hidden', true);
 		$('#cart-div').prop('hidden', true);
 		$('#divcheckout').prop('hidden', true);

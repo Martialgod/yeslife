@@ -32,14 +32,14 @@
 
     <div class="product-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50" id="main-div" ng-app="app" ng-controller="ShopController as vm" >
         
-        <div class="container">
+        <div class="container" ng-cloak> {{-- ng-cloak = hides angularjs initial template load --}}
 
             <div class="row">
 
-                <div class="col-xl-9 col-lg-8 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
+                <div class="col-xl-9 col-lg-8 col-12 order-2 order-lg-2 mb-sm-50 mb-xs-50">
 
                     <!-- Shop Toolbar Start -->
-                    <div class="row" id="div-toolbar" hidden>
+                    <div class="row" id="div-toolbar" >
                         <div class="col">
                             <div class="shop-toolbar">
                                 <div class="product-view-mode">
@@ -52,8 +52,8 @@
 
                                 <div class="product-short">
                                     <p>Sort by</p>
-                                    <select class="nice-select" ng-model="vm.sortby" ng-change="vm.LoadProducts()">
-                                        <option value="category">Categories</option>
+                                    <select id="sortby" class="nice-select" ng-model="vm.sortby" ng-change="vm.LoadProducts()">
+                                        <option value="default">Default</option>
                                         <option value="bestsellers">Best sellers</option>
                                         <option value="bestrated">Best rated</option>
                                         <option value="priceasc">Price: low to high</option>
@@ -71,7 +71,7 @@
                     {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
 
-                    <div class="shop-product-wrap grid row" id="div-products" hidden>
+                    <div class="shop-product-wrap grid row" id="div-products" >
 
                         <!-- Product Item Start -->
                         <div class="col-xl-4 col-lg-4 col-sm-6 col-12 mb-30"  ng-repeat="list in vm.mscproducts">
@@ -222,7 +222,7 @@
 
 
 
-                <div class="col-xl-3 col-lg-4 col-12 order-2 order-lg-1 pr-30 pr-sm-15 pr-md-15 pr-xs-15">
+                <div class="col-xl-3 col-lg-4 col-12 order-1 order-lg-1 pr-30 pr-sm-15 pr-md-15 pr-xs-15">
 
 
                     <div class="sidebar" style="margin-bottom: -30px;">
