@@ -184,7 +184,7 @@
 
 			setTimeout(function(){
 				vm.LoadCategories(); //default load
-			},1000);//END setTimeout
+			},500);//END setTimeout
 
 
 		},500);//END setTimeout
