@@ -30,7 +30,7 @@ class Product extends Model
   
         $common_rule = [
             'name'          =>  ['required','max:255'],
-            'description'   =>  ['required','max:500'],
+            'description'   =>  ['required'],
             'slug'          =>  ['required','max:255'],
             'price'         =>  ['required','numeric', 'min:0'],
             'qty'           =>  ['required', 'numeric', 'min:0'],

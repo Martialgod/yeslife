@@ -22,7 +22,7 @@ class PostMstrView extends Model
                 ->where('stat', 'Posted')
                 ->where('pk_posts', '<>', $pk_posts)
                 ->orderBy('sourcedate', 'DESC')
-                ->limit(5)
+                ->limit(3)
                 ->get();
 
     }//END recentPosts

@@ -34,55 +34,103 @@
         <div class="about-shape two rellax" data-rellax-speed="3" data-rellax-percentage="0.5"><img src="/landingpage/assets/images/shape/about-shape-2.png" alt=""></div>
        
         <div class="container">
-            <div class="row align-items-center">
-                
-                <!-- About Image Start -->
-                <div class="col-lg-6 col-12 order-1 order-lg-2 mb-30">
-                    <div class="about-image masonry-grid row row-7">
-                        <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-1.jpg" alt=""></div>
-                        <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-2.jpg" alt=""></div>
-                        <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-3.jpg" alt=""></div>
-                        <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-4.jpg" alt=""></div>
-                    </div><!--END about-image masonry-grid row row-7-->
-                </div><!-- About Image End -->
-                
-                <!-- About Content Start -->
-                <div class="col-lg-6 col-12 mr-auto order-2 order-lg-1 mb-30">
-                    <div class="about-content about-content-1">
-                        <h3>More About Yes.Life</h2>
-                        <h1>Know What You're Buying</h1>
-                        <div class="desc">
-                            <h2 style="color:#333;">What is CBD?</h2>
-                            <p>Each one of us are born with an Endocannabinoid System (ECS) in our bodies which regulates every metabolic process 
-                            in the body, such as pain sensation, immunity, stress management, temperature regulation, sleep, and more.</p> 
-                            <p>Just like muscles need protein to become stronger, your Endocannabinoid System also needs nutrients (called cannabinoids) 
-                            to function properly to reduce pain, inflammation, anxieties, or other maladies in the body.  That's where Cannabidiol (or CBD) 
-                            comes in - a very healthy nutrient.</p> 
-                            <p>According to many researchers, CBD may be the single most important cannabinoid ever discovered.</p>
-                        </div>
-                        <div class="desc">
-                            <h2 style="color:#333;">THC vs CBD</h2>
-                            <p>THC (Δ9-tetrahydrocannabinol) is the psychoactive portion of cannabis and is commonly found in marijuana in higher amounts and 
-                            is very low (if any) in the hemp plant.  
-                            <p>CBD is “a cannabinoid devoid of psychoactive effect.” In other words, you can't get "high" from CBD! After THC
-                            (Δ9-tetrahydrocannabinol), CBD is by far the most studied natural cannabinoid, and it is gaining in popularity faster than THC because 
-                            of its healthy properties without the drug side attached to it.</p>
-                        </div>
-                        <div class="desc">
-                            <h2 style="color:#333;">Why Hemp (NOT Marijuana)?</h2>
-                            <p>Although hemp and marijuana are both cannabis, they have distinctive biochemical compositions and uses. Marijuana is very high in THC and 
-                            much lower in CBD, while Hemp is the opposite, especially industrial hemp, where CBD is very high and THC is so low that you’re not worried 
-                            about getting a "high" from it.</p> 
+            <div class="row">
 
-                            <p>In fact, industrial hemp has over 25,000 different applications and is one of the healthiest plants on the planet.  You find hemp protein 
-                            in many of the top rated health food stores, which can provide 15g of protein per scoop. You can find hemp seeds in stores like Costco, which 
-                            provide extraordinary amounts of healthy omega oils. There are also hemp tinctures found nationwide that help your body get other essential 
-                            nutrients it needs to function properly.</p> 
-                        </div>                                  
-                    </div><!--END about-content about-content-1-->
-                </div><!-- About Content End -->
+
+                <div class="row col-md-12">
+
+                    <!-- About Image Start -->
+                    <div class="col-lg-6 col-12 order-1 order-lg-2 mb-30">
+                        <div class="about-image masonry-grid row row-7">
+                            <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-1.jpg" alt=""></div>
+                            <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-2.jpg" alt=""></div>
+                            <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-3.jpg" alt=""></div>
+                            <div class="col-6 col"><img src="/landingpage/assets/images/about/about-1-4.jpg" alt=""></div>
+                        </div><!--END about-image masonry-grid row row-7-->
+                    </div><!-- About Image End -->
+
+                    
+                    <!-- About Content Start -->
+                    <div class="col-lg-6 col-12 mr-auto order-2 order-lg-1 mb-30">
+                        <div class="about-content about-content-1">
+                            <h1>Our Company</h1>
+                            <div class="desc">
+                                
+                                <p>
+                                    We focus on providing the natural solutions that are known to work.
+                                </p>
+
+                                <p>
+                                    We focus on smart science, high quality products, and being honest.
+                                </p>
+
+                                <p>
+                                    We focus on those seeking better health, no matter what challenges they may face in it.  
+                                </p>
+                                
+                                <p>
+                                   At Yes.Life, we focus on you saying YES to LIFE again. 
+                                </p>
+
+                            </div>
+                                                       
+                        </div><!--END about-content about-content-1-->
+                    </div><!-- About Content End -->
+                    
+                  
+                </div><!--END row-->
+
+
+
+
+                <div class="col-md-12 ">
+                    <br><br>
+                    <h1>Our Cause</h1>
+                    <br>
+                    <p>
+                        It began with seeing the amazing benefits of CBD in our own lives. Unfortunately, there was so much different information and noise out there – “Is this true?” – “Is this false?” – “What am I reading!?” – we didn’t know what to believe. With so many different products at different price points to compound it all, our heads were spinning. We were lost.
+                        
+                    </p>      
+
+                    <p>
+                        But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, YES.LIFE emerged. Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
+                    </p>  
+
+                    <p>
+                        Our cause stems from making our customers’ lives better. We listen to their needs and empower them to discover better health through the right products – the products nature gave us first – with the help of smarter science. 
+                    </p>
+
+                    <p>
+                        That’s it.
+                    </p>
+
+                    <p>
+                       
+                        Honest. Simple. Natural.
+                        
+                    </p>  
+
+                    <p>
+                        Yes.Life
+                    </p>  
+   
+
+                    
+                </div><!--END col-md-12-->
+
+
+                <div class="col-md-12" >
+                    <br><br>
+                    <h1 style="text-align: center;"> About our YES Nano Technology </h1>
+                    <br>
+                    <p>
+                        Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YES Nano technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible
+                    </p>
+                </div>
+
+
                 
-            </div><!--END row align-items-center-->
+            </div><!--END row-->
         </div><!--END container-->
         
     </div><!-- About Section End -->

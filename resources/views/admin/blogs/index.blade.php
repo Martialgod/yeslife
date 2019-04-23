@@ -69,7 +69,19 @@
                                 </span>
 	                        </td>
 
-	                        <td> {{$a->stat}} </td>
+	                        @php
+	                        	$statcolor = 'grey';
+	                        	if( $a->stat == 'Posted' ){
+	                        		$statcolor = 'green';
+	                        	}
+	                        	elseif( $a->stat == 'In-Active' ){
+	                        		$statcolor = 'red';
+	                        	}
+	                        @endphp
+	                        <td style="color:{{$statcolor}}"> 
+	                            {{ $a->stat }} 
+
+	                        </td>
 
 
 	                        <td> {{ date_format( date_create($a->sourcedate), 'd M, Y' ) }} </td>

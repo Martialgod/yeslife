@@ -45,17 +45,22 @@
                                 <div class="myaccount-content ">    
 
                                     <div class="row col-md-12">
-                                        
-                                        @include('landingpage.layouts.facebookshare')
+
+                                        @include('landingpage.layouts.facebookshare')   
 
                                         &nbsp;&nbsp;&nbsp;
 
                                         @include('landingpage.layouts.twittershare')
-
+                                        
                                     </div>
 
+                                    <br>
+                                    Invite anyone using your affiliate link
 
-                                    
+                                    <a href="{{url('/')}}?refno={{Auth::user()->affiliate_token}}" title="" target="_blank" style="color:#0e76bc;">
+                                        https://yes.life?refno={{Auth::user()->affiliate_token}}
+                                    </a>
+
                                     <hr>
                                         
                                     <h3>Downline   </h3>

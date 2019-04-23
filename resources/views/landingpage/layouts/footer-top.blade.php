@@ -9,7 +9,7 @@
                 <div class="footer-widget">
                     <img src="/landingpage/assets/images/b&w-top-logo_slide.png" alt="">
                     <p>
-                        We provide the best CBD oil in almost all US states.
+                        We ship to all US states.
                     </p>
                     <p>
                         3855 S 500 W Suite D 

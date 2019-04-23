@@ -120,10 +120,9 @@
                                             
                                             We offer the most effective cbd that is engineered  to work <br> with your body and can help you take back your health, with the best nature as to offer.
 
-                                            <br/>
-                                            <a href="{{url('/shop')}}{{$refnourl}}">
+                                            {{--<a href="{{url('/shop')}}{{$refnourl}}">
                                                 <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
-                                            </a>
+                                            </a> --}}
                                             <br/>
                                             Nourish your body with nature and life your best life.
                                         </p>
@@ -164,11 +163,11 @@
 
                                         <p id="" style="color:#fff; text-align:left">
                                             YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
-                                            <br>
+                                          
 
-                                            <a href="{{url('/shop')}}{{$refnourl}}">
+                                            {{--<a href="{{url('/shop')}}{{$refnourl}}">
                                                 <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
-                                            </a>
+                                            </a> --}}
                                             <br>
                                             Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life.
                                         </p>
@@ -212,11 +211,16 @@
            <div class="row">
                 <div class="col">
                     <div class="section-title-2">
-                        <h1>Do You Know HEMP?</h1>
+                        <h1> Start saying YES to life. </h1>
+                        <p>
+                            Each of our products is formulated with our proprietary YES Nano Technology for greater absorption and distribution throughout the body.
+                        </p>
+                        <br>
+                        {{--<h1>Do You Know HEMP?</h1>
                         <p>It is a simple, unassuming plant and has been known for centuries for its amazing medical properties.</p>
                         <p>At YES.LIFE we have found the best way to deliver these properties, with <strong>The Most Water Soluble</strong> CBD on the 
                            market our CBD doesn't get flushed out of your intricate system, it gets delivered right where it should.</p>
-                        <p>Your Body</p>
+                        <p>Your Body</p> --}}
                     </div>
                 </div>
             </div><!-- Section Title End -->
@@ -230,7 +234,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/highest-quality-hemp.png" alt="">
+                        <img src="/landingpage/assets/images/product/circle-banner-v4-001.png" alt="">
                         <h4 class="title">Highest Quality Hemp</h4>
                         
                     </div>
@@ -242,7 +246,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/most-water-soluble.png" alt="">
+                        <img src="/landingpage/assets/images/product/circle-banner-v4-002.png" alt="">
                         <h4 class="title">Most Water Soluble</h4>
                         
                     </div>
@@ -254,7 +258,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/highest-absortion.png" alt="">
+                        <img src="/landingpage/assets/images/product/circle-banner-v4-003.png" alt="">
                         <h4 class="title">Highest Absortion</h4>
                         
                     </div>
@@ -266,7 +270,7 @@
                     <!-- Image -->
                     <div class="product-image">
                         <!-- Image -->
-                        <img src="/landingpage/assets/images/product/source-in-usa.png" alt="">
+                        <img src="/landingpage/assets/images/product/circle-banner-v4-004.png" alt="">
                         <h4 class="title">Souced in USA</h4>
                         
                     </div>
