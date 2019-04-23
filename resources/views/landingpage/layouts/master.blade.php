@@ -35,6 +35,14 @@
     </script>
 
 
+    <!--leaddyno affiliate code -->
+    {{--<script type="text/javascript" src="https://static.leaddyno.com/js"></script>
+    <script>
+      LeadDyno.key = "4e4aa7fc362a674eec1a9780884d24f3799edc09";
+      LeadDyno.recordVisit();
+      LeadDyno.autoWatch();
+    </script> --}}
+
 
     <title>@yield('title')</title>
 
@@ -169,8 +177,6 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-
-    
     {{--
         Generated @AppServiceProvider.php
         required to all page; determine if user is currently logged in. 
@@ -204,6 +210,12 @@
 
         @include('landingpage.layouts.subscription')
         
+        
+        {{--<form action="https://app.leaddyno.com/provision" method="post">
+          Enter Email: <input name="email"/ required="">
+          <input type="hidden" name="key" value="4e4aa7fc362a674eec1a9780884d24f3799edc09"/>
+          <input type="submit" value="Join Our Affiliate Program"/>
+        </form> --}}
     
 
 
