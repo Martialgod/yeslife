@@ -500,6 +500,8 @@ class OrderController extends Controller
             $ordermstr = OrderMstrView::findOrFail($ordermstr->pk_ordermstr);
             $orderdtls = OrderDtlView::where('fk_ordermstr', $ordermstr->pk_ordermstr)->orderBy('indexno', 'ASC')->get();
 
+            
+
             //email to the customer
             $when = Carbon::now()->addMinutes(1);
             Mail::to($users['email'], $users['fullname'])->later($when, new SendOrderConfirmation($ordermstr, $orderdtls, $users));
@@ -511,6 +513,8 @@ class OrderController extends Controller
             Mail::to(env('MAIL_USERNAME'))
                 ->cc($orderemails)
                 ->later($when, new SendOrderConfirmation($ordermstr, $orderdtls, $users));
+
+
          
             //Mail::to($users['email'], $users['fullname'])->queue(new SendOrderConfirmation($ordermstr, $orderdtls, $users));
             

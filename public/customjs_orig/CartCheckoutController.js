@@ -16,7 +16,7 @@
 		vm.statusmsg = 'retrieving cart...';
 
 		vm.isoncart = true; //tregger show or hide cart and checkout forms
-		$('#divcheckout').hide();
+		//$('#divcheckout').hide();
 		$('#nodisplay-div').prop('hidden', true);
 		$('#cart-div').prop('hidden', true);
 		$('#divcheckout').prop('hidden', true);
@@ -364,6 +364,11 @@
 			//$('#divcheckout').show();
 			$('#cart-div').prop('hidden', true);
 			$('#divcheckout').prop('hidden', false);
+
+			LeadDyno.recordPurchase();	
+
+			console.log(LeadDyno);
+
 		};//END vm.ShowCheckout
 
 
@@ -407,6 +412,7 @@
                 		location.href = '/order/success/'+data.trxno;
                 	}//END if vm.referrer_token
 					
+					LeadDyno.recordPurchase();	
 
                 }else{
                 	//GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
@@ -631,7 +637,7 @@
         	};
 
         	//rallypay
-        	/*vm.paymentapi = {
+        	vm.paymentapi = {
         		amount: 100,
             	currency: 'usd',
             	email: 'test@gmail.com',
@@ -648,7 +654,7 @@
 
 	        vm.SubmitCart();
 
-        	return; */
+        	return; 
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js
@@ -669,6 +675,7 @@
 	                //$.unblockUI('#main-div');
 	                hideCustomizeLoading(); //@GlobalScript.js
 
+	                LeadDyno.recordPurchase();
 
 	                //order store db here....
 	                //console.log('order store db here....');

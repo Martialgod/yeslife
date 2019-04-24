@@ -25,23 +25,23 @@
 
     
     <!-- Global site tag (gtag.js) - Google Analytics --> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135977195-1"></script>
+    {{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135977195-1"></script>
     <script>
        window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
        gtag('js', new Date());
 
        gtag('config', 'UA-135977195-1');
-    </script>
+    </script> --}}
 
 
     <!--leaddyno affiliate code -->
-    {{--<script type="text/javascript" src="https://static.leaddyno.com/js"></script>
+    <script type="text/javascript" src="https://static.leaddyno.com/js"></script>
     <script>
       LeadDyno.key = "4e4aa7fc362a674eec1a9780884d24f3799edc09";
       LeadDyno.recordVisit();
       LeadDyno.autoWatch();
-    </script> --}}
+    </script>
 
 
     <title>@yield('title')</title>
