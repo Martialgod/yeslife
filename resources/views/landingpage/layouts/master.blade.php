@@ -23,16 +23,6 @@
     })(window,document,'script','dataLayer','GTM-M82X8X4');</script>
     <!-- End Google Tag Manager -->
 
-    
-    <!-- Global site tag (gtag.js) - Google Analytics --> 
-    {{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135977195-1"></script>
-    <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'UA-135977195-1');
-    </script> --}}
 
 
     <!--leaddyno affiliate code -->
