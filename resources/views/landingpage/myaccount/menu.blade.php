@@ -31,9 +31,9 @@
             <i class="fa fa-user"></i>Account
         </a>
 
-        <a href="{{url('/myaccount/affiliate')}}" class="{{(session('myaccount_tab') == 'Affiliate') ? 'active' : ''}}" >
+        {{--<a href="{{url('/myaccount/affiliate')}}" class="{{(session('myaccount_tab') == 'Affiliate') ? 'active' : ''}}" >
             <i class="fa fa-address-book-o"></i>Affiliate
-        </a>
+        </a> --}}
 
         <a href="{{url('/logout')}}"><i class="fa fa-sign-out"></i>Logout</a>
 

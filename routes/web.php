@@ -28,6 +28,22 @@ Route::get('/twilio', function(){
    
 });
 
+Route::get('/curl', function(){
+
+    $curl = curl_init();
+    
+    //curl_setopt($curl, CURLOPT_URL, 'https://api.leaddyno.com/v1/purchases?key=4e4aa7fc362a674eec1a9780884d24f3799edc09');
+
+    curl_setopt($curl, CURLOPT_URL, 'https://api.leaddyno.com/v1/visitors?key=4e4aa7fc362a674eec1a9780884d24f3799edc09');
+
+    $result = curl_exec($curl);
+
+    curl_close($curl);
+
+    dd($result);
+
+});
+
 
 //sample
 Route::get('/encrypt', function(){
@@ -162,7 +178,7 @@ Route::get('/myaccount/address', 'MyAccountController@address');
 Route::put('/myaccount/address', 'MyAccountController@updateaddress');
 Route::get('/myaccount/details', 'MyAccountController@details');
 Route::put('/myaccount/details', 'MyAccountController@updatedetails');
-Route::get('/myaccount/affiliate', 'MyAccountController@affiliate');
+//Route::get('/myaccount/affiliate', 'MyAccountController@affiliate');
 
 
 Route::post('/logout', 'RegisterController@destroy');

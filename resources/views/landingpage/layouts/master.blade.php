@@ -28,9 +28,13 @@
     <!--leaddyno affiliate code -->
     <script type="text/javascript" src="https://static.leaddyno.com/js"></script>
     <script>
-      LeadDyno.key = "4e4aa7fc362a674eec1a9780884d24f3799edc09";
-      LeadDyno.recordVisit();
-      LeadDyno.autoWatch();
+
+        LeadDyno.key = "4e4aa7fc362a674eec1a9780884d24f3799edc09";
+        LeadDyno.recordVisit();
+        LeadDyno.autoWatch();
+
+        //LeadDyno.devTools.reset();
+
     </script>
 
 
@@ -146,9 +150,6 @@
             .toast-broadcast .toast-message {
               color: #000;
             }
-
-
-
 
 
     </style>
@@ -297,21 +298,6 @@
             "showMethod": "slideDown",
             "hideMethod": "slideUp"
         }
-
-
-        $(document).ready(function(){
-
-            //reset cart count based on cookie if user is not loggedin
-            //if loggedin then cart count is equals to db qty
-            if( $("#isloggedin").val() == 'no' ){
-
-                updateCartCookieCount();//GlobalScript.js
-
-            }
-           
-            //deleteAllCartCookies();
-            //console.log( getCartCookies() );
-        });
 
 
     </script>
