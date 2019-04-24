@@ -504,7 +504,7 @@ class OrderController extends Controller
 
 
             
-            /*
+            
             //email to the customer
             $when = Carbon::now()->addMinutes(1);
             Mail::to($users['email'], $users['fullname'])->later($when, new SendOrderConfirmation($ordermstr, $orderdtls, $users));
@@ -517,10 +517,8 @@ class OrderController extends Controller
                 ->cc($orderemails)
                 ->later($when, new SendOrderConfirmation($ordermstr, $orderdtls, $users));
 
-            */
             
-
-
+ 
          
             //Mail::to($users['email'], $users['fullname'])->queue(new SendOrderConfirmation($ordermstr, $orderdtls, $users));
             
