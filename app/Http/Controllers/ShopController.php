@@ -213,8 +213,8 @@ class ShopController extends Controller
         //
         
         //active tab
-        $products = ProductMstrView::find($id);
-
+        $products = ProductMstrView::where('pk_products', $id)->where('stat', 1)->first();
+        //return $products;
         if( !$products ){
             return response()->json('not found');
         }

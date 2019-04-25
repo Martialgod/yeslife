@@ -212,7 +212,8 @@ class DatabaseSeeder extends Seeder
             'stat'=>1
         ]); */
 
-        DB::table('permalink')->insert([
+        
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 1050,
             'method'=> 'LIST',
             'description'=> 'Flavors',
@@ -303,7 +304,7 @@ class DatabaseSeeder extends Seeder
             'family'=> 'productgroup.index',
             'indexno'=> 2,
             'stat'=>1
-        ]); 
+        ]); */
 
 
     }
