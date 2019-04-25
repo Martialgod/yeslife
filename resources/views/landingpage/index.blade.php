@@ -271,7 +271,7 @@
                     <div class="product-image">
                         <!-- Image -->
                         <img src="/landingpage/assets/images/product/circle-banner-v4-004.png" alt="">
-                        <h4 class="title">Souced in USA</h4>
+                        <h4 class="title">Sourced in USA</h4>
                         
                     </div>
              

@@ -120,7 +120,7 @@
 
 
 		        <div class="form-group">
-		            <label for="options">Options  </label>
+		            <label for="options">Options </label>
 		            <input type="text" class="form-control" id="options" name="options" placeholder="" maxlength="255"  value="{{$products->options}}">
 		        </div>
 

@@ -42,8 +42,9 @@
 	                    {{--<th>Description</th>--}}
 	                    <th>Slug</th>
 	                    <th>Category</th>
+	                    {{--<th>Flavors</th> --}}
 	                    <th>Indexno</th>
-	                    <th>Default Price</th>
+	                    <th>Price</th>
 	                    <th>Qty</th>
 	                    <th>Status</th>
 	                    <th></th>
@@ -62,7 +63,7 @@
 	           
 	                        	<span data-toggle="tooltip" title="{{$a->name}}" style="cursor: help;">
                                     {{
-                                        (strlen($a->name)) > 20 ? substr($a->name,0,20).'..' : $a->name 
+                                        (strlen($a->name)) > 15 ? substr($a->name,0,15).'..' : $a->name 
                                     }}
                                 </span>
 
@@ -80,7 +81,7 @@
 
 	                        	<span data-toggle="tooltip" title="{{$a->slug}}" style="cursor: help;">
                                     {{
-                                        (strlen($a->slug)) > 10 ? substr($a->slug,0,10).'..' : $a->slug 
+                                        (strlen($a->slug)) > 6 ? substr($a->slug,0,6).'..' : $a->slug 
                                     }}
                                 </span>
 
@@ -89,11 +90,19 @@
 	                        <td> 
 	                        	<span data-toggle="tooltip" title="{{$a->category}}" style="cursor: help;">
                                     {{
-                                        (strlen($a->category)) > 10 ? substr($a->category,0,10).'..' : $a->category 
+                                        (strlen($a->category)) > 6 ? substr($a->category,0,6).'..' : $a->category 
                                     }}
                                 </span>
 
 	                        </td>
+
+	                        {{--<td>
+	                        	<span data-toggle="tooltip" title="{{$a->options}}" style="cursor: help;">
+                                    {{
+                                        (strlen($a->options)) > 4 ? substr($a->options,0,4).'..' : $a->options 
+                                    }}
+                                </span>
+	                        </td> --}}
 
 	                        <td>
 	                           {{$a->indexno}}
