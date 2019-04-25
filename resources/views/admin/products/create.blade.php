@@ -31,6 +31,19 @@
 
         	<div class="col-md-4">
 
+        		<div class="form-group">
+		            <label for="fk_productgroup">Product Group <span class="label-required">*</span> </label>
+		            <select name="fk_productgroup" id="fk_productgroup" class="form-control" required="">
+		                @foreach($productgroup as $key => $v)
+		                    <option value="{{$v->pk_productgroup}}" {{ ($v->pk_productgroup == old('fk_productgroup') ) ? 'selected' :'' }}> 
+		                    	{{$v->name}} 
+		                    </option>
+		                @endforeach
+		            </select>
+		          
+		        </div>
+
+
 
 		        <div class="form-group">
 	                <label for="name">Product Name <span class="label-required">*</span> </label>
@@ -176,6 +189,19 @@
                     <input type="number" class="form-control" id="indexno" name="indexno" placeholder="" required="" value="{{$maxindexno}}" >
                   
                 </div>
+
+                <div class="form-group">
+		            <label for="fk_flavors">Flavor <span class="label-required"></span> </label>
+		            <select name="fk_flavors" id="fk_flavors" class="form-control" >
+		            	<option value="">Not Applicable</option>
+		                @foreach($flavors as $key => $v)
+		                    <option value="{{$v->pk_flavors}}" {{ ($v->pk_flavors == old('fk_flavors') ) ? 'selected' :'' }}> 
+		                    	{{$v->name}} 
+		                    </option>
+		                @endforeach
+		            </select>
+		          
+		        </div>
 			
 		        <br>
 		    	@include('admin.layouts.buttonsubmit')

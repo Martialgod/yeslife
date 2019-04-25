@@ -98,6 +98,8 @@ class ShopController extends Controller
             $products->orderBy('ratings', 'DESC');
         }
 
+        $products->groupBy('fk_productgroup');
+
         $products->orderBy('indexno', 'ASC')->orderBy('name', 'DESC'); //default
 
         $products = $products->paginate(20);
@@ -172,7 +174,13 @@ class ShopController extends Controller
 
         $products = ProductPriceListMstrView::mapProductPriceList($products, $pricelist);
 
-        //dd($products);
+        $flavors = ProductMstrView::where('fk_productgroup', $products->fk_productgroup)
+                    ->whereNotNull('fk_flavors')
+                    ->orderBy('indexno', 'ASC')
+                    ->orderBy('name', 'DESC')
+                    ->get();
+
+        //dd($flavors);
 
         $gallery = ProductPix::where('fk_products', $products->pk_products)->get();
 
@@ -183,11 +191,14 @@ class ShopController extends Controller
 
 
         $defaultproducts = ProductMstrView::where('stat', 1)
-            ->orderBy('name', 'ASC')
+            ->where('pk_products', '<>', $products->pk_products )
+            ->groupBy('fk_productgroup')
+            ->orderBy('indexno', 'ASC')
+            ->orderBy('name', 'DESC')
             ->paginate(5);
 
         
-        return view('landingpage.product-details', compact('products', 'defaultproducts', 'gallery', 'reviews', 'totalreviews'));
+        return view('landingpage.product-details', compact('products', 'flavors', 'defaultproducts', 'gallery', 'reviews', 'totalreviews'));
 
     
     }//END show_product

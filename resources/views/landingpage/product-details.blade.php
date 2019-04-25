@@ -103,9 +103,25 @@
 
                                 <div class="body">
 
-                                	{!!  $products->description !!}
+                                	{!!  $products->groupdesc !!}
 
-                                	<br><br>
+                                    <hr>
+
+                                    @if( count($flavors) > 0 )
+
+                                        <div class="product-short">
+                                            <b>Flavor </b> &nbsp;&nbsp;
+                                            <select id="shop_flavor" class="form-control col-md-6" >
+                                                @foreach($flavors as $vf)
+                                                    <option value="{{$vf->slug}}" {{ $vf->fk_flavors == $products->fk_flavors ? 'selected' : '' }} >{{$vf->flavor}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div><!--END product-short-->
+                                        
+
+                                    @endif
+                                    
+                                    <br>
                                     	
                                     <form action="#" method="post" id="" name="form-addcart" class='add-to-cart'>
 
@@ -116,13 +132,11 @@
 						                <input type="hidden" name="productname" value="{{$products->name}}">
 						                <input type="hidden" name="qty" value="1">
 
-
-
                                         <!-- Product Action -->
                                         @if( $products->qty > 0 )
                                             <div class="product-action">
                                                 
-                                                <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                <button type="submit" id="" autofocus="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
                                                     Add To Cart
 
                                                 </button>
@@ -345,7 +359,10 @@
                                                 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
                                                 <a href="{{url('/shop/'.$v->slug)}}{{$refnourl}}" title="">
-                                                    {{$v->name}}
+
+                                                    {{--$v->name--}}
+                                                    {{$v->groupname}}
+
                                                 </a>
                                             </td>
                                         </tr>
@@ -361,7 +378,11 @@
                             			<td>
                                             {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
                             				<a href="{{url('/shop/')}}/@{{list.slug}}{{$refnourl}}" title="">
-                            					@{{list.name}}
+                            					
+                                                {{--@{{list.name}}--}}
+
+                                                @{{list.groupname}}
+
                             				</a>
                             			</td>
                             		</tr>
@@ -411,7 +432,8 @@
     
     <script type="text/javascript">
         //broadcast toastr
-        $(document).ready(function(){
+       
+        /*$(document).ready(function(){
 
             if( $('#toastrbroadcastcount').html() == 1 ){
 
@@ -431,7 +453,7 @@
             }
            
 
-        });
+        }); */
 
 
     </script>

@@ -93,10 +93,16 @@
 
                                     <!-- Product Action -->
                                     <div class="product-action" ng-if="list.qty > 0">
-                                        <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
+                                        
+                                        {{--<button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
                                             <span class="fa fa-shopping-cart" ></span> 
 
-                                        </button>
+                                        </button> --}}
+
+                                        <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  title="">
+                                            <span class="fa fa-shopping-cart" ></span> 
+                                        </a>
+
                                     </div>
 
                                     <div class="product-action" ng-if="list.qty <=0">
@@ -116,7 +122,10 @@
                                         <div class="top" style="height: 60px;">
                                             <h4 class="title">
                                                 <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}"> 
-                                                    @{{list.name}} 
+
+                                                    {{--@{{list.name}}--}}
+                                                    @{{list.groupname}} 
+
                                                 </a>
                                             </h4>
                                         </div>
@@ -145,15 +154,22 @@
                                         <!-- Product Action -->
                                         <div class="product-action text-center" ng-if="list.qty > 0">
                                             <br>
+
+                                            {{--
                                             <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
                                                 Add To Cart
 
-                                            </button>
+                                            </button> --}}
+
+                                            <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  title="">
+                                                Add To Cart
+                                            </a>
 
 
-                                            <button type="button" ng-click="vm.GlobalBuyNow(list)" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+
+                                            {{--<button type="button" ng-click="vm.GlobalBuyNow(list)" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
                                                 Buy Now
-                                            </button>
+                                            </button> --}}
 
                                         </div>
 
@@ -170,13 +186,14 @@
 
                                         <br>
 
+                                        {{--
                                         <!-- Product Action -->
                                         <div class="product-action">
                                             <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
                                                 <span class="fa fa-shopping-cart" ></span> 
 
                                             </button>
-                                        </div><!--END product-action-->
+                                        </div><!--END product-action--> --}}
 
                                     </div><!--END body-->
 

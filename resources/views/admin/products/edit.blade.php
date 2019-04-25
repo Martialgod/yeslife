@@ -31,6 +31,20 @@
 
 
 		        <div class="form-group">
+		            <label for="fk_productgroup">Product Group <span class="label-required">*</span> </label>
+		            <select name="fk_productgroup" id="fk_productgroup" class="form-control" required="">
+		                @foreach($productgroup as $key => $v)
+		                    <option value="{{$v->pk_productgroup}}" {{ ($v->pk_productgroup == $products->fk_productgroup) ? 'selected' :'' }}> 
+		                    	{{$v->name}} 
+		                    </option>
+		                @endforeach
+		            </select>
+		          
+		        </div>
+
+
+
+		        <div class="form-group">
 	                <label for="name">Product Name <span class="label-required">*</span> </label>
 	                <input type="text" class="form-control" id="name" name="name" placeholder="" required="" maxlength="255" value="{{$products->name}}">
 		        </div>
@@ -207,6 +221,20 @@
                     <input type="number" class="form-control" id="indexno" name="indexno" placeholder="" required="" value="{{$products->indexno}}"  >
                   
                 </div>
+
+
+		        <div class="form-group">
+		            <label for="fk_flavors">Flavor <span class="label-required"></span> </label>
+		            <select name="fk_flavors" id="fk_flavors" class="form-control" >
+		            	<option value="">Not Applicable</option>
+		                @foreach($flavors as $key => $v)
+		                    <option value="{{$v->pk_flavors}}" {{ ($v->pk_flavors == $products->fk_flavors) ? 'selected' :'' }}> 
+		                    	{{$v->name}} 
+		                    </option>
+		                @endforeach
+		            </select>
+		          
+		        </div>
 
 		        				
 				@include('admin.layouts.selectstatus', ['source'=>$products])

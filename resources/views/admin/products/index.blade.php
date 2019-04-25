@@ -38,12 +38,13 @@
 
 	                <tr>
 	                   	<th>ID</th>
+	                   	<th>Group</th>
 	                    <th>Name</th>
 	                    {{--<th>Description</th>--}}
-	                    <th>Slug</th>
+	                    {{--<th>Slug</th>--}}
+	                    <th>Flavor</th>
 	                    <th>Category</th>
-	                    {{--<th>Flavors</th> --}}
-	                    <th>Indexno</th>
+	                    <th>Index</th>
 	                    <th>Price</th>
 	                    <th>Qty</th>
 	                    <th>Status</th>
@@ -58,6 +59,14 @@
 
 	                    <tr>
 	                        <td> {{$a->pk_products}}  </td>
+
+	                        <td> 
+	           
+	                        	<span data-toggle="tooltip" title="{{$a->groupname}}" style="cursor: help;">
+                                   {{$a->fk_productgroup}}
+                                </span>
+
+	                        </td>
 
 	                        <td> 
 	           
@@ -77,7 +86,7 @@
 	                            </span>
 	                        </td>--}}
 
-	                        <td>
+	                        {{--<td>
 
 	                        	<span data-toggle="tooltip" title="{{$a->slug}}" style="cursor: help;">
                                     {{
@@ -85,24 +94,22 @@
                                     }}
                                 </span>
 
+	                        </td>--}}
+
+	                        <td>
+	                           {{$a->flavor}}
 	                        </td>
+
 
 	                        <td> 
 	                        	<span data-toggle="tooltip" title="{{$a->category}}" style="cursor: help;">
                                     {{
-                                        (strlen($a->category)) > 6 ? substr($a->category,0,6).'..' : $a->category 
+                                        (strlen($a->category)) > 8 ? substr($a->category,0,8).'..' : $a->category 
                                     }}
                                 </span>
 
 	                        </td>
 
-	                        {{--<td>
-	                        	<span data-toggle="tooltip" title="{{$a->options}}" style="cursor: help;">
-                                    {{
-                                        (strlen($a->options)) > 4 ? substr($a->options,0,4).'..' : $a->options 
-                                    }}
-                                </span>
-	                        </td> --}}
 
 	                        <td>
 	                           {{$a->indexno}}

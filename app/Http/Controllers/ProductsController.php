@@ -27,6 +27,8 @@ use App\Http\Resources\ProductResource;
 use App\ProductPriceListMstrView;
 
 use App\Category;
+use App\Flavor;
+use App\ProductGroup;
 
 use App\User;
 
@@ -77,7 +79,10 @@ class ProductsController extends Controller
 
         $products->where('isdeleted', 0);
 
-        $products = $products->orderBy('indexno', 'ASC')->orderBy('name', 'DESC')->paginate(10);
+        $products = $products->orderBy('indexno', 'ASC')
+                    ->orderBy('name', 'DESC')
+                    ->orderBy('fk_productgroup', 'ASC')
+                    ->paginate(10);
 
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
@@ -111,6 +116,8 @@ class ProductsController extends Controller
 
         $this->setActiveTab();
         $category = Category::getActiveCategory();
+        $flavors = Flavor::getActiveFlavors();
+        $productgroup = ProductGroup::getActiveProductGroup();
         $maxindexno = DB::select("SELECT coalesce(max(indexno),0)+1 as indexno
                         FROM products 
                         where isdeleted = 0;
@@ -118,7 +125,7 @@ class ProductsController extends Controller
 
         $maxindexno = (count($maxindexno ) > 0) ? $maxindexno[0]->indexno : 0;
         //dd($maxindexno);
-        return view('admin.products.create', compact('category', 'maxindexno'));
+        return view('admin.products.create', compact('category', 'flavors', 'productgroup', 'maxindexno'));
     
     }//END create
 
@@ -240,8 +247,10 @@ class ProductsController extends Controller
         $this->setActiveTab();
         $products = ProductMstrView::findOrFail($id);
         $category = Category::getActiveCategory();
+        $flavors = Flavor::getActiveFlavors();
+        $productgroup = ProductGroup::getActiveProductGroup();
         $gallery = ProductPix::where('fk_products', $id)->get();
-        return view('admin.products.edit', compact('products', 'category', 'gallery'));
+        return view('admin.products.edit', compact('products', 'category', 'flavors', 'productgroup', 'gallery'));
     
     }//END edit
 

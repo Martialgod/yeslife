@@ -28,6 +28,7 @@ Route::get('/twilio', function(){
    
 });
 
+
 Route::get('/curl', function(){
 
     $curl = curl_init();
@@ -165,6 +166,7 @@ Route::post('/myaccount', 'RegisterController@store'); //login or register. base
 
 Route::get('/myaccount/home', 'MyAccountController@index');
 Route::get('/myaccount/orders', 'MyAccountController@orders');
+Route::get('/myaccount/orders', 'MyAccountController@orders');
 Route::get('/myaccount/orders/{trxno}', 'MyAccountController@editorders');
 Route::put('/myaccount/orders/{trxno}', 'MyAccountController@updateorders');
 Route::get('/myaccount/recurring', 'MyAccountController@recurring');
@@ -262,6 +264,10 @@ Route::resource('admin/blogs', 'BlogsController');
 Route::resource('/admin/category', 'CategoryController');
 
 Route::resource('/admin/coupons', 'CouponsController');
+
+Route::resource('/admin/flavors', 'FlavorsController');
+
+Route::resource('/admin/productgroup', 'ProductGroupController');
 
 Route::resource('/admin/country', 'CountryController');
 

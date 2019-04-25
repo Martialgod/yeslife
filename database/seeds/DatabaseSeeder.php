@@ -212,6 +212,98 @@ class DatabaseSeeder extends Seeder
             'stat'=>1
         ]); */
 
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1050,
+            'method'=> 'LIST',
+            'description'=> 'Flavors',
+            'route'=> 'flavors.index',
+            'type'=> 'B',
+            'family'=> 'Products',
+            'indexno'=> 3,
+            'stat'=>1
+        ]); 
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1051,
+            'method'=> 'POST',
+            'description'=> 'Add New',
+            'route'=> 'flavors.create',
+            'type'=> 'C',
+            'family'=> 'flavors.index',
+            'indexno'=> 0,
+            'stat'=>1
+        ]); 
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1052,
+            'method'=> 'PUT',
+            'description'=> 'Edit',
+            'route'=> 'flavors.edit',
+            'type'=> 'C',
+            'family'=> 'flavors.index',
+            'indexno'=> 1,
+            'stat'=>1
+        ]); 
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1053,
+            'method'=> 'DELETE',
+            'description'=> 'Delete',
+            'route'=> 'flavors.delete',
+            'type'=> 'C',
+            'family'=> 'flavors.index',
+            'indexno'=> 2,
+            'stat'=>1
+        ]); 
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1060,
+            'method'=> 'LIST',
+            'description'=> 'Group',
+            'route'=> 'productgroup.index',
+            'type'=> 'B',
+            'family'=> 'Products',
+            'indexno'=> 4,
+            'stat'=>1
+        ]); 
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1061,
+            'method'=> 'POST',
+            'description'=> 'Add New',
+            'route'=> 'productgroup.create',
+            'type'=> 'C',
+            'family'=> 'productgroup.index',
+            'indexno'=> 0,
+            'stat'=>1
+        ]); 
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1062,
+            'method'=> 'PUT',
+            'description'=> 'Edit',
+            'route'=> 'productgroup.edit',
+            'type'=> 'C',
+            'family'=> 'productgroup.index',
+            'indexno'=> 1,
+            'stat'=>1
+        ]); 
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1063,
+            'method'=> 'DELETE',
+            'description'=> 'Delete',
+            'route'=> 'productgroup.delete',
+            'type'=> 'C',
+            'family'=> 'productgroup.index',
+            'indexno'=> 2,
+            'stat'=>1
+        ]); 
 
 
     }

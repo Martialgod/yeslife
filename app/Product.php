@@ -19,7 +19,7 @@ class Product extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['fk_category', 'name', 'description', 'slug', 'price', 'price2', 'discount', 'taxrate', 'shippingcost', 'uom', 'alertqty', 'pictxa', 'sku', 'weight', 'length', 'width', 'height', 'options', 'videoupload', 'videoshare', 'fk_createdby', 'fk_updatedby', 'isdeleted', 'fk_deletedby', 'deleted_at', 'indexno', 'stat'];
+    protected $fillable = ['fk_category', 'fk_productgroup', 'fk_flavors', 'name', 'description', 'slug', 'price', 'price2', 'discount', 'taxrate', 'shippingcost', 'uom', 'alertqty', 'pictxa', 'sku', 'weight', 'length', 'width', 'height', 'options', 'videoupload', 'videoshare', 'fk_createdby', 'fk_updatedby', 'isdeleted', 'fk_deletedby', 'deleted_at', 'indexno', 'stat'];
 
 
 
@@ -29,6 +29,7 @@ class Product extends Model
     public static function custom_validation($request, $form){
   
         $common_rule = [
+            'fk_productgroup'=> ['required'],
             'name'          =>  ['required','max:255'],
             'description'   =>  ['required'],
             'slug'          =>  ['required','max:255'],
@@ -66,6 +67,8 @@ class Product extends Model
         }
 
         //dd($common_rule);
+        
+        $request['fk_flavors'] = ( $request['fk_flavors'] ) ? $request['fk_flavors'] : null;
 
         //validate the form
         $validator = Validator::make( $request->all(), $common_rule, static::messages() );
@@ -81,6 +84,7 @@ class Product extends Model
     //custome validation error messages
     public static function messages(){
         return [
+            'fk_productgroup.required' => 'Product group is required',
             'name.required' => 'Product name is required',
             'description.required' => 'Product description is required',
             'slug.required' => 'Slug is required',

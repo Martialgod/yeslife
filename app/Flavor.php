@@ -9,16 +9,17 @@ use Illuminate\Validation\Rule;
 use Validator;
 
 
-class Category extends Model
+class Flavor extends Model
 {
     //
     
-    protected $table = 'category';
-    protected $primaryKey = 'pk_category';
+
+    protected $table = 'flavors';
+    protected $primaryKey = 'pk_flavors';
 
     public $timestamps = true;
 
-    protected $fillable = ['description', 'fk_createdby', 'fk_updatedby', 'indexno', 'stat'];
+    protected $fillable = ['name', 'fk_createdby', 'fk_updatedby', 'stat'];
 
 
     /**
@@ -27,20 +28,21 @@ class Category extends Model
     public static function custom_validation($request, $form){
   
         $common_rule = [
-            'description'   =>  ['required','max:255'],
-            'indexno'       =>  ['required', 'numeric'],
+            'name'   =>  ['required','max:255']
         ];
 
 
         if( $form == 'store' ){
+
             //must be unique in the table
-            array_push($common_rule['description'], 'unique:category');
+            array_push($common_rule['name'], 'unique:flavors');
+
         }else if( $form == 'update' ){ 
 
             //ignore unique rule for the current updated record
-            array_push($common_rule['description'], 
+            array_push($common_rule['name'], 
                 //ignore($id,'custom_field')//optional
-                Rule::unique('category')->ignore($request->pk_category,'pk_category')
+                Rule::unique('flavors')->ignore($request->pk_flavors,'pk_flavors')
             );
 
         }
@@ -61,16 +63,16 @@ class Category extends Model
     //custome validation error messages
     public static function messages(){
         return [
-            'description.required' => 'Description is required',
+            'name.required' => 'Name is required',
         ];
     }
 
 
-    public static function getActiveCategory(){
-    	$category = Category::where('stat', '1')->orderBy('description', 'ASC')->get();
-    	return $category;
+    public static function getActiveFlavors(){
+    	$flavors = Flavor::where('stat', '1')->orderBy('name', 'ASC')->get();
+    	return $flavors;
     }
 
 
 
-}
+}//END class

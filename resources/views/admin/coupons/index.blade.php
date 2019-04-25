@@ -38,7 +38,7 @@
 	                   	<th>ID</th>
 	                   	<th>Code</th>
 	                    <th>Name</th>
-	                    <th>Description</th>
+	                    {{--<th>Description</th>--}}
 	                    <th>Type</th>
 	                    <th>Amount</th>
 	                    <th>Effectivity</th>
@@ -68,13 +68,13 @@
 
 	                        </td>
 
-	                        <td> 
+	                        {{--<td> 
 	                        	<span data-toggle="tooltip" title="{{$a->description}}" style="cursor: help;">
                                     {{
-                                        (strlen($a->description)) > 20 ? substr($a->description,0,20).'..' : $a->description 
+                                        (strlen($a->description)) > 10 ? substr($a->description,0,10).'..' : $a->description 
                                     }}
                                 </span>
-	                        </td>
+	                        </td> --}}
 
 	                        <td> {{$a->type}} </td>
 

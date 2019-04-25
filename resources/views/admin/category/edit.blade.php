@@ -30,7 +30,7 @@
 
         		<div class="form-group">
                     <label for="description">Description <span class="label-required">*</span> </label>
-                    <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{$category->description}}" maxlength="25">
+                    <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{$category->description}}" maxlength="255">
                   
                 </div>
 

@@ -8,6 +8,24 @@ $(document).ready(function(){
 
 });
 
+
+$(document).ready(function(){
+
+  $('#shop_flavor').on('change', function(){
+
+    var tempv = $('#shop_flavor').val();
+    //console.log(tempv);
+
+    showCustomizeLoadingNoIcon();
+    //hideCustomizeLoading();
+    
+    location.href='/shop/'+tempv;
+
+  });
+
+});
+
+
 $(document).ready(function(){
 
     //reset cart count based on cookie if user is not loggedin

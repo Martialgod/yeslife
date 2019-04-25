@@ -16,6 +16,9 @@ class ProductResource extends Resource
     {
         return [
             'productid'=> $this->pk_products,
+            'groupname'=> $this->groupname,
+            'groupdesc'=> $this->groupdesc,
+            'flavors'=> $this->flavors,
             'name'=> $this->name,
             'slug'=> $this->slug,
             'description'=> $this->description,
