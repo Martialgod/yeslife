@@ -127,6 +127,7 @@ Route::get('/shop-categories', 'ShopController@apishowcategories');
 
 // ?refid=33213 -- optional for refferal 
 Route::get('/shop/{slug}', 'ShopController@show_product');
+Route::get('/apishowproduct/{id}', 'ShopController@apishowproduct');
 Route::get('/shop/{id}/reviews', 'ShopController@apireviews');
 Route::post('/shop/{id}/reviews', 'ShopController@post_reviews')->middleware(['auth']);
 

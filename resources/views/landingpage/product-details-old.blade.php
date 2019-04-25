@@ -33,11 +33,9 @@
     <!-- Product Section Start -->
     <div class="product-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50" id="main-div" ng-app="app" ng-controller="ProductDetailsController as vm" >
         
-        <div class="container" ng-cloak>
+        <div class="container">
             
             <div class="row">
-
-                <input type="hidden" id="productid" name="productid" value="{{$products->pk_products}}">
 
                 <div class="col-xl-9 col-lg-8 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
 
@@ -51,8 +49,16 @@
                             <div class="product-slider single-product-slider">
 
                                 <div class="item">
-                                	<img style="" ng-src="{{asset('/storagelink')}}/@{{vm.currentproduct.pictxa}}" alt="">
+                                	<img src="{{asset('/storagelink/'.$products->pictxa)}}" alt="">
                                 </div>
+
+                                {{--@foreach( $gallery as $v )
+
+                                	<div class="item">
+	                                	<img src="{{asset('/storagelink/'.$v->pictx)}}" alt="">
+	                                </div>
+
+                                @endforeach--}}
 
                             </div>
                         </div><!--END product-image mb-xs-20-->
@@ -66,25 +72,29 @@
 
                                     <!-- Title-->
                                     <div class="top">
-                                        <h4 class="title">@{{vm.currentproduct.name}}</h4>
+                                        <h4 class="title">{{$products->name}}</h4>
                                     </div>
 
-                                       
                                     <!-- Price & Ratting -->
-                                    <div class="bottom" >
-                                        
-                                        <span class="price">
+                                    <div class="bottom">
 
-                                            $@{{vm.currentproduct.cartdiscountedprice}}
+                                    	<span class="price">
+		                                    	
+	                                    	${{$products->cartdiscountedprice}}
+	                                    	
+	                                    	@if( $products->cartdiscountedprice < $products->cartprice )
+	                                    		<span class="old">${{$products->cartprice}}</span>
+	                                    	@endif
 
-                                            <span ng-if="vm.currentproduct.cartdiscountedprice < vm.currentproduct.cartprice" class="old">$@{{vm.currentproduct.cartprice}}</span> 
-
-
-                                        </span>
+	                                    	
+	                                    </span>
 
                                         <span class="ratting">
-                                            <br>
-                                            <span ng-bind-html="vm.currentproduct.stars_string"></span>
+                                            
+                                            @for( $i=0; $i<$products->ratings; $i++ )
+                                                <i class="fa fa-star"></i>
+                                            @endfor
+                       
                                         </span>
 
                                     </div><!--END bottom-->
@@ -93,7 +103,7 @@
 
                                 <div class="body">
 
-                                	<div ng-bind-html="vm.currentproduct.groupdesc"></div>
+                                	{!!  $products->groupdesc !!}
 
                                     <hr>
 
@@ -101,10 +111,10 @@
 
                                         <div class="product-short">
                                             <b>Flavor </b> &nbsp;&nbsp;
-                                            <select id="shop_flavor" class="form-control col-md-6" ng-model="vm.selectedflavor" ng-change="vm.ShowProduct(vm.selectedflavor)"  >
-                                                <option ng-repeat="vf in vm.mscflavors" value="@{{vf.pk_products}}" >
-                                                    @{{vf.flavor}}
-                                                </option>
+                                            <select id="shop_flavor" class="form-control col-md-6" >
+                                                @foreach($flavors as $vf)
+                                                    <option value="{{$vf->slug}}" {{ $vf->fk_flavors == $products->fk_flavors ? 'selected' : '' }} >{{$vf->flavor}}</option>
+                                                @endforeach
                                             </select>
                                         </div><!--END product-short-->
                                         
@@ -113,25 +123,39 @@
                                     
                                     <br>
                                     	
-                                    <!-- Product Action -->
-                                    <div class="product-action text-center" ng-if="vm.currentproduct.qty > 0">
-                                        <br>
+                                    <form action="#" method="post" id="" name="form-addcart" class='add-to-cart'>
 
-                                        <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(vm.currentproduct)" > 
-                                            Add To Cart
+						        		{{method_field('POST')}}
+									    {{ csrf_field() }}
 
-                                        </button>
+									    <input type="hidden" id="productid" name="productid" value="{{$products->pk_products}}">
+						                <input type="hidden" name="productname" value="{{$products->name}}">
+						                <input type="hidden" name="qty" value="1">
+
+                                        <!-- Product Action -->
+                                        @if( $products->qty > 0 )
+                                            <div class="product-action">
+                                                
+                                                <button type="submit" id="" autofocus="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                    Add To Cart
+
+                                                </button>
 
 
-                                        <button type="button" ng-click="vm.GlobalBuyNow(vm.currentproduct)" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
-                                            Buy Now
-                                        </button>
+                                                
+                                                <button type="button" onclick="GlobalBuyNow('{{$products->pk_products}}', '1')" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                    Buy Now
+                                                </button>
 
-                                    </div>
 
-                                    <div class="product-action"  ng-if="vm.currentproduct.qty <=0">
-                                        <span class="badge badge-danger">Out of stock</span>
-                                    </div>
+                                            </div>
+                                        @else
+                                            <div class="product-action" lass="btn btn-default" >
+                                                <span class="badge badge-danger">Out of stock</span>
+                                            </div>
+                                        @endif
+
+						            </form>
 
 
                                 </div><!--END body-->
@@ -153,7 +177,7 @@
 
                         <li>
                         	<a data-toggle="tab" href="#reviews">
-                        		Reviews (<span id="totalreviewcount">@{{vm.totalreviews}}</span>)
+                        		Reviews (<span id="totalreviewcount">{{$totalreviews}}</span>)
                         	</a>
                         </li>
 
@@ -162,8 +186,16 @@
                     <div class="product-details-tab-content tab-content">
                         
                         <div class="tab-pane active" id="description">
-
-                            <div ng-bind-html="vm.currentproduct.description"></div>
+                            
+                            {!! $products->description !!}
+                            {{ $products->videourl  }}
+                            <br>
+                            <br>
+                            @if($products->videoshare)
+                                <iframe width="420" height="315" src="https://www.youtube.com/embed/{{$products->videoshare}}">
+                                </iframe>
+                            @endif
+                           
                         
                         </div><!--END description-->
 
@@ -401,7 +433,7 @@
     <script type="text/javascript">
         //broadcast toastr
        
-        $(document).ready(function(){
+        /*$(document).ready(function(){
 
             if( $('#toastrbroadcastcount').html() == 1 ){
 
@@ -421,7 +453,7 @@
             }
            
 
-        });
+        }); */
 
 
     </script>

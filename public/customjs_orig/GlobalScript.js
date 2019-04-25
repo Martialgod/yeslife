@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 
   $('#shop_flavor').on('change', function(){
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
 
   });
 
-});
+});*/
 
 
 $(document).ready(function(){

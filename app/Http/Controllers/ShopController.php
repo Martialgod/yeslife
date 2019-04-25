@@ -187,9 +187,6 @@ class ShopController extends Controller
         $reviews = ProductReviewMstrView::where('fk_products', $products->pk_products)
         			->orderBy('created_at', 'DESC')->paginate(1);
 
-        $totalreviews = ProductReviewMstrView::countTotalReviews($products);
-
-
         $defaultproducts = ProductMstrView::where('stat', 1)
             ->where('pk_products', '<>', $products->pk_products )
             ->groupBy('fk_productgroup')
@@ -198,10 +195,52 @@ class ShopController extends Controller
             ->paginate(5);
 
         
-        return view('landingpage.product-details', compact('products', 'flavors', 'defaultproducts', 'gallery', 'reviews', 'totalreviews'));
+        return view('landingpage.product-details', compact('products', 'flavors', 'defaultproducts', 'gallery', 'reviews'));
 
     
     }//END show_product
+
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function apishowproduct($id)
+    {
+        //
+        
+        //active tab
+        $products = ProductMstrView::find($id);
+
+        if( !$products ){
+            return response()->json('not found');
+        }
+
+        $pricelist = ProductPriceListMstrView::getProductPriceList($products->pluck('pk_products'));
+
+        $products = ProductPriceListMstrView::mapProductPriceList($products, $pricelist);
+
+        $flavors = ProductMstrView::where('fk_productgroup', $products->fk_productgroup)
+                    ->whereNotNull('fk_flavors')
+                    ->orderBy('indexno', 'ASC')
+                    ->orderBy('name', 'DESC')
+                    ->get();
+
+        //dd($flavors);
+        
+
+        $totalreviews = ProductReviewMstrView::countTotalReviews($products);
+
+        $gallery = ProductPix::where('fk_products', $products->pk_products)->get();
+
+        return ['products'=> $products, 'flavors'=> $flavors, 'gallery'=> $gallery, 'totalreviews'=> $totalreviews];
+
+    
+    }//END apishowproduct
+
 
 
     //call through api

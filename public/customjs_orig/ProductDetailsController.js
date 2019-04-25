@@ -16,36 +16,44 @@
 
 		vm.search = null;
 		vm.mscproducts = [];
+		vm.currentproduct = {};
+		vm.selectedflavor = vm.pk_products;
+		vm.mscflavors = [];
 		vm.mscreviews = [];
+		vm.totalreviews = 0;
 		vm.navlinks = {};
 		vm.meta = {};
 
-		vm.LoadProducts = function(url){
 
-			var url = ( url ) ? url : '/shop-search';
+		vm.ShowProduct = function(id){
 
-			//console.log(url);
-			vm.mscproducts = [];
 
-			$http.post(url, {
-				'search': vm.search
-			}).then(function(response){
+			var id = ( id ) ? id : vm.pk_products;
+
+			showCustomizeLoadingNoIcon(); //@GlobalScript.js
+
+			$http.get('/apishowproduct/'+id)
+			.then(function(response){
 				
 				//success
 				//console.log(response);
 
 				var data = response.data;
 
-				//on initial load result body has html contents filled in larave forloop
-				//we need to empty this div and populat angular ng-repeat data
-				$('#searchresultbody').html('');
-				
-				vm.mscproducts = data.data;
+				//console.log(data);
 
-				
+				vm.currentproduct = data.products;
+				vm.mscflavors = data.flavors;
+
+				vm.totalreviews = data.totalreviews;
+
+				vm.StringifyStars();
+
 				//@customjs/AppServices.js
 				GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
 
+
+				vm.LoadReviews();
 
 			}, function(response){
 
@@ -58,27 +66,46 @@
 
 			});
 
-
-		};//END LoadProducts
+		};//END ShowProduct
 
 
 		vm.StringifyStars = function(){
 
 			//format stars
-			vm.mscreviews.forEach(function(item1, index1){
-				item1.stars_string = '';
-				for( var x = 1; x<=item1.star; x++ ){
-					item1.stars_string += '<i class="fa fa-star"></i>';
-				}
-			});
+	
+			vm.currentproduct.stars_string = '';
+			for( var x = 1; x<=vm.currentproduct.ratings; x++ ){
+				vm.currentproduct.stars_string += '<i class="fa fa-star"></i>';
+			}
+		
 
 		};
+
+
+
+		vm.AddToCart = function(list){
+			//console.log(list);
+			var products = {
+				'productid': list.pk_products,
+				'qty': 1,
+			};
+			addCartCookie(products); //@GlobalScript.js
+
+		};//END AddToCart
+
+		vm.GlobalBuyNow = function(list){
+
+			GlobalBuyNow(list.pk_products,1); //@GlobalScript.js
+
+		};//END GlobalBuyNow
+
+
 
 		vm.LoadReviews = function(url){
 
 			//console.log(url);
 
-			var url = ( url ) ? url : '/shop/'+vm.pk_products+'/reviews?v='+Math.random();
+			var url = ( url ) ? url : '/shop/'+vm.selectedflavor+'/reviews?v='+Math.random();
 
 			vm.mscreviews = [];
 
@@ -98,7 +125,7 @@
 				
 				//@customjs/AppServices.js
 				//GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
-				hideCustomizeLoading(); //@GlobalScript.js
+				//hideCustomizeLoading(); //@GlobalScript.js
 
 
 			}, function(response){
@@ -109,7 +136,7 @@
 
 				//@customjs/AppServices.js
 				//GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
-				hideCustomizeLoading(); //@GlobalScript.js
+				//hideCustomizeLoading(); //@GlobalScript.js
 
 			});
 
@@ -168,25 +195,58 @@
 		};//END PostReviews
 
 
+		vm.SearchProducts = function(url){
 
-		vm.SearchProducts = function(){
+			var url = ( url ) ? url : '/shop-search';
 
 			//@customjs/AppServices.js
 			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
 			//showCustomizeLoading(); //@GlobalScript.js
 			showCustomizeLoadingNoIcon(); //@GlobalScript.js
 			vm.mscproducts = []; //reinitialize
-			vm.LoadProducts(); // default search. no url
+
+			$http.post(url, {
+				'search': vm.search
+			}).then(function(response){
+				
+				//success
+				//console.log(response);
+
+				var data = response.data;
+
+				//on initial load result body has html contents filled in larave forloop
+				//we need to empty this div and populat angular ng-repeat data
+				$('#searchresultbody').html('');
+				
+				vm.mscproducts = data.data;
+
+				
+				//@customjs/AppServices.js
+				GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
+
+
+			}, function(response){
+
+				//error
+				swal('Opps!', 'Something went wrong!', 'error');
+				console.log(response.data);
+
+				//@customjs/AppServices.js
+				GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
+
+			});
 
 		};//END RemoveFromCart
+
 
 		//showCustomizeLoading(); //@GlobalScript.js
 		showCustomizeLoadingNoIcon(); //@GlobalScript.js
 		setTimeout(function(){
+
 			//@customjs/AppServices.js
 			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
-			vm.LoadReviews(); //default load
-			//vm.LoadProducts();
+			//vm.LoadReviews(); //default load
+			vm.ShowProduct(); //default load
 
 		},500);//END setTimeout
 
