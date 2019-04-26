@@ -30,6 +30,7 @@
 
 			var id = ( id ) ? id : vm.pk_products;
 
+	
 			showCustomizeLoadingNoIcon(); //@GlobalScript.js
 
 			$http.get('/apishowproduct/'+id)
@@ -41,19 +42,27 @@
 				var data = response.data;
 
 				//console.log(data);
+				
+				if( data != 'not found' ){
 
-				vm.currentproduct = data.products;
-				vm.mscflavors = data.flavors;
+					vm.currentproduct = data.products;
+					vm.mscflavors = data.flavors;
 
-				vm.totalreviews = data.totalreviews;
+					vm.totalreviews = data.totalreviews;
 
-				vm.StringifyStars();
+					vm.StringifyStars();
 
+					vm.LoadReviews();
+
+
+				}else{
+
+					vm.currentproduct = {};
+
+				}
+			
 				//@customjs/AppServices.js
 				GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
-
-
-				vm.LoadReviews();
 
 			}, function(response){
 

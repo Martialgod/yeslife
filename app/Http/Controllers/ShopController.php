@@ -227,7 +227,7 @@ class ShopController extends Controller
                     ->whereNotNull('fk_flavors')
                     ->orderBy('indexno', 'ASC')
                     ->orderBy('name', 'DESC')
-                    ->where('stat', 1)
+                   ->where('stat', 1)
                     ->get();
 
         //dd($flavors);

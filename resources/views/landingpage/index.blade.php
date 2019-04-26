@@ -63,7 +63,7 @@
                                         </h2>
 
                                         <h1 id="" style="color:#fff;">
-                                            Don't Settle For<br/>Inferior CBD Oil! 
+                                           NOURISH YOUR BODY <br> WITH NATURE AND <br> LIVE YOUR BEST LIFE.
                                         </h1>
 
                                         <p id="" style="color:#fff; text-align:left">
@@ -79,7 +79,6 @@
                                                 <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
                                             </a>
                                             <br/>
-                                            Yes.Life CBD retails for as low as $49.95. Get up to 20% off when you order TODAY!!! 
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
@@ -112,7 +111,7 @@
                                         </h2>
 
                                         <h1 id="" style="color:#1d1f23;">
-                                            Honest. Simple.  <br> Natural.  Yes.Life
+                                            DON'T SETTLE FOR <br> INFERIOR CBD OIL!
 
                                         </h1>
 
@@ -157,19 +156,19 @@
                                         </h2>
 
                                         <h1 id="" style="color:#fff;">
-                                            Hand in hand with <br> nature and science
+                                            HAND IN HAND WITH <br> NATURE AND SCIENCE
                                         </h1>
 
 
                                         <p id="" style="color:#fff; text-align:left">
-                                            YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
-                                          
 
-                                            {{--<a href="{{url('/shop')}}{{$refnourl}}">
-                                                <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
-                                            </a> --}}
+                                            <br><br>
+                                            
+                                            {{--YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
+
                                             <br>
-                                            Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life.
+                                            Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life. --}}
+
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
