@@ -32,10 +32,10 @@ $(document).ready(function(){
     //if loggedin then cart count is equals to db qty
     if( $("#isloggedin").val() == 'no' ){
 
-        updateCartCookieCount();//GlobalScript.js
+      updateCartCookieCount();//GlobalScript.js
 
     }
-   
+
     //deleteAllCartCookies();
     //console.log( getCartCookies() );
 });
@@ -359,8 +359,8 @@ $('.add-to-cart').submit(function(e){
 
 function GlobalBuyNow(productid, qty){
 
-  console.log(productid);
-  console.log(qty);
+  //console.log(productid);
+  //console.log(qty);
 
   var products = {
 

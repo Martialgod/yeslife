@@ -265,7 +265,7 @@ class CartController extends Controller
 
                 return $products;
 
-                return '1';
+                //return '1';
 
             }//END count($ordermstr) > 0
 

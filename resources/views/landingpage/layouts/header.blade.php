@@ -20,7 +20,27 @@
                     <ul>
                         <li><a href="{{url('/')}}{{$refnourl}}">HOME</a></li>
                         <li><a href="{{url('/about-us')}}{{$refnourl}}">ABOUT</a></li>
-                        <li><a href="{{url('/shop')}}{{$refnourl}}">SHOP</a></li>
+
+                        @if( Auth::check() && (Auth::user()->fk_usertype == '1000' || Auth::user()->fk_usertype == '1010') )
+
+                            <li><a href="#">SHOP</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{url('/shop')}}{{$refnourl}}">Normal Shop</a></li>
+                                    <li>
+                                        <a href="{{url('/shop-business-partners')}}{{$refnourl}}">
+                                            Business Partners
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        @else
+
+                            <li><a href="{{url('/shop')}}{{$refnourl}}">SHOP</a></li>
+
+                        @endif
+                        
+
                         <li><a href="{{url('/blog')}}{{$refnourl}}">BLOG</a></li>
                         <li><a href="{{url('/contact-us')}}{{$refnourl}}">CONTACT</a></li>
                     </ul>

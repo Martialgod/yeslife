@@ -36,7 +36,7 @@
             <div class="row">
                
                 <!-- Login Form Start -->
-                <div class="col-lg-4 col-md-6 col-12 mr-auto mb-30  alert alert-info ">
+                <div class="col-lg-4 col-md-6 col-12 mr-auto mb-30  alert alert-info" >
                     <div class="login-register-form">{{--login-register-form--}}
                         
                         <h3>Already a Member?</h3>

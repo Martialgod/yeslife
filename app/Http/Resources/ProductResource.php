@@ -33,7 +33,7 @@ class ProductResource extends Resource
             'cartdiscountedprice'=> $this->cartdiscountedprice,
             'qty'=> $this->qty,
             'totalsalesqty'=> $this->totalsalesqty,
-            'selectedqty'=> ( $this->selectedqty ) ? $this->selectedqty : 1, //default 1
+            'selectedqty'=> ( isset($this->selectedqty) ) ? $this->selectedqty : 1, //default 1
             'uom'=> $this->uom,
             'pictxa'=> $this->pictxa,
             'videoshare'=> $this->videoshare,

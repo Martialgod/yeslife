@@ -11,13 +11,6 @@
             <i class="fa fa-cart-arrow-down"></i>My Orders
         </a>
 
-        @if( Auth::user()->fk_usertype == '1000' || Auth::user()->fk_usertype == '1010' )
-
-            <a href="{{url('/myaccount/retailorder')}}" class="{{(session('myaccount_tab') == 'Retail') ? 'active' : ''}}" >
-                <i class="fa fa-cart-plus"></i>Retail Order
-            </a>
-
-        @endif
 
         <a href="{{url('/myaccount/recurring')}}" class="{{(session('myaccount_tab') == 'Recurring') ? 'active' : ''}}" >
             <i class="fa fa-refresh"></i>Recurring

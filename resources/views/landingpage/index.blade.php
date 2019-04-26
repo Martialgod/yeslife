@@ -76,7 +76,7 @@
                                             <br>
 
                                             <a href="{{url('/shop')}}{{$refnourl}}">
-                                                <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
+                                                <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
                                             </a>
                                             <br/>
                                         </p>
@@ -111,7 +111,7 @@
                                         </h2>
 
                                         <h1 id="" style="color:#1d1f23;">
-                                            DON'T SETTLE FOR <br> INFERIOR CBD OIL!
+                                            DON'T SETTLE FOR <br> INFERIOR HEMP CBD OIL!
 
                                         </h1>
 
@@ -270,7 +270,7 @@
                     <div class="product-image">
                         <!-- Image -->
                         <img src="/landingpage/assets/images/product/circle-banner-v4-004.png" alt="">
-                        <h4 class="title">Sourced in USA</h4>
+                        <h4 class="title" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; ">Sourced in USA</h4>
                         
                     </div>
              

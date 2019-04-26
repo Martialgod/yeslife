@@ -29,6 +29,8 @@ use App\Category;
 
 use App\User;
 
+use App\UserCart;
+
 class ShopController extends Controller
 {
     //
@@ -58,6 +60,29 @@ class ShopController extends Controller
 
 
 
+
+    /**
+     * Display a listi
+     * ng of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function shop_business_partners()
+    {
+        //
+
+        $this->setActiveTab();
+
+
+        //products will be fetched through ajax request
+        return view('landingpage.shop-business-partners');
+
+    
+    }//END index
+
+
+
+
     //call through api
     /**
      * Display the specified resource.
@@ -70,6 +95,8 @@ class ShopController extends Controller
         //
         //return $request->all();
         $search = ( $request->search ) ? $request->search : null;
+
+        $shoptype = ( $request->shoptype ) ? $request->shoptype : null;
 
         $category = ( $request->category ) ? $request->category : 'All';
 
@@ -98,7 +125,13 @@ class ShopController extends Controller
             $products->orderBy('ratings', 'DESC');
         }
 
-        $products->groupBy('fk_productgroup');
+        if( $shoptype != 'businesspartners' ){
+
+            //display by group
+            $products->groupBy('fk_productgroup');
+
+        }
+       
 
         $products->orderBy('indexno', 'ASC')->orderBy('name', 'DESC'); //default
 
@@ -125,6 +158,32 @@ class ShopController extends Controller
 
         }
 
+   
+        if( $shoptype == 'businesspartners' ){
+
+            //retrieve current cart
+            $finalcart = UserCart::where('fk_users', Auth::id() )->get()->toArray();
+
+            //initialize selectedqty 
+            foreach($products as $k1=> $v1){
+
+                $v1->selectedqty = 0;
+
+                foreach($finalcart as $k2=>$v2){
+
+                    if( $v1->pk_products == $v2['fk_products'] ){
+
+                        $v1->selectedqty = $v2['qty'];
+
+                    }
+
+                }
+
+            }//END foreach
+
+            
+
+        }//END if $shoptype == 'businesspartners'
        
  
         return ProductResource::collection($products);

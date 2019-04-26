@@ -80,7 +80,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    {{--<th class="pro-thumbnail">Image</th> --}}
+                                    <th class=""></th>
                                     <th class="pro-title">Item(s)</th>
                                     <th class="pro-price">Price</th>
                                     <th class="pro-quantity">Qty</th>
@@ -92,12 +92,18 @@
 
                                 <tr ng-repeat="list in vm.mscproducts">
 
-                                    {{-- <td class="pro-thumbnail">
-                                        <img style="width:60px;height: 60px;" ng-src="{{asset('/storagelink')}}/@{{list.pictxa}}" alt="">
-                                    </td> --}}
+                                    <td class="pro-thumbnail">
+                                        <a ng-href="{{url('/shop/')}}/@{{list.slug}}{{$refnourl}}"> 
+                                            <img style="width:75px;height: 70px;" ng-src="{{asset('/storagelink')}}/@{{list.pictxa}}" alt="">
+                                        </a>
+                                       
+                                    </td>
 
                                     <td class="pro-title">
-                                        @{{list.name}}
+                                        <a ng-href="{{url('/shop/')}}/@{{list.slug}}{{$refnourl}}"> 
+                                            @{{list.name}}
+                                        </a>
+                                        
                                     </td>
 
                                     <td class="pro-price">

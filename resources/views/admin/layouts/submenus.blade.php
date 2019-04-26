@@ -26,7 +26,7 @@
 
 			@if( $sub->method == 'DELETE' )
 
-				<button class="btn btn-default btn-sm label-required hvr-underline-from-left"  type="submit" >
+				<button class="btn btn-default btn-xs label-required hvr-underline-from-left"  type="submit" >
 	               {{$sub->description}}
 	           	</button>
 
@@ -41,7 +41,7 @@
         			@if( isset($options) && $options['unbroadcastusers'] > 0 )
 
         				{{--default. display all--}}
-			        	<a href="{{route($sub->route, $data_id)}}" class="btn btn-default btn-sm hvr-underline-from-left">
+			        	<a href="{{route($sub->route, $data_id)}}" class="btn btn-default btn-xs hvr-underline-from-left">
 			               {{$sub->description}}
 			            </a>	 
 
@@ -52,14 +52,14 @@
         		{{--Login as virtual user--}}
         		@elseif( $sub->pk_permalink == 5006 )
 
-		        	<a href="{{route($sub->route, $data_id)}}" class="btn btn-default btn-sm hvr-underline-from-left" target="_blank">
+		        	<a href="{{route($sub->route, $data_id)}}" class="btn btn-default btn-xs hvr-underline-from-left" target="_blank">
 		               {{$sub->description}}
 		            </a>	 
 
         		@else
 
         			{{--default. display all menu--}}
-		        	<a href="{{route($sub->route, $data_id)}}" class="btn btn-default btn-sm hvr-underline-from-left">
+		        	<a href="{{route($sub->route, $data_id)}}" class="btn btn-default btn-xs hvr-underline-from-left">
 		               {{$sub->description}}
 		            </a>	 
 

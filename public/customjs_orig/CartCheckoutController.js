@@ -64,6 +64,8 @@
                 	vm.mscproducts = data.data;
                 	vm.CalculateTotal();
 
+                	updateCartCookieCount();//GlobalScript.js
+
                 }else{
 
                 	$('#nodisplay-div').prop('hidden', false);

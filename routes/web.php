@@ -120,6 +120,7 @@ Route::post('/cart', 'CartController@apiindex');
 
 // ?refno=33213 -- optional for refferal 
 Route::get('/shop', 'ShopController@index');
+Route::get('/shop-business-partners', 'ShopController@shop_business_partners');
 //search through post, since it will contain lots of params
 Route::post('/shop-search', 'ShopController@apisearch'); 
 
