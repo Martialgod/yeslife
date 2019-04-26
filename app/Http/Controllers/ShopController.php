@@ -48,9 +48,7 @@ class ShopController extends Controller
     public function index()
     {
         //
-
         $this->setActiveTab();
-
 
         //products will be fetched through ajax request
         return view('landingpage.shop');
@@ -71,11 +69,16 @@ class ShopController extends Controller
     {
         //
 
-        $this->setActiveTab();
+        //admin or businespartner
+        if( Auth::check() && (Auth::user()->fk_usertype == '1000' || Auth::user()->fk_usertype == '1010') ){
 
+            $this->setActiveTab();
+            //products will be fetched through ajax request
+            return view('landingpage.shop-business-partners');
 
-        //products will be fetched through ajax request
-        return view('landingpage.shop-business-partners');
+        }
+
+        return redirect('/shop');
 
     
     }//END index
