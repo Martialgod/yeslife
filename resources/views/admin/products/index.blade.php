@@ -44,7 +44,7 @@
 	                    {{--<th>Slug</th>--}}
 	                    <th>Flavor</th>
 	                    <th>Category</th>
-	                    <th>Index</th>
+	                    <th>Sorter</th>
 	                    <th>Price</th>
 	                    <th>Qty</th>
 	                    <th>Status</th>

@@ -18,6 +18,8 @@
 		vm.mscproducts = [];
 		vm.navlinks = {};
 		vm.meta = {};
+		vm.totalamount = 0;
+		vm.totalnetamount = 0;
 
 		vm.LoadCategories = function(){
 
@@ -70,6 +72,8 @@
 				vm.meta = data.meta;
 
 				vm.mscproducts = data.data;
+
+				vm.CalculateTotal();
 
 
 				hideCustomizeLoading(); //@GlobalScript.js
@@ -128,10 +132,52 @@
 				removeCartCookie( list.productid ); //@GlobalScript.js
 
 			}
+
+			vm.CalculateTotal();
 	
 
 		}; //END UpdateCart
 
+
+
+
+		vm.CalculateTotal = function(){
+
+			vm.totalamount = 0;
+			vm.totalcoupondiscount = 0;
+			vm.totaltax = 0;
+			vm.totalshipcost = 0;
+			vm.totalnetamount = 0;
+
+
+            vm.mscproducts.forEach(function(item1, index1){
+
+            	item1.totalamount = parseFloat(item1.selectedqty) * parseFloat(item1.cartdiscountedprice);
+
+    			item1.taxamount = 0;
+
+    			item1.shipamount = 0;
+
+    			item1.netamount = 0;
+
+				item1.netamount = parseFloat(item1.totalamount);
+
+				vm.totalamount += parseFloat(item1.totalamount);
+
+				vm.totalnetamount += parseFloat(item1.netamount);
+
+				//format to 2decimal places
+				item1.totalamount = parseFloat(item1.totalamount).toFixed(2);
+    			item1.netamount = parseFloat(item1.netamount).toFixed(2);
+
+            });//END vm.mscproducts
+
+            //format to 2decimal places
+            vm.totalamount = parseFloat(vm.totalamount).toFixed(2);
+            vm.totalnetamount = parseFloat(vm.totalnetamount).toFixed(2);
+
+		};//END CalculateTotal
+		
 
 
 		vm.SearchProducts = function(){

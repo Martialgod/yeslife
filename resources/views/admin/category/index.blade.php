@@ -37,7 +37,7 @@
 	                <tr>
 	                   	<th>ID</th>
 	                    <th>Name</th>
-	                    <th>Indexno</th>
+	                    <th>Sorter</th>
 	                    <th>Status</th>
 	                    <th></th>
 	              </tr>

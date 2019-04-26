@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="indexno">Indexno <span class="label-required">* sorter</span> </label>
+                    <label for="indexno">Sorter <span class="label-required">* sorter</span> </label>
                     <input type="number" class="form-control" id="indexno" name="indexno" placeholder="" required="" value="{{$maxindexno}}" >
                   
                 </div>

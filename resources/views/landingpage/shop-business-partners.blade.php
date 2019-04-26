@@ -46,7 +46,9 @@
 
 
                                 <div class="product-showing mr-auto" ng-if="vm.mscproducts.length > 0" >
-                                    <p>Showing @{{vm.meta.current_page}} of @{{vm.meta.last_page}}</p>
+                                    <p>
+                                        Showing @{{vm.meta.current_page}} of @{{vm.meta.last_page}}
+                                    </p>
                                 </div>
 
                                 <div class="product-short">
@@ -84,9 +86,12 @@
                                         <th>Product</th>
                                         <th>Price</th>
                                         <th>Qty</th>
+                                        <th>Total</th>
                                     </tr>
 
                                 </thead>
+
+                   
 
                                 <tbody> 
 
@@ -132,6 +137,22 @@
 
                                             {{--<input class="form-control" type="number" min="1" name="qty" ng-model="list.selectedqty" string-to-number ng-change="vm.UpdateCart(list)" ng-model-options="{debounce: 200}" >--}}
                                             
+                                        </td>
+
+                                        <td>
+                                            $@{{list.netamount}}
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><b>Total</b></td>
+                                        <td>
+                                            <b>$@{{vm.totalnetamount}}</b>
                                         </td>
 
                                     </tr>
