@@ -42,8 +42,6 @@
                     <div class="row" id="div-toolbar" >
                         <div class="col">
                             <div class="shop-toolbar">
-                               
-
 
                                 <div class="product-showing mr-auto" ng-if="vm.mscproducts.length > 0" >
                                     <p>

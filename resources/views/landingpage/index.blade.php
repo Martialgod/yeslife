@@ -102,7 +102,7 @@
                                 <div class="hero-content-wrap col">
                                     
                                     <div class="hero-image" style="width:35%">
-                                        <img src="/landingpage/assets/images/slider/cbd-product-2.png" alt="">
+                                        <img src="/landingpage/assets/images/slider/cbd-product-4.png" alt="">
                                     </div>
 
                                     <div class="hero-content text-center"  >
@@ -140,7 +140,7 @@
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01-v2.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01-b.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
@@ -152,15 +152,15 @@
 
                                     <div class="hero-content text-center" >
                                         <h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2>
 
-                                        <h1 id="" style="color:#fff;">
+                                        <h1 id="" style="color:#fbb055;">
                                             HAND IN HAND WITH <br> NATURE AND SCIENCE
                                         </h1>
 
 
-                                        <p id="" style="color:#fff; text-align:left">
+                                        <p id="" style="color:#000; text-align:left">
 
                                             <br><br>
                                             
@@ -436,7 +436,7 @@
                 <div class="col-12">
                     <div class="banner">
                     	<a href="{{url('/shop')}}{{$refnourl}}">
-                    		<img src="/landingpage/assets/images/banner/offer_page-V2.jpg" alt="">
+                    		<img src="/landingpage/assets/images/banner/offer_page-V3.jpg" alt="">
                     	</a>
                     </div>
                 </div>
