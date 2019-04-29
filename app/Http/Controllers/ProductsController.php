@@ -67,6 +67,12 @@ class ProductsController extends Controller
 
         $search = ( request()->search ) ? request()->search : null;
 
+        $productgroup = ( request()->productgroup ) ? request()->productgroup : 'All';
+
+        
+        $mscproductgroup = ProductGroup::getActiveProductGroup();
+
+
         if( $search ){
 
             $products->where(function ($query) use ($search) {
@@ -79,6 +85,10 @@ class ProductsController extends Controller
 
         $products->where('isdeleted', 0);
 
+        if( $productgroup != 'All' ){
+            $products->where('groupname', '=', $productgroup);
+        }
+
         $products = $products->orderBy('indexno', 'ASC')
                     ->orderBy('name', 'DESC')
                     ->orderBy('fk_productgroup', 'ASC')
@@ -88,14 +98,14 @@ class ProductsController extends Controller
         //dd($sub_menu);
         //
         if( count($products) == 0 ){
-            return view('admin.products.index', compact('sub_menu', 'products', 'search'));
+            return view('admin.products.index', compact('sub_menu', 'products', 'search', 'productgroup', 'mscproductgroup'));
         }
 
         $pricelist = ProductPriceListMstrView::getProductPriceList($products->pluck('pk_products'));
 
         $products = ProductPriceListMstrView::mapProductPriceList($products, $pricelist);
 
-        return view('admin.products.index', compact('sub_menu', 'products', 'search'));
+        return view('admin.products.index', compact('sub_menu', 'products', 'search', 'productgroup', 'mscproductgroup'));
     
     }//END index
 
@@ -253,6 +263,34 @@ class ProductsController extends Controller
         return view('admin.products.edit', compact('products', 'category', 'flavors', 'productgroup', 'gallery'));
     
     }//END edit
+
+
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function copy($id)
+    {
+        //
+        //check if user has access
+        if(!User::isUserHasAccess(1017)){
+            return redirect('/admin/404');
+        }
+
+        $this->setActiveTab();
+        $products = ProductMstrView::findOrFail($id);
+        $category = Category::getActiveCategory();
+        $flavors = Flavor::getActiveFlavors();
+        $productgroup = ProductGroup::getActiveProductGroup();
+        $gallery = ProductPix::where('fk_products', $id)->get();
+        return view('admin.products.copy', compact('products', 'category', 'flavors', 'productgroup', 'gallery'));
+    
+    }//END edit
+
 
 
     /**

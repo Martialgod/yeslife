@@ -156,6 +156,36 @@
               @break
 
 
+
+              @case(6) {{--productgroup--}}
+
+                @php 
+                  //responses from the controller
+                  $productgroup = (isset($productgroup)) ? $productgroup : 'All';
+                  $mscproductgroup = (isset($mscproductgroup)) ? $mscproductgroup : [];
+                @endphp 
+
+                <div class="col-md-3">
+
+                  <div class="form-group">
+                        <label for="productgroup">Product Group</label>
+                        <select name="productgroup" id="productgroup" class="form-control">
+                          
+                          <option value="All" {{ $productgroup == 'All' ? 'selected' : '' }} >All</option>
+
+                          @foreach($mscproductgroup as $key=> $v)
+                            <option value="{{$v->name}}" {{ $productgroup == $v->name ? 'selected' : '' }} >{{$v->name}}</option>
+                          @endforeach
+
+                    </select>
+                      
+                    </div>
+
+                </div><!--END col-md-3 productgroup-->
+
+              @break
+
+
               @case(10) {{--Reports List of customers type--}}
 
                 @php 

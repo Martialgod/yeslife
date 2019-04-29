@@ -307,6 +307,18 @@ class DatabaseSeeder extends Seeder
         ]); */
 
 
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1017,
+            'method'=> 'POST',
+            'description'=> 'Copy',
+            'route'=> 'products.copy',
+            'type'=> 'C',
+            'family'=> 'products.index',
+            'indexno'=> 4,
+            'stat'=>1
+        ]); 
+
+
     }
 
 }//END class

@@ -5,4 +5,6 @@
 	<input type="hidden" name="dateto" value="{{$dateto}}">
 	<input type="hidden" name="paymentstatus" value="{{$paymentstatus}}">
 
+@elseif( strpos(url()->current(), '/admin/products') !== false )
+	<input type="hidden" name="productgroup" value="{{$productgroup}}">
 @endif

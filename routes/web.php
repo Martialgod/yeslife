@@ -257,6 +257,8 @@ Route::get('/admin/abandonedcart/broadcast/sample/{id}', 'AbandonedCartControlle
 Route::resource('admin/products', 'ProductsController');
 Route::delete('/admin/products/{id}/softdelete', 'ProductsController@softdelete')->name('products.softdelete');
 
+Route::get('/admin/products/{id}/copy', 'ProductsController@copy')->name('products.copy');
+
 Route::get('/admin/products/{id}/pricelist', 'ProductPriceListController@create')->name('products.pricelist');
 Route::post('/admin/products/{id}/pricelist', 'ProductPriceListController@store')->name('products.pricelist');
 
