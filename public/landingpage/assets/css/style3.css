@@ -36,63 +36,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/*@font-face {
-  	font-family: yeslifeGotham;
-  	src: 
-    url(../fonts-gotham/Gotham-Black.otf), 
-    url(../fonts-gotham/Gotham-BlackItalic.otf),
-    url(../fonts-gotham/Gotham-Bold.otf),
-    url(../fonts-gotham/Gotham-BlackItalic.otf),
-    url(../fonts-gotham/Gotham-Book.otf),
-    url(../fonts-gotham/Gotham-BookItalic.otf),
-    url(../fonts-gotham/Gotham-Light.otf),
-    url(../fonts-gotham/Gotham-LightItalic.otf),
-    url(../fonts-gotham/Gotham-Medium.otf),
-    url(../fonts-gotham/Gotham-MediumItalic.otf),
-    url(../fonts-gotham/Gotham-Thin.otf),
-    url(../fonts-gotham/Gotham-ThinItalic.otf),
-    url(../fonts-gotham/Gotham-Ultra.otf),
-    url(../fonts-gotham/Gotham-UltraItalic.otf),
-    url(../fonts-gotham/Gotham-XLight.otf),
-    url(../fonts-gotham/Gotham-XLightItalic.otf),
-}*/
-
-@font-face{
-	font-family: Gotham;
-	src: url(../fonts-gotham/Gotham-Bold.otf);
-}
-
-
-/*@font-face {
-  	font-family: yeslifeUniverse;
-  	src: url(../fonts-universe/UniversLTStd-Black.otf);
-    src: url(../fonts-universe/UniversLTStd-BlackEx.otf);
-    src: url(../fonts-universe/UniversLTStd-BlackExObl.otf);
-    src: url(../fonts-universe/UniversLTStd-BlackObl.otf);
-    src: url(../fonts-universe/UniversLTStd-Bold.otf);
-    src: url(../fonts-universe/UniversLTStd-BoldCn.otf);
-    src: url(../fonts-universe/UniversLTStd-BoldCnObl.otf);
-    src: url(../fonts-universe/UniversLTStd-BoldObl.otf);
-    src: url(../fonts-universe/UniversLTStd-Cn.otf);
-    src: url(../fonts-universe/UniversLTStd-CnObl.otf);
-    src: url(../fonts-universe/UniversLTStd-Ex.otf);
-    src: url(../fonts-universe/UniversLTStd-ExObl.otf);
-    src: url(../fonts-universe/UniversLTStd-Light.otf);
-    src: url(../fonts-universe/UniversLTStd-LightCnObl.otf);
-    src: url(../fonts-universe/UniversLTStd-LightObl.otf);
-    src: url(../fonts-universe/UniversLTStd-LightUltraCn.otf);
-    src: url(../fonts-universe/UniversLTStd-UltraCn.otf);
-    src: url(../fonts-universe/UniversLTStd-XBlack.otf);
-    src: url(../fonts-universe/UniversLTStd-XBlackExObl.otf);
-    src: url(../fonts-universe/UniversLTStd-XBlackObl.otf);
-    src: url(../fonts-universe/UniversLTStd.otf); 
-}*/
-
-@font-face{
-	font-family: Univers;
-	src: url(../fonts-universe/UniversLTStd-Light.otf);
-}
-
 html, body, .site-wrapper {
   height: 100%; }
 
@@ -103,7 +46,7 @@ body {
   font-style: normal;
   font-weight: normal;
   visibility: visible;
-  font-family: Univers, ;
+  font-family: "Open Sans", sans-serif;
   color: #222222;
   position: relative; }
   body[data-rtl="rtl"] {
@@ -111,7 +54,7 @@ body {
     text-align: right; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Gotham;
+  font-family: "Oswald", sans-serif;
   /*color: #0e76bc;*/
   color: #3a95c2;
   font-weight: 400;
@@ -416,7 +359,7 @@ input::placeholder, textarea::placeholder {
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 0.5px;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     line-height: 1; }
     @media only screen and (max-width: 575px) {
       .page-breadcrumb li {
@@ -445,7 +388,7 @@ input::placeholder, textarea::placeholder {
   .page-pagination li {
     font-size: 16px;
     line-height: 22px;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     color: #a4a4a4;
     margin: 0 10px 10px; }
     .page-pagination li a {
@@ -492,7 +435,7 @@ input::placeholder, textarea::placeholder {
   background-color: #fbb055 /*#faaf54*/;
   border-color: #fbb055 /*#faaf54*/;
   color: #ffffff;
-  font-family: "Univers", ;
+  font-family: "Oswald", sans-serif;
   border-radius: 4px;
   height: 38px;
   text-transform: capitalize;
@@ -721,7 +664,7 @@ input::placeholder, textarea::placeholder {
       line-height: 30px;
       font-weight: 600;
       letter-spacing: 0.25px;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       color: #222222;
       display: block;
       padding: 25px 0;
@@ -777,7 +720,7 @@ input::placeholder, textarea::placeholder {
     .sub-menu li a {
       color: #d8d8d8;
       display: block;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       font-size: 14px;
       line-height: 30px;
       font-weight: 500;
@@ -835,7 +778,7 @@ input::placeholder, textarea::placeholder {
     .mega-menu li > span {
       color: #d0a97e;
       display: block;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       font-size: 18px;
       line-height: 1;
       padding-top: 5px;
@@ -849,7 +792,7 @@ input::placeholder, textarea::placeholder {
     .mega-menu li a {
       color: #d8d8d8;
       display: block;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       font-size: 14px;
       line-height: 30px;
       font-weight: 500;
@@ -916,7 +859,7 @@ input::placeholder, textarea::placeholder {
     line-height: 30px;
     font-weight: 600;
     letter-spacing: 0.25px;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     color: #222222; }
     .header-cart-toggle span.icon {
       display: block;
@@ -1019,7 +962,7 @@ input::placeholder, textarea::placeholder {
     flex: 0 0 calc(100% - 60px);
     padding-left: 15px; }
     .mini-cart-product .content .title {
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       color: #d8d8d8;
       display: block;
       font-size: 16px;
@@ -1059,7 +1002,7 @@ input::placeholder, textarea::placeholder {
       padding: 8px 15px;
       text-align: center;
       font-size: 14px;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       letter-spacing: 0.25px; }
       .mini-cart-footer .buttons a:hover {
         background-color: #d0a97e;
@@ -1148,7 +1091,7 @@ input::placeholder, textarea::placeholder {
           .mobile-menu .mean-bar .mean-nav > ul li a {
             font-size: 13px;
             display: block;
-            font-family: "Univers", ;
+            font-family: "Oswald", sans-serif;
             color: #222222;
             font-weight: 600;
             text-transform: uppercase;
@@ -2029,7 +1972,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
         .product-item .product-content .head .bottom .price {
           font-size: 18px;
           line-height: 21px;
-          font-family: "Univers", ;
+          font-family: "Oswald", sans-serif;
           color: #222222;
           display: -webkit-box;
           display: -ms-flexbox;
@@ -2384,7 +2327,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
           .product-details .product-content .product-content-inner .head .bottom .price {
             font-size: 24px;
             line-height: 28px;
-            font-family: "Univers", ;
+            font-family: "Oswald", sans-serif;
             color: #222222;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -2456,7 +2399,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
           margin-bottom: 12px; }
           .product-details .product-content .product-content-inner .body .size h4, .product-details .product-content .product-content-inner .body .vitamin h4 {
             font-size: 18px;
-            font-family: "Univers", ;
+            font-family: "Open Sans", sans-serif;
             font-weight: 600;
             margin-bottom: 0;
             margin-right: 13px; }
@@ -2485,7 +2428,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
           .product-details .product-content .product-content-inner .body .quantity h4 {
             margin-right: 10px;
             margin-bottom: 0;
-            font-family: "Univers", ;
+            font-family: "Open Sans", sans-serif;
             font-weight: 600; }
           .product-details .product-content .product-content-inner .body .quantity .pro-qty {
             display: -webkit-box;
@@ -2535,7 +2478,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
               padding: 10px 20px;
               background-color: #fbb055 /*#faaf54*/;
               font-weight: 600;
-              font-family: "Univers", ;
+              font-family: "Oswald", sans-serif;
               letter-spacing: 0.5px; }
               .product-details .product-content .product-content-inner .body .product-action a.buy:hover, .product-details .product-content .product-content-inner .body .product-action button.buy:hover {
                 background-color: #222222;
@@ -2649,7 +2592,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       display: block;
       line-height: 24px;
       padding: 13px 20px;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       font-size: 18px;
       font-weight: 500;
       letter-spacing: 0.25px; }
@@ -2727,7 +2670,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       background-color: #222222;
       padding: 10px 30px;
       color: #d0a97e;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       letter-spacing: 0.25px;
       text-transform: uppercase; }
       .review-form form input[type="submit"]:hover {
@@ -2782,7 +2725,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       top: 0;
       font-size: 14px;
       font-weight: 500;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       padding: 11px 20px; }
 
 /*-- List --*/
@@ -3014,7 +2957,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       color: #d8d8d8; }
   .subscribe-form button {
     font-size: 18px;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     color: #222222;
     height: 50px;
     position: absolute;
@@ -3129,7 +3072,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     transform-origin: left bottom;
     font-size: 18px;
     font-weight: 700;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     line-height: 1; }
     .testimonial-image-slider .slick-arrow.slick-prev::after {
@@ -3200,7 +3143,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     margin-bottom: 6px; }
   .testimonial-content span {
     display: block;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     line-height: 1;
     margin: 0; }
 
@@ -3440,7 +3383,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
         display: flex;
         color: #d8d8d8;
         letter-spacing: 0.5px;
-        font-family: "Univers", ;
+        font-family: "Oswald", sans-serif;
         margin-bottom: 3px; }
         .home-blog .content .blog-meta li::after {
           content: "|";
@@ -3457,7 +3400,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       color: #d8d8d8;
       font-weight: 600;
       text-transform: capitalize;
-      font-family: "Univers", ; }
+      font-family: "Oswald", sans-serif; }
       .home-blog .content .read-more:hover {
         color: #d0a97e; }
 
@@ -3529,7 +3472,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
         display: flex;
         color: #d8d8d8;
         letter-spacing: 0.5px;
-        font-family: "Univers", ;
+        font-family: "Oswald", sans-serif;
         margin-bottom: 3px; }
         .blog-item .content .blog-meta li::after {
           content: "|";
@@ -3546,7 +3489,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       color: #d8d8d8;
       font-weight: 600;
       text-transform: capitalize;
-      font-family: "Univers", ; }
+      font-family: "Oswald", sans-serif; }
       .blog-item .content .read-more:hover {
         color: #d0a97e; }
   .blog-item.grid .image {
@@ -3588,7 +3531,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     display: flex;
     color: #222222;
     letter-spacing: 0.5px;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     margin-bottom: 3px; }
     .single-blog-item .content .blog-meta li::after {
       content: "|";
@@ -3628,7 +3571,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       display: block;
       font-size: 15px;
       font-weight: 500;
-      font-family: "Univers", ;
+      font-family: "Oswald", sans-serif;
       line-height: 25px;
       margin-right: 10px; }
     .single-blog-item .content .blog-footer .tags a, .single-blog-item .content .blog-footer .share a {
@@ -3651,7 +3594,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   margin-top: 25px; }
   .blog-navigation a {
     font-size: 15px;
-    font-family: "Univers", ;
+    font-family: "Oswald", sans-serif;
     line-height: 20px; }
     .blog-navigation a i {
       line-height: 24px;
@@ -3758,7 +3701,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   text-transform: uppercase;
   line-height: 25px;
   border: none;
-  font-family: "Univers", ; }
+  font-family: "Oswald", sans-serif; }
   .comment-form button:hover {
     background-color: #d0a97e;
     color: #222222; }
@@ -3828,7 +3771,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   border: none;
   border-radius: 50px;
   font-weight: 600;
-  font-family: "Univers", ; }
+  font-family: "Oswald", sans-serif; }
   .contact-form button:hover {
     background-color: #222222;
     color: #ffffff; }

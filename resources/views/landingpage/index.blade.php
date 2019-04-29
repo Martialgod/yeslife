@@ -31,9 +31,9 @@
     {{--$refnourl initialized at landingpage.master.blade.php--}}
 
 	<!-- Hero Section Start -->
-    <div class="hero-slider section" style="margin-top: -30px;">
+    <div class="hero-slider section" style="margin-top: -30px; ">
 
-        <div class="carousel slide" data-ride="carousel" data-interval="8000" id="slider"   > {{--class="carousel slide" data-ride="carousel"--}}
+        <div class="carousel slide" data-ride="carousel" data-interval="8000" id="slider"  style="" > {{--class="carousel slide" data-ride="carousel"--}}
           
             <ol class="carousel-indicators">
                 <li data-target="#slider" data-slide-to="0" class="active"></li>
@@ -102,7 +102,7 @@
                                 <div class="hero-content-wrap col">
                                     
                                     <div class="hero-image" style="width:35%">
-                                        <img src="/landingpage/assets/images/slider/cbd-product-3.png" alt="">
+                                        <img src="/landingpage/assets/images/slider/cbd-product-4.png" alt="">
                                     </div>
 
                                     <div class="hero-content text-center"  >
@@ -209,23 +209,13 @@
     <!-- Product Section Start -->
     <div class="product-section section pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20">
 
-
         <div class="container">
 
+
+            @include('landingpage.layouts.yeslife-info-tabs')
+
+
             {{--<div class="row">
-
-                <nav class="nav nav-pills nav-justified">
-                  <a class="nav-item nav-link active" href="#">Active</a>
-                  <a class="nav-item nav-link" href="#">Link</a>
-                  <a class="nav-item nav-link" href="#">Link</a>
-                  <a class="nav-item nav-link disabled" href="#">Disabled</a>
-                </nav>
-
-                
-            </div> --}}
-
-
-           <div class="row">
                 <div class="col">
                     <div class="section-title-2">
                         <h1> Start saying YES to life. </h1>
@@ -233,16 +223,10 @@
                             Each of our products is formulated with our proprietary YES Nano Technology for greater absorption and distribution throughout the body.
                         </p>
                         <br>
-                        {{--<h1>Do You Know HEMP?</h1>
-                        <p>It is a simple, unassuming plant and has been known for centuries for its amazing medical properties.</p>
-                        <p>At YES.LIFE we have found the best way to deliver these properties, with <strong>The Most Water Soluble</strong> CBD on the 
-                           market our CBD doesn't get flushed out of your intricate system, it gets delivered right where it should.</p>
-                        <p>Your Body</p> --}}
                     </div>
                 </div>
             </div><!-- Section Title End -->
            
-
 
             <div class="row">
 
@@ -294,10 +278,8 @@
              
                 </div><!--END col-md-3-->
 
+            </div><!--END row--> --}}
 
-            </div><!--END row-->
-
-            
            
             <!-- Section Title Start -->
             <div class="row">
@@ -454,7 +436,7 @@
                 <div class="col-12">
                     <div class="banner">
                     	<a href="{{url('/shop')}}{{$refnourl}}">
-                    		<img src="/landingpage/assets/images/banner/offer_page-V2.jpg" alt="">
+                    		<img src="/landingpage/assets/images/banner/offer_page-V3.jpg" alt="">
                     	</a>
                     </div>
                 </div>

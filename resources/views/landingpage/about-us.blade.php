@@ -87,7 +87,7 @@
                     <br><br>
                     <h1>Our Cause</h1>
                     <br>
-                    <p>
+                    <p style="font-family: Univers">
                         It began with seeing the amazing benefits of CBD in our own lives. Unfortunately, there was so much different information and noise out there – “Is this true?” – “Is this false?” – “What am I reading!?” – we didn’t know what to believe. With so many different products at different price points to compound it all, our heads were spinning. We were lost.
                         
                     </p>      
