@@ -103,7 +103,7 @@ body {
   font-style: normal;
   font-weight: normal;
   visibility: visible;
-  font-family: Univers, ;
+  font-family: "Univers";
   color: #222222;
   position: relative; }
   body[data-rtl="rtl"] {
@@ -111,7 +111,7 @@ body {
     text-align: right; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Gotham;
+  font-family: "Gotham";
   /*color: #0e76bc;*/
   color: #3a95c2;
   font-weight: 400;
@@ -416,7 +416,7 @@ input::placeholder, textarea::placeholder {
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 0.5px;
-    font-family: "Univers", ;
+    font-family: "Univers";
     line-height: 1; }
     @media only screen and (max-width: 575px) {
       .page-breadcrumb li {
@@ -445,7 +445,7 @@ input::placeholder, textarea::placeholder {
   .page-pagination li {
     font-size: 16px;
     line-height: 22px;
-    font-family: "Univers", ;
+    font-family: "Univers";
     color: #a4a4a4;
     margin: 0 10px 10px; }
     .page-pagination li a {
@@ -492,7 +492,7 @@ input::placeholder, textarea::placeholder {
   background-color: #fbb055 /*#faaf54*/;
   border-color: #fbb055 /*#faaf54*/;
   color: #ffffff;
-  font-family: "Univers", ;
+  font-family: "Univers";
   border-radius: 4px;
   height: 38px;
   text-transform: capitalize;
@@ -721,7 +721,7 @@ input::placeholder, textarea::placeholder {
       line-height: 30px;
       font-weight: 600;
       letter-spacing: 0.25px;
-      font-family: "Univers", ;
+      font-family: "Univers";
       color: #222222;
       display: block;
       padding: 25px 0;
@@ -777,7 +777,7 @@ input::placeholder, textarea::placeholder {
     .sub-menu li a {
       color: #d8d8d8;
       display: block;
-      font-family: "Univers", ;
+      font-family: "Univers";
       font-size: 14px;
       line-height: 30px;
       font-weight: 500;
@@ -835,7 +835,7 @@ input::placeholder, textarea::placeholder {
     .mega-menu li > span {
       color: #d0a97e;
       display: block;
-      font-family: "Univers", ;
+      font-family: "Univers";
       font-size: 18px;
       line-height: 1;
       padding-top: 5px;
@@ -849,7 +849,7 @@ input::placeholder, textarea::placeholder {
     .mega-menu li a {
       color: #d8d8d8;
       display: block;
-      font-family: "Univers", ;
+      font-family: "Univers";
       font-size: 14px;
       line-height: 30px;
       font-weight: 500;
@@ -916,7 +916,7 @@ input::placeholder, textarea::placeholder {
     line-height: 30px;
     font-weight: 600;
     letter-spacing: 0.25px;
-    font-family: "Univers", ;
+    font-family: "Univers";
     color: #222222; }
     .header-cart-toggle span.icon {
       display: block;
@@ -1019,7 +1019,7 @@ input::placeholder, textarea::placeholder {
     flex: 0 0 calc(100% - 60px);
     padding-left: 15px; }
     .mini-cart-product .content .title {
-      font-family: "Univers", ;
+      font-family: "Univers";
       color: #d8d8d8;
       display: block;
       font-size: 16px;
@@ -1059,7 +1059,7 @@ input::placeholder, textarea::placeholder {
       padding: 8px 15px;
       text-align: center;
       font-size: 14px;
-      font-family: "Univers", ;
+      font-family: "Univers";
       letter-spacing: 0.25px; }
       .mini-cart-footer .buttons a:hover {
         background-color: #d0a97e;
@@ -1148,7 +1148,7 @@ input::placeholder, textarea::placeholder {
           .mobile-menu .mean-bar .mean-nav > ul li a {
             font-size: 13px;
             display: block;
-            font-family: "Univers", ;
+            font-family: "Univers";
             color: #222222;
             font-weight: 600;
             text-transform: uppercase;
@@ -2029,7 +2029,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
         .product-item .product-content .head .bottom .price {
           font-size: 18px;
           line-height: 21px;
-          font-family: "Univers", ;
+          font-family: "Univers";
           color: #222222;
           display: -webkit-box;
           display: -ms-flexbox;
@@ -2384,7 +2384,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
           .product-details .product-content .product-content-inner .head .bottom .price {
             font-size: 24px;
             line-height: 28px;
-            font-family: "Univers", ;
+            font-family: "Univers";
             color: #222222;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -2456,7 +2456,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
           margin-bottom: 12px; }
           .product-details .product-content .product-content-inner .body .size h4, .product-details .product-content .product-content-inner .body .vitamin h4 {
             font-size: 18px;
-            font-family: "Univers", ;
+            font-family: "Univers";
             font-weight: 600;
             margin-bottom: 0;
             margin-right: 13px; }
@@ -2485,7 +2485,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
           .product-details .product-content .product-content-inner .body .quantity h4 {
             margin-right: 10px;
             margin-bottom: 0;
-            font-family: "Univers", ;
+            font-family: "Univers";
             font-weight: 600; }
           .product-details .product-content .product-content-inner .body .quantity .pro-qty {
             display: -webkit-box;
@@ -2535,7 +2535,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
               padding: 10px 20px;
               background-color: #fbb055 /*#faaf54*/;
               font-weight: 600;
-              font-family: "Univers", ;
+              font-family: "Univers";
               letter-spacing: 0.5px; }
               .product-details .product-content .product-content-inner .body .product-action a.buy:hover, .product-details .product-content .product-content-inner .body .product-action button.buy:hover {
                 background-color: #222222;
@@ -2649,7 +2649,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       display: block;
       line-height: 24px;
       padding: 13px 20px;
-      font-family: "Univers", ;
+      font-family: "Univers";
       font-size: 18px;
       font-weight: 500;
       letter-spacing: 0.25px; }
@@ -2727,7 +2727,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       background-color: #222222;
       padding: 10px 30px;
       color: #d0a97e;
-      font-family: "Univers", ;
+      font-family: "Univers";
       letter-spacing: 0.25px;
       text-transform: uppercase; }
       .review-form form input[type="submit"]:hover {
@@ -2782,7 +2782,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       top: 0;
       font-size: 14px;
       font-weight: 500;
-      font-family: "Univers", ;
+      font-family: "Univers";
       padding: 11px 20px; }
 
 /*-- List --*/
@@ -3014,7 +3014,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       color: #d8d8d8; }
   .subscribe-form button {
     font-size: 18px;
-    font-family: "Univers", ;
+    font-family: "Univers";
     color: #222222;
     height: 50px;
     position: absolute;
@@ -3129,7 +3129,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     transform-origin: left bottom;
     font-size: 18px;
     font-weight: 700;
-    font-family: "Univers", ;
+    font-family: "Univers";
     text-transform: uppercase;
     line-height: 1; }
     .testimonial-image-slider .slick-arrow.slick-prev::after {
@@ -3200,7 +3200,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     margin-bottom: 6px; }
   .testimonial-content span {
     display: block;
-    font-family: "Univers", ;
+    font-family: "Univers";
     line-height: 1;
     margin: 0; }
 
@@ -3440,7 +3440,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
         display: flex;
         color: #d8d8d8;
         letter-spacing: 0.5px;
-        font-family: "Univers", ;
+        font-family: "Univers";
         margin-bottom: 3px; }
         .home-blog .content .blog-meta li::after {
           content: "|";
@@ -3457,7 +3457,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       color: #d8d8d8;
       font-weight: 600;
       text-transform: capitalize;
-      font-family: "Univers", ; }
+      font-family: "Univers"; }
       .home-blog .content .read-more:hover {
         color: #d0a97e; }
 
@@ -3529,7 +3529,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
         display: flex;
         color: #d8d8d8;
         letter-spacing: 0.5px;
-        font-family: "Univers", ;
+        font-family: "Univers";
         margin-bottom: 3px; }
         .blog-item .content .blog-meta li::after {
           content: "|";
@@ -3546,7 +3546,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       color: #d8d8d8;
       font-weight: 600;
       text-transform: capitalize;
-      font-family: "Univers", ; }
+      font-family: "Univers"; }
       .blog-item .content .read-more:hover {
         color: #d0a97e; }
   .blog-item.grid .image {
@@ -3588,7 +3588,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     display: flex;
     color: #222222;
     letter-spacing: 0.5px;
-    font-family: "Univers", ;
+    font-family: "Univers";
     margin-bottom: 3px; }
     .single-blog-item .content .blog-meta li::after {
       content: "|";
@@ -3628,7 +3628,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       display: block;
       font-size: 15px;
       font-weight: 500;
-      font-family: "Univers", ;
+      font-family: "Univers";
       line-height: 25px;
       margin-right: 10px; }
     .single-blog-item .content .blog-footer .tags a, .single-blog-item .content .blog-footer .share a {
@@ -3651,7 +3651,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   margin-top: 25px; }
   .blog-navigation a {
     font-size: 15px;
-    font-family: "Univers", ;
+    font-family: "Univers";
     line-height: 20px; }
     .blog-navigation a i {
       line-height: 24px;
@@ -3758,7 +3758,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   text-transform: uppercase;
   line-height: 25px;
   border: none;
-  font-family: "Univers", ; }
+  font-family: "Univers"; }
   .comment-form button:hover {
     background-color: #d0a97e;
     color: #222222; }
@@ -3828,7 +3828,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   border: none;
   border-radius: 50px;
   font-weight: 600;
-  font-family: "Univers", ; }
+  font-family: "Univers"; }
   .contact-form button:hover {
     background-color: #222222;
     color: #ffffff; }
