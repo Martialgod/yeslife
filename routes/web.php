@@ -182,7 +182,7 @@ Route::get('/myaccount/address', 'MyAccountController@address');
 Route::put('/myaccount/address', 'MyAccountController@updateaddress');
 Route::get('/myaccount/details', 'MyAccountController@details');
 Route::put('/myaccount/details', 'MyAccountController@updatedetails');
-//Route::get('/myaccount/affiliate', 'MyAccountController@affiliate');
+Route::get('/myaccount/affiliate', 'MyAccountController@affiliate');
 
 
 Route::post('/logout', 'RegisterController@destroy');

@@ -74,14 +74,14 @@
                     <div class="tab-pane fade" id="nav-cbd" role="tabpanel" aria-labelledby="nav-cbd-tab">
                         
                         <p style="font-size: 18px;">
-                            CBD – or “cannabidiol” – is a chemical found in the hemp plant. It has a myriad of positive effects on the human body, from decreasing inflammation, to aiding anxiety, to easing general discomfort. Science is still learning of new benefits every day: the ones listed here are merely the tip of the iceberg.
+                            CBD – or “cannabidiol” – is a chemical found in the hemp plant. It has a myriad of positive effects on the human body, from decreasing inflammation, to aiding in anxious feelings, to easing general discomfort. Science is still learning of new benefits every day: the ones listed here are merely the tip of the iceberg.
                         </p>
                         
                     </div>
 
                     <div class="tab-pane fade" id="nav-water" role="tabpanel" aria-labelledby="nav-water-tab">
                         <p style="font-size: 18px;">
-                            CBD is an oil – humans are water. Mix the two together, and they repel. CBD ordinarily doesn’t get absorbed well into the watery systems of humans, and so only CBD products that manage to make the oil water-soluble can deliver the bulk of the product’s advertised CBD into your body. Otherwise, you’re paying for very expensive sewage waste for your toilet that can be taken out
+                            Hemp CBD is an oil - humans are water. Mix the two together and they repel. Water soluble CBD products, like YES.LIFE, will actually deliver the bulk of the advertised milligrams of CBD into your body. Otherwise, you're paying for expensive sewage waste for your toilet.
                         </p>
                        
                     </div>
@@ -89,7 +89,7 @@
 
                     <div class="tab-pane fade" id="nav-absorption" role="tabpanel" aria-labelledby="nav-absorption-tab">
                         <p style="font-size: 18px;">
-                            Our Hemp CBD oil is not only water-soluble, but nano-sized to help the precious supplement reach your bloodstream and carry out its positive effects. With the absorption rate of YES.LIFE’s Hemp CBD Oil, our 250 mg of CBD is equivalent to nearly 3000 mg of competitors’ CBD. 
+                            Our Hemp CBD oil is not only water-soluble, but also nano-sized. Our YesNano technology helps the CBD supplement reach your bloodstream and actually produce positive effects. Because of our higher absorption rate, 250 mg of YES.LIFE CBD is equivalent to nearly 3000 mg of the competitors CBD.
                         </p>
                        
                     </div>

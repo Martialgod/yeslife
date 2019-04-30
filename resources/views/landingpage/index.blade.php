@@ -58,13 +58,14 @@
                                     </div>
 
                                     <div class="hero-content text-center" >
-                                        <h2>
+                                        
+                                        {{--<h2>
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
-                                        </h2>
+                                        </h2> --}}
 
-                                        <h1 id="" style="color:#fff;">
+                                        <h2 id="" style="color:#fff;">
                                            NOURISH YOUR BODY <br> WITH NATURE AND <br> LIVE YOUR BEST LIFE.
-                                        </h1>
+                                        </h2>
 
                                         <p id="" style="color:#fff; text-align:left">
                                             
@@ -102,18 +103,19 @@
                                 <div class="hero-content-wrap col">
                                     
                                     <div class="hero-image" style="width:35%">
-                                        <img src="/landingpage/assets/images/slider/cbd-product-4.png" alt="">
+                                        <img src="/landingpage/assets/images/slider/cbd-product-4.png" alt="" style="width: 300px;">
                                     </div>
 
                                     <div class="hero-content text-center"  >
-                                        <h2>
+                                        
+                                        {{--<h2>
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
-                                        </h2>
+                                        </h2> --}}
 
-                                        <h1 id="" style="color:#1d1f23;">
+                                        <h2 id="" style="color:#1d1f23;">
                                             DON'T SETTLE FOR <br> INFERIOR HEMP CBD OIL!
 
-                                        </h1>
+                                        </h2>
 
                                         <p id="" style="color:#000; text-align:left">
                                             
@@ -151,13 +153,14 @@
                                     </div>
 
                                     <div class="hero-content text-center" >
-                                        <h2>
+                                        
+                                        {{--<h2>
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
-                                        </h2>
+                                        </h2> --}}
 
-                                        <h1 id="" style="color:#fbb055;">
+                                        <h2 id="" style="color:#fbb055;">
                                             HAND IN HAND WITH <br> NATURE AND SCIENCE
-                                        </h1>
+                                        </h2>
 
 
                                         <p id="" style="color:#000; text-align:left">

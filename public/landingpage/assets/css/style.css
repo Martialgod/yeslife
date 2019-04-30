@@ -112,6 +112,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Gotham";
+  text-transform: uppercase;
   /*color: #0e76bc;*/
   color: #3a95c2;
   font-weight: 400;
