@@ -85,6 +85,7 @@
                                         <th>Price</th>
                                         <th>Qty</th>
                                         <th>Total</th>
+                                        {{--<th></th>--}}
                                         <th></th>
                                     </tr>
 
@@ -122,7 +123,7 @@
                                             <div class="input-group mb-3">
                                                 
                                                 <div class="input-group-prepend" ng-click="vm.UpdateCart('minus', list)" style="cursor: pointer;">
-                                                    <img src="{{asset('/landingpage/assets/images/minus.png')}}" alt="" width="100%">
+                                                    <img src="{{asset('/landingpage/assets/images/minus.png')}}" alt="">
                                                 </div>
                                                 
                                                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" ame="qty" ng-model="list.selectedqty" string-to-number ng-change="vm.UpdateCart('', list)" ng-model-options="{debounce: 500}">
@@ -141,15 +142,30 @@
                                         </td>
 
 
-                                        <td>
+                                        {{--<td>
 
-                                            <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default btn-sm" ng-click="vm.AddToCart(list)" ng-disabled="list.selectedqty == 0" > 
+                                            <button id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default btn-sm" ng-click="vm.AddToCart(list)" ng-disabled="list.selectedqty == 0" > 
 
-                                                Add to Cart
+                                                Add
 
                                             </button> 
 
+                                        </td> --}}
+
+
+                                        <td>
+
+                                            
+                                            <button id="" style="background-color: #ffffff;color:#af2424; margin-bottom: 10px;" class="btn btn-danger btn-sm" ng-click="vm.RemoveFromCart(list)" ng-disabled="list.netamount == 0" > 
+
+                                                Remove
+
+                                            </button> 
+
+
+
                                         </td>
+
 
                                     </tr>
 
@@ -162,7 +178,14 @@
                                         <td>
                                             <b>$@{{vm.totalnetamount}}</b>
                                         </td>
-                                        <td></td>
+                                        {{--<td></td>--}}
+                                        <td>
+                                            <button id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default btn" ng-click="vm.BulkUpdate()" > 
+
+                                                Update Cart
+
+                                            </button> 
+                                        </td>
 
                                     </tr>
 

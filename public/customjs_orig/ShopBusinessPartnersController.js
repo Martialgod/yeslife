@@ -133,7 +133,7 @@
 
 			} */
 
-			vm.CalculateTotal();
+			//vm.CalculateTotal();
 	
 
 		}; //END UpdateCart
@@ -161,8 +161,57 @@
 
 			} 
 
+			vm.CalculateTotal();
+
 
 		};//END AddToCart
+
+
+		vm.BulkUpdate = function(){
+
+
+			vm.mscproducts.forEach(function(item1, index1){
+
+				if( item1.selectedqty > 0 ){
+
+					var products = {
+						'productid': item1.productid,
+						'qty': item1.selectedqty,
+					};
+
+					//re initialize cart cookie to prevent double qty update in addCartCookie
+					document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
+
+					addCartCookie(products); //@GlobalScript.js
+
+				}else{
+
+					removeCartCookie( item1.productid ); //@GlobalScript.js
+
+				} 
+
+
+			});
+
+			vm.CalculateTotal();
+
+
+		};//END BulkUpdate
+
+		
+
+
+		vm.RemoveFromCart = function(list){
+
+
+    		//remove from cookie
+			removeCartCookie( list.productid ); //@GlobalScript.js
+
+			list.selectedqty = 0;
+
+			vm.CalculateTotal();
+
+		};//END RemoveFromCart
 
 
 		vm.CalculateTotal = function(){
