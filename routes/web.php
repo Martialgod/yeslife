@@ -35,7 +35,7 @@ Route::get('/curl', function(){
     
     //curl_setopt($curl, CURLOPT_URL, 'https://api.leaddyno.com/v1/purchases?key=4e4aa7fc362a674eec1a9780884d24f3799edc09');
 
-    curl_setopt($curl, CURLOPT_URL, 'https://api.leaddyno.com/v1/visitors?key=4e4aa7fc362a674eec1a9780884d24f3799edc09');
+    curl_setopt($curl, CURLOPT_URL, 'https://api.leaddyno.com/v1/visitors/?key=4e4aa7fc362a674eec1a9780884d24f3799edc09');
 
     $result = curl_exec($curl);
 

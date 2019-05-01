@@ -249,6 +249,7 @@ class ShopController extends Controller
 
         $flavors = ProductMstrView::where('fk_productgroup', $products->fk_productgroup)
                     ->whereNotNull('fk_flavors')
+                    ->where('fk_productgroup', '<>', 1) // do not include business bulk products
                     ->orderBy('indexno', 'ASC')
                     ->orderBy('name', 'DESC')
                     ->get();
@@ -262,6 +263,7 @@ class ShopController extends Controller
 
         $defaultproducts = ProductMstrView::where('stat', 1)
             ->where('pk_products', '<>', $products->pk_products )
+            ->where('fk_productgroup', '<>', 1) // do not include business bulk products
             ->groupBy('fk_productgroup')
             ->orderBy('indexno', 'ASC')
             ->orderBy('name', 'DESC')
