@@ -55,6 +55,7 @@
 	                    <th>Sorter</th>
 	                    <th>Price</th>
 	                    <th>Qty</th>
+	                    <th>Unit</th>
 	                    <th>Status</th>
 	                   
 	              	</tr>
@@ -205,6 +206,9 @@
 	                        <td>
 	                           {{$a->qty}}
 	                        </td>
+
+
+	                        <td>{{$a->uom}}</td>
 
 	                        <td style="color:{{ $a->recordstat == 'Active' ? 'green' : 'red'}} ;"> 
 	                            &nbsp;

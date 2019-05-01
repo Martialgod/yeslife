@@ -178,8 +178,16 @@
     --}}
 
     <div class="form-group" hidden >
+
         <input type="hidden" id="isloggedin" value="{{$isloggedin}}">
+
+        {{--optional, for referral links--}}
+        <input type="hidden" readonly="" id="referrer_token" name="referrer_token" value="{{ ($referrer) ? $referrer->affiliate_token : ''}}">
+
+
     </div>
+
+
 
     {{--
         @AppServiceProvider.php

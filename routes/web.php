@@ -41,7 +41,7 @@ Route::get('/curl', function(){
 
     curl_close($curl);
 
-    dd($result);
+    //dd($result);
 
 });
 

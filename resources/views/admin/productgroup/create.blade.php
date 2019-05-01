@@ -38,8 +38,8 @@
 
 
                 <div class="form-group">
-	                <label for="description">Product Description <span class="label-required">*</span> </label>
-	                <textarea class="form-control trumbowyg" id="description" name="description" placeholder="" required="" style="resize: none;" >{{old('description')}}</textarea>
+	                <label for="description">Product Description <span class="label-required"></span> </label>
+	                <textarea class="form-control trumbowyg" id="description" name="description" placeholder=""  style="resize: none;" >{{old('description')}}</textarea>
 		          		            
 		        </div>
 

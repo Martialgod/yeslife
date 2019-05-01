@@ -58,6 +58,7 @@ class LandingPageController extends Controller
        				->paginate(4); */
 
         $products = ProductMstrView::where('stat', 1)
+                ->where('fk_productgroup', '<>', 1) //do not include business bulk orders
                 ->orderBy('totalsalesqty', 'DESC')
                 ->paginate(4);
 

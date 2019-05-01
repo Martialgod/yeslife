@@ -1,10 +1,15 @@
 var isloggedin = 'no'; //global
 
+var referrer_token = null; //determine referral token
+
 $(document).ready(function(){
 
   //added in the master layout. determine if customer currently logged in
   isloggedin = $('#isloggedin').val();
 
+  referrer_token = $('#referrer_token').val();
+
+  //console.log(referrer_token); //determine referral token
 
 });
 
@@ -390,7 +395,7 @@ function GlobalBuyNow(productid, qty){
        data: cart, // 
        success: function(data){
             
-          console.log(data);
+          //console.log(data);
 
           if( data == 'success' ){
 
@@ -402,9 +407,20 @@ function GlobalBuyNow(productid, qty){
 
         
           //hideCustomizeLoading();
+
+          if(referrer_token != null){
+
+            //redirect to checkout
+            location.href="/cartcheckout?refno="+referrer_token;
+
+          }else{
+
+            //redirect to checkout
+            location.href="/cartcheckout";
+
+          }
           
-          //redirect to checkout
-          location.href="/cartcheckout";
+         
 
 
        },
@@ -421,8 +437,18 @@ function GlobalBuyNow(productid, qty){
 
   }else{
 
-    //redirect to checkout
-    location.href="/cartcheckout";
+    
+    if(referrer_token != null){
+
+      //redirect to checkout
+      location.href="/cartcheckout?refno="+referrer_token;
+
+    }else{
+
+      //redirect to checkout
+      location.href="/cartcheckout";
+
+    }
 
   }//END if isloggedin
 

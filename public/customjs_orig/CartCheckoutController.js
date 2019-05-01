@@ -37,7 +37,7 @@
 		
 		//determine referral token
 		vm.referrer_token = $('#referrer_token').val();
-
+		//console.log(vm.referrer_token);
 
 		vm.LoadCart = function(){
 	

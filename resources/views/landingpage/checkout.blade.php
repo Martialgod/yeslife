@@ -13,7 +13,7 @@
 			    <div class="row row-40">
 
             {{--optional, for referral links--}}
-            <input type="hidden" readonly="" id="referrer_token" name="referrer_token" value="{{ ($referrer) ? $referrer->affiliate_token : ''}}">
+            {{--<input type="hidden" readonly="" id="referrer_token" name="referrer_token" value="{{ ($referrer) ? $referrer->affiliate_token : ''}}"> --}}
 
 			    	<!--start address-->
            	<div class="col-lg-7">

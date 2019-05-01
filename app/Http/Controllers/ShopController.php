@@ -115,8 +115,19 @@ class ShopController extends Controller
             $products->where('fk_category', $category);
         }
 
-   
+
         $products->where('stat', 1);
+
+
+        if( $shoptype == 'businesspartners' ){
+
+            $products->where('fk_productgroup', 1);
+
+        }else{
+
+            $products->where('fk_productgroup', '<>', 1);
+
+        }
 
        
         if( $sortby == 'bestsellers' ){

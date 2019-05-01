@@ -318,7 +318,9 @@ class DatabaseSeeder extends Seeder
             'stat'=>1
         ]);  */
 
-        DB::table('permalink')->insert([
+
+        //unseeded in live db
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 1018,
             'method'=> 'POST',
             'description'=> 'Compositions',
@@ -327,6 +329,14 @@ class DatabaseSeeder extends Seeder
             'family'=> 'products.index',
             'indexno'=> 5,
             'stat'=>1
+        ]);  */
+
+
+        DB::table('productgroup')->insert([
+           'pk_productgroup'=> 1,
+           'name'=> 'Business Shop (Case of 12)',
+           'description'=> 'Business Shop (Case of 12)',
+           'stat'=> 1
         ]);  
 
 

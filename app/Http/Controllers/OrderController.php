@@ -527,7 +527,7 @@ class OrderController extends Controller
             }//END isset($address['isrecurring'])
 
             //insert reward points
-            UserReward::insertSinglePurchaseRewards($ordermstr);
+            //UserReward::insertSinglePurchaseRewards($ordermstr);
             
             //remove cart from db
             UserCart::where('fk_users', $users->id)->delete();
@@ -536,8 +536,6 @@ class OrderController extends Controller
             $ordermstr = OrderMstrView::findOrFail($ordermstr->pk_ordermstr);
             $orderdtls = OrderDtlView::where('fk_ordermstr', $ordermstr->pk_ordermstr)->orderBy('indexno', 'ASC')->get();
 
-
-            
             
             //email to the customer
             $when = Carbon::now()->addMinutes(1);
@@ -553,11 +551,10 @@ class OrderController extends Controller
 
             
 
-            $totalpoints = UserReward::countTotalRewardPointsPerUser($users['id']);
+            /*$totalpoints = UserReward::countTotalRewardPointsPerUser($users['id']);
             $actions = RewardAction::find(1004);
             $when = Carbon::now()->addMinutes(3);
-
-            Mail::to($users['email'], $users['fullname'])->later($when, new BroadCastPurchaseReward($users, $ordermstr, $totalpoints, $actions));
+            Mail::to($users['email'], $users['fullname'])->later($when, new BroadCastPurchaseReward($users, $ordermstr, $totalpoints, $actions)); */
 
          
             //Mail::to($users['email'], $users['fullname'])->queue(new SendOrderConfirmation($ordermstr, $orderdtls, $users));
