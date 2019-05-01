@@ -233,6 +233,8 @@ Route::post('/admin/usertype/{id}/modules', 'UserTypeController@update_modules')
 
 Route::resource('/admin/rewards', 'UserRewardsController');
 
+Route::get('/userrewards/sample/{id}', 'UserRewardsController@sample_email');
+
 
 Route::resource('/admin/orders', 'OrderController');
 
@@ -258,6 +260,14 @@ Route::resource('admin/products', 'ProductsController');
 Route::delete('/admin/products/{id}/softdelete', 'ProductsController@softdelete')->name('products.softdelete');
 
 Route::get('/admin/products/{id}/copy', 'ProductsController@copy')->name('products.copy');
+
+
+Route::get('/admin/products/{id}/compositions', 'ProductCompositionsController@create')->name('products.compositions');
+Route::post('/admin/products/{id}/compositions', 'ProductCompositionsController@update')->name('products.compositions');
+
+Route::get('/admin/products/{id}/compositions-search', 'ProductCompositionsController@search');
+
+
 
 Route::get('/admin/products/{id}/pricelist', 'ProductPriceListController@create')->name('products.pricelist');
 Route::post('/admin/products/{id}/pricelist', 'ProductPriceListController@store')->name('products.pricelist');

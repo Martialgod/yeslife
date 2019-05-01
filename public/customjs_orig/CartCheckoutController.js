@@ -396,6 +396,8 @@
                 console.log(response);
                 var data = response.data;
 
+                //hideCustomizeLoading();  return;
+
                 if( data.status == 'success' ){
 
                 	LeadDyno.recordPurchase( $('#billingemail').val(), {
@@ -658,7 +660,7 @@
         		gender:'',
         	};
 
-
+        	
         	/*
         	//rallypay sample value bypass
         	vm.paymentapi = {

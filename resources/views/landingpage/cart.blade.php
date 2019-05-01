@@ -156,7 +156,7 @@
                                 <!-- Discount Coupon -->
                                 <div class="discount-coupon">
                                     
-                                    <h4>Discount Coupon Code</h4>
+                                    <h4>DISCOUNT COUPON CODE</h4>
 
                                     <form class="form-inline" method="post" ng-submit="vm.ApplyCoupon($event)">
                                         
@@ -181,7 +181,7 @@
                             <div class="cart-summary">
                                 
                                 <div class="cart-summary-wrap">
-                                    <h4>Cart Summary</h4>
+                                    <h4>CART SUMMARY</h4>
 
                                     <p>Count <span> @{{vm.mscproducts.length}} Item(s) </span></p>
                                    

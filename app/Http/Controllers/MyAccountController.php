@@ -31,6 +31,8 @@ use App\User;
 use App\UserMstrView;
 use App\UserDownlineView;
 
+use App\UserReward;
+
 use App\UserCCInfo;
 
 use Hash;
@@ -701,15 +703,20 @@ class MyAccountController extends Controller
     public function affiliate()
     {
         //
+        //
+        $id = Auth::id();
 
         session()->flash('myaccount_tab', 'Affiliate');
 
         $downline = UserDownlineView::select();
 
-        $downline = $downline->where('fk_referredby', Auth::id())->paginate(10);
+        $downline = $downline->where('fk_referredby', $id)->paginate(10);
 
+        $totalpoints = UserReward::countTotalRewardPointsPerUser($id);
+        
+        //dd($totalpoints);
         //$downline = [];
-        return view('landingpage.myaccount.affiliate', compact('downline'));
+        return view('landingpage.myaccount.affiliate', compact('downline', 'totalpoints'));
 
 
     }//END affiliate

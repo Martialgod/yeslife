@@ -307,7 +307,7 @@ class DatabaseSeeder extends Seeder
         ]); */
 
 
-        DB::table('permalink')->insert([
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 1017,
             'method'=> 'POST',
             'description'=> 'Copy',
@@ -316,7 +316,18 @@ class DatabaseSeeder extends Seeder
             'family'=> 'products.index',
             'indexno'=> 4,
             'stat'=>1
-        ]); 
+        ]);  */
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 1018,
+            'method'=> 'POST',
+            'description'=> 'Compositions',
+            'route'=> 'products.compositions',
+            'type'=> 'C',
+            'family'=> 'products.index',
+            'indexno'=> 5,
+            'stat'=>1
+        ]);  
 
 
     }

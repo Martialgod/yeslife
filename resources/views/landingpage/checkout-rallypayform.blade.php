@@ -6,7 +6,7 @@
         <h4>Card Details</h4>
 
         <div style="color:#ffffff;">
-          <label>Card Number **</label>
+          <label>Card Number *</label>
           <input style="color:#666;" type="text" id="rally_cardNumber" placeholder="XX-XXXX-XXXX-XX" data-input="rally_cardNumber" value="{{$users['cardno']}}">
           <span id="errrally_cardNumber" style="color:red; font-size: 12px;"> </span>
         </div>

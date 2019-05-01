@@ -62,8 +62,9 @@
                                     </a>
 
                                     <hr>
-                                        
+
                                     <h3>Downline   </h3>
+                            
 
                                     @if(count($downline) > 0)
 
@@ -140,6 +141,8 @@
                                         @include('landingpage.layouts.nodisplay')
 
                                     @endif
+
+                                    <h3> Points: {{$totalpoints}}   </h3>
 
                                 </div><!--END myaccount-content-->
                             

@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\Auth; //responsible for our authentication
 use Illuminate\Support\Facades\DB; //responsible for DB
 
 use App\Product;
+use App\ProductComposition;
 use App\Country;
 
 use App\OrderMstr;
 use App\OrderDtl;
+use App\OrderComposition;
 
 use App\OrderRecurring;
 
@@ -24,6 +26,10 @@ use App\OrderMstrView;
 use App\OrderDtlView;
 
 use App\User;
+
+use App\UserReward;
+
+use App\RewardAction;
 
 use App\UserCCInfo;
 
@@ -47,6 +53,7 @@ use App\Mail\BroadCastNewOrders;
 
 use App\Mail\SendOrderConfirmation;
 
+use App\Mail\BroadCastPurchaseReward;
 
 use Illuminate\Support\Facades\Crypt;
 
@@ -433,6 +440,30 @@ class OrderController extends Controller
                     'indexno'=> $indexno++
                 ]);
 
+
+
+                //remove old ordercomposition
+                OrderComposition::where('fk_products',  $v['productid'])->where('fk_ordermstr', $ordermstr->pk_ordermstr)->delete();
+
+                //store and update ordercomposition
+                $compositions = ProductComposition::getItemCompositions($v['productid']);
+
+                foreach($compositions as $ckey => $cv){
+
+                    OrderComposition::create([
+
+                        'fk_ordermstr'=> $ordermstr->pk_ordermstr,
+                        'fk_products'=> $v['productid'],
+                        'fk_compositions'=> $cv->fk_compositions,
+                        'qty'=>  floatval($v['selectedqty']) * floatval($cv->qty),
+                        'uom'=> $cv->uom,
+                        //'unitcost'=> $cv->cost
+
+                    ]);
+
+                }//END foreach $compositions
+
+
             }//END foreach
 
 
@@ -494,6 +525,9 @@ class OrderController extends Controller
                
 
             }//END isset($address['isrecurring'])
+
+            //insert reward points
+            UserReward::insertSinglePurchaseRewards($ordermstr);
             
             //remove cart from db
             UserCart::where('fk_users', $users->id)->delete();
@@ -518,7 +552,13 @@ class OrderController extends Controller
                 ->later($when, new SendOrderConfirmation($ordermstr, $orderdtls, $users));
 
             
- 
+
+            $totalpoints = UserReward::countTotalRewardPointsPerUser($users['id']);
+            $actions = RewardAction::find(1004);
+            $when = Carbon::now()->addMinutes(3);
+
+            Mail::to($users['email'], $users['fullname'])->later($when, new BroadCastPurchaseReward($users, $ordermstr, $totalpoints, $actions));
+
          
             //Mail::to($users['email'], $users['fullname'])->queue(new SendOrderConfirmation($ordermstr, $orderdtls, $users));
             

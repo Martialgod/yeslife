@@ -21,7 +21,7 @@
               <!-- Billing Address -->
               <div id="billing-form" class="mb-10">
                 <h4 class="checkout-title">
-                  Billing Address
+                  BILLING ADDRESS
                  
                 </h4>
 

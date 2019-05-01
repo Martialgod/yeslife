@@ -134,7 +134,16 @@ class LandingPageController extends Controller
         $this->setActiveTab();
 
 
-        return view('landingpage.contact-us');
+        $subject = ( request()->subject ) ? request()->subject : 'Customer Inquiry';
+
+        $header = 'GET IN TOUCH';
+
+        if($subject == 'Distributor Inquiry'){
+            $header = 'BECOME A DISTRIBUTOR';
+        }
+
+
+        return view('landingpage.contact-us', compact('subject', 'header'));
 
     
     }//END contact_us

@@ -115,6 +115,34 @@
 			}
 
 
+			/*if( list.selectedqty > 0 ){
+
+				var products = {
+					'productid': list.productid,
+					'qty': list.selectedqty,
+				};
+
+				//re initialize cart cookie to prevent double qty update in addCartCookie
+				document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
+
+				addCartCookie(products); //@GlobalScript.js
+
+			}else{
+
+				removeCartCookie( list.productid ); //@GlobalScript.js
+
+			} */
+
+			vm.CalculateTotal();
+	
+
+		}; //END UpdateCart
+
+
+
+		vm.AddToCart = function(list){
+
+
 			if( list.selectedqty > 0 ){
 
 				var products = {
@@ -131,14 +159,10 @@
 
 				removeCartCookie( list.productid ); //@GlobalScript.js
 
-			}
-
-			vm.CalculateTotal();
-	
-
-		}; //END UpdateCart
+			} 
 
 
+		};//END AddToCart
 
 
 		vm.CalculateTotal = function(){

@@ -35,7 +35,8 @@ class Kernel extends ConsoleKernel
         
         $schedule->command('dbevent:insertrecurringorders')->dailyAt('00:05')->withoutOverlapping();
         
-        $schedule->command('dbevent:insertownpurchaserewards')->dailyAt('1:00')->withoutOverlapping();
+        //inserted directly upon checkout
+        //$schedule->command('dbevent:insertownpurchaserewards')->dailyAt('1:00')->withoutOverlapping();
         
         $schedule->command('dbevent:insertreferralpurchaserewards')->dailyAt('1:20')->withoutOverlapping();
 

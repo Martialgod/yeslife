@@ -19,6 +19,15 @@ use App\UserRewardMstrView;
 
 use App\RewardAction;
 
+use App\Mail\BroadCastPurchaseReward;
+
+use Carbon\Carbon;
+
+
+use Mail;
+
+
+
 class UserRewardsController extends Controller
 {
     
@@ -261,6 +270,39 @@ class UserRewardsController extends Controller
         return redirect('/admin/rewards');
 
     }//END destroy
+
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function sample_email($id)
+    {
+        //
+
+
+        $customers = \App\User::findOrFail(1000);
+
+        $totalpoints = UserReward::countTotalRewardPointsPerUser($id);
+        
+        $ordermstr = \App\OrderMstrView::findOrFail(43);
+
+        $actions = RewardAction::findOrFail(1004);
+
+        return view('landingpage.myaccount.rewards-own-purchase-template', compact('customers', 'ordermstr', 'totalpoints', 'actions'));
+ 
+
+        $when = Carbon::now()->addMinutes(1);
+
+        Mail::to($customers['email'], $customers['fullname'])->later($when, new BroadCastPurchaseReward($customers, $ordermstr, $totalpoints, $actions));
+
+
+    }//END sample_email
+
+
 
 
 }//END class

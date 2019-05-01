@@ -77,19 +77,56 @@ class UserReward extends Model
 
 
     public static function insertReferralSignupRewards(){
+
         //does not return anything so use DB::statement
         DB::statement("CALL usp_insertReferralSignupRewards();");
-    }
+
+    }//END insertReferralSignupRewards
 
     public static function insertOwnPurchaseRewards(){
+
         //does not return anything so use DB::statement
         DB::statement("CALL usp_insertOwnPurchaseRewards();");
-    }
+
+    }//END insertOwnPurchaseRewards
 
     public static function insertReferralPurchaseRewards(){
+
         //does not return anything so use DB::statement
         DB::statement("CALL usp_insertReferralPurchaseRewards();");
-    }
 
+    }//END insertReferralPurchaseRewards
+
+
+    public static function insertSinglePurchaseRewards($ordermstr){
+
+        $action = DB::SELECT("SELECT * FROM rewardactions WHERE pk_rewardactions = '1004' AND stat = 1; ");
+        
+        if( count($action) > 0 ){
+
+            UserReward::create([
+                'fk_users'=> $ordermstr->fk_users,
+                'fk_rewardactions'=> $action[0]->pk_rewardactions,
+                'points'=> $action[0]->points,
+                'fk_ordermstr'=> $ordermstr->pk_ordermstr,
+                'sysremarks'=> 'system generated own purchase reward @'.$ordermstr->created_at,
+                'stat'=> 1
+
+            ]);
+
+        }//END count($action)
+
+    }//END insertSinglePurchaseRewards
+
+
+
+    public static function countTotalRewardPointsPerUser($id){
+      
+        $totalpoints = DB::SELECT("SELECT udf_countTotalRewardPointsPerUser('$id') as totalpoints");
+        $totalpoints = ( count($totalpoints) > 0 ) ? $totalpoints[0]->totalpoints : 0;
+        return $totalpoints;
+
+    }//END countTotalRewardPointsPerUser
+    
 
 }//END class

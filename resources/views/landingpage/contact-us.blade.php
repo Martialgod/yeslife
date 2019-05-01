@@ -64,7 +64,7 @@
                 <div class="col-lg-7 col-12 mb-30">
                     
                     <div class="contact-form-wrap">
-                        <h3>Get in Touch</h3>
+                        <h3> {{$header}} </h3>
                         
                         <p>
                         	We love to hear from you! Please send us any inquiries you have about our product and we will get back to you as quickly as possible.
@@ -90,7 +90,7 @@
                                 			$fullname = Auth::user()->fullname;
                                 			$email = Auth::user()->email;
                                 			$phone = Auth::user()->phone;
-                                			$readonly = 'readonly';
+                                			//$readonly = 'readonly';
 
                                 		}
 
@@ -117,7 +117,7 @@
                                     </div>
 
                                     <div class="col-md-6 col-12 mb-30">
-                                    	<input type="text" name="subject" id="subject" placeholder="Subject" required="" maxlength="255">
+                                    	<input type="text" name="subject" id="subject" placeholder="Subject" required="" maxlength="255" value="{{$subject}}">
                                     </div>
 
                                     <div class="col-12 mb-30">

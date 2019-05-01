@@ -4150,7 +4150,8 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   font-size: 20px;
   line-height: 23px;
   text-decoration: underline;
-  text-transform: capitalize;
+  /*text-transform: capitalize; */
+  text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 30px; }
 
