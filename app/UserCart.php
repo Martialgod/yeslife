@@ -18,7 +18,7 @@ class UserCart extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['fk_users', 'fk_products', 'notified_at', 'fk_notifiedby'];
+    protected $fillable = ['fk_users', 'fk_products', 'qty', 'notified_at', 'fk_notifiedby'];
 
     /**
         - $form = 'store', 'update'

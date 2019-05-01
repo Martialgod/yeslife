@@ -93,11 +93,8 @@
 		};//END LoadProducts
 
 
-		vm.UpdateCart = function(type, list){
 
-			//type = plus, minus, ''
-			
-			//console.log(type + list);
+		vm.MinusPlusQty = function(type, list){
 
 			list.selectedqty = ( isNaN(list.selectedqty) || list.selectedqty == undefined || list.selectedqty == '' ) ? 0 : list.selectedqty;
 
@@ -115,6 +112,32 @@
 			}
 
 
+
+		};//END MinusPlusQty
+
+
+		vm.UpdateCart = function(type, list){
+
+			//type = plus, minus, ''
+			
+			//console.log(type + list);
+
+			if( list.selectedqty != ''){
+
+				list.selectedqty = ( isNaN(list.selectedqty) || list.selectedqty == undefined || list.selectedqty == '' ) ? 0 : list.selectedqty;
+
+				if( list.selectedqty < 0 ){
+					list.selectedqty = 0;
+				}
+
+
+			}else{
+
+				
+
+			}//END list.selectedqty != '' 
+
+			
 			/*if( list.selectedqty > 0 ){
 
 				var products = {
@@ -141,6 +164,11 @@
 
 
 		vm.AddToCart = function(list){
+
+			//console.log(list.selectedqty);
+			
+
+			list.selectedqty = ( isNaN(list.selectedqty) || list.selectedqty == undefined || list.selectedqty == '' ) ? 0 : list.selectedqty;
 
 
 			if( list.selectedqty > 0 ){
@@ -171,6 +199,10 @@
 
 
 			vm.mscproducts.forEach(function(item1, index1){
+
+				//console.log(item1.selectedqty);
+
+				item1.selectedqty = ( isNaN(item1.selectedqty) || item1.selectedqty == undefined || item1.selectedqty == '' ) ? 0 : item1.selectedqty;
 
 				if( item1.selectedqty > 0 ){
 

@@ -485,13 +485,18 @@ function initializeCartCookie(products){
   var multiple = res.split(";");
   for(var i = 0; i < multiple.length; i++) {
     var key = multiple[i].split("=");
-    //console.log(key[0]); //cookie name
     //check if cookie is existing
     if( key[0].indexOf('yeslifecart_'+products.productid) !== -1 ){
+      /*console.log(products);
+      console.log('Product: '+key[0]); //cookie name
+      console.log('Qty: '+key[1]); //cookie name
+      console.log(products.qty); */
       products.qty = parseFloat(products.qty) +  parseFloat(key[1]);  //set qty
     }
     
   }//END for
+
+  //console.log(products);
 
   if( products.productid !== undefined ){
     document.cookie = "yeslifecart_"+products.productid+"="+products.qty+"; path=/";
@@ -522,6 +527,8 @@ function addCartCookie(products){
         'qty': products.qty,
         'fk_users': isloggedin,
       };
+
+      //console.log(cart);
 
       //$.blockUI('#main-div');
       showCustomizeLoading();

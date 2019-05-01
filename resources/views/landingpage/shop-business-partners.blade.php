@@ -122,13 +122,13 @@
 
                                             <div class="input-group mb-3">
                                                 
-                                                <div class="input-group-prepend" ng-click="vm.UpdateCart('minus', list)" style="cursor: pointer;">
+                                                <div class="input-group-prepend" ng-click="vm.MinusPlusQty('minus', list)" style="cursor: pointer;">
                                                     <img src="{{asset('/landingpage/assets/images/minus.png')}}" alt="">
                                                 </div>
                                                 
                                                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" ame="qty" ng-model="list.selectedqty" string-to-number ng-change="vm.UpdateCart('', list)" ng-model-options="{debounce: 500}">
                                                 
-                                                <div class="input-group-append" ng-click="vm.UpdateCart('plus', list)" style="cursor: pointer;"> 
+                                                <div class="input-group-append" ng-click="vm.MinusPlusQty('plus', list)" style="cursor: pointer;"> 
                                                     <img src="{{asset('/landingpage/assets/images/plus.png')}}" alt="">
                                                 </div>
 
