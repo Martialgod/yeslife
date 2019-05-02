@@ -96,11 +96,15 @@
 
                                 	@endphp
 
-                                	<div class="col-md-12" hidden >
+                                	<div class="col-md-12"  hidden >
 		
 										<div class="form-group" >
-										    <input type="text" class="form-control" id="requesturl" name="requesturl" value="{{url()->current()}}">
+										    <input type="hidden" class="form-control" id="requesturl" name="requesturl" value="{{url()->current()}}">
 										</div>
+
+                                        <div class="form-group" >
+                                            <input type="hidden" class="form-control" id="contacttype" name="contacttype" value="{{$contacttype}}">
+                                        </div>
 
 									</div>
 
@@ -119,6 +123,20 @@
                                     <div class="col-md-6 col-12 mb-30">
                                     	<input type="text" name="subject" id="subject" placeholder="Subject" required="" maxlength="255" value="{{$subject}}">
                                     </div>
+
+
+                                    @if($contacttype == 'Distributor')
+
+                                        <div class="col-md-6 col-12 mb-30">
+                                            <input type="text" name="ein" id="ein" placeholder="EIN/SSN"  maxlength="255" value=""  >
+                                        </div>
+
+                                        <div class="col-md-6 col-12 mb-30">
+                                            <input type="text" name="businessname" id="businessname" placeholder="Business Name" required="" maxlength="255" value="">
+                                        </div>
+
+
+                                    @endif
 
                                     <div class="col-12 mb-30">
                                     	<textarea name="message" id="message" placeholder="Write message here..." required=""></textarea>

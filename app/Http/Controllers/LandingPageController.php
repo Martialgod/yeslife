@@ -137,20 +137,19 @@ class LandingPageController extends Controller
 
         $subject = ( request()->subject ) ? request()->subject : 'Customer Inquiry';
 
+        $contacttype = 'Default';
         $header = 'GET IN TOUCH';
 
         if($subject == 'Distributor Inquiry'){
+            $contacttype = 'Distributor';
             $header = 'BECOME A DISTRIBUTOR';
         }
 
 
-        return view('landingpage.contact-us', compact('subject', 'header'));
+        return view('landingpage.contact-us', compact('contacttype', 'subject', 'header'));
 
     
     }//END contact_us
-
-
-
 
 
     /**
@@ -206,8 +205,18 @@ class LandingPageController extends Controller
 
         $contactemails = explode(",",env('CONTACT_EMAILS'));
 
+        $msg = "Name: $request->fullname \nEmail: $request->email \nPhone: $request->phone";
+
+        if( $request->contacttype == 'Distributor' ){
+
+            $msg = $msg . "\nEIN/SSN: $request->ein \nBusiness Name: $request->businessname";
+
+        }
+
+        $msg = $msg . "\nRequesting Url: $request->requesturl \n\n\nSubject: $request->subject \nMessage: $request->message";
+
         //using mail
-        Mail::raw("Name: $request->fullname \nEmail: $request->email \nPhone: $request->phone \nRequesting Url: $request->requesturl \n\n\nSubject: $request->subject \nMessage: $request->message", function ($message) use ($request, $contactemails) {
+        Mail::raw($msg, function ($message) use ($request, $contactemails) {
             //$message->to(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'))
             $message->to($contactemails)
             ->subject('Customer Inquiry');
