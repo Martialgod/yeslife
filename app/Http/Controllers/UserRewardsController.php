@@ -236,6 +236,8 @@ class UserRewardsController extends Controller
             //begin transaction
             $transaction = DB::transaction(function() use($request, $rewards, $id) {
 
+                $request['sysremarks'] = ' Manually updated by '.Auth::user()->fname. ' @ '.Carbon::now();
+
                 $request['fk_updatedby'] = Auth::id();
          
                 $rewards->update($request->all());

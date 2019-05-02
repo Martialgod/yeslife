@@ -1,6 +1,6 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife My Account Affiliate')
+@section('title', 'YesLife My Account Referral')
 
 @section('meta')
 
@@ -21,10 +21,10 @@
 
 
     @include('landingpage.layouts.banner', [
-      'bannerheader'=>'Affiliate', 
+      'bannerheader'=>'Referral', 
       'bannerurl'=> '/myaccount/home',
       'bannerback'=> 'My Account',
-      'bannercontent'=> 'Affiliate'
+      'bannercontent'=> 'Referral'
     ])
 
     <!-- My Account Section Start -->
@@ -44,6 +44,10 @@
 
                                 <div class="myaccount-content ">    
 
+                                    
+
+                                    <h3>Referral</h3>
+
                                     <div class="row col-md-12">
 
                                         @include('landingpage.layouts.facebookshare')   
@@ -55,15 +59,13 @@
                                     </div>
 
                                     <br>
-                                    Invite anyone using your affiliate link
+                                    Invite anyone using your referral link
 
                                     <a href="{{url('/')}}?refno={{Auth::user()->affiliate_token}}" title="" target="_blank" style="color:#0e76bc;">
                                         https://yes.life?refno={{Auth::user()->affiliate_token}}
                                     </a>
 
                                     <hr>
-
-                                    <h3>Downline   </h3>
                             
 
                                     @if(count($downline) > 0)
@@ -142,7 +144,10 @@
 
                                     @endif
 
-                                    <h3> Points: {{$totalpoints}}   </h3>
+                                    <a href="{{url('/myaccount/rewards')}}" title="">
+                                        <h3> Points: {{$totalpoints}}   </h3>
+                                    </a>
+                                   
 
                                 </div><!--END myaccount-content-->
                             

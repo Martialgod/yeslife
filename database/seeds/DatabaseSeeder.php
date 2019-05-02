@@ -320,7 +320,7 @@ class DatabaseSeeder extends Seeder
 
 
         //unseeded in live db
-        /*DB::table('permalink')->insert([
+        DB::table('permalink')->insert([
             'pk_permalink'=> 1018,
             'method'=> 'POST',
             'description'=> 'Compositions',
@@ -329,7 +329,7 @@ class DatabaseSeeder extends Seeder
             'family'=> 'products.index',
             'indexno'=> 5,
             'stat'=>1
-        ]);  */
+        ]);
 
 
         DB::table('productgroup')->insert([

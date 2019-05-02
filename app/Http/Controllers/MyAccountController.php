@@ -32,6 +32,7 @@ use App\UserMstrView;
 use App\UserDownlineView;
 
 use App\UserReward;
+use App\UserRewardMstrView;
 
 use App\UserCCInfo;
 
@@ -700,13 +701,13 @@ class MyAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function affiliate()
+    public function referral()
     {
         //
         //
         $id = Auth::id();
 
-        session()->flash('myaccount_tab', 'Affiliate');
+        session()->flash('myaccount_tab', 'Referral');
 
         $downline = UserDownlineView::select();
 
@@ -716,7 +717,34 @@ class MyAccountController extends Controller
         
         //dd($totalpoints);
         //$downline = [];
-        return view('landingpage.myaccount.affiliate', compact('downline', 'totalpoints'));
+        return view('landingpage.myaccount.referral', compact('downline', 'totalpoints'));
+
+
+    }//END affiliate
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function rewards()
+    {
+        //
+        //
+        $id = Auth::id();
+
+        session()->flash('myaccount_tab', 'Rewards');
+
+        $rewards = UserRewardMstrView::where('fk_users', $id)
+                    ->where('stat', 1)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(5);
+
+        $totalpoints = UserReward::countTotalRewardPointsPerUser($id);
+        
+
+        return view('landingpage.myaccount.rewards', compact('rewards', 'totalpoints'));
 
 
     }//END affiliate

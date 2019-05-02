@@ -50,15 +50,10 @@
 	                    <th>Email</th>
 	                    <th>Action</th>
 	                    <th>Points</th>
-	                    <th>
-	                    	Referredby
-	                    </th>
-	                    <th>
-	                    	Downline
-	                    </th>
-	                    <th>
-	                    	Remarks
-	                    </th>
+	                    <th></th>
+	                    {{--<th>Referredby</th>--}}
+	                    {{--<th>Referral</th> --}}
+	                    <th>Remarks</th>
 	                    <th></th>
 	              </tr>
 
@@ -77,19 +72,37 @@
 
 	                        <td> {{$a->email}} </td>
 
-	                        <td> {{$a->actionname}} </td>
+	                        <td> 
+	                        	{{$a->actionname}} 
+
+	                        </td>
+
 
 	                        <td> {{$a->points}} </td>
 
-	                        <td> 
+
+	                        <td>
+
+
+                        		@php
+                        			$test = "Referral: $a->downline <br> Order No: $a->trxno <br>   Order Amount: $$a->orderamount <br> Reward Type: $a->type <br> Reward Amount: $a->actionpoints";
+	                        	@endphp
+
+                        	 	<span data-html="true"  data-toggle="tooltip" title="{{$test}}" style="cursor: help;">	
+	                        		<i class="fa fa-question"></i>
+	                        	</span>
+
+	                        </td>
+
+	                        {{--<td> 
 	                        	<span data-toggle="tooltip" title="{{$a->mainline}}" style="cursor: help;">
                                     {{
                                         (strlen($a->mainline)) > 8 ? substr($a->mainline,0,8).'..' : $a->mainline 
                                     }}
                                 </span>
-	                        </td>
+	                        </td> --}}
 
-	                        <td> 
+	                        {{--<td>
 
 	                        	<span data-toggle="tooltip" title="{{$a->downline}}" style="cursor: help;">
                                     {{
@@ -97,7 +110,7 @@
                                     }}
                                 </span>
 
-	                        </td>
+	                        </td> --}}
 
 	                        <td>
 

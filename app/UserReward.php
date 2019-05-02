@@ -23,7 +23,7 @@ class UserReward extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['fk_users', 'fk_rewardactions', 'points', 'fk_referral', 'fk_ordermstr', 'remarks', 'sysremarks', 'fk_updatedby', 'stat'];
+    protected $fillable = ['fk_users', 'fk_rewardactions', 'type', 'typeamount', 'points', 'fk_referral', 'fk_ordermstr', 'remarks', 'sysremarks', 'fk_updatedby', 'stat'];
 
 
     /**

@@ -32,8 +32,12 @@
             <i class="fa fa-user"></i>Account
         </a>
 
-        <a href="{{url('/myaccount/affiliate')}}" class="{{(session('myaccount_tab') == 'Affiliate') ? 'active' : ''}}" >
-            <i class="fa fa-address-book-o"></i>Affiliate
+        <a href="{{url('/myaccount/referral')}}" class="{{(session('myaccount_tab') == 'Referral') ? 'active' : ''}}" >
+            <i class="fa fa-address-book-o"></i>Referral
+        </a>
+
+        <a href="{{url('/myaccount/rewards')}}" class="{{(session('myaccount_tab') == 'Rewards') ? 'active' : ''}}" >
+            <i class="fa fa-trophy"></i>Rewards
         </a>
 
         <a href="{{url('/logout')}}"><i class="fa fa-sign-out"></i>Logout</a>

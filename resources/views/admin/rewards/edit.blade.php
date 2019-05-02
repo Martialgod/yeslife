@@ -24,10 +24,34 @@
 		    {{method_field('PUT')}}
 	        {{ csrf_field() }}
 
+
+	        <div class="col-md-6 well">
+
+        		<blockquote>
+        			<b>Referral: </b> {{$rewards->downline}}
+        			<br>
+					<b>Order No: </b> {{$rewards->trxno}}
+					<br>
+					<b>Order Amount: </b> ${{$rewards->orderamount}}
+				</blockquote>
+
+
+
+				<blockquote>
+					<b>Reward Type: </b> {{$rewards->type}}
+					<br>
+					<b>Reward Amount: </b> {{$rewards->actionpoints}}
+				</blockquote>
+
+				
+
+			</div>
+
+
+
         	<div class="col-md-6">
 
         		@include('admin.layouts.alert')
-
 
         		<div class="form-group">
 		            <label for="fk_rewardactions">Action Name<span class="label-required">*</span> </label>
@@ -57,7 +81,6 @@
                   
                 </div>
 
-
              	<div class="form-group">
 	                <label for="points">Points <span class="label-required">*</span> </label>
 	                <input type="number" min="0" step="any" class="form-control" id="points" name="points" placeholder="" required="" value="{{$rewards->points}}">
@@ -82,8 +105,6 @@
 
 			</div><!--END col-md-6-->
 
-
-		
 			
 		</form>
 

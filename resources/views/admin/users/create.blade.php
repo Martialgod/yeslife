@@ -121,7 +121,7 @@
 		        </div>
 
 		        <div class="form-group">
-		        	<label for="vatid">Vat ID</label>
+		        	<label for="vatid">EIN/SSN</label>
 			    	<input type="text" class="form-control" id="vatid" name="vatid" placeholder="" value="{{old('vatid')}}" maxlength="255">
 		        </div>
 				

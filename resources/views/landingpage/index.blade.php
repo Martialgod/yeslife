@@ -142,14 +142,14 @@
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01-b.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-03.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
-                                <div class="hero-content-wrap col">
+                                <div class="hero-content-wrap col ">
                                     
-                                    <div class="hero-image" style="width:35%">
-                                        {{--<img src="/landingpage/assets/images/slider/slider-product-1.png" alt=""> --}}
+                                    <div class="hero-image" style="width:20%">
+                                        {{--<img src="/landingpage/assets/images/slider/slide-03a.png" alt="" > --}} 
                                     </div>
 
                                     <div class="hero-content text-center" >
@@ -158,9 +158,9 @@
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2> --}}
 
-                                        <h2 id="" style="color:#fbb055;">
+                                        <h1 id="" style="color:#fbb055;" >
                                             HAND IN HAND WITH <br> NATURE AND SCIENCE
-                                        </h2>
+                                        </h1>
 
 
                                         <p id="" style="color:#000; text-align:left">

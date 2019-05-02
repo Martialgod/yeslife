@@ -98,27 +98,27 @@ Route::get('/404', function(){
 Route::get('/apisearchusers', 'UsersController@apisearchusers');
 
 
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/', 'LandingPageController@index'); 
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/about-us', 'LandingPageController@about_us');
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/contact-us', 'LandingPageController@contact_us');
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/terms-conditions', 'LandingPageController@terms_conditions');
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/privacy-policy', 'LandingPageController@privacy_policy');
 
 //cartcheckout?recurring=33213  -- optional for recurring checkout
-//?refno=33213 -- optional for refferal 
+//?refno=33213 -- optional for referral 
 Route::get('/cartcheckout', 'CartController@index');
 
 //retrieve cookie cart; the same function in api.php
 //in api.php, all api call from ajax removes the authentication. this needs to manually send isloggedin variable
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::post('/cart', 'CartController@apiindex');
 
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/shop', 'ShopController@index');
 Route::get('/shop-business-partners', 'ShopController@shop_business_partners');
 //search through post, since it will contain lots of params
@@ -126,14 +126,14 @@ Route::post('/shop-search', 'ShopController@apisearch');
 
 Route::get('/shop-categories', 'ShopController@apishowcategories'); 
 
-// ?refid=33213 -- optional for refferal 
+// ?refid=33213 -- optional for referral 
 Route::get('/shop/{slug}', 'ShopController@show_product');
 Route::get('/apishowproduct/{id}', 'ShopController@apishowproduct');
 Route::get('/shop/{id}/reviews', 'ShopController@apireviews');
 Route::post('/shop/{id}/reviews', 'ShopController@post_reviews')->middleware(['auth']);
 
 
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/blog', 'PublicBlogController@index');
 Route::get('/blog/{slug}', 'PublicBlogController@show');
 
@@ -147,7 +147,7 @@ Route::get('/sample-subscription-email-template/{id}', 'LandingPageController@sa
 Route::get('/activate/subscription/{token}', 'LandingPageController@activate_subscription');
 Route::get('/activate/sample-subscription/user/{token}', 'LandingPageController@sample_subscription');
 
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/order/success/{trxno}', 'LandingPageController@order_success');
 Route::get('/sample-succes-order/{id}', 'OrderController@sample_succes_order');
 
@@ -161,7 +161,7 @@ Route::post('/myaccount/resetpassword/{token}', 'RegisterController@updatepasswo
 Route::get('/myaccount/unsubscribe', 'MyAccountController@unsubscribe');
 Route::get('/myaccount/resubscribe', 'MyAccountController@resubscribe');
 
-// ?refno=33213 -- optional for refferal 
+// ?refno=33213 -- optional for referral 
 Route::get('/myaccount', 'RegisterController@create');
 Route::post('/myaccount', 'RegisterController@store'); //login or register. base on logtype
 
@@ -182,8 +182,8 @@ Route::get('/myaccount/address', 'MyAccountController@address');
 Route::put('/myaccount/address', 'MyAccountController@updateaddress');
 Route::get('/myaccount/details', 'MyAccountController@details');
 Route::put('/myaccount/details', 'MyAccountController@updatedetails');
-Route::get('/myaccount/affiliate', 'MyAccountController@affiliate');
-
+Route::get('/myaccount/referral', 'MyAccountController@referral');
+Route::get('/myaccount/rewards', 'MyAccountController@rewards');
 
 Route::post('/logout', 'RegisterController@destroy');
 Route::get('/logout', 'RegisterController@destroy');
@@ -204,7 +204,7 @@ Route::get('/admin/login', function(){
     if(Auth::check()){
         return redirect('/admin/home');
     }
-	return view('admin.login');
+    return view('admin.login');
 
 })->name('login');
 
