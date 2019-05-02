@@ -14,7 +14,7 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="Yes.Life" />
     <meta property="og:description"   content="We provide the best CBD oil in almost all US states." />
-    <meta property="og:image"         content="/landingpage/assets/images/favicon.png" />
+    <meta property="og:image"         content="/landingpage/assets/images/favicon3.png" />
 
 
 @endsection
@@ -47,14 +47,14 @@
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01-v1.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01a.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
                                 <div class="hero-content-wrap col">
                                     
-                                    <div class="hero-image" style="width:35%;">
-                                        <img src="/landingpage/assets/images/slider/cbd-circle-flavor.png" alt=""  > 
+                                    <div class="hero-image" style="width:50%;">
+                                        {{--<img src="/landingpage/assets/images/slider/cbd-circle-flavor.png" alt=""  > --}}
                                     </div>
 
                                     <div class="hero-content text-center" >
@@ -96,15 +96,15 @@
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-02-v1.jpg); margin-top: 80px;">
+                    <div class="hero-item "  style="background-image: url(/landingpage/assets/images/slider/slide-02.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
                                 <div class="hero-content-wrap col">
                                     
-                                    <div class="hero-image" style="width:35%">
+                                    {{--<div class="hero-image" style="width:35%">
                                         <img src="/landingpage/assets/images/slider/cbd-product-4.png" alt="" style="width: 300px;">
-                                    </div>
+                                    </div> --}}
 
                                     <div class="hero-content text-center"  >
                                         
@@ -112,12 +112,12 @@
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2> --}}
 
-                                        <h2 id="" style="color:#1d1f23;">
+                                        <h2 id="" style="color:#fbb055 ;">
                                             DON'T SETTLE FOR <br> INFERIOR HEMP CBD OIL!
 
                                         </h2>
 
-                                        <p id="" style="color:#000; text-align:left">
+                                        <p id="" style="color:#fff; text-align:left">
                                             
                                             We offer the most effective cbd that is engineered  to work <br> with your body and can help you take back your health, with the best nature as to offer.
 
@@ -138,19 +138,17 @@
                 </div><!--END carousel-item-->
 
 
-                 <div class="carousel-item">
+                 <div class="carousel-item ">
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-03.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-03a.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
                                 <div class="hero-content-wrap col ">
                                     
-                                    <div class="hero-image" style="width:20%">
-                                        {{--<img src="/landingpage/assets/images/slider/slide-03a.png" alt="" > --}} 
-                                    </div>
+                                    
 
                                     <div class="hero-content text-center" >
                                         

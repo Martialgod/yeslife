@@ -1345,10 +1345,14 @@ input::placeholder, textarea::placeholder {
     .hero-item {
       height: auto;
       padding: 80px 0; } }
+
   @media only screen and (max-width: 767px) {
     .hero-item {
-      height: auto;
+      /*height: auto; */
       padding: 50px 0; } }
+
+
+
 
 /*-- Hero Content Wrap --*/
 .hero-content-wrap {
@@ -1519,7 +1523,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     margin-bottom: 20px; }
     .hero-content p {
     line-height: 18px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px; } 
   .hero-content .btn {
     font-size: 11px;
     height: 32px;
@@ -1527,12 +1531,13 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 
 @media only screen and (max-width: 479px) {
   .hero-content h2 {
-    font-size: 13px; }
+    font-size: 20px; }
   .hero-content h1 {
-    font-size: 16px;
+    font-size: 25px;
     line-height: 24px;
     margin-bottom: 10px; }
     .hero-content p {
+    font-size: 14px;
     line-height: 18px;
     margin-bottom: 20px; }
   .hero-content .btn {
