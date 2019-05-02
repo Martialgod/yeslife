@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="keywords" content="YesLife Admin Home Page" />
 
 	<!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/landingpage/assets/images/faviconv3.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/landingpage/assets/images/faviconv3.png?v=2">
     
     
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
