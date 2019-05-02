@@ -53,7 +53,7 @@
                                             <table class="table">
                                                 <thead class="">
                                                     <tr>
-                                                        <th>Track No.</th>
+                                                        <th>Confirmation</th>
                                                         <th>Duration</th>
                                                         <th>Interval</th>
                                                         <th>Items</th>

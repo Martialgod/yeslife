@@ -856,7 +856,8 @@ class OrderController extends Controller
         $orderdtls = OrderDtlView::where('fk_ordermstr', $id)->orderBy('indexno', 'ASC')->get();
 
         $users = User::findOrFail($ordermstr->fk_users); 
-        //return view('emails.orders-broadcast', compact('ordermstr', 'orderdtls'));
+        
+        //return view('landingpage.success-email-template', compact('users', 'ordermstr', 'orderdtls'));
 
         $data = array('users'=>$users, 'ordermstr'=>$ordermstr, 'orderdtls'=>$orderdtls);
 

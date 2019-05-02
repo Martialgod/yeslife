@@ -358,7 +358,7 @@
                           <br>
                           
                           <p>
-                            Your order tracking # is: <b> {{ $ordermstr->trxno }} </b>
+                            Your order confirmation # is: <b> {{ $ordermstr->trxno }} </b>
                           </p>
 
                           <p>

@@ -10,7 +10,7 @@
         <table class="table">
             <thead class="">
                 <tr>
-                    <th>Track No.</th>
+                    <th>Confirmation</th>
                     <th>Date</th>
                     <th>Items</th>
                     <th>Total</th>

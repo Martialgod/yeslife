@@ -95,7 +95,7 @@
                                             <div class="col-md-6">
 
                                                 <p>
-                                                    <b>Track #: </b>
+                                                    <b>Confirmation Number: </b>
                                                     <br>
                                                     {{ $orders->trxno }}
                                                 </p>

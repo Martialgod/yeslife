@@ -39,7 +39,7 @@
 	    		<div class="col-12" style="text-align:center">
 	    			
 	    			<p>
-	    				Your order tracking # is: <b> {{ $orders->trxno }} </b>
+	    				Your Confirmation # is: <b> {{ $orders->trxno }} </b>
 	    			</p>
 
 	    			<p>
