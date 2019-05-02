@@ -38,6 +38,7 @@
 	                   	<th>ID</th>
 	                   	<th>Name</th>
 	                    <th>Description</th>
+	                    <th>Type</th>
 	                    <th>Points</th>
 	                    <th>Status</th>
 	                    <th></th>
@@ -62,7 +63,9 @@
                                     }}
                                 </span>
 
-	                     	</td>
+	                     	</td>	
+
+	                     	<td> {{$a->type}} </td>
 
 	                        <td>
 	                        	{{$a->points}}

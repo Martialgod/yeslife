@@ -43,6 +43,17 @@
                     <textarea class="form-control trumbowyg" id="description" name="description" placeholder="" required="" rows="4" style="resize:none;" >{{old('description')}}</textarea>
                 </div>
 
+                
+                <div class="form-group">
+                    <label for="type">Type <span class="label-required">*</span> </label>
+                  	<select name="type" id="type" class="form-control">
+				        <option value="Fixed" {{ old('type') == 'Fixed' ? 'selected' : '' }}>Fixed</option>
+				        <option value="Rated" {{  old('type') == 'Rated' ? 'selected' : '' }}>Rated</option>
+				    </select>
+
+ 
+                </div>
+
              	<div class="form-group">
 	                <label for="points">Points <span class="label-required">*</span> </label>
 	                <input type="number" min="0" step="any" class="form-control" id="points" name="points" placeholder="" required="" value="{{old('points') ? old('points') : 0.00}}">

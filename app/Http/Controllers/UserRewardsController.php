@@ -83,6 +83,8 @@ class UserRewardsController extends Controller
         }
 
 
+        $rewards->where('stat', 1);
+
         $fullname = User::fullname($fk_users); //for select2 default value
 
         $rewards = $rewards->orderBy('created_at', 'DESC')->paginate(10);
@@ -199,7 +201,7 @@ class UserRewardsController extends Controller
 
         $this->setActiveTab();
         $rewards = UserRewardMstrView::findOrFail($id);
-        $actions = RewardAction::getManualAction();
+        $actions = RewardAction::findOrFail($rewards->fk_rewardactions);
         return view('admin.rewards.edit', compact('rewards', 'actions'));
 
     }//END edit
@@ -238,7 +240,7 @@ class UserRewardsController extends Controller
          
                 $rewards->update($request->all());
 
-                session()->flash('success', "manual reward has been updated!");
+                session()->flash('success', "reward points has been updated!");
                 return redirect()->back();
 
 

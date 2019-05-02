@@ -43,6 +43,20 @@
                   
                 </div>
 
+
+
+                
+                <div class="form-group">
+                    <label for="type">Type <span class="label-required">*</span> </label>
+                  	<select name="type" id="type" class="form-control">
+				        <option value="Fixed" {{ $actions->type == 'Fixed' ? 'selected' : '' }}>Fixed</option>
+				        <option value="Rated" {{ $actions->type == 'Rated' ? 'selected' : '' }}>Rated</option>
+				    </select>
+
+ 
+                </div>
+
+
              	<div class="form-group">
 	                <label for="points">Points <span class="label-required">*</span> </label>
 	                <input type="number" min="0" step="any" class="form-control" id="points" name="points" placeholder="" required="" value="{{$actions->points}}">

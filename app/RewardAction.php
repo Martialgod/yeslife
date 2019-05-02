@@ -17,7 +17,7 @@ class RewardAction extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['name', 'description', 'points', 'fk_createdby', 'fk_updatedby', 'stat'];
+    protected $fillable = ['name', 'description', 'type', 'points', 'fk_createdby', 'fk_updatedby', 'stat'];
 
     /**
         - $form = 'store', 'update'
@@ -25,7 +25,8 @@ class RewardAction extends Model
     public static function custom_validation($request, $form){
   
         $common_rule = [
-            'name'   =>  ['required','max:255'],
+            'name'    =>  ['required','max:255'],
+            'type'    =>  ['required','max:10'],
             'points'  =>  ['required','numeric', 'min:0'],
         ];
 
@@ -47,6 +48,15 @@ class RewardAction extends Model
 
         }
 
+         //validate type
+        if( $request['type'] == 'Rated' ){
+
+            //for Rated coupons, max amount should be 100
+            array_push($common_rule['points'], 'max:100');
+
+        }
+
+
         //dd($common_rule);
 
         //validate the form
@@ -65,8 +75,10 @@ class RewardAction extends Model
         return [
             'name.required' => 'Action name is required',
             'name.unique' => 'Action name already exist',
-            'points.required' => 'Point value is required',
-            'points.numeric' => 'Point value must be numeric',
+            'type.required' => 'Type is required',
+            'points.required' => 'Amount is required',
+            'points.numeric' => 'Amount must be numeric',
+            'points.max' => 'Rated action only allows maximum points of 100',
         ];
     }
 
