@@ -20,7 +20,8 @@
 @endsection
 
 @section('optional_styles')
-	
+
+
 
 @endsection
 
@@ -156,9 +157,9 @@
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2> --}}
 
-                                        <h1 id="" style="color:#fbb055;" >
+                                        <h2 id="" style="color:#fbb055;" >
                                             HAND IN HAND WITH <br> NATURE AND SCIENCE
-                                        </h1>
+                                        </h2>
 
 
                                         <p id="" style="color:#000; text-align:left">
