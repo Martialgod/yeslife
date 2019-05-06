@@ -157,7 +157,7 @@
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2> --}}
 
-                                        <h2 id="" style="color:#fbb055;" >
+                                        <h2 id="" style="color:#3a95c2; font-size: 45px !important;">
                                             HAND IN HAND WITH <br> NATURE AND SCIENCE
                                         </h2>
 
@@ -210,6 +210,22 @@
     <div class="product-section section pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20">
 
         <div class="container">
+
+          
+            <div style="text-align: center;">
+
+                @php
+                    if( !$refnourl ){
+                        $refnourl = '?subject=Distributor Inquiry';
+                    }else{
+                        $refnourl = $refnourl . '&subject=Distributor Inquiry';
+                    }
+                @endphp
+
+                <a href="{{url('/contact-us')}}{{$refnourl}}" class="btn btn-success btn-sm custom-default-btn"> Become A Distributor </a>
+
+            </div>
+            <br><br>
 
 
             @include('landingpage.layouts.yeslife-info-tabs')
@@ -436,8 +452,9 @@
                 <div class="col-12">
                     <div class="banner">
                     	<a href="{{url('/shop')}}{{$refnourl}}">
-                    		<img src="/landingpage/assets/images/banner/offer_page-V3.jpg" alt="">
-                    	</a>
+                    	   {{--<img src="/landingpage/assets/images/banner/offer_page-V3.jpg" alt=""> --}}
+                    	   <img src="/landingpage/assets/images/banner/offer_page-V2.jpg" alt=""> 
+                        </a>
                     </div>
                 </div>
             </div>
