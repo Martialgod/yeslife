@@ -162,13 +162,15 @@
 
                             <button style="background-color: #ffffff;color:#222222;" class="btn btn-secondary ">
 
-                                Login | Register
+                                Sign In
 
                             </button>
 
                         </a>
 
                     @endif
+
+                  
                     
                     
                 </div>

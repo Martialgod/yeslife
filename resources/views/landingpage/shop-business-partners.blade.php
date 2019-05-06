@@ -38,6 +38,10 @@
 
                 <div class="col-xl-9 col-lg-8 col-12 order-2 order-lg-2 mb-sm-50 mb-xs-50">
 
+                    
+                    <div ng-bind-html="vm.categorydescription" style="font-size: 18px;"> </div>
+                    <hr>
+
                     <!-- Shop Toolbar Start -->
                     <div class="row" id="div-toolbar" >
                         <div class="col">

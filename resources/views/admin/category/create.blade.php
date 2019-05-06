@@ -3,7 +3,7 @@
 @section('title', 'Admin Category Create Page')
 
 @section('optional_styles')
-	
+	<link rel="stylesheet" href="/trumbowyg/dist/ui/trumbowyg.min.css">
 @endsection
 
 @section('content-header')
@@ -40,6 +40,13 @@
                   
                 </div>
 
+
+                <div class="form-group">
+	                <label for="description2">Description <span class="label-required"></span> </label>
+	                <textarea class="form-control trumbowyg" id="description2" name="description2" placeholder="" style="resize: none;" >{{old('description2')}}</textarea>
+		          		            
+		        </div>
+
                 <br>
 		    	@include('admin.layouts.buttonsubmit')
 		
@@ -63,9 +70,12 @@
 
 @section('optional_scripts')
 
-	<script type="text/javascript">
 		
-	</script>
+    <script src="/trumbowyg/dist/trumbowyg.min.js"></script>
+
+    <script type="text/javascript">
+        $('.trumbowyg').trumbowyg();
+    </script>
 
 @endsection
 

@@ -18,7 +18,7 @@ class Category extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['description', 'fk_createdby', 'fk_updatedby', 'indexno', 'stat'];
+    protected $fillable = ['description', 'description2', 'fk_createdby', 'fk_updatedby', 'indexno', 'stat'];
 
 
     /**
@@ -61,7 +61,8 @@ class Category extends Model
     //custome validation error messages
     public static function messages(){
         return [
-            'description.required' => 'Description is required',
+            'description.required' => 'Category name is required',
+            'description.unique' => 'Category name aleady exists',
         ];
     }
 

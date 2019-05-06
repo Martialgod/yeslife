@@ -13,7 +13,9 @@
 		var vm = this;
 
 		vm.search = null;
+		vm.msccategories = [];
 		vm.category = 'All';
+		vm.categorydescription =  '<h4> All Categories <h4>';
 		vm.sortby = 'default';
 		vm.mscproducts = [];
 		vm.navlinks = {};
@@ -66,8 +68,25 @@
 			var url = ( url ) ? url : '/shop-search?v='+Math.random();
 
 			//console.log(vm.sortby);
+			
+			if( vm.category == 'All' ){
 
+				vm.categorydescription = '<h4> All Categories <h4>';
 
+			}else{
+				vm.msccategories.forEach(function(item1, index1){
+
+					if( vm.category == item1.pk_category ){
+
+						vm.categorydescription = '<h4>'+item1.description+'</h4>'+item1.description2;
+
+					}
+
+				}); 
+
+			}//END vm.category != 'All'
+		
+			
 			$('#btn-view-mode-list').removeClass('active');
 			$('#btn-view-mode-grid').removeClass('grid active');
 			$('#btn-view-mode-grid').addClass('grid active');

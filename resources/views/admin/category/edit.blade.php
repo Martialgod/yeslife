@@ -3,7 +3,7 @@
 @section('title', 'Admin Category Edit Page')
 
 @section('optional_styles')
-	
+	<link rel="stylesheet" href="/trumbowyg/dist/ui/trumbowyg.min.css">
 @endsection
 
 @section('content-header')
@@ -29,7 +29,7 @@
         		@include('admin.layouts.alert')
 
         		<div class="form-group">
-                    <label for="description">Description <span class="label-required">*</span> </label>
+                    <label for="description">Name <span class="label-required">*</span> </label>
                     <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{$category->description}}" maxlength="255">
                   
                 </div>
@@ -39,6 +39,14 @@
                     <input type="number" class="form-control" id="indexno" name="indexno" placeholder="" required="" value="{{$category->indexno}}" >
                   
                 </div>
+
+
+                <div class="form-group">
+	                <label for="description2">Description <span class="label-required"></span> </label>
+	                <textarea class="form-control trumbowyg" id="description2" name="description2" placeholder="" style="resize: none;" >{{$category->description2}}</textarea>
+		          		            
+		        </div>
+
 
                 @include('admin.layouts.selectstatus', ['source'=>$category])
 
@@ -65,9 +73,12 @@
 
 @section('optional_scripts')
 
-	<script type="text/javascript">
 		
-	</script>
+    <script src="/trumbowyg/dist/trumbowyg.min.js"></script>
+
+    <script type="text/javascript">
+        $('.trumbowyg').trumbowyg();
+    </script>
 
 @endsection
 
