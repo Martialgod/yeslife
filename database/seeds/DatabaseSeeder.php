@@ -319,8 +319,7 @@ class DatabaseSeeder extends Seeder
         ]);  */
 
 
-        //unseeded in live db
-        DB::table('permalink')->insert([
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 1018,
             'method'=> 'POST',
             'description'=> 'Compositions',
@@ -337,7 +336,7 @@ class DatabaseSeeder extends Seeder
            'name'=> 'Business Shop (Case of 12)',
            'description'=> 'Business Shop (Case of 12)',
            'stat'=> 1
-        ]);  
+        ]);  */ 
 
 
     }
