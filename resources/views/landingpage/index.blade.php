@@ -212,7 +212,7 @@
         <div class="container">
 
           
-            <div style="text-align: center;">
+            {{--<div style="text-align: center;">
 
                 @php
                     if( !$refnourl ){
@@ -225,7 +225,7 @@
                 <a href="{{url('/contact-us')}}{{$refnourl}}" class="btn btn-success btn-sm custom-default-btn"> BECOME A DISTRIBUTOR </a>
 
             </div>
-            <br><br>
+            <br><br> --}}
 
 
             @include('landingpage.layouts.yeslife-info-tabs')

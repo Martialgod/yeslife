@@ -53,6 +53,8 @@
                 </div>
             </div>
             
+    
+
             <div class="col mb-40">
                 <div class="footer-widget">
                     <h3 class="title">Information</h3>
@@ -65,6 +67,25 @@
                     </ul>
                 </div>
             </div>
+
+            
+            <div class="col mb-40">
+                <div class="footer-widget">
+                    <h3 class="title">PROGRAMS</h3>
+                    <ul>
+                        @php
+                            if( !$refnourl ){
+                                $tempdist = '?subject=Distributor Inquiry';
+                            }else{
+                                $tempdist = $refnourl . '&subject=Distributor Inquiry';
+                            }
+                        @endphp
+
+                        <li><a href="{{url('/contact-us')}}{{$tempdist}}">Become a distributor</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             
             <div class="col mb-40">
                 <div class="footer-widget">
@@ -79,6 +100,7 @@
                     </ul>
                 </div>
             </div>
+
             
         </div>
     </div>

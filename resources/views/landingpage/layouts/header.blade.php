@@ -25,10 +25,10 @@
 
                             <li><a href="#">SHOP</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{url('/shop')}}{{$refnourl}}">Normal Shop</a></li>
+                                    <li><a href="{{url('/shop')}}{{$refnourl}}">NORMAL SHOP</a></li>
                                     <li>
                                         <a href="{{url('/shop-business-partners')}}{{$refnourl}}">
-                                            Business Partners
+                                            BUSINESS PARTNERS
                                         </a>
                                     </li>
                                 </ul>
@@ -42,7 +42,24 @@
                         
 
                         <li><a href="{{url('/blog')}}{{$refnourl}}">BLOG</a></li>
+
+                        @php
+                            if( !$refnourl ){
+                                $tempdist = '?subject=Distributor Inquiry';
+                            }else{
+                                $tempdist = $refnourl . '&subject=Distributor Inquiry';
+                            }
+                        @endphp
+
+                        <li><a href="#">PROGRAMS</a>
+                            <ul class="sub-menu">
+                                <li><a href="{{url('/contact-us')}}{{$tempdist}}">BECOME A DISTRIBUTOR</a></li>
+                            </ul>
+                        </li>
+
+
                         <li><a href="{{url('/contact-us')}}{{$refnourl}}">CONTACT</a></li>
+
                     </ul>
                 </nav>
             </div>
