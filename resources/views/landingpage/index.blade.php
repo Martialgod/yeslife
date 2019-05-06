@@ -222,7 +222,7 @@
                     }
                 @endphp
 
-                <a href="{{url('/contact-us')}}{{$refnourl}}" class="btn btn-success btn-sm custom-default-btn"> Become A Distributor </a>
+                <a href="{{url('/contact-us')}}{{$refnourl}}" class="btn btn-success btn-sm custom-default-btn"> BECOME A DISTRIBUTOR </a>
 
             </div>
             <br><br>
