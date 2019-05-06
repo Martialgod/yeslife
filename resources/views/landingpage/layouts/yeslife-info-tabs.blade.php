@@ -16,7 +16,7 @@
                             {{--<img src="/landingpage/assets/images/product/yes-to-life.png"/ style="width: 80px;" >
                             <br> --}}
                             <p>
-                               Start Saying <br> Yes to LIFE 
+                               START SAYING <br> YES TO LIFE
                             </p>
                             
                         </a>
@@ -25,7 +25,7 @@
                             {{--<img src="/landingpage/assets/images/product/highest-quality-hemp.png"/ style="width: 80px" >
                             <br> --}}
                             <p>
-                                What is <br> CBD?
+                                WHAT IS <br> CBD?
                             </p>
                             
                         </a>
@@ -34,7 +34,7 @@
                             {{--<img src="/landingpage/assets/images/product/most-water-soluble.png"/ style="width: 80px" >
                             <br> --}}
                             <p>
-                                Why does Water-Solubility <br> Matter?
+                                WHY DOES WATER-SOLUBILITY <br> MATTER?
                             </p>
                            
                         </a>
@@ -43,7 +43,7 @@
                             {{--<img src="/landingpage/assets/images/product/highest-absortion.png"/ style="width: 80px" >
                             <br> --}}
                             <p>
-                               Highest <br> Absorption 
+                               HIGHEST <br> ABSORPTION 
                             </p>
                             
                         </a>
@@ -52,7 +52,7 @@
                             {{--<img src="/landingpage/assets/images/product/source-in-usa.png"/ style="width: 80px" >
                             <br> --}}
                             <p>
-                                USA <br> Product
+                                USA <br> PRODUCT
                             </p>
                             
                         </a>
