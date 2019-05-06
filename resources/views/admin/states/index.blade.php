@@ -39,6 +39,7 @@
 	                   	<th>Country</th>
 	                    <th>State</th>
 	                    <th>Code</th>
+	                    <th>Tax Rate</th>
 	                    <th>Status</th>
 	                    <th></th>
 	              </tr>
@@ -58,6 +59,10 @@
 
 	                        <td>
 	                        	{{$a->code}}
+	                        </td>
+
+	                        <td>
+	                        	{{$a->taxrate}}
 	                        </td>
 
 	                        <td style="color:{{ $a->stat == '1' ? 'green' : 'red'}} ;"> 

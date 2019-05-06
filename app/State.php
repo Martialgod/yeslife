@@ -17,7 +17,7 @@ class State extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['fk_country', 'name', 'code', 'fk_createdby', 'fk_updatedby', 'stat'];
+    protected $fillable = ['fk_country', 'name', 'code', 'taxrate', 'fk_createdby', 'fk_updatedby', 'stat'];
 
     /**
         - $form = 'store', 'update'
@@ -28,6 +28,7 @@ class State extends Model
             'fk_country'   =>  ['required'],
             'name'   =>  ['required','max:255'],
             'code'   =>  ['required','max:15'],
+            'taxrate'  =>  ['required','numeric', 'min:0', 'max:100'],
         ];
 
 
@@ -61,6 +62,7 @@ class State extends Model
         	'fk_country.required' => 'Country is required',
             'name.required' => 'State is required',
             'code.required' => 'Code is required',
+            'taxrate.required' => 'Taxrate is required',
         ];
     }
 

@@ -54,6 +54,13 @@
                   
                 </div>
 
+
+                <div class="form-group">
+	                <label for="taxrate">Tax Rate <span class="label-required">*</span> </label>
+	                <input type="number" min="0" max="100" step="any" class="form-control" id="taxrate" name="taxrate" placeholder="" required="" value="{{$states->taxrate}}">
+		        </div>
+
+
                 @include('admin.layouts.selectstatus', ['source'=>$states])
 
 
