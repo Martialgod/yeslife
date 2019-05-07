@@ -3,7 +3,7 @@
 @section('title', 'Admin Certifications Page')
 
 @section('optional_styles')
-	
+	<link rel="stylesheet" href="/trumbowyg/dist/ui/trumbowyg.min.css">
 @endsection
 
 
@@ -15,6 +15,7 @@
 @section('content-body')
 
 	@include('admin.layouts.alert')
+
 
     @include('admin.layouts.submenus')
 
@@ -103,6 +104,25 @@
     @endif
 
 
+    <br><br><br>
+    <form method="POST" class="jqvalidate-form swa-confirm"  action="{{url('/admin/certifications-main-content/'.$globalmessage->pk_globalmessage)}}" enctype="multipart/form-data" >
+
+		{{method_field('PUT')}}
+	    {{ csrf_field() }}
+
+	    <div class="form-group">
+	        <label for="content">Index Content <span class="label-required"></span> </label>
+	        <textarea class="form-control trumbowyg" id="content" name="content" placeholder="" style="resize: none;" >{{$globalmessage->content}}</textarea>
+	      		            
+	    </div>
+
+
+	    <br>
+		@include('admin.layouts.buttonsubmit')
+		
+
+	</form>
+	
 
 
 @endsection
@@ -111,9 +131,11 @@
 
 @section('optional_scripts')
 
-	<script type="text/javascript">
-		
-	</script>
+	<script src="/trumbowyg/dist/trumbowyg.min.js"></script>
+
+    <script type="text/javascript">
+        $('.trumbowyg').trumbowyg();
+    </script>
 
 @endsection
 

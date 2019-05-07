@@ -69,10 +69,10 @@
                             
                             <div class="row col-md-6">
 
-                            	<label for="{{$v->pk_certificatedtls}}">Remove </label>
 
-
-                                <input type="checkbox" id="{{$v->pk_certificatedtls}}" name="removegallery[{{$v->pictx}}]"  class="i-checks"  > 
+                                <input type="checkbox" id="{{$v->pk_certificatedtls}}" name="removegallery[{{$v->pictx}}]"  class="i-checks"  >
+                                <label for="{{$v->pk_certificatedtls}}">Remove </label>
+ 
 
                                 <br>
                               	<a href="{{url(asset('/storagelink/'.$v->pictx))}}" title="" target="_blank">

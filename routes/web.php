@@ -219,6 +219,7 @@ Route::post('/admin/login', 'SessionsController@store');
 Route::post('/admin/logout', 'SessionsController@destroy');
 Route::get('/admin/logout', 'SessionsController@destroy');
 
+
 Route::get('/admin/profile', 'UsersController@profile');
 Route::put('/admin/profile', 'UsersController@updateprofile');
 
@@ -280,6 +281,9 @@ Route::post('/admin/products/{id}/pricelist', 'ProductPriceListController@store'
 Route::resource('admin/blogs', 'BlogsController');
 
 Route::resource('admin/certifications', 'CertificationsController');
+
+Route::put('/admin/certifications-main-content/{id}', 'CertificationsController@update_main_content');
+
 
 Route::resource('/admin/category', 'CategoryController');
 

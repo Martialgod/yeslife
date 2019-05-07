@@ -24,6 +24,8 @@ use App\CertificationMstrView;
 use App\Product;
 use App\ProductGroup;
 
+use App\GlobalMessage;
+
 use App\User;
 
 use App\AppStorage;
@@ -78,7 +80,9 @@ class CertificationsController extends Controller
         $sub_menu = User::getSubMenu(Auth::id(), $this->menu_group);
         //dd($sub_menu);
         
-        return view('admin.certifications.index', compact('sub_menu', 'certifications', 'search'));
+        $globalmessage = GlobalMessage::findOrFail(2000);
+
+        return view('admin.certifications.index', compact('sub_menu', 'certifications', 'search', 'globalmessage'));
 
     }//END index
 
@@ -342,6 +346,50 @@ class CertificationsController extends Controller
         }//END try
         
     }//END destroy
+
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update_main_content(Request $request, $id)
+    {
+        //
+        //check if user has access
+        if(!User::isUserHasAccess(3010)){
+            return redirect('/admin/404');
+        }
+        
+        $this->setActiveTab();
+    
+        //dd($request->all());
+        
+        $globalmessage = GlobalMessage::findOrFail($id);
+
+        //begin transaction
+        $transaction = DB::transaction(function() use($request, $globalmessage) {
+
+            $request['fk_updatedby'] = Auth::id();
+
+            $globalmessage->update($request->all());
+            
+            //remove gallery
+
+            session()->flash('success', "record has been updated!");
+            return redirect()->back();
+
+
+        });//END transaction
+
+        return $transaction;
+
+          
+  
+    }//END update_main_content
 
 
 

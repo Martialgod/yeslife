@@ -34,6 +34,8 @@ use App\Mail\SendSubsActivated;
 
 use Carbon\Carbon;
 
+use App\GlobalMessage;
+
 use App\MyHelperClass;
 
 class LandingPageController extends Controller
@@ -207,7 +209,9 @@ class LandingPageController extends Controller
 
         $certifications = CertificationDtl::mapCertificateGallery($certifications, $gallery);
 
-        return view('landingpage.certifications', compact('certifications'));
+        $globalmessage = GlobalMessage::findOrFail(2000);
+
+        return view('landingpage.certifications', compact('certifications', 'globalmessage'));
 
     
     }//END certifications
@@ -466,7 +470,11 @@ class LandingPageController extends Controller
         if( !$users ){
             return view('landingpage.layouts.subscription-invalid-template');
         }
-     
+
+        $user = $users;
+        
+        return view('landingpage.layouts.subscription-coupon-template', compact('user'));
+
         return view('landingpage.layouts.subscription-email-template', compact('users'));
         
        
