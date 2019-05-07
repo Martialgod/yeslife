@@ -48,7 +48,7 @@
 
                                     <div class="blog-item" style="background-color: #f7eadc;">
                                        
-                                        <a class="image" href="{{url('/blog/'.$a->slug)}}" style="background-image: url(storagelink/{{$a->pictx}});" >
+                                        <a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(storagelink/{{$a->pictx}});" >
                                             <img src="{{asset('/storagelink/'.$a->pictx)}}" alt="">
                                         </a>
 
@@ -56,7 +56,7 @@
                                         <div class="content">
 
                                             <h3 class="title">
-                                                <a href="{{url('/blog/'.$a->slug)}}" style="color:#222222 !important;">
+                                                <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="color:#222222 !important;">
                                                     {{$a->name}}
                                                 </a>
                                             </h3>
@@ -78,7 +78,7 @@
 
 
 
-                                            <a href="{{url('/blog/'.$a->slug)}}" class="read-more" style="color:#222222 !important;">read more...</a>
+                                            <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" class="read-more" style="color:#222222 !important;">read more...</a>
 
                                         </div><!--END content-->
 

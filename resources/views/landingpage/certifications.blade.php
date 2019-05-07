@@ -54,7 +54,7 @@
                                 @foreach($v1->gallery as $k2 => $v2)
 
                                     <li>
-                                        <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}" title="" target="_blank">
+                                        <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
                                             {{$v2->lotcode}}
                                         </a>
                                     </li>
