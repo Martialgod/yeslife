@@ -339,6 +339,54 @@ class DatabaseSeeder extends Seeder
         ]);  */ 
 
 
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 3010,
+            'method'=> 'LIST',
+            'description'=> 'Certifications',
+            'route'=> 'certifications.index',
+            'type'=> 'B',
+            'family'=> 'Posts',
+            'indexno'=> 1,
+            'stat'=>1
+        ]);
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 3011,
+            'method'=> 'POST',
+            'description'=> 'Add New',
+            'route'=> 'certifications.create',
+            'type'=> 'C',
+            'family'=> 'certifications.index',
+            'indexno'=> 0,
+            'stat'=>1
+        ]);
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 3012,
+            'method'=> 'PUT',
+            'description'=> 'Edit',
+            'route'=> 'certifications.edit',
+            'type'=> 'C',
+            'family'=> 'certifications.index',
+            'indexno'=> 1,
+            'stat'=>1
+        ]);
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 3014,
+            'method'=> 'DELETE',
+            'description'=> 'Delete',
+            'route'=> 'certifications.delete',
+            'type'=> 'C',
+            'family'=> 'certifications.index',
+            'indexno'=> 2,
+            'stat'=>1
+        ]);
+
+
+
     }
 
 }//END class

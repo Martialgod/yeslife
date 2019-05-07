@@ -247,7 +247,7 @@ class BlogsController extends Controller
     }//END edit
 
 
-     /**
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

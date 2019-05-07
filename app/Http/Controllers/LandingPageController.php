@@ -21,6 +21,9 @@ use App\ProductPriceListMstrView;
 
 use App\OrderMstrView;
 
+use App\CertificationMstrView;
+use App\CertificationDtl;
+
 use App\User;
 
 use Mail;
@@ -186,6 +189,67 @@ class LandingPageController extends Controller
     }//END privacy_policy
 
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function certifications()
+    {
+        //
+
+        $this->setActiveTab();
+
+        $certifications = CertificationMstrView::where('stat', 1)->orderBy('fk_products', 'DESC')->get();
+
+        $gallery = CertificationDtl::getCertificatesGallery($certifications->pluck('pk_certificatemstr'));
+
+        $certifications = CertificationDtl::mapCertificateGallery($certifications, $gallery);
+
+        return view('landingpage.certifications', compact('certifications'));
+
+    
+    }//END certifications
+        
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function certifications_show($id, $lotcode)
+    {
+        //
+
+        $this->setActiveTab();
+
+        $certifications = CertificationMstrView::where('pk_certificatemstr', $id)
+                            ->where('stat', 1)
+                            ->first();
+
+        if( !$certifications ){
+
+            return redirect('/404');
+
+        }
+
+        $gallery = CertificationDtl::where('lotcode', $lotcode)->first();
+
+        if( !$gallery ){
+
+            return redirect('/404');
+
+        }
+
+        return view('landingpage.certifications-show', compact('certifications', 'gallery'));
+
+    
+    }//END certifications_show
+    
+
+    
     
     /**
      * Display a listing of the resource.

@@ -42,9 +42,14 @@
                         <a class="nav-item nav-link" id="nav-absorption-tab" data-toggle="tab" href="#nav-absorption" role="tab" aria-controls="nav-absorption" aria-selected="false">
                             {{--<img src="/landingpage/assets/images/product/highest-absortion.png"/ style="width: 80px" >
                             <br> --}}
-                            <p>
+
+                            {{--<p>
                                HIGHEST <br> ABSORPTION 
-                            </p>
+                            </p> --}}
+
+                            <p>
+                               BEST <br> ABSORBING 
+                            </p> 
                             
                         </a>
 

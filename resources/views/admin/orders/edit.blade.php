@@ -127,7 +127,7 @@
 
 			                        <td> ${{$a->taxamount}} </td>
 
-			                        <td> ${{$a->netamount}} </td>
+			                        <td> ${{$a->totalamount}} </td>
 
 			                        <td>
 		                        		<select name="fk_products[{{$a->fk_products}}]" class="">

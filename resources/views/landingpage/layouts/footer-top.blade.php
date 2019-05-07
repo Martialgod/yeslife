@@ -62,13 +62,14 @@
                         <li><a href="{{url('/myaccount/home')}}">My Account</a></li>
                         <li><a href="{{url('/privacy-policy')}}{{$refnourl}}">Privacy Policy</a></li>
                         <li><a href="{{url('/terms-conditions')}}{{$refnourl}}">Terms & Conditions</a></li>
+                        <li><a href="{{url('/certifications')}}{{$refnourl}}">Certifications</a></li>
                         <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Promotional Offers</a></li>
                     </ul>
                 </div>
             </div>
 
-            
+
             <div class="col mb-40">
                 <div class="footer-widget">
                     <h3 class="title">PROGRAMS</h3>

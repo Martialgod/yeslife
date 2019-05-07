@@ -109,6 +109,10 @@ Route::get('/terms-conditions', 'LandingPageController@terms_conditions');
 // ?refno=33213 -- optional for referral 
 Route::get('/privacy-policy', 'LandingPageController@privacy_policy');
 
+// ?refno=33213 -- optional for referral 
+Route::get('/certifications', 'LandingPageController@certifications');
+Route::get('/certifications/{id}/{lotcode}', 'LandingPageController@certifications_show');
+
 //cartcheckout?recurring=33213  -- optional for recurring checkout
 //?refno=33213 -- optional for referral 
 Route::get('/cartcheckout', 'CartController@index');
@@ -274,6 +278,8 @@ Route::post('/admin/products/{id}/pricelist', 'ProductPriceListController@store'
 
 
 Route::resource('admin/blogs', 'BlogsController');
+
+Route::resource('admin/certifications', 'CertificationsController');
 
 Route::resource('/admin/category', 'CategoryController');
 

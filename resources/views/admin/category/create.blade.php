@@ -29,7 +29,7 @@
         		@include('admin.layouts.alert')
 
         		<div class="form-group">
-                    <label for="description">Description <span class="label-required">*</span> </label>
+                    <label for="description">Name <span class="label-required">*</span> </label>
                     <input type="text" class="form-control" id="description" name="description" placeholder="" required="" value="{{old('description')}}" maxlength="255">
                   
                 </div>
