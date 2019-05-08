@@ -58,6 +58,8 @@ class SocialFacebookAccountService
                     'affiliate_token'=> $token,
                     'password'=> bcrypt($token), //default password
                 ]);
+
+                
                 
             }elseif( !$user->fname ){
 

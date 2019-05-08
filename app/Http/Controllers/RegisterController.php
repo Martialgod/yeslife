@@ -24,6 +24,9 @@ use App\PasswordReset;
 
 use Mail;
 
+use App\Mail\SendRegistrationCouponCode;
+
+
 class RegisterController extends Controller
 {
     //
@@ -58,7 +61,8 @@ class RegisterController extends Controller
     {
 
         //dd($request->all());
-        //
+        
+
 
         if( $request->logtype == 'register' ){
 
@@ -337,6 +341,10 @@ class RegisterController extends Controller
                     'affiliate_token'=> MyHelperClass::generateRandomString(10).''.$users->id
                 ]);
                 
+                //email to the customer
+                $when = Carbon::now()->addMinutes(1);
+                Mail::to($request->email, $request->email)->later($when, new SendRegistrationCouponCode($users));
+
                 session()->flash('success', "Registration completed!");
                 return redirect()->back();
 
@@ -388,6 +396,9 @@ class RegisterController extends Controller
 
             }
 
+            $request['issubscribed'] = ( $request->issubscribed && $request->issubscribed == 'on' ) ? 1 : 0;
+            $request['istext'] = ( $request->istext && $request->istext == 'on' ) ? 1 : 0;
+
             $request['password'] = bcrypt($request->password);
             $request['fullname'] = $request->fname.' '.$request->lname;
             $request['stat'] = 1;  //default stat
@@ -399,6 +410,8 @@ class RegisterController extends Controller
                 'lname'=> $request->lname,
                 'fullname'=> $request->fullname,
                 //'fk_referredby'=> $request->fk_referredby,
+                'issubscribed'=> $request->issubscribed,
+                'istext'=> $request->istext,
                 'stat'=> 1
 
             ]);
@@ -411,6 +424,10 @@ class RegisterController extends Controller
                 ]);
             }
 
+
+            //email to the customer
+            $when = Carbon::now()->addMinutes(1);
+            Mail::to($request->email, $request->email)->later($when, new SendRegistrationCouponCode($users));
 
             session()->flash('success', "Registration completed!");
             return redirect()->back();

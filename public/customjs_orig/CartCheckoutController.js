@@ -37,7 +37,8 @@
 		
 		//determine referral token
 		vm.referrer_token = $('#referrer_token').val();
-		//console.log(vm.referrer_token);
+		vm.yeslife_referrer_id = $('#yeslife_referrer_id').val();
+		//console.log(vm.yeslife_referrer_id);
 
 		vm.LoadCart = function(){
 	
@@ -378,6 +379,7 @@
 
 			$http.post('/api/save-order', {
 				'referrer_token': vm.referrer_token,
+				'yeslife_referrer_id': vm.yeslife_referrer_id,
 				'recurringtrxno': vm.recurringtrxno,
 				'cart': vm.mscproducts, 
 				'coupons': vm.msccoupons,
@@ -396,6 +398,7 @@
                 console.log(response);
                 var data = response.data;
 
+                //bypass checkout
                 //hideCustomizeLoading();  return;
 
                 if( data.status == 'success' ){
@@ -594,7 +597,7 @@
 		 	.then(function(result){
 			    if (result.value) {
 			        
-			        console.log('cart payment logic...');
+			        //console.log('cart payment logic...');
 
 			      	//remove event handler submit, prevent recursion call of the submit
 			      	//$(e.currentTarget).off("submit").submit(); 
@@ -662,7 +665,7 @@
 
         	
         	/*
-        	//rallypay sample value bypass
+        	//bypass rallypay
         	vm.paymentapi = {
         		amount: 100,
             	currency: 'usd',
@@ -675,11 +678,8 @@
 					id: '1ftrt2',
 				}
         	};
-
 	        //console.log(donation);
-
 	        vm.SubmitCart();
-
         	return;  */
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory

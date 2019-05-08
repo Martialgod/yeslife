@@ -314,6 +314,11 @@ class LandingPageController extends Controller
 
         $users = User::findOrFail($id);
 
+        $user = $users;
+        
+        return view('landingpage.layouts.registration-coupon-template', compact('user'));
+
+
         return view('landingpage.layouts.subscription-email-template', compact('users'));
         
 
@@ -347,7 +352,6 @@ class LandingPageController extends Controller
         //begin transaction
         $transaction = DB::transaction(function() use($request) {
 
-
             $request['fk_usertype'] = 1008; //Normal User. Default User Access
             $request['uname'] = $request->subemail;
             $request['password'] = 'test';
@@ -357,6 +361,7 @@ class LandingPageController extends Controller
             $request['state'] = 'Alabama'; //default state from db
             $request['city'] = 'Alabama';
             $request['address1'] = 'Alabama';
+            $request['fk_referredby'] = $request->refno_subs;
             $request['stat'] = 0;
 
             $users =  User::create($request->all());
@@ -471,9 +476,9 @@ class LandingPageController extends Controller
             return view('landingpage.layouts.subscription-invalid-template');
         }
 
-        $user = $users;
+        //$user = $users;
         
-        return view('landingpage.layouts.subscription-coupon-template', compact('user'));
+        //return view('landingpage.layouts.subscription-coupon-template', compact('user'));
 
         return view('landingpage.layouts.subscription-email-template', compact('users'));
         

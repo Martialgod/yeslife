@@ -1,6 +1,6 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Login & Register')
+@section('title', 'YesLife Sign In')
 
 @section('meta')
 
@@ -22,10 +22,10 @@
 	{{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Login & Register', 
+      'bannerheader'=>'Sign In', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'Login & Register'
+      'bannercontent'=> 'Sign In'
     ])
 
 

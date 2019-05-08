@@ -251,13 +251,16 @@ class OrderController extends Controller
                 $request['stat'] = 0;
 
                 //check referral token
-                $request['fk_referredby'] = null;
+                /*$request['fk_referredby'] = null;
                 if( isset($request->referrer_token) &&  $request->referrer_token != null || $request->referrer_token != '' ){
 
                     $refno = User::where('affiliate_token', $request->referrer_token)->pluck('id')->first();
                     $request['fk_referredby'] = $refno;
 
-                }//END $request->referrer_token
+                }//END $request->referrer_token */
+
+                $request['fk_referredby'] = $request->yeslife_referrer_id;
+                
                 
 
                 $validator = User::custom_validation($request, 'store');

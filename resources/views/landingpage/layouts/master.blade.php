@@ -183,7 +183,9 @@
 
         {{--optional, for referral links--}}
         <input type="hidden" readonly="" id="referrer_token" name="referrer_token" value="{{ ($referrer) ? $referrer->affiliate_token : ''}}">
-
+        
+        {{--initialize @App/Providers/AppServiceProvider.php--}}
+        <input type="hidden" readonly="" id="yeslife_referrer_id" name="yeslife_referrer_id" value="{{session('yeslife_referrer_id')}}">
 
     </div>
 

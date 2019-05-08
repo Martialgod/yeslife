@@ -213,6 +213,8 @@ class AppServiceProvider extends ServiceProvider
             //refno = optional referal token; use in affiliate
             $referrer = User::getReferrer(request());
 
+
+
             $refnourl = '';
             if( isset($referrer) ){
 
@@ -223,10 +225,13 @@ class AppServiceProvider extends ServiceProvider
                 $refnourl = '?refno='.$referrer->affiliate_token;
 
             }else{
+
                 //declare global session referrer_id. to be used in Social Login
-                session()->put('yeslife_referrer_id', null);
+                //session()->put('yeslife_referrer_id', null);
 
             }
+
+            //dd(session('yeslife_referrer_id'));
 
             //dd($referrer);
 

@@ -71,7 +71,7 @@
                                         <p id="" style="color:#fff; text-align:left">
                                             
                                             ✓ #1 Most-stable
-                                            ✓ Water-soluble ✓ highest-absorbing
+                                            ✓ Water-soluble ✓ Highest-absorbing
                                             <br> 
                                             ✓ Fast-acting
                                             ✓ NO addictive chemicals added 
@@ -119,14 +119,17 @@
                                         </h2>
 
                                         <p id="" style="color:#fff; text-align:left">
+
+                                            We offer the most effective CBD engineered to work <br> with your body and can help you take back your health with the best nature has to offer.
                                             
-                                            We offer the most effective cbd that is engineered  to work <br> with your body and can help you take back your health, with the best nature as to offer.
+                                            {{--We offer the most effective cbd that is engineered  to work <br> with your body and can help you take back your health, with the best nature as to offer. --}}
 
                                             {{--<a href="{{url('/shop')}}{{$refnourl}}">
                                                 <img src="/landingpage/assets/images/30-days-btn.png" alt="" />
                                             </a> --}}
                                             <br/>
-                                            Nourish your body with nature and life your best life.
+                                            {{--Nourish your body with nature and life your best life.--}}
+                                            Nourish your body with nature’s best and live your best life.
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
