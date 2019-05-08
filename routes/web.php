@@ -113,6 +113,9 @@ Route::get('/privacy-policy', 'LandingPageController@privacy_policy');
 Route::get('/certifications', 'LandingPageController@certifications');
 Route::get('/certifications/{id}/{lotcode}', 'LandingPageController@certifications_show');
 
+// ?refno=33213 -- optional for referral 
+Route::get('/free-sample', 'FreeSampleController@index'); 
+
 //cartcheckout?recurring=33213  -- optional for recurring checkout
 //?refno=33213 -- optional for referral 
 Route::get('/cartcheckout', 'CartController@index');

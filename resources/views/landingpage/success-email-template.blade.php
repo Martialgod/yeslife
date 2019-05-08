@@ -375,6 +375,12 @@
 
                           </p>
 
+                          <p>
+                            <b> Phone Number  </b>
+                            <br>
+                            {{$ordermstr->billingphone}}
+                          </p>
+
 
                           <hr>
 

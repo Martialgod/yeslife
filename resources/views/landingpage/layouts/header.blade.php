@@ -11,13 +11,15 @@
                     <a href="{{url('/')}}{{$refnourl}}">
                         <img src="/landingpage/assets/images/main-logo.png" alt="">
                     </a>
+
                 </div>
             </div>
             
             <!-- Main Menu -->
             <div class="col d-none d-lg-block">
-                <nav class="main-menu">
+                <nav class="main-menu" style="margin-left: -50px !important;" > 
                     <ul>
+
                         <li><a href="{{url('/')}}{{$refnourl}}">HOME</a></li>
                         <li><a href="{{url('/about-us')}}{{$refnourl}}">ABOUT</a></li>
 
@@ -66,7 +68,7 @@
 
                    
             <!-- Header Action -->
-            <div class="col">
+            <div class="col" >{{--col--}}
 
                 <div class="header-action" style="margin-top: 5px;">
 
@@ -94,6 +96,8 @@
                         
                     </div>
 
+
+
                     {{-- 
                         check for admin login-as virtual user 
                         Generated @AppServiceProvider.php
@@ -104,7 +108,7 @@
 
                             <button class="btn btn-secondary dropdown-toggle custom-default-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                                {{$virtualuser->fname}} - (Virtual User)
+                                {{$virtualuser->fname}}{{-- (Virtual User) --}}
                                 <span class="fa fa-user fa"></span>
 
                             </button>
@@ -187,8 +191,6 @@
 
                     @endif
 
-                  
-                    
                     
                 </div>
                             
