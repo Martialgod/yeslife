@@ -27,10 +27,10 @@
                 <div class="col">
                     
                     <div class="page-banner text-center" >
-                        <h1>Forgot Password</h1>
+                        <h1 style="color:#3295c3;">Forgot Password</h1>
                         <ul class="page-breadcrumb" >
-                            <li style="color:#fff;"><a href="{{url('/')}}" >Home</a></li>
-                            <li style="color:#fff;">Forgot Password</li>
+                            <li style="color:#3295c3;"><a href="{{url('/')}}" >Home</a></li>
+                            <li style="color:#3295c3;">Forgot Password</li>
                         </ul>
                     </div><!--END page-banner-->
                     

@@ -339,7 +339,7 @@ class DatabaseSeeder extends Seeder
         ]);  */ 
 
 
-        DB::table('permalink')->insert([
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 3010,
             'method'=> 'LIST',
             'description'=> 'Certifications',
@@ -383,7 +383,7 @@ class DatabaseSeeder extends Seeder
             'family'=> 'certifications.index',
             'indexno'=> 2,
             'stat'=>1
-        ]);
+        ]); */
 
 
 
