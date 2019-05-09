@@ -46,7 +46,7 @@
 
                                     
 
-                                    <h3>Rewards: {{$totalpoints}} </h3>
+                                    @include('landingpage.myaccount.totalrewards')
 
 
                                     <hr>
@@ -132,7 +132,7 @@
 
                                     @else
 
-                                        @include('landingpage.layouts.nodisplay')
+                                        {{--@include('landingpage.layouts.nodisplay')--}}
 
                                     @endif
 

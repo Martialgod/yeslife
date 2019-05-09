@@ -78,7 +78,7 @@
 	                        </td>
 
 
-	                        <td> {{$a->points}} </td>
+	                        <td> ${{$a->points}} </td>
 
 
 	                        <td>

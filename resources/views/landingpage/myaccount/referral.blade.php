@@ -140,12 +140,14 @@
 
                                     @else
 
-                                        @include('landingpage.layouts.nodisplay')
+                                        {{--@include('landingpage.layouts.nodisplay')--}}
 
                                     @endif
 
                                     <a href="{{url('/myaccount/rewards')}}" title="">
-                                        <h3> Points: {{$totalpoints}}   </h3>
+                                        
+                                        @include('landingpage.myaccount.totalrewards')
+
                                     </a>
                                    
 

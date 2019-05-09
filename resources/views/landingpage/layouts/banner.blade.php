@@ -5,7 +5,6 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                
                 <div class="page-banner text-center">
                     <h1 style="color:#3295c3;"> {{$bannerheader}} </h1>
                     <ul class="page-breadcrumb">
