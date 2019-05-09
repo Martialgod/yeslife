@@ -1,7 +1,7 @@
 (function(){
 
 	var app = angular.module('app', ['AppServices'])
-		.constant('API_URL', '/cart')//define constant API_URL to be used in linking angular and laravel
+		.constant('API_URL', '/free-sample')//define constant API_URL to be used in linking angular and laravel
 		//to enable laravel request()->ajax()
 		.config(['$httpProvider', function($httpProvider){
 				$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
@@ -9,31 +9,16 @@
 
 
 
-	app.controller('CartCheckoutController', ['$http', 'API_URL', 'GlobalFactory', function($http, API_URL, GlobalFactory){
+	app.controller('FreeSampleController', ['$http', 'API_URL', 'GlobalFactory', function($http, API_URL, GlobalFactory){
 
 		var vm = this;
 
 		vm.statusmsg = 'retrieving cart...';
 
-		vm.isoncart = true; //tregger show or hide cart and checkout forms
-		//$('#divcheckout').hide();
-		$('#nodisplay-div').prop('hidden', true);
-		$('#cart-div').prop('hidden', true);
-		$('#divcheckout').prop('hidden', true);
-
 		vm.mscproducts = [];
-
-		vm.msccoupons = [];
-
-		vm.couponcode = null;
 
 		vm.paymentapi = {};
 
-		vm.isloggedin = $('#isloggedin').val(); //intialize @master layout; contains session id
-
-		//determine if user is approving recurring order through checkout
-		vm.recurringtrxno = $('#recurringtrxno').val();
-		//console.log(vm.recurringtrxno);
 		
 		//determine referral token
 		vm.referrer_token = $('#referrer_token').val();
@@ -94,139 +79,6 @@
             });//END $http
 
 		};//END LoadCart
-
-
-		vm.UpdateCart = function(type, list){
-
-			//type = plus, minus, ''
-			
-			//console.log(type + list);
-
-			list.selectedqty = ( isNaN(list.selectedqty) || list.selectedqty == undefined || list.selectedqty == '' ) ? 1 : list.selectedqty;
-
-			if( type == 'plus' ){
-				list.selectedqty++;
-			}
-			else if( type == 'minus' ){
-
-				list.selectedqty--;
-
-			}
-
-			if( list.selectedqty <= 0 ){
-				list.selectedqty = 1;
-			}
-
-			//if not a recurring checkout process then assume we checkout base on items added to the cart
-        	if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
-        		
-        		var products = {
-					'productid': list.productid,
-					'qty': list.selectedqty,
-				};
-
-				//re initialize cart cookie to prevent double qty update in addCartCookie
-    			document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
-
-				addCartCookie(products); //@GlobalScript.js
-
-        	}//END vm.recurringtrxno == undefined
-
-			vm.CalculateTotal();
-
-		}; //END UpdateCart
-
-
-
-		vm.ApplyCoupon = function($event){
-
-			$event.preventDefault();
-
-			//console.log(vm.couponcode);
-
-			if( vm.couponcode == null || vm.couponcode == '' || vm.couponcode.length <=3 ){
-				swal('Opps!', 'Coupon Code not found!', 'warning');
-				return;
-			}
-
-			if( vm.totalnetamount <=0 ){
-				swal('Opps!', 'You cannot add another coupon!', 'warning');
-				return;
-			}
-
-			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
-			showCustomizeLoading(); //@GlobalScript.js
-
-			$http.post('/api/searchcoupon', {couponcode: vm.couponcode, userid: vm.isloggedin})
-            .then(function(response){
-
-                //console.log(response);
-                var data = response.data;
-                //console.log(data);
-
-                if( data.length > 0 ){
-
-                	//check for duplicate entry
-			   		var isfound = false;
-
-                	vm.msccoupons.forEach(function(item1, index1){
-
-			   			if( item1.pk_coupons == data[0].pk_coupons ){
- 							isfound = true;
- 							return;
- 						}
-
-                	});//END vm.msccoupons
-                	
-                	if(!isfound){
-		   				vm.msccoupons.push( data[0] );
-		   			}else{
-
-		   			}//!isfound
-
-                }else{
-
-                	swal('Opps!', 'Coupon Code not found!', 'warning');
-
-                }//END data.length >  0
-
-                vm.CalculateTotal();
-
-
-                //GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
-                hideCustomizeLoading(); //@GlobalScript.js
-
-            },function(response){
-
-                console.log(response);
-
-                //swal('Opps!', 'Something went wrong!<br> please see log for details', 'error');
-                swal('Opps!', 'Coupon Code not found!', 'error');
-                //GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
-                hideCustomizeLoading(); //@GlobalScript.js
-
-            });//END $http
-
-
-		};//END ApplyCoupon
-
-
-
-		vm.RemoveCoupons = function(list){
-
-
-			vm.msccoupons.forEach(function(item1, index1){
-
-	   			if( item1.pk_coupons == list.pk_coupons ){
-					vm.msccoupons.splice(index1, 1);
-				}
-
-        	});//END vm.msccoupons
-
-			vm.CalculateTotal();
-
-		};//END RemoveCoupons
-
 
 
 
@@ -301,76 +153,6 @@
 		
 
 
-		vm.RemoveFromCart = function(list){
-
-			vm.mscproducts.forEach(function(item1, index1){
-				if( item1.productid == list.productid ){
-
-					vm.mscproducts.splice(index1, 1);
-
-					//if not a recurring checkout process then assume we checkout base on items added to the cart
-		        	if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
-		        		
-		        		//remove from cookie
-						removeCartCookie( list.productid ); //@GlobalScript.js
-
-		        	}//END vm.recurringtrxno == undefined
-
-					
-
-				}//END item1.productid == list.productid 
-
-			});//END vm.mscproducts
-
-			if( vm.mscproducts.length == 0 ){
-				$('#nodisplay-div').prop('hidden', false);
-				$('#cart-div').prop('hidden', true);
-			}
-
-			vm.CalculateTotal();
-
-
-		};//END RemoveFromCart
-
-
-		vm.IsCartItemsValid = function(){
-			
-			//check if cart is not empty and cart net amount not lessthan zero
-          	if( vm.mscproducts.length <=0  ){
-          		swal('Opps!', 'Youre cart is empty!', 'error');
-          		return false;
-          	}
-
-          	if( vm.totalnetamount <= 0 ){
-          		swal('Opps!', 'Net amount cannot be zero!', 'error');
-          		return false;
-          	}
-
-          	return true;
-
-		};//END IsCartItemsValid
-
-		vm.ShowCart = function(){
-
-			vm.isoncart = true; //tregger show or hide cart and checkout forms
-			//$('#divcheckout').show();
-			$('#cart-div').prop('hidden', false);
-			$('#divcheckout').prop('hidden', true);
-
-		}
-
-		vm.ShowCheckout = function(){
-			if(!vm.IsCartItemsValid()){
-				return;
-			}
-			vm.isoncart = false; //tregger show or hide cart and checkout forms
-			//$('#divcheckout').show();
-			$('#cart-div').prop('hidden', true);
-			$('#divcheckout').prop('hidden', false);
-
-		};//END vm.ShowCheckout
-
-
 
 		vm.SubmitCart = function(){
 
@@ -380,9 +162,9 @@
 			$http.post('/api/save-order', {
 				'referrer_token': vm.referrer_token,
 				'yeslife_referrer_id': vm.yeslife_referrer_id,
-				'recurringtrxno': vm.recurringtrxno,
+				'recurringtrxno': null,
 				'cart': vm.mscproducts, 
-				'coupons': vm.msccoupons,
+				'coupons': [],
 				'total': {
 					'totalamount': vm.totalamount,
 					'totalnetamount': vm.totalnetamount,
@@ -399,7 +181,7 @@
                 var data = response.data;
 
                 //bypass checkout
-                //hideCustomizeLoading();  return;
+                hideCustomizeLoading();  return;
 
                 if( data.status == 'success' ){
 
@@ -413,11 +195,6 @@
 
 
                 		console.log("Purchase successfully sent to LeadDyno");
-
-                		//if not a recurring checkout process then assume we checkout base on items added to the cart
-	                	if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
-	                		deleteAllCartCookies(); //@GlobalScript.js
-	                	}
 
 	                	//go to checkout success page;
 	                	if( vm.referrer_token != null && vm.referrer_token != '' ){
@@ -481,39 +258,8 @@
 				return;
 			}
 
-          	//validate items
-          	if(!vm.IsCartItemsValid()){
-				return;
-			}
+       
 
-			//validate isrecurring dates
-			if( $('#isrecurring').is(":checked") ){
-
-				var datenow = GlobalFactory.formatDate( (new Date()), 'yyyy-MM-dd' );
-				var timenow = new Date(datenow).getTime();
-
-				//var startdate = new Date($('#startdate').val()).getTime();
-				var enddate = new Date($('#enddate').val()).getTime();
-
-				/*if( startdate < timenow ){
-					swal('Opps!', 'Recurring start date should be greater than today!', 'error');
-					return;
-				}*/
-
-				if( $('#enddate').val() !== 'undefined' && $('#enddate').val() != '' && ( enddate <= timenow ) ){
-
-					swal('Opps!', 'Recurring end date should be greater than today!', 'error');
-					return;
-
-				}
-
-				//console.log( new Date(datenow).getTime() );
-
-
-			}//END isrecurring
-
-			
-			
 			if( $('#isnewaccount').prop("checked") == true ){
                if( $('#billingpassword').val().length == 0 || ( $('#billingpassword').val() != $('#billingrepeatpassword').val() ) ){
 
@@ -664,7 +410,7 @@
         	};
 
         	
-        	/*
+        	
         	//bypass rallypay
         	vm.paymentapi = {
         		amount: 100,
@@ -680,7 +426,7 @@
         	};
 	        //console.log(donation);
 	        vm.SubmitCart();
-        	return;  */
+        	return;  
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js
@@ -743,14 +489,13 @@
         };//END validateRally
 
 
-        //showCustomizeLoading(); //@GlobalScript.js
-        showCustomizeLoadingNoIcon(); //@GlobalScript.js
+        //showCustomizeLoadingNoIcon(); //@GlobalScript.js
 		setTimeout(function(){
-			vm.LoadCart();
+			//vm.LoadCart();
 		}, 500);
 		
 
-	}]);//END CartCheckoutController
+	}]);//END FreeSampleController
 
 
 })();//END file

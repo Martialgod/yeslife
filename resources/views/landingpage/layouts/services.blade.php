@@ -1,8 +1,10 @@
 <!-- Service Section Start -->
 <div class="service-section section pl-15 pr-15 pl-lg-30 pr-lg-30 pl-md-30 pr-md-30">
     <div class="service-container">
+
         <br>
-        <div class="row ml-0 mr-0">
+
+        <div class="row ml-0 mr-0" id="div-main-services" >
            
             <div class="service col-xl-3 col-md-6 col-12">
                 <div class="icon"></div>
@@ -42,5 +44,30 @@
             </div>
             
         </div>
+
+
+        <div class="row ml-0 mr-0"  id="div-free-services" hidden>
+           
+            <div class="service col-md-6">
+                <div class="icon"></div>
+                <div class="content">
+                    <h3>Quality Products</h3>
+                    {{--<p>Our main goal is to ensure quality on all of our products.</p>--}}
+                    <p> We only provided USA Grown, harvested, and produced Hemp</p>
+                </div>
+            </div>
+            
+            <div class="service col-md-6">
+                <div class="icon"></div>
+                <div class="content">
+                    <h3>Online Support</h3>
+                    <p>We ensure the product quality that you can trust easily
+                    <br>Email Support: info@yes.life   </p>
+                </div>
+            </div>
+            
+          
+        </div>
+
     </div>
 </div><!-- Service Section End -->

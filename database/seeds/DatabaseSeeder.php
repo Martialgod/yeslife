@@ -387,6 +387,14 @@ class DatabaseSeeder extends Seeder
 
 
 
+        DB::table('productgroup')->insert([
+           'pk_productgroup'=> 10,
+           'name'=> 'FREE Sample!',
+           'description'=> 'FREE Sample!',
+           'stat'=> 1
+        ]);  
+
+
     }
 
 }//END class
