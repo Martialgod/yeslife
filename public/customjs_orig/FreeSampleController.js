@@ -237,6 +237,11 @@
 				return;
 			}
 
+            if( vm.totalnetamount <= 0 ){
+                swal('Opps!', 'Net amount cannot be zero!', 'error');
+                return false;
+            }
+
        
 
 			if( $('#isnewaccount').prop("checked") == true ){
