@@ -115,6 +115,10 @@ Route::get('/certifications/{id}/{lotcode}', 'LandingPageController@certificatio
 
 // ?refno=33213 -- optional for referral 
 Route::get('/free-sample', 'FreeSampleController@index'); 
+Route::get('/free-sample/showproduct/{id}', 'FreeSampleController@apishowproduct'); 
+Route::get('/free-sample/isfirsttimer/{email}/{productid}', 'FreeSampleController@isfirsttimer'); 
+
+
 
 //cartcheckout?recurring=33213  -- optional for recurring checkout
 //?refno=33213 -- optional for referral 

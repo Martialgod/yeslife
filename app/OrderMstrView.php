@@ -21,7 +21,33 @@ class OrderMstrView extends Model
 			->orderBy('created_at', 'DESC')->orderBy('pk_ordermstr', 'ASC')
 			->get();
 
-    }//END orders
+    }//END ordersummary_date
+
+
+    //10 = Free Sample product
+    public static function isfirsttimer_freesample($email, $productid){
+
+    	$result = DB::SELECT("
+    		SELECT a.pk_ordermstr
+    		FROM ordermstr a 
+    		INNER JOIN orderdtls b 
+    		ON a.pk_ordermstr = b.fk_ordermstr 
+    		INNER JOIN users c 
+    		ON a.fk_users = c.id
+    		INNER JOIN products d 
+    		ON b.fk_products = d.pk_products
+    		WHERE c.email = '$email'
+    		AND b.fk_products = '$productid'
+    		AND d.fk_productgroup = 10
+    	");
+
+    	if( count($result) > 0 ){
+    		return 'no'; //not a first timer
+    	}
+    	return 'yes'; //yes a first timer
+
+    }//END isfirsttimer_freesample
+
     
 
 }

@@ -218,7 +218,7 @@ class OrderController extends Controller
             }
             
             //return $request->all();
-            //
+            
             
             //test for new account
             //$request['billingemail'] = 'test@gmail.com';
@@ -540,6 +540,7 @@ class OrderController extends Controller
             $orderdtls = OrderDtlView::where('fk_ordermstr', $ordermstr->pk_ordermstr)->orderBy('indexno', 'ASC')->get();
 
             
+            
             //email to the customer
             $when = Carbon::now()->addMinutes(1);
             Mail::to($users['email'], $users['fullname'])->later($when, new SendOrderConfirmation($ordermstr, $orderdtls, $users));
@@ -551,7 +552,7 @@ class OrderController extends Controller
             Mail::to(env('MAIL_USERNAME'))
                 ->cc($orderemails)
                 ->later($when, new SendOrderConfirmation($ordermstr, $orderdtls, $users));
-
+            
             
 
             /*$totalpoints = UserReward::countTotalRewardPointsPerUser($users['id']);

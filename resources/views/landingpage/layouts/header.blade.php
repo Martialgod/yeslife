@@ -17,7 +17,7 @@
             
             <!-- Main Menu -->
             <div class="col d-none d-lg-block">
-                <nav class="main-menu" style="margin-left: -50px !important;" > 
+                <nav class="main-menu" style="margin-left: -40px !important;" > 
                     <ul>
 
                         <li><a href="{{url('/')}}{{$refnourl}}">HOME</a></li>
@@ -76,11 +76,11 @@
                     <div class="header-cart-wrap" style="margin-right: 10px;font-size: 20px;" >
 
                         <a href="{{url('/cartcheckout')}}{{$refnourl}}" title="">
-                            <button type="button" class="btn btn-info custom-default-btn" >
+                            <button type="button" class="btn btn-info btn-sm custom-default-btn" >
 
                                 <i class="fa fa-shopping-cart" style="color:#faaf54;" aria-hidden="true"></i>
 
-                                <span class="badge badge-warning" style="margin-left: -10px;font-size: 10px;" id="headercartcount" > 
+                                <span class="badge badge-warning" style="margin-left: -6px;font-size: 10px;" id="headercartcount" > 
                                     
                                     {{--@AppServiceProvider global variable for layouts.header--}}
                                     {{$yeslifecartcount}} 
@@ -106,7 +106,7 @@
 
                         <div class="dropdown" >
 
-                            <button class="btn btn-secondary dropdown-toggle custom-default-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle custom-default-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                 {{$virtualuser->fname}}{{-- (Virtual User) --}}
                                 <span class="fa fa-user fa"></span>
@@ -138,7 +138,7 @@
 
                         <div class="dropdown" >
 
-                            <button class="btn btn-secondary dropdown-toggle custom-default-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle custom-default-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                 {{ Auth::user()->fname  }} 
                                 <span class="fa fa-user fa"></span>
@@ -181,7 +181,7 @@
                        
                         <a href="{{url('/myaccount')}}{{$refnourl}}" title="" >
 
-                            <button style="background-color: #ffffff;color:#222222;" class="btn btn-secondary ">
+                            <button style="background-color: #ffffff;color:#222222;" class="btn btn-secondary btn-sm ">
 
                                 Sign In
 
@@ -191,6 +191,17 @@
 
                     @endif
 
+                    <!-- Cart Wrap Start-->
+                    <div class="header-free-sample" style="margin-left: 10px;font-size: 20px;" >
+
+                        <a href="{{url('/free-sample')}}{{$refnourl}}" title="">
+                            <button type="button" style="background-color: #fbb055; color:#fff;" class="btn btn-info btn-sm custom-default-btn" >
+                                FREE Sample!
+                            </button>
+                        </a>
+
+                    </div>
+
                     
                 </div>
                             
@@ -199,7 +210,7 @@
      
                     
   
-            <div class="col-12 d-block d-lg-none" style="padding-top: 10px;">
+            <div class="col-12 d-block d-lg-none" style="padding-top: 15px;">
                 <div class="mobile-menu"></div>
 
             </div>

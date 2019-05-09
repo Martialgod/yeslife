@@ -400,8 +400,19 @@
 
                                   <tbody>
 
+                                    @php 
+                                      $isfree = 0;
+                                    @endphp
+
 
                                       @foreach($orderdtls as $key => $v)
+
+                                        @php
+                                          if( $v->shipamount > 0 && $v->netamount == 0 ){
+                                            $isfree = 1;
+                                          }
+                                        @endphp
+                                       
 
                                         <tr>
                                           <td > 
@@ -431,16 +442,33 @@
                                           <hr>
                                         </td>
                                       </tr>
-                                      
-                                      <tr>
+
+                                      @if( $isfree == 1 )
+
+                                        <tr>
                                           <td> </td>
 
-                                          <td> <b> Total </b> </td>
+                                          <td> <b> Shipping Cost </b> </td>
 
-                                          <td> <b>${{$ordermstr->netamount}}</b> </td>
+                                          <td> <b>${{$ordermstr->totalshipcost}}</b> </td>
 
-                                      </tr>
+                                        </tr>
 
+                                      @else 
+
+
+                                        <tr>
+                                            <td> </td>
+
+                                            <td> <b> Total </b> </td>
+
+                                            <td> <b>${{$ordermstr->netamount}}</b> </td>
+
+                                        </tr>
+
+                                      @endif
+                                      
+                                      
 
                                     
                                   </tbody>

@@ -96,6 +96,8 @@
                             <!--start address-->
                             <div class="col-md-12">
 
+                                <input type="hidden" class="form-control" id="productid" name="productid" placeholder=""  maxlength="255" readonly="" value="{{$products->pk_products}}">
+
                                 <!-- Billing Address -->
                                 <div id="billing-form" class="mb-10">
                                     
@@ -210,7 +212,9 @@
                                         </div>
 
 
-                                        <div class="col-12 mb-20">
+                                        @if(!Auth::check())
+
+                                          <div class="col-12 mb-20">
 
                                             <div class="check-box">
                                                <input type="checkbox" id="isnewaccount" name="isnewaccount" >
@@ -241,7 +245,10 @@
                                     
                                             </div><!--END isnewaccountdiv-->
 
-                                        </div><!--END col-12 mb-20-->
+                                          </div><!--END col-12 mb-20-->
+
+                                        @endif
+
 
                                         <div class="col-12 mb-20">
                                           <div class="check-box">
