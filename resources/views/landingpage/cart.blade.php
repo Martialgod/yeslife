@@ -23,10 +23,10 @@
 
 
     @include('landingpage.layouts.banner', [
-      'bannerheader'=>'Cart & Checkout', 
+      'bannerheader'=>'Checkout', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'Cart & Checkout'
+      'bannercontent'=> 'Checkout'
     ])
 
 

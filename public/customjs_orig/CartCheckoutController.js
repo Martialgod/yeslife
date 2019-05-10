@@ -44,6 +44,8 @@
 	
 			var cart = getCartCookies(); //@GlobalScript.js
 
+			//console.log(cart);
+
 			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
 			//showCustomizeLoading(); //@GlobalScript.js
 			
@@ -64,6 +66,13 @@
 
                 	vm.mscproducts = data.data;
                 	vm.CalculateTotal();
+
+                	//syn javascript cookie to be the same as the final cart
+                	vm.mscproducts.forEach(function(item1, index1){
+
+                		document.cookie = "yeslifecart_"+item1.productid+"="+item1.selectedqty+"; path=/";
+
+                	});//END mscproducts
 
                 	updateCartCookieCount();//GlobalScript.js
 
