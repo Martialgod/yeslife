@@ -130,6 +130,14 @@
                                             <br/>
                                             {{--Nourish your body with nature and life your best life.--}}
                                             Nourish your body with nature’s best and live your best life.
+
+                                            <div class="pull-left">
+                                                <a href="{{url('/shop')}}{{$refnourl}}">
+                                                    <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
+                                                </a> 
+                                            </div>
+                                         
+
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
@@ -166,13 +174,18 @@
 
 
                                         <p id="" style="color:#000; text-align:left">
-
-                                            <br><br>
                                             
                                             {{--YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
 
                                             <br>
                                             Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life. --}}
+
+
+                                            <div class="pull-left">
+                                                <a href="{{url('/shop')}}{{$refnourl}}">
+                                                    <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
+                                                </a> 
+                                            </div>
 
                                         </p>
                                     </div><!--END hero-content text-center-->
