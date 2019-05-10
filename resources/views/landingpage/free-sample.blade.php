@@ -85,8 +85,15 @@
                 <!-- Contact Form Start -->
                 <div class="col-md-6">
 
-                    <!-- Checkout Form-->
-                    <form id="form-checkout" class="jqvalidate-form checkout-form"  method="POST" action="#" >
+                    <span style="text-align: center;">
+                      <h1 style="font-size: 50px;">SIGN UP HERE</h1>
+                    </span>
+
+                    <br>
+                   
+
+                    <!-- Checkout Form checkout-form-->
+                    <form id="form-checkout" class="jqvalidate-form "  method="POST" action="#" >
 
                         {{method_field('POST')}}
                         {{ csrf_field() }}
@@ -101,9 +108,9 @@
                                 <!-- Billing Address -->
                                 <div id="billing-form" class="mb-10">
                                     
-                                    <h4 class="checkout-title">
+                                    {{--checkout-title--}}
+                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
                                       BILLING ADDRESS
-                                     
                                     </h4>
 
                                     <div class="row">
@@ -184,28 +191,32 @@
                                         <div class="col-12 mb-20">
                                            <label>Address Line 1*</label>
                                            <input type="text" class="form-control" id="billingaddress1" name="billingaddress1" placeholder="Street address, P.O. box, company name, c/o" value="" maxlength="500" required="">
+                                           <br>
                                            <input type="text" class="form-control" id="billingaddress2" name="billingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
                                         </div><!--END col-md-6 col-12 mb-20-->
 
                                        
                                         <div class="col-12 mb-20">
-                                            <h4>Card Details</h4>
-                                            <br>
+                                            {{--checkout-title--}}
+
+                                            <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
+                                                CARD DETAILS
+                                            </h4>
                                             <label>Card Number *</label>
-                                            <input style="color:#666;" type="text" id="rally_cardNumber" placeholder="XX-XXXX-XXXX-XX" data-input="rally_cardNumber" value="">
+                                            <input style="color:#666;" class="form-control" type="text" id="rally_cardNumber" placeholder="XX-XXXX-XXXX-XX" data-input="rally_cardNumber" value="">
                                             <span id="errrally_cardNumber" style="color:red; font-size: 12px;"> </span>
                                         </div>
 
                                         <div class="row col-12 mb-20">
                                             <div class="col-md-6 col-12 mb-20">
-                                              <label style="">Expiry Date*</label>
-                                              <input style="" type="text" id="rally_expDate" placeholder="MM/YYYY" data-input="rally_expDate" maxlength="7" value="">
+                                              <label style="">Expiry Date *</label>
+                                              <input style="" type="text" class="form-control" id="rally_expDate" placeholder="MM/YYYY" data-input="rally_expDate" maxlength="7" value="">
                                               <span id="errrally_expDate" style="color:red; font-size: 12px;"> </span>
                                             </div>
 
                                           <div class="col-md-6 col-12 mb-20">
-                                              <label style="">CVC*</label>
-                                              <input style=" type="text" id="rally_cvc" placeholder="XXX" data-input="rally_cvc" maxlength="4" value="">
+                                              <label style="">CVC *</label>
+                                              <input style="" type="text" class="form-control" id="rally_cvc" placeholder="XXX" data-input="rally_cvc" maxlength="4" value="">
                                               <span id="errrally_cvc" style="color:red; font-size: 12px;"> </span>
                                           </div>
 
@@ -224,8 +235,11 @@
 
                                             <div id="isnewaccountdiv" hidden>
 
+                                                <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
+                                                  ACCOUNT PASSWORD
+                                                </h4>
+
                                                 <span style="font-size: 12px; color:red">
-                                                    <br>
                                                     By default your username will be your email. You can just changed it later.
                                                 </span>
                                        
@@ -264,7 +278,9 @@
                                 <!-- Shipping Address -->
                                 <div hidden id="divshippingaddress">
                                    
-                                   <h4 class="checkout-title">Shipping Address</h4>
+                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
+                                      SHIPPING ADDRESS
+                                    </h4>
 
                                     <div class="row">
 
@@ -337,6 +353,7 @@
                                         <div class="col-12 mb-20">
                                            <label>Address Line 1*</label>
                                            <input type="text" class="form-control" id="shippingaddress1" name="shippingaddress1" placeholder="Street address, P.O. box, company name, c/o" value="" maxlength="500" required="">
+                                           <br>
                                            <input type="text" class="form-control" id="shippingaddress2" name="shippingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
                                         </div>
 
