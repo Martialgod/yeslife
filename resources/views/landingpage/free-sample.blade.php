@@ -67,10 +67,16 @@
             
             <div class="row">
 
+                <div class="col-md-1">
+                  
+                </div>
+
 
                 <!-- Contact Info Start -->
                 <div class="col-md-6">
 
+                    {!! $products->description !!}
+           
                     {{--<span class="text-center">
                         <img style="" src="{{asset('/storagelink/'.$products->pictxa)}}"alt="">
                     </span>
@@ -78,12 +84,12 @@
 
                     <br><br> --}}
 
-                    {!! $products->description !!}
+                   
 
                 </div><!-- Contact Info End -->
                 
                 <!-- Contact Form Start -->
-                <div class="col-md-6">
+                <div class="col-md-5">
 
                     <span style="text-align: center;">
                       <h1 style="font-size: 50px;">SIGN UP HERE</h1>
