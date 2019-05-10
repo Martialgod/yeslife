@@ -200,7 +200,12 @@ class UserRewardsController extends Controller
         }
 
         $this->setActiveTab();
-        $rewards = UserRewardMstrView::findOrFail($id);
+        $rewards = UserRewardMstrView::where('pk_userrewards', $id)->where('stat', 1)->first();
+
+        if( !$rewards ){
+            return redirect('/admin/404');
+        }
+
         $actions = RewardAction::findOrFail($rewards->fk_rewardactions);
         return view('admin.rewards.edit', compact('rewards', 'actions'));
 
