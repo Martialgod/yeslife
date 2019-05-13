@@ -185,7 +185,7 @@
 
                                     <p>Count <span> @{{vm.mscproducts.length}} Item(s) </span></p>
                                    
-                                    <p>Sub Total <span> $@{{vm.totalamount}} </span></p>
+                                    <p>Partial Amount <span> $@{{vm.totalamount}} </span></p>
 
                                     {{--
                                         shipping cost here..
@@ -208,13 +208,26 @@
                                             <span style="color:red" ng-if="list.type == 'Rated'"> 
                                                 - @{{list.amount}}% 
 
-                                            </span>
 
                                         </p>
+                                       
+                                        <p>Sub Total <span> $@{{vm.totalamount - vm.totalcoupondiscount}} </span></p>
+                                        <p></p>
+
                                     </span>
+
+                                    <p id="totaltax1">
+
+                                        Sales Tax <span> $@{{vm.totaltax}} </span>
+                                    </p>
                                     
                                     
-                                    <h2>Grand Total <span>$@{{vm.totalnetamount}}</span></h2>
+                                    <h2 id="grandtotal1">
+                                        Grand Total 
+                                        <span id="totalnetamount1">
+                                            $@{{vm.totalnetamount}}
+                                        </span>
+                                    </h2>
 
                                 </div><!--END cart-summary-wrap-->
 

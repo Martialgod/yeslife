@@ -70,6 +70,7 @@
 					                    	{{$v->name}} 
 					                    </option>
 					                @endforeach
+
 					            </select>
                    </div><!--END col-md-6 col-12 mb-20-->
 
@@ -260,6 +261,7 @@
                        </div>
 
                        <div class="col-md-6 col-12 mb-20">
+                          <input type="hidden" id="currentshippingcountry" value="{{$users['shippingcountry']}}">
                            <label style="padding-bottom: 6px;">Country*</label>
                            <select name="shippingcountry" id="shippingcountry" class="form-control" required="" >
 							                @foreach($country as $key => $v)
@@ -344,7 +346,7 @@
 
                        	</ul>
 
-                       	<p>Sub Total <span>$@{{vm.totalamount}}</span></p>
+                       	<p>Partial Amount <span>$@{{vm.totalamount}}</span></p>
                        
                        	{{--<p>Shipping Fee <span>$00.00</span></p> --}}
 
@@ -364,7 +366,16 @@
 
                        	</ul>
 
-                       	<h4>Grand Total <span>$@{{vm.totalnetamount}}</span></h4>
+                        <p ng-if="vm.msccoupons.length >0 "> 
+                          Sub Total <span> $@{{vm.totalamount - vm.totalcoupondiscount}} </span>
+                        </p>
+
+                        <p id="totaltax2">
+                          Sales Tax <span> $@{{vm.totaltax}} </span> 
+                        </p>
+                        
+
+                       	<h4 id="grandtotal2">Grand Total <span>$@{{vm.totalnetamount}}</span></h4>
 
                      	</div><!--END col-12 mb-60-->
 

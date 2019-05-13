@@ -349,6 +349,8 @@ class CartController extends Controller
             return $v['fk_products'];
         }, $finalcart);
 
+
+
         if( count($finalcart) == 0 ){
             return response()->json('empty');
         }
@@ -393,7 +395,10 @@ class CartController extends Controller
 
         $products = ProductResource::collection($products);
 
-        return $products;
+
+        $mscstates = State::getStateByCountry(229); //default USA
+
+        return ['cart'=>$products, 'mscstates'=> $mscstates];
     
     }//END apiindex
 

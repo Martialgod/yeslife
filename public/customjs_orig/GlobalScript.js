@@ -31,6 +31,17 @@ $(document).ready(function(){
 });*/
 
 
+function isEmpty(obj) {
+  
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
+
+}; //END isEmpty
+
 $(document).ready(function(){
 
     //reset cart count based on cookie if user is not loggedin

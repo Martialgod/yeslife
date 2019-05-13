@@ -107,8 +107,8 @@
 			                    <th>Qty</th>
 			                    <th>Price</th>
 			                    {{--<th>Discount</th>--}}
-			                    <th>Ship</th>
-			                    <th>Tax</th>
+			                    {{--<th>Ship</th>
+			                    <th>Tax</th> --}}
 			                    <th>Total</th>
 			                    <th>Status</th>
 			              </tr>
@@ -130,9 +130,9 @@
 
 			                        {{--<td> ${{$a->coupondisc}} </td>--}}
 
-			                        <td> ${{$a->shipamount}} </td>
+			                        {{--<td> ${{$a->shipamount}} </td>
 
-			                        <td> ${{$a->taxamount}} </td>
+			                        <td> ${{$a->taxamount}} </td> --}}
 
 			                        <td> ${{$a->totalamount}} </td>
 
@@ -152,74 +152,84 @@
 
 
 
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><b>Partial Amount</b></td>
+                                <td><b>${{$ordermstr->totalamount}}</b></td>
+                                <td></td>
+                                {{--<td></td>
+                                <td></td> --}}
+                            </tr>
+
                             @if(count($coupons) > 0)
 
-                                
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><b>Sub Total</b></td>
-                                    <td><b>${{$ordermstr->totalamount}}</b></td>
-                                    <td></td>
-                                </tr>
+                            	@foreach($coupons as $c)
 
-                                @foreach($coupons as $c)
+	                                <tr>
+	                                
+	                                    <td>Coupons</td>
+	                                    <td></td>
+	                                    {{--<td></td>
+	                                    <td></td> --}}
+	                                    <td>{{$c->code}}</td>
+	                                    <td>
+	                                    	<span style="color:red" >
+	                                            @if($c->type == 'Fixed')
+	                                                - ${{$c->amount}} 
+	                                            @else  
+	                                                - {{$c->amount}}% 
+	                                            @endif 
+	                                            
+	                                        </span>
+	                                    </td>
+	                                    <td></td>
 
-                                    <tr>
-                                    
-                                        <td>Coupons</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>{{$c->code}}</td>
-                                        <td>
-                                        	<span style="color:red" >
-                                                @if($c->type == 'Fixed')
-                                                    - ${{$c->amount}} 
-                                                @else  
-                                                    - {{$c->amount}}% 
-                                                @endif 
-                                                
-                                            </span>
-                                        </td>
-                                        <td></td>
+	                                </tr>
 
-                                    </tr>
-
-                                @endforeach
-
-                                <tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><b>Grand Total</b></td>
-                                        <td><b>${{$ordermstr->netamount}}</b></td>
-                                        <td></td>
-                                    </tr>
-                                </tr>
+	                            @endforeach
 
 
-                            @else
+	                            <tr>
+	                                <tr>
+	                                    <td></td>
+	                                    <td></td>
+	                                    <td><b>Sub Total</b></td>
+	                                    <td><b>${{$ordermstr->totalamount - $ordermstr->totalcoupon}}</b></td>
+	                                    <td></td>
+	                                    {{--<td></td>
+	                                    <td></td> --}}
+	                                </tr>
+	                            </tr>
 
-
-                                <tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><b>Grand Total</b></td>
-                                        <td><b>${{$ordermstr->netamount}}</b></td>
-                                        <td></td>
-                                    </tr>
-                                </tr>
-                             
                             @endif
-                          
+
+                            <tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td><b>Sales Tax</b></td>
+                                    <td><b>${{$ordermstr->totaltax}}</b></td>
+                                    <td></td>
+                                    {{--<td></td>
+                                    <td></td> --}}
+                                </tr>
+                            </tr>
+
+                            <tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td><b>Grand Total</b></td>
+                                    <td><b>${{$ordermstr->netamount}}</b></td>
+                                    <td></td>
+                                    {{--<td></td>
+                                    <td></td> --}}
+                                </tr>
+                            </tr>
+
+
+
 				          
 			      		</tbody>
 

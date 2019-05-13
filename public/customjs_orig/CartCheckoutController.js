@@ -21,9 +21,14 @@
 		$('#cart-div').prop('hidden', true);
 		$('#divcheckout').prop('hidden', true);
 
+
 		vm.mscproducts = [];
 
 		vm.msccoupons = [];
+
+		vm.mscstates = [];
+		vm.selectedstates = {};
+		vm.selectedtaxrate = 0;
 
 		vm.couponcode = null;
 
@@ -50,7 +55,11 @@
 			//showCustomizeLoading(); //@GlobalScript.js
 			
 			//'api/cart'
-			$http.post('/cart', {cart: cart, isloggedin: vm.isloggedin, recurringtrxno: vm.recurringtrxno })
+			$http.post('/cart', {
+				cart: cart, 
+				isloggedin: vm.isloggedin, 
+				recurringtrxno: vm.recurringtrxno 
+			})
             .then(function(response){
 
                 //console.log(response);
@@ -64,8 +73,12 @@
                 	$('#nodisplay-div').prop('hidden', true);
 					$('#cart-div').prop('hidden', false);
 
-                	vm.mscproducts = data.data;
-                	vm.CalculateTotal();
+                	vm.mscproducts = data.cart;
+                	vm.mscstates = data.mscstates;
+
+
+               		vm.SetSelectedStates();
+                	//vm.CalculateTotal();
 
                 	//syn javascript cookie to be the same as the final cart
                 	vm.mscproducts.forEach(function(item1, index1){
@@ -83,7 +96,7 @@
 
                 }//END data != 'empty'
 
-               
+               	
                 
 
                	//console.log(vm.mscproducts);
@@ -238,14 +251,22 @@
 
 
 
-
 		vm.CalculateTotal = function(){
 
 			vm.totalamount = 0;
 			vm.totalcoupondiscount = 0;
 			vm.totaltax = 0;
 			vm.totalshipcost = 0;
-			vm.totalnetamount = 0;
+			vm.totalnetamount = 0;	
+
+			vm.selectedtaxrate = 0;
+			
+
+			//@GlobalScript.js
+			if( !isEmpty(vm.selectedstates) ){
+				$('#totaltax1').prop('hidden', false);
+				vm.selectedtaxrate = parseFloat(vm.selectedstates.taxrate);
+			}
 
 
             vm.mscproducts.forEach(function(item1, index1){
@@ -279,17 +300,22 @@
 
 				});//END vm.msccoupons
 
-				//console.log(item1.coupondiscount);
-
+				
 				item1.netamount = parseFloat(item1.totalamount) - parseFloat(item1.coupondiscount);
+
+				//calculate tax after discount
+				item1.taxamount = ( item1.netamount ) * ( vm.selectedtaxrate / 100 );
 
 				vm.totalcoupondiscount += parseFloat(item1.coupondiscount);
 
+				vm.totaltax += parseFloat(item1.taxamount);
+
 				vm.totalamount += parseFloat(item1.totalamount);
 
-				vm.totalnetamount += parseFloat(item1.netamount);
+				vm.totalnetamount += parseFloat(item1.netamount) + parseFloat(item1.taxamount);
 
 				//format to 2decimal places
+				item1.taxamount = parseFloat(item1.taxamount).toFixed(2);
 				item1.coupondiscount = parseFloat(item1.coupondiscount).toFixed(2);
 				item1.totalamount = parseFloat(item1.totalamount).toFixed(2);
     			item1.netamount = parseFloat(item1.netamount).toFixed(2);
@@ -302,10 +328,20 @@
             //vm.totalnetamount = parseFloat(vm.totalamount) - parseFloat(vm.totalcoupondiscount);
 
             //format to 2decimal places
+            vm.totaltax = parseFloat(vm.totaltax).toFixed(2);
+            vm.totalcoupondiscount = parseFloat(vm.totalcoupondiscount).toFixed(2);
             vm.totalamount = parseFloat(vm.totalamount).toFixed(2);
             vm.totalnetamount = parseFloat(vm.totalnetamount).toFixed(2);
 
+
+			$('#totaltax1').html(" Sales Tax <span> $"+vm.totaltax +"</span>");
+			$('#totaltax2').html(" Sales Tax <span> $"+vm.totaltax +"</span>");
+			$('#grandtotal1').html(" Grand Total <span> $"+vm.totalnetamount +"</span>");
+			$('#grandtotal2').html(" Grand Total <span> $"+vm.totalnetamount +"</span>");
+
+            //console.log(vm.totaltax);
             //console.log(vm.mscproducts);
+
 
 		};//END CalculateTotal
 		
@@ -751,6 +787,71 @@
 
 
         };//END validateRally
+
+
+        vm.SetSelectedStates = function(){
+
+			vm.selectedstates = {};
+
+			var tempstates = '';
+
+			if( $('#shiptodifferentaddress').prop("checked") == true ){
+
+				if( $('#shippingcantfindstate').prop('checked') == true ){
+					tempstates =  '';
+				}else{
+					tempstates =  $('#shippingstatesdropdown').val();
+				}
+
+			}else{
+
+				if( $('#billingcantfindstate').prop('checked') == true ){
+					tempstates =  '';
+				}else{
+					tempstates =  $('#billingstatesdropdown').val();
+				}
+				
+			}
+
+			var totalstates = vm.mscstates.length;
+			for(var i=0; i<totalstates; i++){
+
+				if( vm.mscstates[i].name == tempstates ){
+					vm.selectedstates = vm.mscstates[i];
+					break;
+				}
+
+			}
+
+			vm.CalculateTotal();
+
+		};//END SetSelectedStates
+
+
+		$(document).on('change','#billingstatesdropdown',function(){
+			vm.SetSelectedStates();
+		});//END #billingcountry on change
+
+
+
+		$(document).on('change','#billingcantfindstate',function(){
+		   vm.SetSelectedStates();
+		});//END #billingcantfindstate on change
+
+
+		$(document).on('change', '#shiptodifferentaddress', function(){
+			vm.SetSelectedStates();
+		});
+
+		$(document).on('change','#shippingstatesdropdown',function(){
+		    vm.SetSelectedStates();
+		});//END #shippingstatesdropdown on change
+
+
+		$(document).on('change','#shippingcantfindstate',function(){
+		   	vm.SetSelectedStates();
+		});//END #shippingcantfindstate on change
+
 
 
         //showCustomizeLoading(); //@GlobalScript.js

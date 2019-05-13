@@ -456,20 +456,36 @@
 
                                       @else 
 
+                                        <tr>
+                                            <td> </td>
+
+                                            <td> <b> Sub Total </b> </td>
+
+                                            <td> <b>${{ $ordermstr->totalamount - $ordermstr->totalcoupon }}</b> </td>
+
+                                        </tr>
+
 
                                         <tr>
                                             <td> </td>
 
-                                            <td> <b> Total </b> </td>
+                                            <td> <b> Sales Tax </b> </td>
+
+                                            <td> <b>${{$ordermstr->totaltax}}</b> </td>
+
+                                        </tr>
+
+
+                                        <tr>
+                                            <td> </td>
+
+                                            <td> <b> Grand Total </b> </td>
 
                                             <td> <b>${{$ordermstr->netamount}}</b> </td>
 
                                         </tr>
 
                                       @endif
-                                      
-                                      
-
                                     
                                   </tbody>
                                 </table>

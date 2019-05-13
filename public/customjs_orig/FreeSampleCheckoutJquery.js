@@ -13,8 +13,7 @@ $(document).on('change','#billingcountry',function(){
     //GlobalScript.js
     apigetstates('#checkout-div', '#billingstatesdropdown', fk_country);
 
-});//END #billingcountry on change 
-
+});//END #billingcountry on change
 
 $(document).on('change','#billingcantfindstate',function(){
   
@@ -34,6 +33,7 @@ $(document).on('change','#billingcantfindstate',function(){
 });//END #billingcantfindstate on change
 
 
+
 $(document).on('change','#shippingcountry',function(){
 
     var fk_country = $('#shippingcountry').val();
@@ -49,7 +49,7 @@ $(document).on('change','#shippingcountry',function(){
     apigetstates('#checkout-div', '#shippingstatesdropdown', fk_country);
 
 
-});//END #shippingcountry on change 
+});//END #shippingcountry on change
 
 $(document).on('change','#shippingcantfindstate',function(){
   

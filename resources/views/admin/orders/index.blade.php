@@ -45,8 +45,8 @@
 	                   	<th>Date</th>
 	                    <th>Billto</th>
 	                    <th>Items</th>
-	                    <th>Shipping</th>
-	                    <th>Net</th>
+	                    {{--<th>Shipping</th> --}}
+	                    <th>Total</th>
 	                    <th>Status</th>
 	                    <th></th>
 	              </tr>
@@ -77,7 +77,7 @@
 	                        <td>{{$a->totalitem}}</td>
 
 
-	                        <td>${{$a->totalshipcost}}</td>
+	                        {{--<td>${{$a->totalshipcost}}</td> --}}
 
 	                        <td> ${{$a->netamount}} </td>
 
