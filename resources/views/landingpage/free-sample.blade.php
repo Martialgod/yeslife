@@ -126,7 +126,6 @@
 
                     <br><br>
 
-
                     <p>
                       <img src="/landingpage/assets/images/mini-logo.png" >
                       <b> #1 HIGHEST QUALITY CBD </b> on the Market.
@@ -159,6 +158,8 @@
                       Best tasting CBD on the market, don’t eat weeds!
                     </p>
 
+
+                   
                     {{--{!! $products->description !!}--}}
            
                     {{--<span class="text-center">

@@ -191,7 +191,7 @@
 
                     @endif
 
-                    <!-- Cart Wrap Start-->
+                    {{--<!-- Cart Wrap Start-->
                     <div class="header-free-sample" style="margin-left: 10px;font-size: 20px;" >
 
                         <a href="{{url('/free-sample')}}{{$refnourl}}" title="">
@@ -200,7 +200,7 @@
                             </button>
                         </a>
 
-                    </div>
+                    </div> --}}
 
                     
                 </div>
