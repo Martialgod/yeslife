@@ -75,10 +75,30 @@
  
 
                                 <br>
-                              	<a href="{{url(asset('/storagelink/'.$v->pictx))}}" title="" target="_blank">
-                              		<img src="{{asset('/storagelink/'.$v->pictx)}}" alt="" style="width:200px;height:150px;">
-                              	</a>
-                               
+
+                                @if( strpos($v->pictx, '.pdf') !== false )
+
+                                	<object data="{{asset('/storagelink/'.$v->pictx)}}" type="application/pdf" width="100%" height="150px"> 
+			                            
+			                            <p>
+			                                It appears you don't have a PDF plugin for this browser.
+			                                No biggie... you can 
+			                                <a href="{{asset('/storagelink/'.$v->pictx)}}">click here to
+			                                download the PDF file.</a>
+			                            </p>  
+
+			                        </object>
+	                               
+
+                                @else
+
+                                	<a href="{{url(asset('/storagelink/'.$v->pictx))}}" title="" target="_blank">
+                              			<img src="{{asset('/storagelink/'.$v->pictx)}}" alt="" style="width:200px;height:150px;">
+                              		</a>
+
+                                @endif
+
+ 
                                 <br>
                                 
                                 Lot Code: {{$v->lotcode}}
