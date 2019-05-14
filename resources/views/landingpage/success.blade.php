@@ -22,12 +22,12 @@
 				    
 	<div class="" style="text-align: center;">
 
+		<br><br><br><br><br>
+
 		<div class="error-404">  	
 			
 			<div class="error-page-left">
-				<h1>
-					Yes.Life
-				</h1>
+			
 				<h3>
     				Thank you for your purchase!
     			</h3>
@@ -54,6 +54,12 @@
 	    				<br>
 	    				<b> {{$orders->shipto}} </b>
 
+	    			</p>
+
+	    			<p>
+	    				Phone Number
+	    				<br>
+	    				<b> {{$orders->billingphone}} </b>
 	    			</p>
 
 	    			<p>
