@@ -103,7 +103,7 @@
     	</div>
     @endif
 
-
+    {{--
     <br><br><br>
     <form method="POST" class="jqvalidate-form swa-confirm"  action="{{url('/admin/certifications-main-content/'.$globalmessage->pk_globalmessage)}}" enctype="multipart/form-data" >
 
@@ -121,7 +121,7 @@
 		@include('admin.layouts.buttonsubmit')
 		
 
-	</form>
+	</form> --}}
 	
 
 

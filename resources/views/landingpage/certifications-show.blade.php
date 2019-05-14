@@ -40,10 +40,29 @@
 
                     <h5>Lot Code</h5>
 
-                    <h5> {{$gallery->lotcode}} </h5>
+                    <span style="font-size: 20px; color:#58595b;"> {{$gallery->lotcode}} </span>
 
-                    <img src="{{asset('/storagelink/'.$gallery->pictx)}}" alt="">
+                    <hr>
                     
+                    @if( strpos($gallery->pictx, '.pdf') !== false )
+
+                        <object data="{{asset('/storagelink/'.$gallery->pictx)}}" type="application/pdf" width="100%" height="600px"> 
+                            <p>
+                                It appears you don't have a PDF plugin for this browser.
+                                No biggie... you can 
+                                <a href="{{asset('/storagelink/'.$gallery->pictx)}}">click here to
+                                download the PDF file.</a>
+                            </p>  
+                        </object>
+
+
+                    @else
+
+                       <img src="{{asset('/storagelink/'.$gallery->pictx)}}" alt="">
+
+
+                    @endif
+
                 </div>
 
             </div><!--END row-->

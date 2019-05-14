@@ -34,29 +34,39 @@
             
             <div class="row">
 
-                <div class="col-md-4">
+                <div class="row">
 
                     @foreach($certifications as $k1=> $v1)
 
-                        <div class="col-md-12">
+                        <div class="col-md-6">
 
                             @if( $v1->fk_products != null )
                                 <h4>Product</h4>
                             @endif
                             
+                            <h4> {{$v1->productname}} </h4>
 
-                            <h5> {{$v1->productname}} </h5>
-
-                            <h6>Lot Code</h6>
+                            <h5>Lot Code</h5>
                             
                             <ul>
 
                                 @foreach($v1->gallery as $k2 => $v2)
 
                                     <li>
-                                        <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
-                                            {{$v2->lotcode}}
-                                        </a>
+
+                                        <span style="font-size: 20px; color:#58595b;">
+                                            
+                                            <b>
+
+                                                <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
+                                                    {{$v2->lotcode}}
+                                                </a> 
+
+
+                                            </b>
+
+                                        </span>
+
                                     </li>
 
 
@@ -65,10 +75,11 @@
                             </ul>
                                    
 
-                            <hr>
-                                
+                     
 
                         </div>
+
+
 
 
                     @endforeach
@@ -76,13 +87,13 @@
                 </div>
 
 
-                <div class="col-md-8">
+                {{--<div class="col-md-8">
 
                     <p>
                         {!! $globalmessage->content !!}
                     </p>
                     
-                </div>
+                </div> --}}
             
         
                 <br>
