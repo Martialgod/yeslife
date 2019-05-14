@@ -37,7 +37,8 @@
 			<div class="error-right">
 		    	
 	    		<div class="col-12" style="text-align:center">
-	    			
+
+	    
 	    			<p>
 	    				Your Confirmation # is: <b> {{ $orders->trxno }} </b>
 	    			</p>
@@ -96,7 +97,7 @@
 @section('optional_scripts')
 
 	<script type="text/javascript">
-		
+
 	</script>
 
 @endsection
