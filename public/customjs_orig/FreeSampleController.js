@@ -222,7 +222,30 @@
 
 
 		};//END SubmitCart
-		
+		  
+
+        vm.NextStep = function(){
+
+            //jquery validate
+            if(!$('#form-checkout').valid()){
+                return;
+            }
+
+            $('#div-personal-info').prop('hidden', true);
+            $('#div-card-details').prop('hidden', false);
+
+            $('#rally_cardNumber').focus();
+
+            //console.log('s');
+
+        };//END NextStep
+
+        vm.BackStep = function(){
+
+            $('#div-personal-info').prop('hidden', false);
+            $('#div-card-details').prop('hidden', true);
+
+        };//END BackStep
 
 
 		$(document).on('submit','#form-checkout',function(e){

@@ -152,15 +152,14 @@
 
 
 
-                            <tr>
+                            {{--<tr>
                                 <td></td>
                                 <td></td>
                                 <td><b>Partial Amount</b></td>
                                 <td><b>${{$ordermstr->totalamount}}</b></td>
                                 <td></td>
-                                {{--<td></td>
-                                <td></td> --}}
-                            </tr>
+
+                            </tr> --}}
 
                             @if(count($coupons) > 0)
 
@@ -204,6 +203,7 @@
 
                             @endif
 
+                         
                             <tr>
                                 <tr>
                                     <td></td>
@@ -215,6 +215,19 @@
                                     <td></td> --}}
                                 </tr>
                             </tr>
+
+                            <tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td><b>Shipping Cost</b></td>
+                                    <td><b>${{$ordermstr->totalshipcost}}</b></td>
+                                    <td></td>
+                                    {{--<td></td>
+                                    <td></td> --}}
+                                </tr>
+                            </tr>
+
 
                             <tr>
                                 <tr>

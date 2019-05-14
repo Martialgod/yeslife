@@ -27,12 +27,19 @@
     <div class="page-banner-section section">
         <div class="container">
             <div class="row">
+
                 <div class="col">
+
+                    <div class="free-sample-logo" style="margin-top: -50px;">
+                      <img src="/landingpage/assets/images/logo-01.png" width="320px" alt="">
+                    </div>
+
+                     
                     <br><br>
                     <div class="page-banner">
                         <ul class="page-breadcrumb">
-                            <li style="color:#3295c3;text-align: center;">
 
+                            <li style="color:#3295c3;text-align: center;">
                                 <h3>
                                     <span style="color:#8a8c8e;">ORDER</span> 
                                     <span style="color:#3a95c2;">YES.LIFE</span> 
@@ -42,7 +49,7 @@
                                 <h1 style="color:#3a95c2;">
                                     GET YOUR 
                                     <span style="color:#fbb055;"> FREE SAMPLE </span>
-                                    TODAY! 
+                                    of Yes.Life CBD Oil and Relief Cream today!
                                 </h1>
 
                                 <h3 style="color:#8a8c8e;">
@@ -67,15 +74,92 @@
             
             <div class="row">
 
-                <div class="col-md-1">
-                  
-                </div>
-
 
                 <!-- Contact Info Start -->
-                <div class="col-md-6">
+                <div class="col-md-8">
 
-                    {!! $products->description !!}
+
+                    <h3>
+                      
+                      <span style="color:#fbb055;"> &nbsp; #1</span> 
+                      
+                      <span style="color:#3a95c2;">MOST-STABLE,</span> 
+                     
+                      <span style="color:#8a8c8e;">
+                        
+                        LONGEST- <br> LASTING, HIGHEST-ABSORBING 
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp; CBD ON THE MARKET! 
+
+                      </span>
+
+                    </h3>
+
+                    <br>  
+
+                    <div class="row">
+
+                      <div class="col-md-6">
+                        <img src="/landingpage/assets/images/product/free-sample-01.png" >
+                      </div>
+
+                      <div class="col-md-5">
+                        
+                        <p>
+                          A Quick Message from our Founders - 
+                        </p>
+
+                        <p>
+                        
+                          <i>
+                             “Our number one goal at Yes Life is to help improve people’s lives. Personally we have seen the power of CBD and the positive effects it has had on Millions of Americans. So we spared no cost when we formulated our Yes Life CBD products. With YesNano ™ technology we have become the best absorbing water soluble product on the market. With so many false CBD’s out there, we wanted to provide the nation with the ability to try CBD themselves before buying something that doesn’t work for them. We want to earn your trust and become your families exclusive CBD provider, and in order to that we are betting on ourselves and our product, by allowing every new customer to try it for Free. Take a sample, and we will see you again in a week!”
+                          </i>
+
+                        </p>
+
+
+
+                      </div>
+                      
+                    </div>
+
+                    
+
+                    <br><br>
+
+
+                    <p>
+                      <img src="/landingpage/assets/images/mini-logo.png" >
+                      <b> #1 HIGHEST QUALITY CBD </b> on the Market.
+                    </p>
+                    
+                    <p>
+                      <img src="/landingpage/assets/images/mini-logo.png" >
+                      CBD Oil and Relief Cream in one sample, YAY!
+                    </p>
+
+                    <p>
+                      <img src="/landingpage/assets/images/mini-logo.png" >
+                      Completely Water Soluble
+                    </p>
+
+                    
+                    <p>
+                      <img src="/landingpage/assets/images/mini-logo.png" >
+                      Faster and Longer Absorption with YesNano™
+                    </p>
+
+                    <p>
+                      <img src="/landingpage/assets/images/mini-logo.png" >
+                      Made from Hemp, Not Marijuana (Drug Test Safe)
+                    </p>
+
+
+                    <p>
+                      <img src="/landingpage/assets/images/mini-logo.png" >
+                      Best tasting CBD on the market, don’t eat weeds!
+                    </p>
+
+                    {{--{!! $products->description !!}--}}
            
                     {{--<span class="text-center">
                         <img style="" src="{{asset('/storagelink/'.$products->pictxa)}}"alt="">
@@ -84,12 +168,13 @@
 
                     <br><br> --}}
 
+
                    
 
                 </div><!-- Contact Info End -->
                 
                 <!-- Contact Form Start -->
-                <div class="col-md-5">
+                <div class="col-md-4">
 
                     <span style="text-align: center;">
                       <h1 style="font-size: 50px;">SIGN UP HERE</h1>
@@ -107,7 +192,7 @@
                         <div class="row">
 
                             <!--start address-->
-                            <div class="col-md-12">
+                            <div class="col-md-12" id="div-personal-info" >
 
                                 <input type="hidden" class="form-control" id="productid" name="productid" placeholder=""  maxlength="255" readonly="" value="{{$products->pk_products}}">
 
@@ -116,7 +201,7 @@
                                     
                                     {{--checkout-title--}}
                                     <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
-                                      BILLING ADDRESS
+                                      PERSONAL INFO
                                     </h4>
 
                                     <div class="row">
@@ -200,34 +285,6 @@
                                            <br>
                                            <input type="text" class="form-control" id="billingaddress2" name="billingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
                                         </div><!--END col-md-6 col-12 mb-20-->
-
-                                       
-                                        <div class="col-12 mb-20">
-                                            {{--checkout-title--}}
-
-                                            <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
-                                                CARD DETAILS
-                                            </h4>
-                                            <label>Card Number *</label>
-                                            <input style="color:#666;" class="form-control" type="text" id="rally_cardNumber" placeholder="XX-XXXX-XXXX-XX" data-input="rally_cardNumber" value="">
-                                            <span id="errrally_cardNumber" style="color:red; font-size: 12px;"> </span>
-                                        </div>
-
-                                        <div class="row col-12 mb-20">
-                                            <div class="col-md-6 col-12 mb-20">
-                                              <label style="">Expiry Date *</label>
-                                              <input style="" type="text" class="form-control" id="rally_expDate" placeholder="MM/YYYY" data-input="rally_expDate" maxlength="7" value="">
-                                              <span id="errrally_expDate" style="color:red; font-size: 12px;"> </span>
-                                            </div>
-
-                                          <div class="col-md-6 col-12 mb-20">
-                                              <label style="">CVC *</label>
-                                              <input style="" type="text" class="form-control" id="rally_cvc" placeholder="XXX" data-input="rally_cvc" maxlength="4" value="">
-                                              <span id="errrally_cvc" style="color:red; font-size: 12px;"> </span>
-                                          </div>
-
-                                        </div>
-
 
                                         @if(!Auth::check())
 
@@ -367,10 +424,55 @@
 
                                 </div><!--END divshippingaddress-->
 
-                                <button type="submit" id="paymentSubmit" class="place-order btn btn-lg btn-round">Submit</button>
+                                <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
+
 
                             </div><!--END col-md-12-->
                             <!--END address-->
+
+
+
+                            <div class="col-md-12" id="div-card-details" hidden  >
+
+                              <h4 class="" style="background-color: #3a95c2;padding:10px; color:#fff;"> 
+                                  
+
+                                <button type="button" id="backstep" class="btn btn-sm btn-default" style="background-color: #3a95c2" ng-click="vm.BackStep()">
+                                  <span class="fa fa-arrow-left"></span> 
+                                </button>
+
+                                 CARD DETAILS
+
+                              </h4>
+                             
+
+                              <div class="mb-20">
+
+                                  <label>Card Number *</label>
+                                  <input style="color:#666;" class="form-control" type="text" id="rally_cardNumber" placeholder="XX-XXXX-XXXX-XX" data-input="rally_cardNumber" value="">
+                                  <span id="errrally_cardNumber" style="color:red; font-size: 12px;"> </span>
+                              </div>
+
+                              <div class="row  mb-20">
+                                  <div class="col-md-6 col-12 mb-20">
+                                    <label style="">Expiry Date *</label>
+                                    <input style="" type="text" class="form-control" id="rally_expDate" placeholder="MM/YYYY" data-input="rally_expDate" maxlength="7" value="">
+                                    <span id="errrally_expDate" style="color:red; font-size: 12px;"> </span>
+                                  </div>
+
+                                <div class="col-md-6 col-12 mb-20">
+                                    <label style="">CVC *</label>
+                                    <input style="" type="text" class="form-control" id="rally_cvc" placeholder="XXX" data-input="rally_cvc" maxlength="4" value="">
+                                    <span id="errrally_cvc" style="color:red; font-size: 12px;"> </span>
+                                </div>
+
+                              </div>
+
+
+                              <button type="submit" id="paymentSubmit" class="place-order btn-lg btn btn-round" style="margin-top: -10px;">GET MY FREE SAMPLE</button>
+
+                           
+                            </div>
 
 
                         </div><!--END row row-->

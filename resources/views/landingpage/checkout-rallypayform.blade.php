@@ -1,5 +1,5 @@
 <!-- Payment Method  -->
-<div class="col-12 mb-60">
+<div class="mb-60">
 
     <div class="checkout-cart-total" >
 
@@ -12,13 +12,13 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6 col-12 mb-20">
+            <div class="col-md-6 mb-20">
               <label style="color:#ffffff;">Expiry Date *</label>
               <input style="color:#666;" type="text" id="rally_expDate" placeholder="MM/YYYY" data-input="rally_expDate" maxlength="7" value="{{$users['expdate']}}">
               <span id="errrally_expDate" style="color:red; font-size: 12px;"> </span>
             </div>
 
-          <div class="col-md-6 col-12 mb-20">
+          <div class="col-md-6 mb-20">
               <label style="color:#ffffff;">CVC *</label>
               <input style="color:#666;" type="text" id="rally_cvc" placeholder="XXX" data-input="rally_cvc" maxlength="4" value="{{$users['cvc']}}">
               <span id="errrally_cvc" style="color:red; font-size: 12px;"> </span>
