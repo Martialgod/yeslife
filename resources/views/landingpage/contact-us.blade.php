@@ -1,11 +1,11 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Contact Us')
+@section('title', 'Contact Us | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,index" />
-    <meta name="description" content="yeslife,cbd,index">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Contact Yes.Life, one of the web's best cbd oil sellers. Let us help answer any and all questions you have. We're here to help you regain & maintain a happy & healthy life.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -22,7 +22,7 @@
 
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Contact Us', 
+      'bannerheader'=>'Contact Yes.Life', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Contact Us'

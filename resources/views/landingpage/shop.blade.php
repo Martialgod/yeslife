@@ -1,11 +1,11 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Shop')
+@section('title', 'Buy CBD Oil Online | CBD Store | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,index" />
-    <meta name="description" content="yeslife,cbd,index">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Buy cbd oil online at Yes.Life's cbd store and be confident that you're getting the highest quality and most absorbable hemp cbd products on the market. Experience the Yes.Life difference in your health & healing today!">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -23,7 +23,7 @@
 
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Shop', 
+      'bannerheader'=>'Yes.Life CBD Store', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Shop'

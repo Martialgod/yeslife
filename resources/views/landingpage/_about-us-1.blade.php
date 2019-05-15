@@ -1,11 +1,11 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife About Us')
+@section('title', 'CBD Website | About Us | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,index" />
-    <meta name="description" content="yeslife,cbd,index">
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Yes.Life is the best CBD oil company on the market. Our company mission is to facilitate health & healing in all. To that end, we offer water-soluable, micro-sized CBD oil with our YesNano technology that really works. Learn more about Yes.Life.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 

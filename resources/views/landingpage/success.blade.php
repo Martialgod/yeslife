@@ -1,5 +1,7 @@
 @extends('landingpage.layouts.master')
 
+
+
 @section('title', 'YesLife Order Success Page')
 
 @section('meta')
@@ -7,6 +9,7 @@
     <meta name="robots" content="yeslife,cbd,index" />
     <meta name="description" content="yeslife,cbd,index">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
 
 @endsection
@@ -98,34 +101,18 @@
 
 	<script type="text/javascript">
 
+		@php 
+
+			//echo 'alert(1);';
+
+		@endphp
+
 
 
 	</script>
 
-	
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-           'transactionId': '123',
-           'transactionTotal': 38.26,
-           'transactionTax': 1.29,
-           'transactionShipping': 5,
-           'transactionProducts': [{
-               'sku': 'DD44',
-               'name': 'T-Shirt',
-               'category': 'Apparel',
-               'price': 11.99,
-               'quantity': 1
-           },{
-               'sku': 'AA1243544',
-               'name': 'Hat',
-               'category': 'Apparel',
-               'price': 9.99,
-               'quantity': 2
-           }]
-        });
-        </script>
 
+	
 		
 
 @endsection

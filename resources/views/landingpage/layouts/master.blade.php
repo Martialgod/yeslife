@@ -16,6 +16,32 @@
     <meta name="msvalidate.01" content="1D5F67923C25997C33F9A152A689FFEA" />
 
 
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          'event':'TransactionComplete',
+          'transactionId': '1234',
+          'transactionAffiliation': 'Acme Clothing',
+          'transactionTotal': 38.26,
+          'transactionTax': 1.29,
+          'transactionShipping': 5,
+          'transactionProducts': [{
+              'sku': 'DD44',
+              'name': 'T-Shirt',
+              'category': 'Apparel',
+              'price': 11.99,
+              'quantity': 1
+          },{
+              'sku': 'AA1243544',
+              'name': 'Hat',
+              'category': 'Apparel',
+              'price': 9.99,
+              'quantity': 2
+          }]
+        });
+    </script>
+
+
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

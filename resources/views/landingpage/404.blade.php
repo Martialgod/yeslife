@@ -4,7 +4,7 @@
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,index" />
+    <meta name="robots" content="noindex" />
     <meta name="description" content="yeslife,cbd,index">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

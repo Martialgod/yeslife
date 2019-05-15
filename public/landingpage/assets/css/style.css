@@ -310,9 +310,10 @@ input::placeholder, textarea::placeholder {
 /*-- 
     - Section Title
 ------------------------------------------*/
-.section-title h1 {
+.section-title h2 {
   /*color: #3a95c2;*/
   font-weight: 600;
+  font-size: 36px;
   letter-spacing: 0.25px;
   margin: 0;
   line-height: 1;
@@ -323,7 +324,7 @@ input::placeholder, textarea::placeholder {
   position: relative;
   padding-bottom: 2px;
   z-index: 1; }
-  .section-title h1::before {
+  .section-title h2::before {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -2984,7 +2985,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     .subscribe-wrap h3 span {
       color: #fbb055 /*#faaf54*/;
       font-weight: 600; }
-  .subscribe-wrap h1 {
+  .subscribe-wrap h2 {
     font-weight: 600;
     color: #d8d8d8;
     letter-spacing: 0.1px;
@@ -2994,7 +2995,7 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .subscribe-wrap h3 {
       font-size: 22px; }
-    .subscribe-wrap h1 {
+    .subscribe-wrap h2 {
       font-size: 30px; } }
   @media only screen and (max-width: 767px) {
     .subscribe-wrap {

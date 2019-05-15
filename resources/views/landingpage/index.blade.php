@@ -1,19 +1,19 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife The best absorbing natural CBD supplement on the market')
+@section('title', 'Hemp CBD Oil & Products for Lifelong Health & Healing | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="YesLife We provide the best CBD oil in almost all US states." />
-    <meta name="description" content="YesLife We provide the best CBD oil in almost all US states.">
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Yes Life sells the Best Absorbing hemp CBD oil products on the market. With our water absorbing and YesNano technology, we are able to get CBD into your body faster for longer than other CBDs on the market. Experience the Yes.Life difference in your health & healing today!">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
     <meta property="og:url"           content="{{url('/')}}" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Yes.Life" />
-    <meta property="og:description"   content="We provide the best CBD oil in almost all US states." />
+    <meta property="og:title"         content="Hemp CBD Oil & Products for Lifelong Health & Healing" />
+    <meta property="og:description"   content="Yes Life sells the Best Absorbing hemp CBD oil products on the market. With our water absorbing and YesNano technology, we are able to get CBD into your body faster for longer than other CBDs on the market. Experience the Yes.Life difference in your health & healing today!" />
     <meta property="og:image"         content="/landingpage/assets/images/favicon3.png" />
 
 
@@ -318,7 +318,7 @@
                 <div class="col">
                     <div class="section-title left mb-60 mb-xs-40">
                         <br><br><br>
-                        <h1>Popular Products</h1>
+                        <h2>Popular Products</h2>
                         <p>
                         	{{--Some of our customer say that they trust us and buy our product without any hesitation because they believe us and always happy to buy our product. --}}
                         </p>

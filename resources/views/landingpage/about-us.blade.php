@@ -1,11 +1,11 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife About Us')
+@section('title', 'CBD Website | About Us | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,index" />
-    <meta name="description" content="yeslife,cbd,index">
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Yes.Life is the best CBD oil company on the market. Our company mission is to facilitate health & healing in all. To that end, we offer water-soluable, micro-sized CBD oil with our YesNano technology that really works. Learn more about Yes.Life.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -21,10 +21,10 @@
 
 
     @include('landingpage.layouts.banner', [
-      'bannerheader'=>'About Us', 
+      'bannerheader'=>'About Yes.Life', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'About Us'
+      'bannercontent'=> 'About Us '
     ])
 
     <div class="about-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix">
@@ -53,7 +53,7 @@
                     <!-- About Content Start -->
                     <div class="col-lg-6 col-12 mr-auto order-2 order-lg-1 mb-30">
                         <div class="about-content about-content-1">
-                            <h1>Our Company</h1>
+                            <h2>Our Company</h2>
                             <div class="desc">
                                 
                                 <p>
@@ -85,7 +85,7 @@
 
                 <div class="col-md-12 ">
                     <br><br>
-                    <h1>Our Cause</h1>
+                    <h2>Our Cause</h2>
                     <br>
                     <p style="font-family: Univers">
                         It began with seeing the amazing benefits of CBD in our own lives. Unfortunately, there was so much different information and noise out there – “Is this true?” – “Is this false?” – “What am I reading!?” – we didn’t know what to believe. With so many different products at different price points to compound it all, our heads were spinning. We were lost.
@@ -121,7 +121,7 @@
 
                 <div class="col-md-12" >
                     <br><br>
-                    <h1 style="text-align: center;"> About our YES Nano Technology </h1>
+                    <h2 style="text-align: center;"> About our YES Nano Technology </h2>
                     <br>
                     <p>
                         Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YES Nano technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible

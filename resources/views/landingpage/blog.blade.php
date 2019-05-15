@@ -1,11 +1,11 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Blog')
+@section('title', 'CBD News, Research, Information & Education | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,blog" />
-    <meta name="description" content="yeslife,cbd,blog">
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Get CBD news, info & education as well as easy to digest summaries of the latest hemp CBD research only on the Yes.Life blog.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -21,7 +21,7 @@
     
 
     @include('landingpage.layouts.banner', [
-      'bannerheader'=>'Blog', 
+      'bannerheader'=>'Yes.Life Blog: CBD News, Research, Info & Education', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Blog'

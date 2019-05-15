@@ -10,7 +10,7 @@
                 <div class="subscribe-wrap">
                     
                     <h3>Special <span>Offers</span> for Subscription</h3>
-                    <h1>GET INSTANT DISCOUNT FOR MEMBERSHIP</h1>
+                    <h2>GET INSTANT DISCOUNT FOR MEMBERSHIP</h2>
                     <p>Subscribe to our newsletter and get all fresh information about our latest products, promotions, offers and discounts.</p>
                     
                     {{--id:mc-form  class:--}}
