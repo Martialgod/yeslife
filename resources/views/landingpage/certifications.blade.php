@@ -40,39 +40,40 @@
 
                         <div class="col-md-6">
 
-                            @if( $v1->fk_products != null )
-                                <h4>Product</h4>
-                            @endif
-                            
-                            <h4> {{$v1->productname}} </h4>
 
-                            <h5>Lot Code</h5>
-                            
-                            <ul>
+                            <a href="{{url('/certifications/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title="" target="_blank">
+                                                        
+                                @if( $v1->fk_products != null )
+                                    <h4>Product</h4>
+                                @endif
+                                
+                                <h4> {{$v1->productname}} </h4>
 
-                                @foreach($v1->gallery as $k2 => $v2)
+                                <h5>Lot Code</h5>
+                                
+                                <ul>
 
-                                    <li>
+                                    @foreach($v1->gallery as $k2 => $v2)
 
-                                        <span style="font-size: 20px; color:#58595b;">
-                                            
+                                        <li style="font-size: 20px; color:#58595b;">
+
                                             <b>
 
                                                 <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
                                                     {{$v2->lotcode}}
                                                 </a> 
-
-
+                                          
                                             </b>
 
-                                        </span>
 
-                                    </li>
+                                        </li>
+
+                                    @endforeach
+                                    
+                                </ul>
 
 
-                                @endforeach
-                                
-                            </ul>
+                            </a>
                                    
 
                             <br><br>

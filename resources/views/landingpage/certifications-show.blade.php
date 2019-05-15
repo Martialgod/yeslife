@@ -36,32 +36,39 @@
 
                 <div class="col-md-12" style="text-align: center !important;">
        
-                    <h4> {{$certifications->productname}} </h4>
+                    <h3> {{$certifications->productname}} </h3>
 
-                    <h5>Lot Code</h5>
+                    @foreach($gallery as $key => $v)
 
-                    <span style="font-size: 20px; color:#58595b;"> {{$gallery->lotcode}} </span>
+                        <br><br>
 
-                    <hr>
-                    
-                    @if( strpos($gallery->pictx, '.pdf') !== false )
+                        <h4>Lot Code</h4>
 
-                        <object data="{{asset('/storagelink/'.$gallery->pictx)}}" type="application/pdf" width="100%" height="600px"> 
-                            <p>
-                                It appears you don't have a PDF plugin for this browser.
-                                No biggie... you can 
-                                <a href="{{asset('/storagelink/'.$gallery->pictx)}}">click here to
-                                download the PDF file.</a>
-                            </p>  
-                        </object>
+                        <span style="font-size: 20px; color:#58595b;"> {{$v->lotcode}} </span>
+
+                        <hr>
+                        
+                        @if( strpos($v->pictx, '.pdf') !== false )
+
+                            <object data="{{asset('/storagelink/'.$v->pictx)}}" type="application/pdf" width="100%" height="600px"> 
+                                <p>
+                                    It appears you don't have a PDF plugin for this browser.
+                                    No biggie... you can 
+                                    <a href="{{asset('/storagelink/'.$v->pictx)}}">click here to
+                                    download the PDF file.</a>
+                                </p>  
+                            </object>
 
 
-                    @else
+                        @else
 
-                       <img src="{{asset('/storagelink/'.$gallery->pictx)}}" alt="">
+                           <img src="{{asset('/storagelink/'.$v->pictx)}}" alt="">
 
 
-                    @endif
+                        @endif
+
+                    @endforeach
+
 
                 </div>
 

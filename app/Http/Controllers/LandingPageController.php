@@ -223,7 +223,7 @@ class LandingPageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function certifications_show($id, $lotcode)
+    public function certifications_show($id, $lotcode=null)
     {
         //
 
@@ -239,13 +239,22 @@ class LandingPageController extends Controller
 
         }
 
-        $gallery = CertificationDtl::where('lotcode', $lotcode)->first();
+        if( !$lotcode ){
 
-        if( !$gallery ){
+           $gallery = CertificationDtl::where('fk_certificatemstr', $id)->get();
+
+        }else{
+
+            $gallery = CertificationDtl::where('lotcode', $lotcode)->limit(1)->get();
+
+        }
+
+        if( count($gallery) == 0 ){
 
             return redirect('/404');
 
         }
+
 
         return view('landingpage.certifications-show', compact('certifications', 'gallery'));
 
