@@ -79,16 +79,16 @@
                 <div class="col-md-8">
 
 
-                    <h3>
+                    <h3 style="text-align: center;">
                       
-                      <span style="color:#fbb055;"> &nbsp; #1</span> 
+                      <span style="color:#fbb055;">#1</span> 
                       
-                      <span style="color:#3a95c2;">MOST-STABLE,</span> 
+                      <span style="color:#3a95c2;">MOST WATER SOLUBLE,</span> 
                      
                       <span style="color:#8a8c8e;">
-                        
-                        LONGEST- <br> LASTING, HIGHEST-ABSORBING 
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp; CBD ON THE MARKET! 
+                        <br>
+                        LONGEST-LASTING, HIGHEST-ABSORBING 
+                        <br> CBD ON THE MARKET! 
 
                       </span>
 
@@ -98,25 +98,47 @@
 
                     <div class="row">
 
-                      <div class="col-md-6">
+                      <div class="col-md-5">
                         <img src="/landingpage/assets/images/product/free-sample-01.png" >
                       </div>
 
-                      <div class="col-md-5">
-                        
+                      <div class="col-md-7">
+
                         <p>
-                          A Quick Message from our Founders - 
+                          <br>
                         </p>
 
                         <p>
+                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          <b> #1 HIGHEST QUALITY CBD </b> on the Market.
+                        </p>
                         
-                          <i>
-                             “Our number one goal at Yes Life is to help improve people’s lives. Personally we have seen the power of CBD and the positive effects it has had on Millions of Americans. So we spared no cost when we formulated our Yes Life CBD products. With YesNano ™ technology we have become the best absorbing water soluble product on the market. With so many false CBD’s out there, we wanted to provide the nation with the ability to try CBD themselves before buying something that doesn’t work for them. We want to earn your trust and become your families exclusive CBD provider, and in order to that we are betting on ourselves and our product, by allowing every new customer to try it for Free. Take a sample, and we will see you again in a week!”
-                          </i>
+                        <p>
+                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          CBD Oil and Relief Cream in one sample, YAY!
+                        </p>
 
+                        <p>
+                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          Completely Water Soluble
+                        </p>
+
+                        
+                        <p>
+                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          Faster and Longer Absorption with YesNano™
+                        </p>
+
+                        <p>
+                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          Made from Hemp, Not Marijuana (Drug Test Safe)
                         </p>
 
 
+                        <p>
+                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          Best tasting CBD on the market, don’t eat weeds!
+                        </p>
 
                       </div>
                       
@@ -126,37 +148,19 @@
 
                     <br><br>
 
-                    <p>
-                      <img src="/landingpage/assets/images/mini-logo.png" >
-                      <b> #1 HIGHEST QUALITY CBD </b> on the Market.
-                    </p>
                     
-                    <p>
-                      <img src="/landingpage/assets/images/mini-logo.png" >
-                      CBD Oil and Relief Cream in one sample, YAY!
-                    </p>
-
-                    <p>
-                      <img src="/landingpage/assets/images/mini-logo.png" >
-                      Completely Water Soluble
-                    </p>
-
+                    <h3 style="text-align: center;"> MESSAGE FROM OUR FOUNDERS </h3>
                     
-                    <p>
-                      <img src="/landingpage/assets/images/mini-logo.png" >
-                      Faster and Longer Absorption with YesNano™
+
+                    <p style="text-align: center;">
+
+                      <i>
+                         “Our number one goal at Yes Life is to help improve people’s lives. Personally we have seen the power of CBD and the positive effects it has had on Millions of Americans. So we spared no cost when we formulated our Yes Life CBD products. With YesNano ™ technology we have become the best absorbing water soluble product on the market. With so many false CBD’s out there, we wanted to provide the nation with the ability to try CBD themselves before buying something that doesn’t work for them. We want to earn your trust and become your families exclusive CBD provider, and in order to that we are betting on ourselves and our product, by allowing every new customer to try it for Free. Take a sample, and we will see you again in a week!”
+                      </i>
+
                     </p>
 
-                    <p>
-                      <img src="/landingpage/assets/images/mini-logo.png" >
-                      Made from Hemp, Not Marijuana (Drug Test Safe)
-                    </p>
 
-
-                    <p>
-                      <img src="/landingpage/assets/images/mini-logo.png" >
-                      Best tasting CBD on the market, don’t eat weeds!
-                    </p>
 
 
                    
@@ -445,7 +449,18 @@
                                  CARD DETAILS
 
                               </h4>
-                             
+
+
+                              <hr>
+                              <h4 style="text-align:center;">
+                                Free Sample $0.00 + ${{$products->shippingcost}} Shipping
+                              </h4>
+                              <hr>
+                              <h3 style="text-align:center;">
+                                Total: ${{$products->shippingcost}}
+                              </h3>
+                              <hr>
+
 
                               <div class="mb-20">
 
@@ -472,6 +487,7 @@
 
                               <button type="submit" id="paymentSubmit" class="place-order btn-lg btn btn-round" style="margin-top: -10px;">GET MY FREE SAMPLE</button>
 
+                             
                            
                             </div>
 
