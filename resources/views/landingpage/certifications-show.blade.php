@@ -46,6 +46,7 @@
 
                         <span style="font-size: 20px; color:#58595b;"> {{$v->lotcode}} </span>
 
+                        <br><br>
                         
                         @if( strpos($v->pictx, '.pdf') !== false )
 
