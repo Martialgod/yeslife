@@ -40,13 +40,12 @@
 
                     @foreach($gallery as $key => $v)
 
-                        <br><br>
+                        <br>
 
                         <h4>Lot Code</h4>
 
                         <span style="font-size: 20px; color:#58595b;"> {{$v->lotcode}} </span>
 
-                        <hr>
                         
                         @if( strpos($v->pictx, '.pdf') !== false )
 
@@ -66,6 +65,8 @@
 
 
                         @endif
+
+                        <hr>
 
                     @endforeach
 
