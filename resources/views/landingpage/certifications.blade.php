@@ -50,29 +50,32 @@
                                 <h4> {{$v1->productname}} </h4>
 
                                 <h5>Lot Code</h5>
-                                
-                                <ul>
+                                <hr>
+                                <div style="margin-top: -50px;">
 
-                                    @foreach($v1->gallery as $k2 => $v2)
+                                    <ul>
 
-                                        <li style="font-size: 20px; color:#58595b;">
+                                        @foreach($v1->gallery as $k2 => $v2)
 
-                                            <b>
+                                            <li style="font-size: 20px; color:#58595b;">
 
-                                                <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
-                                                    {{$v2->lotcode}}
-                                                </a> 
-                                          
-                                            </b>
+                                                <b>
+
+                                                    <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
+                                                        {{$v2->lotcode}}
+                                                    </a> 
+                                              
+                                                </b>
 
 
-                                        </li>
+                                            </li>
 
-                                    @endforeach
+                                        @endforeach
+                                        
+                                    </ul>
                                     
-                                </ul>
-
-
+                                </div>
+                                
                             </a>
                                    
 
