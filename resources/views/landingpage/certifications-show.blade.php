@@ -40,7 +40,7 @@
 
                     @foreach($gallery as $key => $v)
 
-                        <br>
+                        <br><br>
 
                         <h4>Lot Code</h4>
 
@@ -65,8 +65,6 @@
 
 
                         @endif
-
-                        <hr>
 
                     @endforeach
 
