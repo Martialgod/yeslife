@@ -21,12 +21,15 @@
 @section('content-body')
 
 
-	{{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
+	 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
+
+    {{--
     <!-- Page Banner Section Start -->
     <div class="page-banner-section section"  style="height: 350px;">
         <div class="container" >
             <div class="row" >
+
 
                 <div class="col">
 
@@ -34,17 +37,18 @@
                         <ul class="page-breadcrumb">
 
                             <li style="color:#3295c3;text-align: center;">
+                                
                                 <h3>
                                     <span style="color:#8a8c8e;">ORDER</span> 
                                     <span style="color:#3a95c2;">YES.LIFE</span> 
                                     <span style="color:#8a8c8e;">TODAY!</span>
-                                </h3>
+                                </h3> 
 
-                                <h1 style="color:#3a95c2;">
+                                <h2 style="color:#3a95c2;">
                                     GET YOUR 
                                     <span style="color:#fbb055;"> FREE SAMPLE </span>
                                     of Yes.Life CBD Oil and Relief Cream today!
-                                </h1>
+                                </h2>
 
                                 <h3 style="color:#8a8c8e;">
                                     YOU JUST PAY ${{$products->shippingcost}} FOR SHIPPING
@@ -57,20 +61,26 @@
                 </div><!--END col-->
             </div><!--END row-->
         </div><!--END container-->
-    </div><!-- Page Banner Section End -->
+    </div><!-- Page Banner Section End --> --}}
 
 
-
-    <!-- Contact Section Start -->
-    <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div"  ng-app="app" ng-controller="FreeSampleController as vm" ng-cloak style="margin-top: -40px;">
+    <!-- Contact Section Start  page-banner-section section-->
+    <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix page-banner-section section" id="main-div"  ng-app="app" ng-controller="FreeSampleController as vm" ng-cloak  >
        
         <div class="container" >
 
             <div class="row">
 
                 <!-- Contact Info Start -->
-                <div class="col-md-8">
+                <div class="col-xl-8 col-lg-8 col-12 order-1 order-lg-1 mb-sm-50 mb-xs-50">
 
+                    <h2 style="color:#3a95c2;text-align: center;">
+                        GET YOUR 
+                        <span style="color:#fbb055;"> FREE SAMPLE </span>
+                        of Yes.Life CBD Oil and Relief Cream today!
+                    </h2>
+
+                    <br>
 
                     <h3 style="text-align: center;">
                       
@@ -102,34 +112,34 @@
                         </p>
 
                         <p>
-                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          <img src="/landingpage/assets/images/icon-lotus.png" >
                           <b> #1 HIGHEST QUALITY CBD </b> on the Market.
                         </p>
                         
                         <p>
-                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          <img src="/landingpage/assets/images/icon-lotus.png" >
                           CBD Oil and Relief Cream in one sample, YAY!
                         </p>
 
                         <p>
-                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          <img src="/landingpage/assets/images/icon-lotus.png" >
                           Completely Water Soluble
                         </p>
 
                         
                         <p>
-                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          <img src="/landingpage/assets/images/icon-lotus.png" >
                           Faster and Longer Absorption with YesNano™
                         </p>
 
                         <p>
-                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          <img src="/landingpage/assets/images/icon-lotus.png" >
                           Made from Hemp, Not Marijuana (Drug Test Safe)
                         </p>
 
 
                         <p>
-                          <img src="/landingpage/assets/images/mini-logo.png" >
+                          <img src="/landingpage/assets/images/icon-lotus.png" >
                           Best tasting CBD on the market, don’t eat weeds!
                         </p>
 
@@ -166,18 +176,13 @@
 
                     <br><br> --}}
 
-
-                   
-
                 </div><!-- Contact Info End -->
                 
                 <!-- Contact Form Start -->
-                <div class="col-md-4">
+                <div class="col-xl-4 col-lg-4 col-12 order-2 order-lg-2 pr-30 pr-sm-15 pr-md-15 pr-xs-15">
 
-                    <span style="text-align: center;">
-                      <h1 style="font-size: 50px;">SIGN UP HERE</h1>
-                    </span>
-
+                    <h2 style="text-align: center;">SIGN UP HERE</h2>
+               
                     <br>
                    
 
@@ -205,29 +210,29 @@
                                     <div class="row">
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>First Name*</label>
+                                           {{--<label>First Name*</label> --}}
                                            <input type="text" class="form-control" id="billingfname" name="billingfname" placeholder="Firstname" required="" maxlength="255" value="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>Last Name*</label>
+                                           {{--<label>Last Name*</label> --}}
                                            <input type="text" class="form-control" id="billinglname" name="billinglname" placeholder="Lastname" required="" maxlength="255" value="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>Email Address*</label>
+                                           {{--<label>Email Address*</label> --}}
                                            <input type="email" class="form-control" id="billingemail" name="billingemail" placeholder="Email" required="" maxlength="255" value="" >
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>Phone no*</label>
+                                           {{--<label>Phone no*</label> --}}
                                            <input type="text" class="form-control" id="billingphone" name="billingphone" placeholder="Phone" required="" maxlength="255" value="">
                                         </div>
 
 
                                         <div class="col-md-6 col-12 mb-20">
 
-                                           <label style="padding-bottom: 6px;">Country*</label>
+                                           {{--<label style="padding-bottom: 6px;">Country*</label> --}}
 
                                            <select name="billingcountry" id="billingcountry" class="form-control" required=""> 
                                                 @foreach($country as $key => $v)
@@ -240,10 +245,10 @@
 
                                         <div class="col-md-6 col-12 mb-20">
                                             
-                                            <label>
+                                            {{--<label>
                                                 <input type="checkbox" class="" id="billingcantfindstate" name="billingcantfindstate">
                                                 Can't find State?*
-                                            </label>
+                                            </label> --}}
 
                                             <div id="billingstatesdropdowndiv">
 
@@ -267,18 +272,18 @@
                                         </div><!--END col-md-6 col-12 mb-20-->
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>City*</label>
+                                           {{--<label>City*</label> --}}
                                            <input type="text" class="form-control" id="billingcity" name="billingcity" placeholder="City" value="" maxlength="255" required="">
                                         </div><!--END col-md-6 col-12 mb-20-->
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>Zip Code *</label>
+                                           {{--<label>Zip Code *</label> --}}
                                            <input type="text" class="form-control" id="billingzip" name="billingzip" placeholder="Zip Code" value="" maxlength="50" required="">
                                         </div><!--END col-md-6 col-12 mb-20-->
 
 
                                         <div class="col-12 mb-20">
-                                           <label>Address Line 1*</label>
+                                           {{--<label>Address Line 1*</label>--}}
                                            <input type="text" class="form-control" id="billingaddress1" name="billingaddress1" placeholder="Street address, P.O. box, company name, c/o" value="" maxlength="500" required="">
                                            <br>
                                            <input type="text" class="form-control" id="billingaddress2" name="billingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
@@ -305,15 +310,15 @@
                                                 </span>
                                        
                                                 <div id="divbillingpassword" class="form-group">
-                                                    <label for="billingpassword">Password<span class="error">*</span> </label>
-                                                    <input type="password" class="form-control" id="billingpassword" name="billingpassword" placeholder="" required="" maxlength="255" value="">
+                                                    {{--<label for="billingpassword">Password<span class="error">*</span> </label> --}}
+                                                    <input type="password" class="form-control" id="billingpassword" name="billingpassword" placeholder="password" required="" maxlength="255" value="">
                                                     
                                                 </div>
 
                                                 <div id="divbillingrepeatpassword" class="form-group">
                                                     
-                                                    <label for="billingrepeatpassword">Repeat Password<span class="error">*</span> </label>
-                                                    <input type="password" class="form-control" id="billingrepeatpassword" name="billingrepeatpassword" placeholder="" required="" maxlength="255" value="">
+                                                    {{--<label for="billingrepeatpassword">Repeat Password<span class="error">*</span> </label> --}}
+                                                    <input type="password" class="form-control" id="billingrepeatpassword" name="billingrepeatpassword" placeholder="repeat password" required="" maxlength="255" value="">
                                                     
                                                     
                                                 </div>
@@ -346,23 +351,23 @@
                                     <div class="row">
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>First Name*</label>
+                                           {{--<label>First Name*</label> --}}
                                            <input type="text" class="form-control" id="shippingfname" name="shippingfname" placeholder="Firstname" required="" maxlength="255" value="">
                                         </div>
 
                                        <div class="col-md-6 col-12 mb-20">
-                                           <label>Last Name*</label>
+                                           {{--<label>Last Name*</label> --}}
                                            <input type="text" class="form-control" id="shippinglname" name="shippinglname" placeholder="Lastname" required="" maxlength="255" value="">
                                        </div>
 
 
                                         <div class="col-12 mb-20">
-                                           <label>Phone no*</label>
+                                           {{--<label>Phone no*</label> --}}
                                            <input type="text" class="form-control" id="shippingphone" name="shippingphone" placeholder="Phone" required="" maxlength="255" value="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label style="padding-bottom: 6px;">Country*</label>
+                                           {{--<label style="padding-bottom: 6px;">Country*</label> --}}
                                            <select name="shippingcountry" id="shippingcountry" class="form-control" required="" >
                                                 @foreach($country as $key => $v)
                                                     <option value="{{$v->pk_country}}" {{ ($v->pk_country == 229 ) ? 'selected' :'' }}> 
@@ -374,10 +379,10 @@
 
                                         <div class="col-md-6 col-12 mb-20">
                                             
-                                            <label>
+                                            {{--<label>
                                                 <input type="checkbox" class="" id="shippingcantfindstate" name="shippingcantfindstate">
                                                 Can't find State?*
-                                            </label>
+                                            </label> --}}
 
                                             <div id="shippingstatesdropdowndiv" >
                                                 <select name="shippingstatesdropdown" id="shippingstatesdropdown" class="form-control" >
@@ -400,19 +405,19 @@
 
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>City*</label>
+                                           {{--<label>City*</label> --}}
                                            <input type="text" class="form-control" id="shippingcity" name="shippingcity" placeholder="City" value="" maxlength="255" required="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
-                                           <label>Zip Code *</label>
+                                           {{--<label>Zip Code *</label> --}}
                                            <input type="text" class="form-control" id="shippingzip" name="shippingzip" placeholder="Zip Code" value="" maxlength="50" required="">
                                         </div>
 
 
 
                                         <div class="col-12 mb-20">
-                                           <label>Address Line 1*</label>
+                                           {{--<label>Address Line 1*</label> --}}
                                            <input type="text" class="form-control" id="shippingaddress1" name="shippingaddress1" placeholder="Street address, P.O. box, company name, c/o" value="" maxlength="500" required="">
                                            <br>
                                            <input type="text" class="form-control" id="shippingaddress2" name="shippingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
@@ -427,7 +432,6 @@
 
                             </div><!--END col-md-12-->
                             <!--END address-->
-
 
 
                             <div class="col-md-12" id="div-card-details" hidden  >
