@@ -63,7 +63,7 @@
 
 			    <br>
                 <p style="text-align: center;">
-                	<img src="{{asset('/storagelink/'.$products->pictxa)}}" alt="" style="width:;">
+                	<img src="{{asset('/storagelink/'.$products->pictxa)}}" alt="" style="width:308px;">
                 </p>
 
             </div><!--END col-md-4-->

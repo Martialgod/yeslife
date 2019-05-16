@@ -1,11 +1,10 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Blog - '.$blogs->name)
-
+@section('title',$blogs->name.' | Yes.Life') 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,blog" />
-    <meta name="description" content="yeslife,cbd,blog">
+    <meta name="robots" content="index, follow")>
+    <meta name="description" content="{{$blogs->summary}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -51,7 +50,7 @@
                         <div class="content">
 
                             <div>
-                               <h2> {{$blogs->name}} </h2>
+                               <h1 style="font-size: 30px;"> {{$blogs->name}} </h1>
                             </div>
 
                             <ul class="blog-meta">

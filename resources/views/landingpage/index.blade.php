@@ -1,19 +1,19 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'Hemp CBD Oil & Products for Lifelong Health & Healing | Yes.Life')
+@section('title', 'Yes Life CBD: Best CBD Oil, Pet CBD and Deep Relief Gel')
 
 @section('meta')
 
     <meta name="robots" content="index,follow" />
-    <meta name="description" content="Yes Life sells the Best Absorbing hemp CBD oil products on the market. With our water absorbing and YesNano technology, we are able to get CBD into your body faster for longer than other CBDs on the market. Experience the Yes.Life difference in your health & healing today!">
+    <meta name="description" content="Yes.Life provides the Best Absorbing water soluble CBD Products on the market. YesNano™ technology was created to help you transform your health and discover a happier life.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
     <meta property="og:url"           content="{{url('/')}}" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Hemp CBD Oil & Products for Lifelong Health & Healing" />
-    <meta property="og:description"   content="Yes Life sells the Best Absorbing hemp CBD oil products on the market. With our water absorbing and YesNano technology, we are able to get CBD into your body faster for longer than other CBDs on the market. Experience the Yes.Life difference in your health & healing today!" />
+    <meta property="og:title"         content="Yes Life CBD: Best CBD Oil, Pet CBD and Deep Relief Gel" />
+    <meta property="og:description"   content="Yes.Life provides the Best Absorbing water soluble CBD Products on the market. YesNano™ technology was created to help you transform your health and discover a happier life." />
     <meta property="og:image"         content="/landingpage/assets/images/favicon3.png" />
 
 
@@ -150,7 +150,7 @@
                 </div><!--END carousel-item-->
 
 
-                 <div class="carousel-item ">
+                <div class="carousel-item ">
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
@@ -171,6 +171,58 @@
                                         <h2 id="" style="color:#3a95c2; font-size: 45px !important;">
                                             HAND IN HAND WITH <br> NATURE AND SCIENCE
                                         </h2>
+
+
+                                        <p id="" style="color:#000; text-align:left">
+                                            
+                                            {{--YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
+
+                                            <br>
+                                            Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life. --}}
+
+
+                                            <div class="pull-left">
+                                                <a href="{{url('/shop')}}{{$refnourl}}">
+                                                    <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
+                                                </a> 
+                                            </div>
+
+                                        </p>
+                                    </div><!--END hero-content text-center-->
+                                    
+                                </div><!--END hero-content-wrap col-->
+                                
+                            </div><!--END row -->
+                        </div><!--END container-->
+                    </div><!-- Hero Item End -->
+                  
+               
+                  
+
+                </div><!--END carousel-item-->
+
+
+                <div class="carousel-item ">
+
+                    <!-- Hero Item Start -->
+                    {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-04a.jpg); margin-top: 80px;">
+                        <div class="container">
+                            <div class="row">
+                              
+                                <div class="hero-content-wrap col ">
+                                    
+                                    
+
+                                    <div class="hero-content text-center" >
+                                        
+                                        {{--<h2>
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
+                                        </h2> --}}
+
+                                        <h1 id="" style="color:#3a95c2; font-size: 45px !important; line-height: 1; font-weight: 300; ">
+                                            HEMP CBD OIL PRODUCTS <br> FOR LIFELONG HEALTH <br>AND HEALING
+                                        </h1>
 
 
                                         <p id="" style="color:#000; text-align:left">
@@ -227,90 +279,8 @@
 
         <div class="container">
 
-          
-            {{--<div style="text-align: center;">
-
-                @php
-                    if( !$refnourl ){
-                        $refnourl = '?subject=Distributor Inquiry';
-                    }else{
-                        $refnourl = $refnourl . '&subject=Distributor Inquiry';
-                    }
-                @endphp
-
-                <a href="{{url('/contact-us')}}{{$refnourl}}" class="btn btn-success btn-sm custom-default-btn"> BECOME A DISTRIBUTOR </a>
-
-            </div>
-            <br><br> --}}
-
 
             @include('landingpage.layouts.yeslife-info-tabs')
-
-
-            {{--<div class="row">
-                <div class="col">
-                    <div class="section-title-2">
-                        <h1> Start saying YES to life. </h1>
-                        <p>
-                            Each of our products is formulated with our proprietary YES Nano Technology for greater absorption and distribution throughout the body.
-                        </p>
-                        <br>
-                    </div>
-                </div>
-            </div><!-- Section Title End -->
-           
-
-            <div class="row">
-
-                <div class="col-md-3" style="text-align: center;">
-        
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <img src="/landingpage/assets/images/product/circle-banner-v4-001.png" alt="">
-                        <h4 class="title">Highest Quality Hemp</h4>
-                        
-                    </div>
-             
-                </div><!--END col-md-3-->
-
-                <div class="col-md-3" style="text-align: center;">
-        
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <img src="/landingpage/assets/images/product/circle-banner-v4-002.png" alt="">
-                        <h4 class="title">Most Water Soluble</h4>
-                        
-                    </div>
-             
-                </div><!--END col-md-3-->
-
-                <div class="col-md-3" style="text-align: center;">
-        
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <img src="/landingpage/assets/images/product/circle-banner-v4-003.png" alt="">
-                        <h4 class="title">Highest Absortion</h4>
-                        
-                    </div>
-             
-                </div><!--END col-md-3-->
-
-                <div class="col-md-3" style="text-align: center;">
-        
-                    <!-- Image -->
-                    <div class="product-image">
-                        <!-- Image -->
-                        <img src="/landingpage/assets/images/product/circle-banner-v4-004.png" alt="">
-                        <h4 class="title" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; ">Sourced in USA</h4>
-                        
-                    </div>
-             
-                </div><!--END col-md-3-->
-
-            </div><!--END row--> --}}
 
            
             <!-- Section Title Start -->

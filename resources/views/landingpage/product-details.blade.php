@@ -1,11 +1,11 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Product Details Page')
+@section('title',$products->name.' | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,index" />
-    <meta name="description" content="yeslife,cbd,index">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="{{$products->description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -66,7 +66,7 @@
 
                                     <!-- Title-->
                                     <div class="top">
-                                        <h4 class="title">@{{vm.currentproduct.name}}</h4>
+                                        <h1 class="title">@{{vm.currentproduct.name}}</h1>
                                     </div>
 
                                        
