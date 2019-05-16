@@ -24,18 +24,12 @@
 	{{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section">
-        <div class="container">
-            <div class="row">
+    <div class="page-banner-section section"  style="height: 350px;">
+        <div class="container" >
+            <div class="row" >
 
                 <div class="col">
 
-                    <div class="free-sample-logo" style="margin-top: -50px;">
-                      <img src="/landingpage/assets/images/logo-01.png" width="320px" alt="">
-                    </div>
-
-                     
-                    <br><br>
                     <div class="page-banner">
                         <ul class="page-breadcrumb">
 
@@ -68,12 +62,11 @@
 
 
     <!-- Contact Section Start -->
-    <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div"  ng-app="app" ng-controller="FreeSampleController as vm" ng-cloak>
+    <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div"  ng-app="app" ng-controller="FreeSampleController as vm" ng-cloak style="margin-top: -40px;">
        
-        <div class="container">
-            
-            <div class="row">
+        <div class="container" >
 
+            <div class="row">
 
                 <!-- Contact Info Start -->
                 <div class="col-md-8">

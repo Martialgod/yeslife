@@ -20,7 +20,7 @@
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
           'event':'TransactionComplete',
-          'transactionId': '0000',
+          'transactionId': '2000',
           'transactionAffiliation': 'Acme Clothing',
           'transactionTotal': 38.26,
           'transactionTax': 1.29,
