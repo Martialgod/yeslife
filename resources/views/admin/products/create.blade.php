@@ -58,6 +58,13 @@
 		            
 		        </div>
 
+		        <div class="form-group">
+                    <label for="metadata">Meta Data <span class="label-required">*</span> </label>
+                   <textarea class="form-control" id="metadata" name="metadata" placeholder="A brief summary here..." required="" rows="3" style="resize: none;" maxlength="255" >{{old('metadata')}}</textarea>
+                  
+                </div>
+
+
 
 		        <div class="form-group">
 	                <label for="description">Product Description <span class="label-required">*</span> </label>

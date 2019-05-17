@@ -21,6 +21,7 @@ class ProductResource extends Resource
             'flavors'=> $this->flavors,
             'name'=> $this->name,
             'slug'=> $this->slug,
+            'metadata'=> $this->metadata,
             'description'=> $this->description,
             'price'=> $this->price,
             'discountedprice'=> $this->discountedprice,
