@@ -15,12 +15,57 @@
 
     <meta name="msvalidate.01" content="1D5F67923C25997C33F9A152A689FFEA" />
 
+    @php
 
+
+        if( strpos(url()->current(), '/order/success') ){
+            //trigger google analytics ecommerce tracking in order success page
+            $tempItems = [];
+            foreach( $orderdtls as $key=> $v ){
+
+                $tempItems[] ="{
+                    'sku': '$v->fk_products',
+                    'name': '$v->name',
+                    'category': '$v->category',
+                    'price': $v->unitprice,
+                    'quantity': $v->qty
+                }";
+
+            }
+
+            $tempItems = implode(',', $tempItems);
+
+            echo "<script> ";
+
+            echo "window.dataLayer = window.dataLayer || []; ";
+
+            echo 'dataLayer.push({';
+
+            echo "'event':'TransactionComplete',
+                      'transactionId': '$orders->trxno',
+                      'transactionAffiliation': 'YES.life',
+                      'transactionTotal': $orders->netamount,
+                      'transactionTax': $orders->totaltax,
+                      'transactionShipping': $orders->totalshipcost,
+                      'transactionProducts': [$tempItems]";
+
+
+            echo '});';
+
+
+            echo " </script>";
+
+        }
+
+
+    @endphp
+
+    {{--
     <script>
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
           'event':'TransactionComplete',
-          'transactionId': '3000',
+          'transactionId': '4000',
           'transactionAffiliation': 'Acme Clothing',
           'transactionTotal': 38.26,
           'transactionTax': 1.29,
@@ -39,7 +84,7 @@
               'quantity': 2
           }]
         });
-    </script>
+    </script> --}}
 
 
 

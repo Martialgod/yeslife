@@ -20,6 +20,7 @@ use App\ProductPix;
 use App\ProductPriceListMstrView;
 
 use App\OrderMstrView;
+use App\OrderDtlView;
 
 use App\CertificationMstrView;
 use App\CertificationDtl;
@@ -103,7 +104,9 @@ class LandingPageController extends Controller
             return redirect('/404');
         }
 
-        return view('landingpage.success', compact('orders'));
+        $orderdtls = OrderDtlView::where('fk_ordermstr', $orders->pk_ordermstr)->get();
+
+        return view('landingpage.success', compact('orders', 'orderdtls'));
 
     
     }//END index
