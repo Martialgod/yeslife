@@ -22,12 +22,33 @@
 @section('content-body')
     
 
-    @include('landingpage.layouts.banner', [
+    {{--@include('landingpage.layouts.banner', [
       'bannerheader'=> 'Blog', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Blog'
-    ])
+    ]) --}}
+
+    <!-- Page Banner Section Start -->
+    <div class="page-banner-section section">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-banner text-center">
+                        <h2 style="color:#3295c3;"> Blog </h2>
+                        <ul class="page-breadcrumb">
+                            <li style="color:#3295c3;">
+                                <a href="/{{$refnourl}}">Home</a>
+                            </li>
+                            <li style="color:#3295c3;"><b> Blog </b></li>
+                        </ul>
+                    </div><!--END page-banner-->
+                    
+                </div><!--END col-->
+            </div><!--END row-->
+        </div><!--END container-->
+    </div><!-- Page Banner Section End -->
+
 
 
 

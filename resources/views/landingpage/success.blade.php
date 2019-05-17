@@ -23,9 +23,7 @@
 @section('content-body')
 
 				    
-	<div class="" style="text-align: center;">
-
-		<br><br><br><br><br>
+	<div class="page-banner-section" style="text-align: center;">
 
 		<div class="error-404">  	
 			

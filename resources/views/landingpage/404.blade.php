@@ -19,12 +19,10 @@
 	
 @section('content-body')
 
-	<br><br><br><br>
-				    
-	<div class="" style="text-align: center;">
+	<div class="page-banner-section" style="text-align: center;">
 
 		
-	<div class="col-md-4"></div>                   
+		<div class="col-md-4"></div>                   
     	<div class="">     
     		<h1>404 Page</h1>
         	<img src="/adminpage/images/nosearchfound.png" alt="">
