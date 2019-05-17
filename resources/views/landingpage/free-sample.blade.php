@@ -104,7 +104,7 @@
                     <div class="row">
 
                       <div class="col-md-5">
-                        <img src="/landingpage/assets/images/product/gel-spray-bottle-V3.png" >
+                        <img src="/landingpage/assets/images/product/gel-spray-bottle-V4.png" >
                       </div>
 
                       <div class="col-md-7">
