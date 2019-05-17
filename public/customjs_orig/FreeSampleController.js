@@ -278,14 +278,14 @@
 
             vm.rallycnumber = ($('#rally_cardNumber').val()).trim();
 
-        	if( vm.rallycnumber == undefined || vm.rallycnumber == '' || vm.rallycnumber.length == 0 ){
+        	/*if( vm.rallycnumber == undefined || vm.rallycnumber == '' || vm.rallycnumber.length == 0 ){
 
         		//swal('Opps!', 'Credit card number is required!', 'error');
         		$('#errrally_cardNumber').html('This is required!');
         		$('#rally_cardNumber').focus();
         		return;
 
-        	} $('#errrally_cardNumber').html('');
+        	} $('#errrally_cardNumber').html(''); 
         	
         	if( isNaN(vm.rallycnumber) || ( Math.floor(vm.rallycnumber) != vm.rallycnumber ) ){
 
@@ -294,10 +294,11 @@
         		$('#rally_cardNumber').focus();
         		return;
 
-        	}  $('#errrally_cardNumber').html('');
+        	}  $('#errrally_cardNumber').html(''); */
 
 
         	vm.rallyexpDate = ($('#rally_expDate').val()).trim();
+
         	if( vm.rallyexpDate == undefined || vm.rallyexpDate == '' || vm.rallyexpDate.length == 0  ){
         		
         		//swal('Opps!', 'Expiry date is required!', 'error');
@@ -356,6 +357,8 @@
 			      	//$(e.currentTarget).off("submit").submit(); 
 
 			      	vm.isFirstTimer();
+                    
+                    //vm.procesRallyPay();
 
 			    }
 			});
@@ -419,8 +422,8 @@
         	}
 
         	vm.paymentapi = {
-
-        		'cardno': ($('#rally_cardNumber').val()).trim(),
+                //remove spaces
+        		'cardno': (($('#rally_cardNumber').val()).trim()).replace(/\s/g, ''), 
         		'exmonth': vm.rallyexpDate.substring(0,2),
         		'exyear': vm.rallyexpDate.substring(3,vm.rallyexpDate.length),
         		'cvc': ($('#rally_cvc').val()).trim(),
@@ -447,6 +450,7 @@
         		gender:'',
         	};
 
+            //console.log(donation); return;
         	
         	/*
         	//bypass rallypay

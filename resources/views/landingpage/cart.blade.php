@@ -12,6 +12,8 @@
 
 @section('optional_styles')
     
+    <script src="/cleavejs/cleave.min.js" type="text/javascript"></script>
+
     <script src="/customjs/CartCheckoutController.js?v={{time()}}" type="text/javascript"></script>
 
     {{--<script type="text/javascript" src="https://rallypay.com/v1/rallypay.js"></script>--}}
@@ -327,7 +329,24 @@
 @section('rallyapikey')
     
     <script type="text/javascript">
+        
         //Rally.setPublishableKey('pk_live_c15b10d1e39a990c2165080985f5b9b9');
+        
+        //Cleave.js html text formatter
+        new Cleave('.credit-card-number', {
+            creditCard: true,
+            onCreditCardTypeChanged: function (type) {
+                // update UI ...
+                //console.log(type);
+            }
+        });
+
+        //Cleave.js html text formatter
+        new Cleave('.credit-card-expiry', {
+           date: true,
+           datePattern: ['m', 'Y'] //Y = 4 digit year
+        });
+
     </script>
 
 @endsection

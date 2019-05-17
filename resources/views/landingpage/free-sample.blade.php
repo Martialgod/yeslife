@@ -12,7 +12,9 @@
 @endsection
 
 @section('optional_styles')
-	
+  
+  <script src="/cleavejs/cleave.min.js" type="text/javascript"></script>
+    
 	<script src="/customjs/FreeSampleController.js?v={{time()}}" type="text/javascript"></script>
     
 @endsection
@@ -176,7 +178,7 @@
                         <div class="row">
 
                             <!--start address-->
-                            <div class="col-md-12" id="div-personal-info" >
+                            <div class="col-md-12" id="div-personal-info"  >
 
                                 <input type="hidden" class="form-control" id="productid" name="productid" placeholder=""  maxlength="255" readonly="" value="{{$products->pk_products}}">
 
@@ -443,14 +445,14 @@
                               <div class="mb-20">
 
                                   <label>Card Number *</label>
-                                  <input style="color:#666;" class="form-control" type="text" id="rally_cardNumber" placeholder="XX-XXXX-XXXX-XX" data-input="rally_cardNumber" value="">
+                                  <input style="color:#666;" class="form-control credit-card-number" type="text" id="rally_cardNumber" placeholder="XXXX XXXX XXXX XXXX" data-input="rally_cardNumber" value="" maxlength="19" required="">
                                   <span id="errrally_cardNumber" style="color:red; font-size: 12px;"> </span>
                               </div>
 
                               <div class="row  mb-20">
                                   <div class="col-md-6 col-12 mb-20">
                                     <label style="">Expiry Date *</label>
-                                    <input style="" type="text" class="form-control" id="rally_expDate" placeholder="MM/YYYY" data-input="rally_expDate" maxlength="7" value="">
+                                    <input style="" type="text" class="form-control credit-card-expiry" id="rally_expDate" placeholder="MM/YYYY" data-input="rally_expDate" maxlength="7" value="">
                                     <span id="errrally_expDate" style="color:red; font-size: 12px;"> </span>
                                   </div>
 
@@ -523,6 +525,21 @@
            $('#subscription-div').prop('hidden', true);
            $('#div-main-services').prop('hidden', true);
            $('#div-free-services').prop('hidden', false);
+        });
+
+        //Cleave.js html text formatter
+        new Cleave('.credit-card-number', {
+            creditCard: true,
+            onCreditCardTypeChanged: function (type) {
+                // update UI ...
+                //console.log(type);
+            }
+        });
+
+        //Cleave.js html text formatter
+        new Cleave('.credit-card-expiry', {
+           date: true,
+           datePattern: ['m', 'Y'] //Y = 4 digit year
         });
 
 
