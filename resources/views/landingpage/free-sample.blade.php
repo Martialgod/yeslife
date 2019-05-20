@@ -79,7 +79,7 @@
                     <h2 style="color:#3a95c2;text-align: center;">
                         GET YOUR 
                         <span style="color:#fbb055;"> FREE SAMPLE </span>
-                        of Yes.Life CBD Oil and Relief Cream today!
+                        of Yes.Life CBD Oil and Relieve Cream today!
                     </h2>
 
                     <br>
@@ -120,7 +120,7 @@
                         
                         <p>
                           <img src="/landingpage/assets/images/icon-lotus.png" >
-                          CBD Oil and Relief Cream in one sample, YAY!
+                          CBD Oil and Relieve Cream in one sample, YAY!
                         </p>
 
                         <p>
