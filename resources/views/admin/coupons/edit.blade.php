@@ -29,6 +29,13 @@
 
 
         		<div class="form-group">
+                    <label for="code">Coupon Code <span class="label-required">*</span> </label>
+                    <input type="text" class="form-control" id="code" name="code" placeholder="" required="" value="{{$coupons->code}}" maxlength="255">
+                  
+                </div>
+
+
+        		<div class="form-group">
                     <label for="name">Name <span class="label-required">*</span> </label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="" required="" value="{{$coupons->name}}" maxlength="255">
                   
@@ -44,7 +51,7 @@
                     <label for="type">Type <span class="label-required">*</span> </label>
                   	<select name="type" id="type" class="form-control">
 				        <option value="Fixed" {{ $coupons->type == 'Fixed' ? 'selected' : '' }}>Fixed</option>
-				        <option value="Rated" {{ $coupons->type == 'Rated' ? 'selected' : '' }}>Rated</option>
+				        <option value="Rated" {{ $coupons->type == 'Rated' ? 'selected' : '' }}>Rated (Percentage)</option>
 				    </select>
 
  

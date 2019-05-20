@@ -35,6 +35,7 @@ class Coupon extends Model
     public static function custom_validation($request, $form){
   
         $common_rule = [
+            'code'          =>  ['required','max:255'],
         	'name'   		=>  ['required','max:255'],
             'description'   =>  ['required','max:255'],
             'type'   		=>  ['required','max:10'],
@@ -48,9 +49,17 @@ class Coupon extends Model
         if( $form == 'store' ){
 
             //must be unique in the table
+            array_push($common_rule['code'], 'unique:coupons');
             array_push($common_rule['name'], 'unique:coupons');
 
         }else if( $form == 'update' ){ 
+
+            //ignore unique rule for the current updated record
+            array_push($common_rule['code'], 
+                //ignore($id,'custom_field')//optional
+                Rule::unique('coupons')->ignore($request->pk_coupons,'pk_coupons')
+            );
+
 
             //ignore unique rule for the current updated record
             array_push($common_rule['name'], 
@@ -84,6 +93,7 @@ class Coupon extends Model
     //custome validation error messages
     public static function messages(){
         return [
+            'code.required' => 'Coupon code is required',
         	'name.required' => 'Name is required',
             'description.required' => 'Description is required',
             'type.required' => 'Type is required',

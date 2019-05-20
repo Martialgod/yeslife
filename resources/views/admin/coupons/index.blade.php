@@ -76,7 +76,14 @@
                                 </span>
 	                        </td> --}}
 
-	                        <td> {{$a->type}} </td>
+	                        <td> 
+	                        	@if($a->type == 'Fixed')
+	                        		{{$a->type}} 
+	                        	@else
+	                        		{{$a->type}} (Percentage)
+	                        	@endif
+	                         
+	                        </td>
 
 	                        <td> 
 	                        	@if($a->type == 'Fixed')
@@ -98,6 +105,7 @@
 	                        	{{$a->applies_to}}
 
 	                        </td>
+
 
 	                        <td style="color:{{ $a->stat == '1' ? 'green' : 'red'}} ;"> 
 	                            &nbsp;

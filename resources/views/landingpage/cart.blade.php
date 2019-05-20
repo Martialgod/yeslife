@@ -214,6 +214,7 @@
                                         </p>
                                        
                                         <p>Sub Total <span> $@{{vm.totalamount - vm.totalcoupondiscount}} </span></p>
+                                        {{--<p>Sub Total <span> $@{{vm.subtotal}} </span></p>--}}
                                         <p></p>
 
                                     </span>

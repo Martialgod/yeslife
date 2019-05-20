@@ -138,10 +138,11 @@ class CouponsController extends Controller
                 //create will return the newly created object
                 $coupons = Coupon::create($request->all()); //insert all $request
 
+                //commented since user is required to manually input coupon code
                 //generate random code
-                $coupons->update([
+                /*$coupons->update([
                     'code'=> MyHelperClass::generateRandomString(4).''.$coupons->pk_coupons
-                ]);
+                ]); */
 
                 session()->flash('success', "$request->name has been created!");
                 return redirect()->back();

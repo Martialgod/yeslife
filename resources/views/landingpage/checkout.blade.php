@@ -368,6 +368,7 @@
 
                         <p ng-if="vm.msccoupons.length >0 "> 
                           Sub Total <span> $@{{vm.totalamount - vm.totalcoupondiscount}} </span>
+                          {{--Sub Total <span> $@{{vm.subtotal}} </span>--}}
                         </p>
 
                         <p id="totaltax2">

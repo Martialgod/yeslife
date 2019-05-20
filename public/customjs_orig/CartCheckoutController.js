@@ -253,6 +253,7 @@
 
 		vm.CalculateTotal = function(){
 
+			vm.subtotal = 0;
 			vm.totalamount = 0;
 			vm.totalcoupondiscount = 0;
 			vm.totaltax = 0;
@@ -332,6 +333,10 @@
             vm.totalcoupondiscount = parseFloat(vm.totalcoupondiscount).toFixed(2);
             vm.totalamount = parseFloat(vm.totalamount).toFixed(2);
             vm.totalnetamount = parseFloat(vm.totalnetamount).toFixed(2);
+
+            vm.subtotal = parseFloat(vm.totalamount) - parseFloat(vm.totalcoupondiscount);
+            vm.subtotal = parseFloat(vm.subtotal).toFixed(2);
+            //console.log(vm.subtotal);
 
 
 			$('#totaltax1').html(" Sales Tax <span> $"+vm.totaltax +"</span>");
