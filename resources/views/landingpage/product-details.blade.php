@@ -22,13 +22,13 @@
 @section('content-body')
 
 	
- {{--  @include('landingpage.layouts.banner', [
+    {{--  @include('landingpage.layouts.banner', [
       'bannerheader'=>'Product Details', 
       'bannerurl'=> '/shop',
       'bannerback'=> 'Shop',
       'bannercontent'=> 'Product Details'
     ])
---}}
+    --}}
 
     <!-- Page Banner Section Start -->
     <div class="page-banner-section section">
@@ -44,6 +44,11 @@
                             <li style="color:#3295c3;"><b> Product Details </b></li>
                         </ul>
                     </div><!--END page-banner-->
+                </div><!--END col-->
+            </div><!--END row-->
+        </div><!--END container-->
+    </div><!--END page-banner-section section-->
+
 
     <!-- Product Section Start -->
     <div class="product-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50" id="main-div" ng-app="app" ng-controller="ProductDetailsController as vm" >
