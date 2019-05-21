@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col">
                     <div class="page-banner text-center">
-                        <h2 style="color:#3295c3;"> Blog </h2>
+                        <h2 style="color:#3295c3; font-size: 42px;"> Blog </h2>
                         <ul class="page-breadcrumb">
                             <li style="color:#3295c3;">
                                 <a href="/{{$refnourl}}">Home</a>
