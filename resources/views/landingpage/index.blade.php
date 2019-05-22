@@ -34,7 +34,7 @@
 	<!-- Hero Section Start -->
     <div class="hero-slider section" style="margin-top: -30px; ">
 
-        <div class="carousel slide" data-ride="carousel" data-interval="8000" id="slider"  style="" > {{--class="carousel slide" data-ride="carousel"--}}
+        <div class="carousel slide" data-ride="carousel" data-interval="6000" id="slider"  style="" > {{--class="carousel slide" data-ride="carousel"--}}
           
             <ol class="carousel-indicators">
                 <li data-target="#slider" data-slide-to="0" class="active"></li>
