@@ -132,7 +132,7 @@
 
                    			<div class="check-box">
                            <input type="checkbox" id="isnewaccount" name="isnewaccount" >
-                           <label for="isnewaccount">Create an Acount?</label>
+                           <label for="isnewaccount">Create an Account?</label>
                        	</div>
 
 
