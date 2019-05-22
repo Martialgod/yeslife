@@ -236,6 +236,21 @@ class ShopController extends Controller
     {
         //
         
+        //redirect old slug. already been indexed in google
+        if($slug == '250mg_Broad_Spectrum_Mixed_Berry_30ml'){
+            return redirect('/shop/250mg-broad-spectrum-mixed-berry-30ml');
+        }else if($slug == '1000mg_Broad_Spectrum_Mixed_Berry_30ml'){
+            return redirect('/shop/1000mg-broad-spectrum-mixed-berry-30ml');
+        }else if($slug == '300mg_4oz_Pain_Gel'){
+            return redirect('/shop/300mg-4oz-pain-gel');
+        }else if($slug == '150mg_2oz_Pain_Gel'){
+            return redirect('/shop/150mg-2oz-pain-gel');
+        }else if($slug == '500mg_Broad_Spectrum_Mixed_Berry_30ml'){
+            return redirect('/shop/500mg-broad-spectrum-mixed-berry-30ml');
+        }else if($slug == '500mg_Nano'){
+            return redirect('/shop');
+        }
+
         //active tab
         $products = ProductMstrView::where('slug', $slug)->where('stat', 1)->first();
 
