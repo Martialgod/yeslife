@@ -249,6 +249,8 @@ class ShopController extends Controller
             return redirect('/shop/500mg-broad-spectrum-mixed-berry-30ml');
         }else if($slug == '500mg_Nano'){
             return redirect('/shop');
+        }else if($slug == '100mg_Pain_Roll-on'){
+            return redirect('/shop/100mg-pain-roll-on');
         }
 
         //active tab
