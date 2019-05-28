@@ -633,8 +633,10 @@
         		return;
 
         	}
-	
-
+			
+			vm.procesRallyPay();
+        	//removed as per Ms. Ace and Forrester @May 29 2019
+        	/*
 		 	swal({
 			    title: 'Are you sure you want to continue?',
 			    text: "",
@@ -656,7 +658,8 @@
 			      	vm.procesRallyPay();
 
 			    }
-			});
+			}); */
+
 		 	/*.then((result) => {
 
 			    if (result.value) {

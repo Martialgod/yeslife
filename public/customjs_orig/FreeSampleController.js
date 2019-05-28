@@ -336,9 +336,12 @@
         		return;
 
         	}
-	
+	   
 
-		 	swal({
+            vm.isFirstTimer();
+
+            //removed as per Ms. Ace and Forrester @May 29 2019
+		 	/*swal({
 			    title: 'Are you sure you want to continue?',
 			    text: "",
 			    type: 'warning',
@@ -361,7 +364,7 @@
                     //vm.procesRallyPay();
 
 			    }
-			});
+			}); */
 		 	
 
          	

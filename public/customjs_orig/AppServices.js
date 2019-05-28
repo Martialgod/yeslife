@@ -431,13 +431,13 @@
             //rallypay errors
             if( err.address_zip !== undefined ){
                 err.address_zip.forEach(function(item1, index1){
-                    errors.push('Address zipcode is '+item1);
+                    errors.push('Address zipcode '+item1);
                 });
             }
 
             if( err.billing_address_zip !== undefined ){
                 err.billing_address_zip.forEach(function(item1, index1){
-                    errors.push('Billing zipcode is '+item1);
+                    errors.push('Billing zipcode '+item1);
                 });
             }
 
@@ -445,25 +445,25 @@
             
             if( err.first_name !== undefined ){
                 err.first_name.forEach(function(item1, index1){
-                    errors.push('Firstname is '+item1);
+                    errors.push('Firstname '+item1);
                 });
             }
 
             if( err.last_name !== undefined ){
                 err.last_name.forEach(function(item1, index1){
-                    errors.push('Lastname is '+item1);
+                    errors.push('Lastname '+item1);
                 });
             }
 
             if( err.phone_number !== undefined ){
                 err.phone_number.forEach(function(item1, index1){
-                    errors.push('Phone No. is '+item1);
+                    errors.push('Phone No. '+item1);
                 });
             }
 
             if( err.credit_card_number !== undefined ){
                 err.credit_card_number.forEach(function(item1, index1){
-                    errors.push('Card Number is '+item1);
+                    errors.push('Card Number '+item1);
                 });
             }
 

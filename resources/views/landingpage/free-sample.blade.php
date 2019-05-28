@@ -71,16 +71,22 @@
        
         <div class="container" >
 
-            <div class="row">
+            <div class="row banner-free-sample">
 
                 <!-- Contact Info Start -->
-                <div class="col-xl-8 col-lg-8 col-12 order-1 order-lg-1 mb-sm-50 mb-xs-50">
+                <div class="col-xl-8 col-lg-8 col-12 order-1 order-lg-1 mb-sm-50 mb-xs-50" >
 
                     <h2 style="color:#3a95c2;text-align: center;">
                         GET YOUR 
                         <span style="color:#fbb055;"> FREE SAMPLE </span>
                         of Yes.Life CBD Oil and Relieve Cream today!
                     </h2>
+
+                    <br>
+
+                    <h3 style="color:#8a8c8e;text-align: center;">
+                      YOU JUST PAY ${{$products->shippingcost}} FOR SHIPPING
+                    </h3>
 
                     <br>
 
@@ -164,7 +170,7 @@
                 <!-- Contact Form Start -->
                 <div class="col-xl-4 col-lg-4 col-12 order-2 order-lg-2 pr-30 pr-sm-15 pr-md-15 pr-xs-15">
 
-                    <h2 style="text-align: center;">SIGN UP HERE</h2>
+                    <h2 style="text-align: center;">GET YOUR SAMPLE NOW</h2>
                
                     <br>
                    
