@@ -150,7 +150,8 @@
                 <div class="row" style="margin-top: 60px !important;">
                     
                     <div class="col-md-4">
-                        <iframe width="" height="" src="https://www.youtube.com/embed/OwxVO1GPgTw">
+                        <iframe width="" height="" src="https://www.youtube.com/embed/OwxVO1GPgTw" allowfullscreen>
+                            Your browser doesn't support iframes
                         </iframe>
                         <br>
                         <b>Revitalize Your Pets Life With CBD Oil</b>
@@ -159,14 +160,16 @@
                    
 
                     <div class="col-md-4">
-                        <iframe width="" height="" src="https://www.youtube.com/embed/imZ62RUy8Sk">
+                        <iframe width="" height="" src="https://www.youtube.com/embed/imZ62RUy8Sk" allowfullscreen>
+                            Your browser doesn't support iframes
                         </iframe>
                         <br>
                         <b> Hemp - The Miracle Plant! </b>
                     </div>
 
                     <div class="col-md-4">
-                        <iframe width="" height="" src="https://www.youtube.com/embed/eetXu157S7A">
+                        <iframe width="" height="" src="https://www.youtube.com/embed/eetXu157S7A" allowfullscreen>
+                            Your browser doesn't support iframes
                         </iframe>
                         <br>
                         <b> The History of Hemp Timeline </b>
