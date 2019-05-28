@@ -907,6 +907,8 @@ input::placeholder, textarea::placeholder {
     width: 70% !important;}
   .free-sample-final-step{
     width: 100% !important;}
+  .about-us-right-image{
+    display: none;}
  }
 @media only screen and (max-width: 479px) {
   .banner-free-sample {
@@ -917,6 +919,8 @@ input::placeholder, textarea::placeholder {
     width: 70% !important;}
   .free-sample-final-step{
     width: 100% !important;}
+  .about-us-right-image{
+    display: none;}
 }
 @media only screen and (max-width: 575px) {
   .banner-free-sample {
@@ -927,6 +931,8 @@ input::placeholder, textarea::placeholder {
     width: 70% !important;}
   .free-sample-final-step{
     width: 100% !important;}
+  .about-us-right-image{
+    display: none;}
 } 
 
 
