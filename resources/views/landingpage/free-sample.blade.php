@@ -195,7 +195,7 @@
                                 <div id="billing-form" class="mb-10">
                                     
                                     {{--checkout-title--}}
-                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
+                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff; text-align: center;"> 
                                       PERSONAL INFO
                                     </h4>
 
@@ -293,7 +293,7 @@
 
                                             <div id="isnewaccountdiv" hidden>
 
-                                                <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
+                                                <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff; text-align: center;"> 
                                                   ACCOUNT PASSWORD
                                                 </h4>
 
@@ -336,7 +336,7 @@
                                 <!-- Shipping Address -->
                                 <div hidden id="divshippingaddress">
                                    
-                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff;"> 
+                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff; text-align: center;"> 
                                       SHIPPING ADDRESS
                                     </h4>
 
@@ -419,23 +419,29 @@
 
                                 </div><!--END divshippingaddress-->
 
-                                <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
 
+                                <div class="row free-sample-next-step" style="margin: auto; width: 50%; padding: 10px;">
+
+                                  <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
+                                  
+
+                                </div>
+
+                               
 
                             </div><!--END col-md-12-->
                             <!--END address-->
 
 
-                            <div class="col-md-12" id="div-card-details" hidden  >
+                            <div class="col-md-12" id="div-card-details" hidden>
 
-                              <h4 class="" style="background-color: #3a95c2;padding:10px; color:#fff;"> 
-                                  
+                              <h4 class="" style="background-color: #3a95c2;padding:10px; color:#fff; text-align: center !important;"> 
 
                                 <button type="button" id="backstep" class="btn btn-sm btn-default" style="background-color: #3a95c2" ng-click="vm.BackStep()">
                                   <span class="fa fa-arrow-left"></span> 
                                 </button>
 
-                                 CARD DETAILS
+                                CARD DETAILS
 
                               </h4>
 
@@ -474,9 +480,15 @@
                               </div>
 
 
-                              <button type="submit" id="paymentSubmit" class="place-order btn-lg btn btn-round" style="margin-top: -10px;">GET MY FREE SAMPLE</button>
 
-                             
+                              <div class="row free-sample-final-step" style="margin: auto; width: 70%; padding: 10px;">
+
+                                  <button type="submit" id="paymentSubmit" class="place-order btn-lg btn btn-round" style="margin-top: -10px;">GET MY FREE SAMPLE</button>
+
+
+                              </div>
+
+
                            
                             </div>
 
