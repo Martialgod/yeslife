@@ -427,6 +427,13 @@
                                 <div class="row free-sample-next-step" style="margin: auto; width: 50%; padding: 10px;">
 
                                   <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
+
+                                  <script type="text/javascript">
+                                    function outbrainNextStepConvert(){
+                                      obApi('track', 'Next Step Convert');
+                                      console.log('sss');
+                                    }
+                                  </script>
                                   
 
                                 </div>
