@@ -1,12 +1,10 @@
 
-
+{{--
 <p style="font-size:12px; line-height: 18px;color:#58595b;">
                
   	You must be 18 years or older to visit this website and/or purchase Yes.Life products. The information on our website is intended to provide general information regarding our products and is not to be construed as medical advice or instruction. The efficacy of these products have not been confirmed by FDA- approved research. These products are not intended to diagnose, treat, cure or prevent any disease.
 
- 
 
-  	
 </p>
 
 <div class="row">
@@ -21,3 +19,4 @@
 	
 </div>
 
+--}}
