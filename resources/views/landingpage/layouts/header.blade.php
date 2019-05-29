@@ -60,7 +60,10 @@
                         </li>
 
 
-                        <li><a href="{{url('/contact-us')}}{{$refnourl}}">CONTACT</a></li>
+                        <li style="width: 100px;">
+                            <a href="{{url('/contact-us')}}{{$refnourl}}">CONTACT US</a>
+                        </li>
+
 
                     </ul>
                 </nav>

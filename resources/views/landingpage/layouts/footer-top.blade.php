@@ -9,12 +9,14 @@
                 <div class="footer-widget">
                     <img src="/landingpage/assets/images/b&w-top-logo_slide.png" alt="">
                     <p>
-                        We ship to all US states.
+                        We ship anywhere in US
                     </p>
                     <p>
-                        3855 S 500 W Suite D 
-                        South Salt Lake, UT 84115
-                        United Staes
+                        3855 S 500 W Ste D,
+                        <br> 
+                        South Salt Lake, Utah 84115
+                        <br>
+                        United States
                     </p>
                     <p>
                         <a href="#"> 1-833-TRY-LIFE  </a> / <a href="#"> 1-833-879-5433 </a>
@@ -48,7 +50,7 @@
                         <li><a href="{{url('/shop')}}{{$refnourl}}">Shop</a></li>
                         <li><a href="{{url('/blog')}}{{$refnourl}}">Blog</a></li>
                         <li><a href="{{url('/cartcheckout')}}{{$refnourl}}">Cart</a></li>
-                        <li><a href="{{url('/contact-us')}}{{$refnourl}}">Contact</a></li>
+                        <li><a href="{{url('/contact-us')}}{{$refnourl}}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,12 +94,31 @@
                 <div class="footer-widget">
                     <h3 class="title">Follow us</h3>
                     <ul>
-                        <li><a href="https://www.facebook.com/iamyeslife" target="_blank">Facebook</a></li>
-                        <li><a href="https://twitter.com/iamyeslife" target="_blank">Twitter</a></li>
-                        {{--<li><a href="#">Linkedin</a></li>
-                        <li><a href="#">Google Plus</a></li>--}}
-                        <li><a href="https://www.pinterest.com/iamyeslife/" target="_blank">Pinterest</a>
-                        <li><a href="https://www.youtube.com/channel/UCT1-KDYOP0RsLRlwucHUIYA" target="_blank">Youtube</a></li>
+
+                        <li>
+                            <a href="https://www.facebook.com/iamyeslife" target="_blank">
+                                <i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Facebook
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://twitter.com/iamyeslife" target="_blank">
+                                <i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; Twitter
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.pinterest.com/iamyeslife/" target="_blank">
+                               <i class="fa fa-pinterest-p" aria-hidden="true"></i> &nbsp;  Pinterest
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCT1-KDYOP0RsLRlwucHUIYA" target="_blank">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp; Youtube
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

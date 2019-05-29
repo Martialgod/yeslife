@@ -21,7 +21,8 @@
                 <div class="content">
                     <h3>Quality Products</h3>
                     {{--<p>Our main goal is to ensure quality on all of our products.</p>--}}
-                    <p> We only provided USA Grown, harvested, and produced Hemp</p>
+                    {{--<p> We only provided USA Grown, harvested, and produced Hemp</p>--}}
+                    <p> We only provide USA-grown, harvested, and produced Hemp. </p>
                 </div>
             </div>
             
