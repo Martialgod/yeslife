@@ -321,7 +321,10 @@
 
                    </div><!--END row-->
 
+
                </div><!--END divshippingaddress-->
+
+             
 
            	</div><!--END col-lg-7-->
            	<!--END address-->

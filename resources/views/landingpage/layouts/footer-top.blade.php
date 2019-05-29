@@ -15,8 +15,6 @@
                         3855 S 500 W Ste D,
                         <br> 
                         South Salt Lake, Utah 84115
-                        <br>
-                        United States
                     </p>
                     <p>
                         <a href="#"> 1-833-TRY-LIFE  </a> / <a href="#"> 1-833-879-5433 </a>
