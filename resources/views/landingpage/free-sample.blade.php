@@ -98,7 +98,7 @@
                         <i>
                           Just pay 
                           <span style="color:#fbb055;"> ${{$products->shippingcost}}  </span> 
-                          for shipping and handling.
+                          for shipping & handling.
                         </i>
                       </p>
                     </div>
