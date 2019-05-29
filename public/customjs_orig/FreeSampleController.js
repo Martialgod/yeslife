@@ -236,6 +236,9 @@
 
             $('#rally_cardNumber').focus();
 
+            //outbrain script tag initialize @free-sample.blade.php
+            obApi('track', 'Next Step Convert'); 
+
             //console.log('s');
 
         };//END NextStep
