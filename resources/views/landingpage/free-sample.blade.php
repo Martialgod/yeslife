@@ -13,15 +13,6 @@
 
 @section('optional_styles')
 
-  <script data-obct type="text/javascript">
-    /** DO NOT MODIFY THIS CODE**/
-    !function(_window, _document) {
-      var OB_ADV_ID='00f8c14969788d63b6869a2e8a86d80aee';
-      if (_window.obApi) {var toArray = function(object) {return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];};_window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));return;}
-      var api = _window.obApi = function() {api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);};api.version = '1.1';api.loaded = true;api.marketerId = OB_ADV_ID;api.queue = [];var tag = _document.createElement('script');tag.async = true;tag.src = '//amplify.outbrain.com/cp/obtp.js';tag.type = 'text/javascript';var script = _document.getElementsByTagName('script')[0];script.parentNode.insertBefore(tag, script);}(window, document);
-    obApi('track', 'PAGE_VIEW');
-  </script>
-  
   <script src="/cleavejs/cleave.min.js" type="text/javascript"></script>
     
 	<script src="/customjs/FreeSampleController.js?v={{time()}}" type="text/javascript"></script>
@@ -446,7 +437,7 @@
                             <!--END address-->
 
 
-                            <div class="col-md-12" id="div-card-details" hidden>
+                            <div class="col-md-12" id="div-card-details" hidden >
 
                               <h4 class="" style="background-color: #3a95c2;padding:10px; color:#fff; text-align: center !important;"> 
 
@@ -491,6 +482,10 @@
                                 </div>
 
                               </div>
+
+
+
+                              @include('landingpage.layouts.checkout-disclosure')
 
 
 

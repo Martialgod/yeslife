@@ -287,6 +287,16 @@ class OrderController extends Controller
 
             }//!$users 
 
+
+            //update disclosure opt-in
+            $request['issubscribed'] = ( $request->isallowcontact && $request->isallowcontact == 'on' ) ? 1 : 0;
+            $request['istext'] = ( $request->isallowcontact && $request->isallowcontact == 'on' ) ? 1 : 0;
+            $users->update([
+                'issubscribed'=> $request->issubscribed,
+                'istext'=> $request->istext
+            ]);
+
+
             //return $request->all();
             
 

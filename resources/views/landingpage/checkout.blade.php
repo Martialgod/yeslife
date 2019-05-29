@@ -324,7 +324,9 @@
 
                </div><!--END divshippingaddress-->
 
-             
+               @include('landingpage.layouts.checkout-disclosure')
+
+            
 
            	</div><!--END col-lg-7-->
            	<!--END address-->

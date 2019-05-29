@@ -60,33 +60,6 @@
 
     @endphp
 
-    {{--
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-          'event':'TransactionComplete',
-          'transactionId': '4000',
-          'transactionAffiliation': 'Acme Clothing',
-          'transactionTotal': 38.26,
-          'transactionTax': 1.29,
-          'transactionShipping': 5,
-          'transactionProducts': [{
-              'sku': 'DD44',
-              'name': 'T-Shirt',
-              'category': 'Apparel',
-              'price': 11.99,
-              'quantity': 1
-          },{
-              'sku': 'AA1243544',
-              'name': 'Hat',
-              'category': 'Apparel',
-              'price': 9.99,
-              'quantity': 2
-          }]
-        });
-    </script> --}}
-
-
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -109,6 +82,15 @@
 
         //LeadDyno.devTools.reset();
 
+    </script>
+
+    <script data-obct type="text/javascript">
+        /** DO NOT MODIFY THIS CODE**/
+        !function(_window, _document) {
+          var OB_ADV_ID='00f8c14969788d63b6869a2e8a86d80aee';
+          if (_window.obApi) {var toArray = function(object) {return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];};_window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));return;}
+          var api = _window.obApi = function() {api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);};api.version = '1.1';api.loaded = true;api.marketerId = OB_ADV_ID;api.queue = [];var tag = _document.createElement('script');tag.async = true;tag.src = '//amplify.outbrain.com/cp/obtp.js';tag.type = 'text/javascript';var script = _document.getElementsByTagName('script')[0];script.parentNode.insertBefore(tag, script);}(window, document);
+        obApi('track', 'PAGE_VIEW');
     </script>
 
 
