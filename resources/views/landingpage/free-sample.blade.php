@@ -95,7 +95,11 @@
                     <div class="free-sample-shipping" style="color:#8a8c8e;text-align: center;font-size: 28px; font-weight: bold; font-family: 'Gotham'">
                       <br>
                       <p>
-                         <i>Just pay ${{$products->shippingcost}} for shipping. </i>
+                        <i>
+                          Just pay 
+                          <span style="color:#fbb055;"> ${{$products->shippingcost}}  </span> 
+                          for shipping and handling.
+                        </i>
                       </p>
                     </div>
 
