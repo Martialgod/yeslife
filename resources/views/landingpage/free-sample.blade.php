@@ -531,7 +531,7 @@
                 </i> --}}
                 
                 <i>
-                  “Our number one goal at Yes.Life is to help improve people’s lives.  Personally, we have seen the power of CBD and the positive effects it has had on millions of Americans.  So, we spared no cost when we formulated our Yes.Life CBD products.  With YesNano™ Technology, we have become the best-absorbing water-soluble product on the market.  With so many false CBD’s out there, we wanted to provide the nation with the ability to try CBD themselves before buying something that doesn’t work for them.  We want to earn your trust and become your family’s exclusive CBD provider, and in order to do that, we are betting on ourselves and our product, by allowing every new customer to try it for FREE.  Take a sample, and we will see you again in a week!”
+                  “Our number one goal at Yes.Life is to help improve people’s lives.  Personally, we have seen the power of CBD and the positive effects it has had on millions of Americans.  So, we spared no cost when we formulated our Yes.Life CBD products.  With <b> YesNano™ Technology,</b> we have become the best-absorbing water-soluble product on the market.  With so many false CBD’s out there, we wanted to provide the nation with the ability to try CBD themselves before buying something that doesn’t work for them.  We want to earn your trust and become your family’s exclusive CBD provider, and in order to do that, we are betting on ourselves and our product, by allowing every new customer to try it for <b>FREE.</b>  Take a sample, and we will see you again in a week!”
                 </i>
 
               </p>
