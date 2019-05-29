@@ -27,7 +27,7 @@
                 <div class="col">
                     <div class="page-banner text-center">
                         <h1 style="color:#3295c3; font-size: 42px; text-align: center;"> 
-                            About YES.LIFE
+                            About
                         </h1>
                     </div><!--END page-banner-->
                 </div><!--END col-->
@@ -147,7 +147,7 @@
                 </div>
                 <br>
 
-                <div class="row" style="margin-top: 60px !important;">
+                <div class="row about-us-videos" style="margin-top: 60px !important; margin: auto;">
                     
                     <div class="col-md-4">
                         <iframe width="" height="" src="https://www.youtube.com/embed/OwxVO1GPgTw" allowfullscreen>
