@@ -76,10 +76,10 @@
 
                    <div class="col-md-6 col-12 mb-20">
                      	
-                      <label>
+                      {{--<label>
                      		<input type="checkbox" class="" id="billingcantfindstate" name="billingcantfindstate" {{ $iscustomstate ? 'checked' : '' }}>
                      		Can't find State?*
-                     	</label>
+                     	</label> --}}
 
                        {{--
                           disabled automatically when user currently logged in
@@ -90,6 +90,7 @@
                         @endif
 
                      	<div id="billingstatesdropdowndiv" {{ $iscustomstate ? 'hidden' : '' }}>
+                          <label style="padding-bottom: 6px;">States*</label>
 						            	<select name="billingstatesdropdown" id="billingstatesdropdown" class="form-control" >
 						            
 					            			@foreach($states as $key => $v)
@@ -273,12 +274,14 @@
                        </div>
 
                        <div class="col-md-6 col-12 mb-20">
-                         	<label>
+                         	
+                          {{--<label>
                          		<input type="checkbox" class="" id="shippingcantfindstate" name="shippingcantfindstate">
                          		Can't find State?*
-                         	</label>
+                         	</label> --}}
 
                         	<div id="shippingstatesdropdowndiv" >
+                              <label style="padding-bottom: 6px;">States*</label>
   							            	<select name="shippingstatesdropdown" id="shippingstatesdropdown" class="form-control" >
   							            
   						            			@foreach($states as $key => $v)
