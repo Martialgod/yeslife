@@ -196,6 +196,9 @@ class CartController extends Controller
         //dd($recurring);
         
 
+        //trigger where the success page came from
+        session()->put('yeslife_order_from', 'Cart-Checkout');
+
         return view('landingpage.cart', compact('users', 'country', 'states', 'iscustomstate', 'recurring'));
     
     }//END index

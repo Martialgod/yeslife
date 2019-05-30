@@ -44,7 +44,10 @@ class FreeSampleController extends Controller
     public function index()
     {
         //
- 	
+ 	      
+        //trigger where the success page came from
+        session()->put('yeslife_order_from', 'Free-Sample');
+
  		//10 = Free Sample!
         $products = ProductMstrView::where('fk_productgroup', 10)->first();
 

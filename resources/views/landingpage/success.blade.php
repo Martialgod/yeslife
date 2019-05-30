@@ -74,6 +74,7 @@
 	    			<a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-round btn-lg"> 
 	    				Continue Shopping
 	    			</a>
+
                    
                 </div>
 		    	
@@ -96,22 +97,23 @@
 
 @section('optional_scripts')
 
-	<script type="text/javascript">
-
-		@php 
-
-			//echo 'alert(1);';
-
-		@endphp
 
 
 
-	</script>
+	@if( session('yeslife_order_from') == 'Free-Sample' )
 
+		<script type="text/javascript">
+	        obApi('track', 'Training Payment');
+		</script>
 
-	<script type="text/javascript">
-        //obApi('track', 'Training Payment');
-	</script>
+	@elseif( session('yeslife_order_from') == 'Cart-Checkout' )
+
+		<script type="text/javascript">
+	        obApi('track', 'Payment');
+		</script>
+
+	@endif
+
 	
 		
 
