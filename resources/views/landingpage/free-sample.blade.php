@@ -428,13 +428,25 @@
 
                                   <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
 
-                                  <script type="text/javascript">
-                                    function outbrainNextStepConvert(){
-                                      //obApi('track', 'Next Step Convert');
-                                      obApi('track', 'Training Next Step');
-                                    }
-                                  </script>
-                                  
+
+                                  @if( strpos(url()->current(), 'training.yes.life/free-sample') !== false )
+
+                                      <script type="text/javascript">
+                                        function outbrainNextStepConvert(){
+                                          obApi('track', 'Training Next Step');
+                                        }
+                                      </script>
+
+                                  @elseif( strpos(url()->current(), 'yes.life/free-sample') !== false  )
+
+                                    <script type="text/javascript">
+                                      function outbrainNextStepConvert(){
+                                        obApi('track', 'Next Step Convert');
+                                      }
+                                    </script>
+
+
+                                  @endif
 
                                 </div>
 

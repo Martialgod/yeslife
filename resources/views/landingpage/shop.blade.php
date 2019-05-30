@@ -338,12 +338,20 @@
 
 @section('optional_scripts')
 
-	<script type="text/javascript">
+    @if( strpos(url()->current(), 'training.yes.life/shop') !== false )
 
-        //obApi('track', 'Training Shop Page');
-        obApi('track', 'Shop Page Link');
+        <script type="text/javascript">
+            obApi('track', 'Training Shop Page');
+        </script>
 
-	</script>
+    @elseif( strpos(url()->current(), 'yes.life/shop') !== false  )
+
+        <script type="text/javascript">
+            obApi('track', 'Shop Page Link');
+        </script>
+
+
+    @endif
 
     
     <script type="text/javascript">
