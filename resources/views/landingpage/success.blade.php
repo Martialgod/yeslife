@@ -99,20 +99,37 @@
 
 
 
+	@if( strpos(url()->current(), 'training.yes.life/order/success') !== false )
 
+		<script type="text/javascript">
+	        //obApi('track', 'Training Payment');
+	        console.log('training');
+		</script>
+
+	@elseif( strpos(url()->current(), 'yes.life/order/success') !== false  )
+
+		<script type="text/javascript">
+	        //obApi('track', 'Training Payment');
+	        console.log('live');
+		</script>
+
+
+	@endif
+
+	{{--
 	@if( session('yeslife_order_from') == 'Free-Sample' )
 
 		<script type="text/javascript">
-	        obApi('track', 'Training Payment');
+	        //obApi('track', 'Training Payment');
 		</script>
 
 	@elseif( session('yeslife_order_from') == 'Cart-Checkout' )
 
 		<script type="text/javascript">
-	        obApi('track', 'Payment');
+	        //obApi('track', 'Payment');
 		</script>
 
-	@endif
+	@endif --}}
 
 	
 		
