@@ -164,6 +164,7 @@
 
                 if( data.status == 'success' ){
 
+
                 	LeadDyno.recordPurchase( $('#billingemail').val(), {
                 		purchase_code: data.trxno, 
                 		purchase_amount: vm.totalnetamount, 
@@ -238,6 +239,8 @@
 
             //outbrain script tag initialize @free-sample.blade.php
             //obApi('track', 'Next Step Convert'); 
+            //
+            //obApi('track', 'Training Next Step');
             
             outbrainNextStepConvert(); //@init @free-sample.blade.php
 

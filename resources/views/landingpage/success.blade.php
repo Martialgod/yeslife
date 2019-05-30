@@ -109,6 +109,9 @@
 	</script>
 
 
+	<script type="text/javascript">
+        obApi('track', 'Training Payment');
+	</script>
 	
 		
 

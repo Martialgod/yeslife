@@ -339,7 +339,9 @@
 @section('optional_scripts')
 
 	<script type="text/javascript">
-		
+
+        obApi('track', 'Training Shop Page');
+
 	</script>
 
     
