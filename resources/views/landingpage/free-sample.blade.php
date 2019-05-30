@@ -430,9 +430,8 @@
 
                                   <script type="text/javascript">
                                     function outbrainNextStepConvert(){
-                                      //obApi('track', 'Next Step Convert');
-                                      obApi('track', 'Training Next Step');
-                                      console.log('sss');
+                                      obApi('track', 'Next Step Convert');
+                                      //obApi('track', 'Training Next Step');
                                     }
                                   </script>
                                   

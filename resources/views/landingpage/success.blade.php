@@ -110,7 +110,7 @@
 
 
 	<script type="text/javascript">
-        obApi('track', 'Training Payment');
+        //obApi('track', 'Training Payment');
 	</script>
 	
 		
