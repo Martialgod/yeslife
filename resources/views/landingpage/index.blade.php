@@ -1,6 +1,6 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'Yes Life CBD: Best CBD Oil, Pet CBD and Deep Relief Gel')
+@section('title', 'Yes.Life CBD: Best CBD Oil, Pet CBD and Deep Relief Gel')
 
 @section('meta')
 

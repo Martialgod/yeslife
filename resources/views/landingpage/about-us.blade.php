@@ -61,7 +61,7 @@
                     <div class="row">
 
                         <!-- About Image Start col-lg-6 col-12 order-1 order-lg-2 mb-30-->
-                        <div class="col-md-8 order-2 about-us-right-image" style="background-image: url('/landingpage/assets/images/about/about-image.jpg');height: 800px; ">
+                        <div class="col-md-8 order-2 about-us-right-image" style="background-image: url('/landingpage/assets/images/about/about-image-2.jpg');height: 800px; ">
                         </div><!-- About Image End -->
 
                         
