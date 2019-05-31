@@ -240,7 +240,7 @@
     @if(count($products) > 0)
     	<div class="pagination-margin-top">
     		{{ $products->appends(
-            	['search' => $search,]
+            	['search' => $search, 'productgroup'=> $productgroup]
         	)->links() }}
     	</div>
     @endif
