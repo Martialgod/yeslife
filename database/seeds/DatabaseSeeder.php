@@ -394,7 +394,16 @@ class DatabaseSeeder extends Seeder
            'stat'=> 1
         ]);  */
         
-
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 10003,
+            'method'=> 'LIST',
+            'description'=> 'Slug Description Template',
+            'route'=> null,
+            'type'=> 'B',
+            'family'=> 'Reports',
+            'indexno'=> 2,
+            'stat'=>1
+        ]);
 
     }
 

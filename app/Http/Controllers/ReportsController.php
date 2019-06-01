@@ -22,6 +22,8 @@ use App\UserType;
 use App\UserMstrView;
 use App\UserAbandonedCartMstrView;
 
+use App\ProductMstrView;
+
 use App\OrderMstrView;
 use App\ReportOrderDtls; // specefic view for reporting
 
@@ -184,6 +186,40 @@ class ReportsController extends Controller
           }//END $export == 'true'
 
           return view("admin.reports.create", compact('permalink', 'result', 'search', 'filters', 'displaytype', 'datefrom', 'dateto'));
+
+
+        break;
+
+
+
+        //10003 = Slug Description Template
+        case '10003':
+         
+          $type = ( request()->type ) ? request()->type : 'Slug Description Template';
+
+          //10 = type
+          $filters = [10];
+
+          $result = DB::SELECT("
+              
+              SELECT pk_products, category, groupname, flavor, qty, NAME, indexno, slug 
+              FROM vw_productmstr WHERE isdeleted = 0
+              ORDER BY fk_category, flavor DESC, indexno
+          ");
+
+          //dd($result);
+          
+
+          if($export == 'true'){
+
+            return Excel::download(new ExportFromView('admin.reports.10003', [
+              'result'=> $result, 
+              'type'=> $type, 
+            ]), "$type list.xlsx");
+
+          }//END $export == 'true'
+          
+          return view("admin.reports.create", compact('permalink', 'result', 'search', 'filters', 'type'));
 
 
         break;
