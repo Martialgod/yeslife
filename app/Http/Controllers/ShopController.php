@@ -238,19 +238,25 @@ class ShopController extends Controller
 
         //redirect old slug. already been indexed in google
         if($slug == '250mg_Broad_Spectrum_Mixed_Berry_30ml'){
-            return redirect('/shop/250mg-broad-spectrum-mixed-berry-30ml');
+            //return redirect('/shop/250mg-broad-spectrum-mixed-berry-30ml');
+            return redirect('/shop/broad-mixed-berry-30ml-250mg');
         }else if($slug == '1000mg_Broad_Spectrum_Mixed_Berry_30ml'){
-            return redirect('/shop/1000mg-broad-spectrum-mixed-berry-30ml');
+            //return redirect('/shop/1000mg-broad-spectrum-mixed-berry-30ml');
+            return redirect('/shop/broad-mixed-berry-30ml-1000mg');
         }else if($slug == '1000mg_Broad_Spectrum_Cinnamon_30ml'){
-            return redirect('/shop/1000mg-broad-spectrum-cinnamon-30ml');
+            //return redirect('/shop/1000mg-broad-spectrum-cinnamon-30ml');
+            return redirect('/shop/broad-cinnamon-30ml-1000mg');
         }else if($slug == '300mg_4oz_Pain_Gel'){
             return redirect('/shop/300mg-4oz-pain-gel');
-        }else if($slug == '150mg_2oz_Pain_Gel'){
-            return redirect('/shop/150mg-2oz-pain-gel');
+        }else if($slug == '150mg_2oz_Pain_Gel' || $slug == '150mg-2oz-pain-gel'){
+            //return redirect('/shop/150mg-2oz-pain-gel');
+            return redirect('/shop');
         }else if($slug == '500mg_Broad_Spectrum_Mixed_Berry_30ml'){
-            return redirect('/shop/500mg-broad-spectrum-mixed-berry-30ml');
-        }else if($slug == '500mg_Broad_Spectrum_Cinnamon'){
-            return redirect('/shop/500mg-broad-spectrum-cinnamon');
+            //return redirect('/shop/500mg-broad-spectrum-mixed-berry-30ml');
+            return redirect('/shop/broad-mixed-berry-30ml-500mg');
+        }else if($slug == '500mg_Broad_Spectrum_Cinnamon' || $slug == '500mg-broad-spectrum-cinnamon'){
+            //return redirect('/shop/500mg-broad-spectrum-cinnamon');
+            return redirect('/shop/broad-cinnamon-30ml-500mg');
         }else if($slug == '500mg_Nano'){
             return redirect('/shop');
         }else if($slug == '100mg_Pain_Roll-on'){
