@@ -63,11 +63,33 @@ class LandingPageController extends Controller
        				->inRandomOrder()
        				->paginate(4); */
 
-        $products = ProductMstrView::where('stat', 1)
+       
+        if(strpos(url()->current(), 'yes.life') !== false){
+
+            //applicable for live site only. display popular products on this order
+            /*
+                1) Broad 500 Mixed Berry = 19
+                2) Full 500 Mixed Berry = 24
+                3) Relieve Gel = 27
+                4) Pawsterity 100 = 22
+
+            */
+            $products = ProductMstrView::where('stat', 1)
+                ->whereIn('pk_products', [19,24,27,22]) 
+                ->orderBy('indexno')
+                ->paginate(4);
+
+        }else{
+
+            //default
+            $products = ProductMstrView::where('stat', 1)
                 ->where('fk_productgroup', '<>', 1) //do not include business bulk orders
                 ->orderBy('totalsalesqty', 'DESC')
                 ->paginate(4);
 
+        }
+
+       
 
         if( count($products) == 0 ){
             return view('landingpage.index', compact('products'));
