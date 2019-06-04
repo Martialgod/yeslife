@@ -64,7 +64,7 @@ class LandingPageController extends Controller
        				->paginate(4); */
 
        
-        if(strpos(url()->current(), 'training.yes.life') === false){
+        if(strpos(url()->current(), 'training.yes.life') !== false){
 
 
             //default
@@ -74,7 +74,8 @@ class LandingPageController extends Controller
                 ->paginate(4);
 
 
-        }else{
+        }elseif(strpos(url()->current(), 'yes.life') !== false){
+
 
             //applicable for live site only. display popular products on this order
             /*
@@ -87,6 +88,15 @@ class LandingPageController extends Controller
             $products = ProductMstrView::where('stat', 1)
                 ->whereIn('pk_products', [19,24,27,22]) 
                 ->orderBy('indexno')
+                ->paginate(4);
+
+
+        }else{
+
+            //default
+            $products = ProductMstrView::where('stat', 1)
+                ->where('fk_productgroup', '<>', 1) //do not include business bulk orders
+                ->orderBy('totalsalesqty', 'DESC')
                 ->paginate(4);
 
         }
