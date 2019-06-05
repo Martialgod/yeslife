@@ -325,104 +325,11 @@
                                         @endif --}}
 
 
-                                        <div class="col-12 mb-20">
-                                          <div class="check-box">
-                                             <input type="checkbox" id="shiptodifferentaddress" name="shiptodifferentaddress" >
-                                             <label for="shiptodifferentaddress">Ship to Different Address?</label>
-                                          </div>
-                                        </div>
-
                                     </div><!--END row-->
 
                                 </div><!--END billing-form-->
 
-                                <!-- Shipping Address -->
-                                <div hidden id="divshippingaddress">
-                                   
-                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff; text-align: center;"> 
-                                      SHIPPING ADDRESS
-                                    </h4>
-
-                                    <div class="row">
-
-                                        <div class="col-md-6 col-12 mb-20">
-                                           {{--<label>First Name*</label> --}}
-                                           <input type="text" class="form-control" id="shippingfname" name="shippingfname" placeholder="Firstname" required="" maxlength="255" value="">
-                                        </div>
-
-                                       <div class="col-md-6 col-12 mb-20">
-                                           {{--<label>Last Name*</label> --}}
-                                           <input type="text" class="form-control" id="shippinglname" name="shippinglname" placeholder="Lastname" required="" maxlength="255" value="">
-                                       </div>
-
-
-                                        <div class="col-12 mb-20">
-                                           {{--<label>Phone no*</label> --}}
-                                           <input type="text" class="form-control" id="shippingphone" name="shippingphone" placeholder="Phone" required="" maxlength="255" value="">
-                                        </div>
-
-                                        <div class="col-md-6 col-12 mb-20">
-                                           {{--<label style="padding-bottom: 6px;">Country*</label> --}}
-                                           <select name="shippingcountry" id="shippingcountry" class="form-control" required="" >
-                                                @foreach($country as $key => $v)
-                                                    <option value="{{$v->pk_country}}" {{ ($v->pk_country == 229 ) ? 'selected' :'' }}> 
-                                                        {{$v->name}} 
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
-                                        <div class="col-md-6 col-12 mb-20">
-                                            
-                                            {{--<label>
-                                                <input type="checkbox" class="" id="shippingcantfindstate" name="shippingcantfindstate">
-                                                Can't find State?*
-                                            </label> --}}
-
-                                            <div id="shippingstatesdropdowndiv" >
-                                                <select name="shippingstatesdropdown" id="shippingstatesdropdown" class="form-control" >
-                                            
-                                                    @foreach($states as $key => $v)
-                                                        <option value="{{$v->name}}"> 
-                                                            {{$v->name}} 
-                                                        </option>
-                                                    @endforeach
-                                                
-                                                  
-                                                </select>
-                                            </div>
-
-                                            <div id="shippingstatescustomdiv" hidden>
-                                                <input type="text" class="form-control" id="shippingstatescustom" name="shippingstatescustom" placeholder="enter manually" value="" maxlength="255" required="">
-                                            </div>
-
-                                       </div>
-
-
-                                        <div class="col-md-6 col-12 mb-20">
-                                           {{--<label>City*</label> --}}
-                                           <input type="text" class="form-control" id="shippingcity" name="shippingcity" placeholder="City" value="" maxlength="255" required="">
-                                        </div>
-
-                                        <div class="col-md-6 col-12 mb-20">
-                                           {{--<label>Zip Code *</label> --}}
-                                           <input type="text" class="form-control" id="shippingzip" name="shippingzip" placeholder="Zip Code" value="" maxlength="50" required="">
-                                        </div>
-
-
-
-                                        <div class="col-12 mb-20">
-                                           {{--<label>Address Line 1*</label> --}}
-                                           <input type="text" class="form-control" id="shippingaddress1" name="shippingaddress1" placeholder="Street address, P.O. box, company name, c/o" value="" maxlength="500" required="">
-                                           <br>
-                                           <input type="text" class="form-control" id="shippingaddress2" name="shippingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
-                                        </div>
-
-                                    </div><!--END row-->
-
-                                </div><!--END divshippingaddress-->
-
-
+                              
                                 <div class="row free-sample-next-step" style="margin: auto; width: 50%; padding: 10px;">
 
                                   <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
@@ -502,10 +409,102 @@
                               </div>
 
 
+                              <div class="mb-20">
+                                <div class="check-box">
+                                   <input type="checkbox" id="shiptodifferentaddress" name="shiptodifferentaddress" >
+                                   <label for="shiptodifferentaddress">Billing address is different from shipping</label>
+                                </div>
+                              </div>
+
+
+                              <!-- Shipping Address -->
+                              <div hidden id="divshippingaddress">
+                                 
+                                  <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff; text-align: center;"> 
+                                    SHIPPING ADDRESS
+                                  </h4>
+
+                                  <div class="row">
+
+                                      <div class="col-md-6 col-12 mb-20">
+                                         {{--<label>First Name*</label> --}}
+                                         <input type="text" class="form-control" id="shippingfname" name="shippingfname" placeholder="Firstname" required="" maxlength="255" value="">
+                                      </div>
+
+                                     <div class="col-md-6 col-12 mb-20">
+                                         {{--<label>Last Name*</label> --}}
+                                         <input type="text" class="form-control" id="shippinglname" name="shippinglname" placeholder="Lastname" required="" maxlength="255" value="">
+                                     </div>
+
+
+                                      <div class="col-12 mb-20">
+                                         {{--<label>Phone no*</label> --}}
+                                         <input type="text" class="form-control" id="shippingphone" name="shippingphone" placeholder="Phone" required="" maxlength="255" value="">
+                                      </div>
+
+                                      <div class="col-md-6 col-12 mb-20">
+                                         {{--<label style="padding-bottom: 6px;">Country*</label> --}}
+                                         <select name="shippingcountry" id="shippingcountry" class="form-control" required="" >
+                                              @foreach($country as $key => $v)
+                                                  <option value="{{$v->pk_country}}" {{ ($v->pk_country == 229 ) ? 'selected' :'' }}> 
+                                                      {{$v->name}} 
+                                                  </option>
+                                              @endforeach
+                                          </select>
+                                      </div>
+
+                                      <div class="col-md-6 col-12 mb-20">
+                                          
+                                          {{--<label>
+                                              <input type="checkbox" class="" id="shippingcantfindstate" name="shippingcantfindstate">
+                                              Can't find State?*
+                                          </label> --}}
+
+                                          <div id="shippingstatesdropdowndiv" >
+                                              <select name="shippingstatesdropdown" id="shippingstatesdropdown" class="form-control" >
+                                          
+                                                  @foreach($states as $key => $v)
+                                                      <option value="{{$v->name}}"> 
+                                                          {{$v->name}} 
+                                                      </option>
+                                                  @endforeach
+                                              
+                                                
+                                              </select>
+                                          </div>
+
+                                          <div id="shippingstatescustomdiv" hidden>
+                                              <input type="text" class="form-control" id="shippingstatescustom" name="shippingstatescustom" placeholder="enter manually" value="" maxlength="255" required="">
+                                          </div>
+
+                                     </div>
+
+
+                                      <div class="col-md-6 col-12 mb-20">
+                                         {{--<label>City*</label> --}}
+                                         <input type="text" class="form-control" id="shippingcity" name="shippingcity" placeholder="City" value="" maxlength="255" required="">
+                                      </div>
+
+                                      <div class="col-md-6 col-12 mb-20">
+                                         {{--<label>Zip Code *</label> --}}
+                                         <input type="text" class="form-control" id="shippingzip" name="shippingzip" placeholder="Zip Code" value="" maxlength="50" required="">
+                                      </div>
+
+
+
+                                      <div class="col-12 mb-20">
+                                         {{--<label>Address Line 1*</label> --}}
+                                         <input type="text" class="form-control" id="shippingaddress1" name="shippingaddress1" placeholder="Street address, P.O. box, company name, c/o" value="" maxlength="500" required="">
+                                         <br>
+                                         <input type="text" class="form-control" id="shippingaddress2" name="shippingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
+                                      </div>
+
+                                  </div><!--END row-->
+
+                              </div><!--END divshippingaddress-->
+
 
                               @include('landingpage.layouts.checkout-disclosure')
-
-
 
                               <div class="row free-sample-final-step" style="margin: auto; width: 70%; padding: 10px;">
 
