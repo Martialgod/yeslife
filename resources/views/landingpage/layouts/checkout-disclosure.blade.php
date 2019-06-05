@@ -12,7 +12,7 @@
 	</div>
 	<div class="col-md-11">
 		<label for="isallowcontact" style="font-size:12px; line-height: 18px;color:#58595b;">
-			Yes.Life may need to contact me about my order and other potential offers, I will allow calls to my number that uses an autodialer as well as a pre-recorded or live voice. <br><br>
+			Yes.Life may need to contact me about my order and other potential offers. I will allow calls to my number that uses an autodialer as well as a pre-recorded or live voice. <br><br>
 		</label>
 	</div>
 	
