@@ -15,15 +15,15 @@
 
   <script src="/cleavejs/cleave.min.js" type="text/javascript"></script>
     
-	<script src="/customjs/FreeSampleController.js?v={{time()}}" type="text/javascript"></script>
+  <script src="/customjs/FreeSampleController.js?v={{time()}}" type="text/javascript"></script>
     
 @endsection
 
-	
+  
 @section('content-body')
 
 
-	 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
+   {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
 
     {{--
@@ -199,9 +199,9 @@
                                 <div id="billing-form" class="mb-10">
                                     
                                     {{--checkout-title--}}
-                                    <h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff; text-align: center;"> 
+                                    {{--<h4 class="" style="background-color: #3a95c2;padding:15px; color:#fff; text-align: center;"> 
                                       PERSONAL INFO
-                                    </h4>
+                                    </h4> --}}
 
                                     <div class="row">
 
@@ -285,6 +285,7 @@
                                            <input type="text" class="form-control" id="billingaddress2" name="billingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
                                         </div><!--END col-md-6 col-12 mb-20-->
 
+                                        {{--
                                         @if(!Auth::check())
 
                                           <div class="col-12 mb-20">
@@ -306,14 +307,12 @@
                                                 </span>
                                        
                                                 <div id="divbillingpassword" class="form-group">
-                                                    {{--<label for="billingpassword">Password<span class="error">*</span> </label> --}}
                                                     <input type="password" class="form-control" id="billingpassword" name="billingpassword" placeholder="password" required="" maxlength="255" value="">
                                                     
                                                 </div>
 
                                                 <div id="divbillingrepeatpassword" class="form-group">
                                                     
-                                                    {{--<label for="billingrepeatpassword">Repeat Password<span class="error">*</span> </label> --}}
                                                     <input type="password" class="form-control" id="billingrepeatpassword" name="billingrepeatpassword" placeholder="repeat password" required="" maxlength="255" value="">
                                                     
                                                     
@@ -323,7 +322,7 @@
 
                                           </div><!--END col-12 mb-20-->
 
-                                        @endif
+                                        @endif --}}
 
 
                                         <div class="col-12 mb-20">
@@ -456,7 +455,7 @@
                             <!--END address-->
 
 
-                            <div class="col-md-12" id="div-card-details" hidden >
+                            <div hidden class="col-md-12" id="div-card-details"  >
 
                               <h4 class="" style="background-color: #3a95c2;padding:10px; color:#fff; text-align: center !important;"> 
 
@@ -471,7 +470,7 @@
 
                               <hr>
                               <h4 style="text-align:center;">
-                                Free Sample $0.00 + ${{$products->shippingcost}} Shipping
+                                Free Sample $0.00 + ${{$products->shippingcost}} Shipping & Handling Fee
                               </h4>
                               <hr>
                               <h3 style="text-align:center;">
@@ -569,7 +568,7 @@
 
     <script src="/customjs/CartCheckoutJquery.js?v={{time()}}" type="text/javascript"></script>
     
-	    
+      
     <script type="text/javascript">
         //broadcast toastr
         $(document).ready(function(){
