@@ -435,6 +435,10 @@
                 </tr>
               </table>
 
+              <p>
+                @include('admin.layouts.email-noreply-disclaimer')
+              </p>
+
 
             </div>
             <!-- END FOOTER -->
