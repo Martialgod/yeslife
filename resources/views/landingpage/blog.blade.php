@@ -52,7 +52,7 @@
                                         #f7eadc
                                         border: #3295c3 1px solid;border-bottom-style: solid;border-bottom-color: #fbb055;border-left-color:#fbb055; 
                                     --}}
-                                    <div class="blog-item" style="background-color:#fff0dd;">
+                                    <div class="blog-item" style="background-color:#b1eaf9">
                                        
                                         {{--<a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(storagelink/{{$a->pictx}});" >
 
