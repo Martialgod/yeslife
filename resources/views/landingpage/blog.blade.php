@@ -62,7 +62,7 @@
 
                                         <a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(/landingpage/assets/images/faviconv2.png); background-color:#3a95c2;" >
 
-                                            <img src="/landingpage/assets/images/faviconv3.png" alt="">
+                                            <img src="/landingpage/assets/images/faviconv2-01.png" alt="">
 
                                         </a>
 
