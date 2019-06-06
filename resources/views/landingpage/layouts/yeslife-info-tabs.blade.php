@@ -86,9 +86,12 @@
 
                     <div class="tab-pane fade" id="nav-water" role="tabpanel" aria-labelledby="nav-water-tab">
                         <p style="font-size: 18px;">
-                            Hemp CBD is an oil - humans are water. {{--Mix the two together and they repel.--}} These two do not mix together.  
+                            Hemp CBD is an oil - humans are water. 
+                            {{--Mix the two together and they repel.--}} These two do not mix together.  
                             {{--Water soluble CBD products, like YES.LIFE, will actually deliver the bulk of the advertised milligrams of CBD into your body. Otherwise, you're paying for expensive sewage waste for your toilet. --}}
-                            Water-soluble CBD products, like YES.life, will actually deliver the bulk of the advertised milligrams of CBD into your body and giving you the most value for your money.
+
+                            Water-soluble CBD products, like YES.life, will actually deliver the bulk of the advertised milligrams of {{--CBD into your body and giving you--}}
+                            CBD into your body giving you the most value for your money.
                         </p>
                        
                     </div>
@@ -103,7 +106,7 @@
 
                     <div class="tab-pane fade" id="nav-usa" role="tabpanel" aria-labelledby="nav-usa-tab">
                        <p style="font-size: 18px;">
-                           Our Hemp CBD Oil is extracted from Hemp plants grown and cultivated in the United States of America. Even the extraction itself is carrier out in the USA. We are a homegrown American company hoping to deliver the best products to those wanting to say YES to LIFE again.
+                           Our Hemp CBD Oil is extracted from Hemp plants grown and cultivated in the United States of America. Even the extraction itself is {{--carrier out in the USA.--}} carried out in the USA. We are a homegrown American company hoping to deliver the best products to those wanting to say YES to LIFE again.
                        </p>
                        
                     </div>
