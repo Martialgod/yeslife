@@ -85,11 +85,19 @@
 				}); 
 
 			}//END vm.category != 'All'
-		
 			
-			$('#btn-view-mode-list').removeClass('active');
-			$('#btn-view-mode-grid').removeClass('grid active');
-			$('#btn-view-mode-grid').addClass('grid active');
+			//remove active gri class and set default view as list
+			$('#btn-view-mode-grid').removeClass('active');
+			$('#btn-view-mode-list').removeClass('active'); //prevent duplicate 
+			$('#btn-view-mode-list').addClass('active');
+
+			$('#div-products').removeClass('grid');
+			$('#div-products').removeClass('list'); //prevent duplicate 
+			$('#div-products').addClass('list');
+
+			$('#div-product-item').removeClass('list'); //prevent duplicate 
+			$('#div-product-item').addClass('list');
+
 
 			//console.log(url);
 			vm.mscproducts = [];

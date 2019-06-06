@@ -47,8 +47,8 @@
                         <div class="col">
                             <div class="shop-toolbar">
                                 <div class="product-view-mode">
-                                    <button id="btn-view-mode-grid" class="grid active" data-mode="grid"><span>grid</span></button>
-                                    <button id="btn-view-mode-list" class="list" data-mode="list"><span>list</span></button>
+                                    <button id="btn-view-mode-grid" class="grid" data-mode="grid"><span>grid</span></button>
+                                    <button id="btn-view-mode-list" class="list active" data-mode="list"><span>list</span></button>
                                 </div>
                                 <div class="product-showing mr-auto" ng-if="vm.mscproducts.length > 0" >
                                     <p>Showing @{{vm.meta.current_page}} of @{{vm.meta.last_page}}</p>
@@ -74,13 +74,14 @@
                     
                     {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
-
-                    <div class="shop-product-wrap grid row" id="div-products" >
+                    {{--shop-product-wrap grid row--}}
+                    <div class="shop-product-wrap list row" id="div-products" >
 
                         <!-- Product Item Start -->
                         <div class="col-xl-4 col-lg-4 col-sm-6 col-12 mb-30"  ng-repeat="list in vm.mscproducts">
                             
-                            <div class="product-item">
+                            {{--product-item--}}
+                            <div id="div-product-item" class="product-item list">
                                 
                                 <!-- Image -->
                                 <div class="product-image">
@@ -185,7 +186,7 @@
                                     </div><!--END head-->
 
                                     <div class="body">
-                                       
+                                    
                                         <div ng-bind-html="list.description"></div>
 
                                         <br>
