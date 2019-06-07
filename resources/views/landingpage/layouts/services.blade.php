@@ -29,9 +29,10 @@
             <div class="service col-xl-3 col-md-6 col-12">
                 <div class="icon"></div>
                 <div class="content"> 
+                    <br>
                     <h3>30-Day Return Policy</h3>
                     {{--<p>Return product within 30 days for any product you buy.</p> --}}
-                    <p> We stand by our product. <br> If you are not entirely satisfied with your purchase, sent it back for a full refund</p>
+                    <p> We stand by our product. <br> If you are not entirely satisfied with your purchase, send it back for a full refund</p>
                 </div>
             </div>
             

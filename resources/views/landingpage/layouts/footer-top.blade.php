@@ -12,9 +12,8 @@
                         We ship anywhere in US
                     </p>
                     <p>
-                        3855 S 500 W Ste D,
-                        <br> 
-                        South Salt Lake, Utah 84115
+                        3855 S 500 W Suite D <br> 
+                        South Salt Lake, UT 84115
                     </p>
                     <p>
                         <a href="#"> 1-833-TRY-LIFE  </a> / <a href="#"> 1-833-879-5433 </a>
@@ -41,13 +40,13 @@
             
             <div class="col mb-40">
                 <div class="footer-widget">
-                    <h3 class="title">Quick Link</h3>
+                    <h3 class="title">Quick Links</h3>
                     <ul>
-                        <li><a href="{{url('/about-us')}}{{$refnourl}}">About CBD</a></li>
+                        <li><a href="{{url('/about-us')}}{{$refnourl}}">About Us</a></li>
                         <li><a href="#">Benefits</a></li>
                         <li><a href="{{url('/shop')}}{{$refnourl}}">Shop</a></li>
                         <li><a href="{{url('/blog')}}{{$refnourl}}">Blog</a></li>
-                        <li><a href="{{url('/cartcheckout')}}{{$refnourl}}">Cart</a></li>
+                        <li><a href="{{url('/cartcheckout')}}{{$refnourl}}">My Cart</a></li>
                         <li><a href="{{url('/contact-us')}}{{$refnourl}}">Contact Us</a></li>
                     </ul>
                 </div>

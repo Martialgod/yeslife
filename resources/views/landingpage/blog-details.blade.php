@@ -82,7 +82,7 @@
                                     By - {{$blogs->sourcename}}
                                 </li>
                                 <li >
-                                    {{ date_format( date_create($blogs->sourcedate), 'd M, Y' ) }}
+                                    {{ date_format( date_create($blogs->sourcedate), 'd M Y' ) }}
                                 </li>
                             </ul>
 

@@ -32,7 +32,7 @@ $(document).ready(function(){
                     // Display a success toast, with a title
                     swal('Success!', 'thank you for reaching us!', 'success');
                     
-                    $('#subject').val('');
+                    //$('#subject').val('');
                     $('#message').val('');
 
                 }else{

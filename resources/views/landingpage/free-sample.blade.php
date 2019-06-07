@@ -1,11 +1,11 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife FREE Sample!')
+@section('title', 'Free CBD Samples | CBD oil & Pain Relief Lotion | Yes.Life')
 
 @section('meta')
 
-    <meta name="robots" content="yeslife,cbd,index" />
-    <meta name="description" content="yeslife,cbd,index">
+    <meta name="robots" content="follow, noindex" />
+    <meta name="description" content="Yes.Life is offering free CBD samples. For a limited time get our free cbd sample pack that includes both our high-absorbing cbd oil and Relieve Hemp CBD gel that works great for pain relief!">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -76,11 +76,11 @@
                 <!-- Contact Info Start -->
                 <div class="col-xl-8 col-lg-8 col-12 order-1 order-lg-1 mb-sm-50 mb-xs-50" >
 
-                    <h2 style="color:#3a95c2;text-align: center;">
+                    <h1 style="color:#3a95c2; text-align: center; font-size: 30px !important;">
                         GET YOUR 
-                        <span style="color:#fbb055;"> FREE SAMPLE </span>
-                        of Yes.Life CBD Oil and Relieve Cream today!
-                    </h2>
+                        <span style="color:#fbb055;"> FREE CBD SAMPLES </span>
+                        of Yes.Life's CBD Oil and Hemp CBD Pain Relief Cream today!
+                    </h1>
 
                 
                     <div class="free-sample-shipping" style="color:#8a8c8e;text-align: center;font-size: 28px; font-weight: bold; font-family: 'Gotham'">

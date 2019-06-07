@@ -71,7 +71,7 @@
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
                         <p style="font-size: 18px;">
-                            YES.life strives to help you transform your health and discover a happier life through the very best products. Our Promise: to provide natural products as tools to help you achieve better health, live with more happiness and transform your life.
+                            Yes.Life strives to help you transform your health and discover a happier life through the very best products. Our Promise: to provide natural products as tools to help you achieve better health, live with more happiness and transform your life.
                         </p>
 
                     </div>
@@ -90,7 +90,7 @@
                             {{--Mix the two together and they repel.--}} These two do not mix together.  
                             {{--Water soluble CBD products, like YES.LIFE, will actually deliver the bulk of the advertised milligrams of CBD into your body. Otherwise, you're paying for expensive sewage waste for your toilet. --}}
 
-                            Water-soluble CBD products, like YES.life, will actually deliver the bulk of the advertised milligrams of {{--CBD into your body and giving you--}}
+                            Water-soluble CBD products, like Yes.life, will actually deliver the bulk of the advertised milligrams of {{--CBD into your body and giving you--}}
                             CBD into your body giving you the most value for your money.
                         </p>
                        
@@ -99,7 +99,7 @@
 
                     <div class="tab-pane fade" id="nav-absorption" role="tabpanel" aria-labelledby="nav-absorption-tab">
                         <p style="font-size: 18px;">
-                            Our Hemp CBD oil is not only water-soluble, but also nano-sized. Our YesNano technology helps the CBD supplement reach your bloodstream and actually produce positive effects. Because of our higher absorption rate, 250 mg of YES.LIFE CBD is equivalent to nearly 3000 mg of the competitors CBD.
+                            Our Hemp CBD Oil is not only water-soluble, but also nano-sized. Our YesNano™ Technology helps the CBD supplement reach your bloodstream and actually produce positive effects. Because of our higher absorption rate, our 250 mg of Yes.Life CBD is equivalent to nearly 3000 mg of the competitor's CBD.
                         </p>
                        
                     </div>

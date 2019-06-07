@@ -111,11 +111,11 @@
                     </p>      
 
                     <p>
-                        But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, YES.LIFE emerged. Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
+                        But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, YES.Life emerged. Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
                     </p>  
 
                     <p>
-                        Our cause stems from making our customers’ lives better. We listen to their needs and empower them to discover better health through the right products – the products nature gave us first – with the help of smarter science. 
+                        Our cause stems from making our customers’ lives better. We listen to your needs and empower them to discover better health through the right products – the products nature gave us first – with the help of smarter science. 
                     </p>
 
                     <p>
@@ -138,10 +138,10 @@
 
                 <div class="col-md-12" style="background-color: #8a8c8e;" >
                     <br><br>
-                    <h2 style="text-align: center;color:#fff !important;"> About our YES Nano Technology </h2>
+                    <h2 style="text-align: center;color:#fff !important;"> About our YESNANO™ TECHNOLOGY </h2>
                     <br>
                     <p style="color:#fff !important;">
-                        Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YES Nano technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible
+                        Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YesNano™ Technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible.
                     </p>
                     <br>
                 </div>

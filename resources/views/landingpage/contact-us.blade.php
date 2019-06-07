@@ -19,14 +19,35 @@
 
 	
 @section('content-body')
+    
+
+    <!-- Page Banner Section Start -->
+    <div class="page-banner-section section">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-banner text-center">
+                        <h1 style="color:#3295c3; text-transform: none !important;"> CONTACT Yes.Life </h1>
+                        <ul class="page-breadcrumb">
+                            <li style="color:#3295c3;">
+                                <a href="/{{$refnourl}}">Home</a>
+                            </li>
+                            <li style="color:#3295c3;"><b> Contact Us </b></li>
+                        </ul>
+                    </div><!--END page-banner-->
+                    
+                </div><!--END col-->
+            </div><!--END row-->
+        </div><!--END container-->
+    </div><!-- Page Banner Section End -->
 
 
-	@include('landingpage.layouts.banner', [
+	{{--@include('landingpage.layouts.banner', [
       'bannerheader'=>'Contact Yes.Life', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Contact Us'
-    ])
+    ])--}}
 
     <!-- Contact Section Start -->
     <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div">
@@ -39,22 +60,48 @@
                 <div class="col-lg-5 col-12 mb-30">
                     <div class="contact-info">
                         <ul>
+
                             <li>
-                                <h4>Address</h4>
-                                <p>3855 S 500 W Suite D South Salt Lake, UT 84115</p>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                      <i style="color:#3a95c2;" class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p>
+                                            3855 S 500 W Suite D <br> 
+                                            South Salt Lake, UT 84115
+                                        </p>
+                                    </div>
+                                    
+                                </div>
                             </li>
                             <li>
-                                <h4>Phone No.</h4>
-                                <p>
-                                   <a href="#">1 – 833 - 879 - 5433</a>
-                                </p>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                      <i style="color:#3a95c2;" class="fa fa-phone fa-3x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p>
+                                            1 - 833 - 879 - 5433 <br>
+                                            1 - 833 - TRY - LIFE
+                                        </p>
+                                    </div>
+                                    
+                                </div>
                             </li>
                             <li>
-                                <h4>Web</h4>
-                                <p>
-                                   <a href="#">info@yes.life</a>
-                                   <a href="https://yes.life">https://yes.life</a>
-                                </p>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                      <i style="color:#3a95c2;" class="fa fa-envelope-o fa-3x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p>
+                                            info@yes.life <br>
+                                            https://yes.life
+                                        </p>
+                                    </div>
+                                    
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -67,7 +114,7 @@
                         <h3> {{$header}} </h3>
                         
                         <p>
-                        	We love to hear from you! Please send us any inquiries you have about our product and we will get back to you as quickly as possible.
+                        	We love to hear from you!  Please send us any inquiries about our company and the products we offer, and we will get back to you as quickly as possible.
                         </p>
 
                         <div class="contact-form">
@@ -120,10 +167,47 @@
                                     	<input type="text" name="phone" id="phone" placeholder="Phone"  maxlength="255" value="{{$phone}}"  >
                                     </div>
 
-                                    <div class="col-md-6 col-12 mb-30">
+                                    {{--<div class="col-md-6 col-12 mb-30">
                                     	<input type="text" name="subject" id="subject" placeholder="Subject" required="" maxlength="255" value="{{$subject}}">
-                                    </div>
+                                    </div> --}}
 
+                                    <div class="col-md-6 col-12 mb-30" style="border-radius:36px;display:inline-block;overflow:hidden;background:#fff;border:1px solid #cccccc; height: 45px;">
+                                        <select name="subject" id="subject" required="" style="height:100%; width: 100%;border:0px;outline:none;" class="">
+
+                                            <option value="null" disabled="" selected="">
+                                                Subject (choose one)
+                                            </option>
+
+                                            <option value="General questions" {{($subject == 'Customer Inquiry') ? 'selected' : ''}}> 
+                                                General questions
+                                            </option>
+
+                                            <option value="Product Inquiry"> 
+                                                Product Inquiry
+                                            </option>
+
+                                            <option value="Direct Sales and Wholesale" {{($subject == 'Distributor Inquiry') ? 'selected' : ''}} > 
+                                                Direct Sales and Wholesale
+                                            </option>
+
+                                            <option value="Returns and Exchange"> 
+                                                Returns and Exchange
+                                            </option>
+
+                                            <option value="Shipping Questions"> 
+                                                Shipping Questions
+                                            </option>
+
+                                            <option value="Marketing"> 
+                                                Marketing
+                                            </option>
+
+                                            <option value="Others"> 
+                                                Others
+                                            </option>
+                                            
+                                        </select>
+                                    </div>
 
                                     @if($contacttype == 'Distributor')
 

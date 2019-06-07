@@ -46,13 +46,13 @@
 
                             @foreach( $blogs as $key=> $a )
 
-                                <div class="col-lg-12 col-12 mb-30" >
+                                <div class="col-lg-12 col-12 mb-30">
 
                                     {{-- 
                                         #f7eadc
                                         border: #3295c3 1px solid;border-bottom-style: solid;border-bottom-color: #fbb055;border-left-color:#fbb055; 
                                     --}}
-                                    <div class="blog-item" style="background-color:#b1eaf9">
+                                    <div class="blog-item" style="background-color:#b1eaf9;">
                                        
                                         {{--<a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(storagelink/{{$a->pictx}});" >
 
@@ -60,14 +60,14 @@
 
                                         </a> 3a95c2--}}
 
-                                        <a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(/landingpage/assets/images/faviconv2-02.png); background-color:#3a95c2;background-size:100%;"  >
+                                        <a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(/landingpage/assets/images/faviconv2-02.png); background-color:#3a95c2;background-size:80%;"  >
 
                                             <img src="/landingpage/assets/images/faviconv2-02.png" alt="">
 
                                         </a>
 
                                       
-                                        <div class="content">
+                                        <div class="content" style="margin: -25px auto;" >
 
                                             <h3 class="title">
                                                 <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="color:#222222 !important;">
@@ -80,7 +80,7 @@
                                                     By - {{$a->sourcename}}
                                                 </li>
                                                 <li style="color:#222222 !important;">
-                                                    {{ date_format( date_create($a->sourcedate), 'd M, Y' ) }}
+                                                    {{ date_format( date_create($a->sourcedate), 'd M Y' ) }}
                                                 </li>
                                             </ul>
 
