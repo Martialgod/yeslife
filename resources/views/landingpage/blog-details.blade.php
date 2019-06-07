@@ -7,6 +7,9 @@
     <meta name="description" content="{{$blogs->summary}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+     <meta property="og:image" content="{{asset('/storagelink/'.$blogs->pictx)}}" />
+
+
 
 @endsection
 
