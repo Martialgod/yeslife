@@ -369,25 +369,31 @@
         }
 
 
-        sweetAlert({
+
+        $(document).on( "click",".fb-share",  function(e){
+            //here sweet alert closes when I press this button. 
+            openFbPopup(); 
+        });
+
+    </script>
+
+
+
+    <script type="text/javascript">
+        
+        /*sweetAlert({
             title: "",
             text: "You must be 18 years or older to order CBD products. If you are of legal age click Enter.",
             type: null,
             confirmButtonText: "ENTER",
             confirmButtonColor: '#3a95c2',
             html: "You must be 18 years or older to order CBD products. If you are of legal age click Enter.",
-            closeOnConfirm: false, //It does close the popup when I click on close button
-            closeOnCancel: false,
+            //closeOnConfirm: false, //It does close the popup when I click on close button
+            //closeOnCancel: false,
             allowOutsideClick: false, 
             allowEscapeKey: false
-        }, function () {});
+        }, function () {}); */
 
-
-
-        $(document).on( "click",".fb-share",  function(e){
-            //here sweet alert closes when I press this button. 
-            openFbPopup(); 
-        });
 
     </script>
 
