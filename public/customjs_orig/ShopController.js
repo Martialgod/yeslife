@@ -87,7 +87,7 @@
 			}//END vm.category != 'All'
 			
 			//remove active gri class and set default view as list
-			/*$('#btn-view-mode-grid').removeClass('active');
+			$('#btn-view-mode-grid').removeClass('active');
 			$('#btn-view-mode-list').removeClass('active'); //prevent duplicate 
 			$('#btn-view-mode-list').addClass('active');
 
@@ -96,7 +96,7 @@
 			$('#div-products').addClass('list');
 
 			$('#div-product-item').removeClass('list'); //prevent duplicate 
-			$('#div-product-item').addClass('list'); */
+			$('#div-product-item').addClass('list');
 
 
 			//console.log(url);
