@@ -79,10 +79,10 @@
 
                             <ul class="blog-meta">
                                 <li>
-                                    By - {{$blogs->sourcename}}
+                                    By {{$blogs->sourcename}}
                                 </li>
                                 <li >
-                                    {{ date_format( date_create($blogs->sourcedate), 'd M Y' ) }}
+                                    {{ date_format( date_create($blogs->sourcedate), 'd F Y' ) }}
                                 </li>
                             </ul>
 

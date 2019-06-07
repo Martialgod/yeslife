@@ -77,10 +77,10 @@
 
                                             <ul class="blog-meta" >
                                                 <li style="color:#222222 !important;">
-                                                    By - {{$a->sourcename}}
+                                                    By {{$a->sourcename}}
                                                 </li>
                                                 <li style="color:#222222 !important;">
-                                                    {{ date_format( date_create($a->sourcedate), 'd M Y' ) }}
+                                                    {{ date_format( date_create($a->sourcedate), 'd F Y' ) }}
                                                 </li>
                                             </ul>
 

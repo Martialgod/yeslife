@@ -74,9 +74,16 @@ Route::get('/artisan-clear', function(){
     Artisan::call('cache:clear');
     Artisan::call('view:clear');
     Artisan::call('route:clear');
+    //session()->put('yeslife_legal_age', null);
     return 'config,cache,view and route all cleared';
+
 });
 
+
+Route::get('/session/legal-age', function(){
+    session()->put('yeslife_legal_age', 'yes');
+    return redirect()->back();
+});
 
 Route::get('/artisan-command', function(){
 
