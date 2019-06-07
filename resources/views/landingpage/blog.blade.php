@@ -60,7 +60,7 @@
 
                                         </a> 3a95c2--}}
 
-                                        <a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(/landingpage/assets/images/faviconv2-02.png); background-color:#3a95c2;" >
+                                        <a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(/landingpage/assets/images/faviconv2-02.png); background-color:#3a95c2;background-size:100%;"  >
 
                                             <img src="/landingpage/assets/images/faviconv2-02.png" alt="">
 
