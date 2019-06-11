@@ -21,13 +21,13 @@
 
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section">
+    <div class="page-banner-section section banner100px">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="page-banner text-center">
-                        <h1 style="color:#3295c3; font-size: 42px; text-align: center;"> 
-                            About
+                        <h1 style="color:#3295c3; font-size: 42px; text-align: center; text-transform: none;"> 
+                            About Us
                         </h1>
                     </div><!--END page-banner-->
                 </div><!--END col-->
@@ -46,7 +46,7 @@
 
 
 
-    <div class="about-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix " style="margin-top: -90px;">
+    <div class="about-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix ">
 
         <!-- About Section Shape -->
         <div class="about-shape one rellax" data-rellax-speed="-5" data-rellax-percentage="0.5"><img src="/landingpage/assets/images/shape/about-shape-1.png" alt=""></div>
@@ -111,7 +111,7 @@
                     </p>      
 
                     <p>
-                        But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, YES.Life emerged. Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
+                        But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, Yes.Life emerged. Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
                     </p>  
 
                     <p>

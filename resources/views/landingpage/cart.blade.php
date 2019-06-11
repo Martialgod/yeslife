@@ -185,7 +185,9 @@
                                 <div class="cart-summary-wrap">
                                     <h4>CART SUMMARY</h4>
 
-                                    <p>Count <span> @{{vm.mscproducts.length}} Item(s) </span></p>
+                                    {{--<p>Count <span> @{{vm.mscproducts.length}} Item(s) </span></p> --}}
+
+                                    <p>Count <span> @{{vm.totalqty}} Item(s) </span></p>
                                    
                                     <p>Partial Amount <span> $@{{vm.totalamount}} </span></p>
 

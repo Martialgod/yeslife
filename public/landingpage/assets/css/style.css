@@ -711,11 +711,11 @@ input::placeholder, textarea::placeholder {
   display: -ms-flexbox;
   display: flex; }
   .main-menu > ul > li {
-    margin-right: 40px;
+    margin-right: 20px;
     position: static; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .main-menu > ul > li {
-        margin-right: 10px; } }
+        margin-right: auto; } }
     .main-menu > ul > li:last-child {
       margin-right: 0; }
     .main-menu > ul > li > a {
@@ -752,6 +752,8 @@ input::placeholder, textarea::placeholder {
       opacity: 1;
       visibility: visible;
       z-index: 99; }
+
+ 
 
 /*-- Sub Menu --*/
 .sub-menu {
@@ -1207,6 +1209,7 @@ input::placeholder, textarea::placeholder {
             padding: 0 40px 0 20px;
             border-bottom: 0;
             margin-bottom: 0;
+            width:300px;
             /*---- Menu Expand For Sub Menu ----*/ }
             .mobile-menu .mean-bar .mean-nav > ul li a::after {
               display: none; }

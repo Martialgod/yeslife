@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 use Illuminate\Support\Facades\Auth; //responsible for our authentication 
 
 use Illuminate\Support\Facades\DB; //responsible for DB
@@ -24,6 +23,8 @@ use App\OrderDtlView;
 
 use App\CertificationMstrView;
 use App\CertificationDtl;
+
+use App\Faq;
 
 use App\User;
 
@@ -300,6 +301,40 @@ class LandingPageController extends Controller
     
 
     
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function faq()
+    {
+        //
+
+        $this->setActiveTab();
+
+        $faqs = Faq::select();
+
+        $search = ( request()->search ) ? request()->search : null;
+
+        if( $search ){
+
+            $faqs->where(function ($query) use ($search) {
+                $query->where('question', 'like', "%$search%");
+            });
+
+        }
+
+        $faqs->where('stat', 1);
+
+        $faqs = $faqs->orderBy('indexno', 'ASC')->get();
+
+        $faqreferences = GlobalMessage::findOrFail(3000);
+
+        return view('landingpage.faq', compact('faqs', 'faqreferences', 'search'));
+
+    
+    }//END faq
     
     /**
      * Display a listing of the resource.

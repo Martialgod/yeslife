@@ -1,7 +1,7 @@
   
 <div class="sidebar">
 
-    <h4 class="sidebar-title">Recent Post</h4>
+    <h4 class="sidebar-title" style="text-align: center;" >Recent Post</h4>
 
     <ul class="sidebar-post-list">
 

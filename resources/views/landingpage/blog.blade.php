@@ -21,7 +21,7 @@
     
 
     @include('landingpage.layouts.banner', [
-      'bannerheader'=>'Yes.Life Blog: CBD News, Research, Info & Education', 
+      'bannerheader'=>'<span style="text-transform:none;"> Yes.Life Blog: CBD News, Research, Info & Education </span>', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Blog'

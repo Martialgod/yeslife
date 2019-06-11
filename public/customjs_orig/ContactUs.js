@@ -8,11 +8,20 @@ $(document).ready(function(){
 
         e.preventDefault();
 
+
+        if( $('#subject').val() == undefined || $('#subject').val() == '' ){
+            $('#errsubject').prop('hidden', false);
+            $('#subject').focus();
+            return;
+
+        } $('#errsubject').prop('hidden', true);
+
         //jquery validate
         if(!$('#form-contact').valid()){
             return;
-        }
+        }   
 
+       
         //$.blockUI('#main-div');
         showCustomizeLoading(); //@GlobalScript.js
 

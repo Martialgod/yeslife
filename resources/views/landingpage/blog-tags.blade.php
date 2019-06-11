@@ -1,6 +1,8 @@
 <div class="sidebar">
 
-    <h4 class="sidebar-title">Tags</h4>
+    <h4 class="sidebar-title" style="text-align: center;" >
+    	Tags
+    </h4>
 
     <ul class="sidebar-post-list">
 

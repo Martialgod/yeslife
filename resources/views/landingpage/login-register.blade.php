@@ -179,13 +179,13 @@
 
 								<div class="col-md-6">
 									<div class="form-group">
-							        	<label for="lname">Lastname <span class="label-required">*</span> </label>
+							        	<label for="lname">Last Name <span class="label-required">*</span> </label>
 								    	<input type="text" class="form-control" id="lname" name="lname" placeholder="" required="" value="{{old('lname')}}" maxlength="255">
 							        </div>
 
 
 							        <div class="form-group">
-							        	<label for="fname">Firstname <span class="label-required">*</span> </label>
+							        	<label for="fname">First Name <span class="label-required">*</span> </label>
 								    	<input type="text" class="form-control" id="fname" name="fname" placeholder=""  value="{{old('fname')}}" required="" maxlength="255">
 							        </div>
 

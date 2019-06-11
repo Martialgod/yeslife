@@ -253,6 +253,7 @@
 
 		vm.CalculateTotal = function(){
 
+			vm.totalqty = 0;
 			vm.subtotal = 0;
 			vm.totalamount = 0;
 			vm.totalcoupondiscount = 0;
@@ -271,6 +272,8 @@
 
 
             vm.mscproducts.forEach(function(item1, index1){
+
+            	vm.totalqty += parseFloat(item1.selectedqty);
 
             	item1.totalamount = parseFloat(item1.selectedqty) * parseFloat(item1.cartdiscountedprice);
 

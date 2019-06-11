@@ -22,7 +22,7 @@
     
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section">
+    {{--<div class="page-banner-section section banner100px">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -39,15 +39,15 @@
                 </div><!--END col-->
             </div><!--END row-->
         </div><!--END container-->
-    </div><!-- Page Banner Section End -->
+    </div><!-- Page Banner Section End --> --}}
 
 
-	{{--@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Contact Yes.Life', 
+	@include('landingpage.layouts.banner', [
+      'bannerheader'=>'<span style="text-transform:none;"> Contact Yes.Life </span>', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Contact Us'
-    ])--}}
+    ])
 
     <!-- Contact Section Start -->
     <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div">
@@ -64,7 +64,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col-md-2">
-                                      <i style="color:#3a95c2;" class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+                                      <i style="color:#3a95c2;" class="fa fa-globe fa-3x" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-md-10">
                                         <p>
@@ -156,7 +156,7 @@
 									</div>
 
                                     <div class="col-md-6 col-12 mb-30">
-                                    	<input type="text" name="fullname" id="fullname" placeholder="Name" required=""  maxlength="255" value="{{$fullname}}" {{$readonly}} >
+                                    	<input type="text" name="fullname" id="fullname" placeholder="Full Name" required=""  maxlength="255" value="{{$fullname}}" {{$readonly}} >
                                     </div>
 
                                     <div class="col-md-6 col-12 mb-30">
@@ -171,14 +171,15 @@
                                     	<input type="text" name="subject" id="subject" placeholder="Subject" required="" maxlength="255" value="{{$subject}}">
                                     </div> --}}
 
-                                    <div class="col-md-6 col-12 mb-30" style="border-radius:36px;display:inline-block;overflow:hidden;background:#fff;border:1px solid #cccccc; height: 45px;">
-                                        <select name="subject" id="subject" required="" style="height:100%; width: 100%;border:0px;outline:none;" class="">
+                                    {{--border-radius:36px;display:inline-block;overflow:hidden;background:#fff;border:1px solid #cccccc; height: 45px;--}}
+                                    <div class="col-md-6 col-12 mb-30" style="">
+                                        <select name="subject" id="subject" required="" style="height:100%; width: 100%;border:0px;outline:none;" class="nice-select">
 
-                                            <option value="null" disabled="" selected="">
+                                            <option value="" disabled="" selected="">
                                                 Subject (choose one)
                                             </option>
 
-                                            <option value="General questions" {{($subject == 'Customer Inquiry') ? 'selected' : ''}}> 
+                                            <option value="General questions"> 
                                                 General questions
                                             </option>
 
@@ -207,6 +208,9 @@
                                             </option>
                                             
                                         </select>
+
+                                        <label style="color:red;" hidden id="errsubject">This Field Is Required.</label>
+
                                     </div>
 
                                     @if($contacttype == 'Distributor')

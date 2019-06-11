@@ -125,7 +125,8 @@ Route::get('/free-sample', 'FreeSampleController@index');
 Route::get('/free-sample/showproduct/{id}', 'FreeSampleController@apishowproduct'); 
 Route::get('/free-sample/isfirsttimer/{email}/{productid}', 'FreeSampleController@isfirsttimer'); 
 
-
+// ?refno=33213 -- optional for referral 
+Route::get('/faq', 'LandingPageController@faq');
 
 //cartcheckout?recurring=33213  -- optional for recurring checkout
 //?refno=33213 -- optional for referral 
@@ -314,6 +315,11 @@ Route::resource('/admin/states', 'StatesController');
 Route::resource('/admin/actions', 'RewardActionsController');
 
 Route::resource('admin/tags', 'TagsController');
+
+Route::resource('admin/faqs', 'FaqsController');
+
+Route::put('/admin/faqs-references/{id}', 'FaqsController@updateReferences');
+
 
 
 Route::get('/admin/reports', 'ReportsController@index')->name('reports.index');

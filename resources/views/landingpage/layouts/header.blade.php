@@ -21,7 +21,7 @@
                     <ul>
 
                         <li><a href="{{url('/')}}{{$refnourl}}">HOME</a></li>
-                        <li><a href="{{url('/about-us')}}{{$refnourl}}">ABOUT</a></li>
+                        <li style="width: 90px;"><a href="{{url('/about-us')}}{{$refnourl}}">ABOUT US</a></li>
 
                         @if( Auth::check() && (Auth::user()->fk_usertype == '1000' || Auth::user()->fk_usertype == '1010') )
 
@@ -60,7 +60,9 @@
                         </li>
 
 
-                        <li style="width: 140px;">
+                        <li><a href="{{url('/faq')}}{{$refnourl}}">FAQ</a></li>
+
+                        <li style="width: 110px;">
                             <a href="{{url('/contact-us')}}{{$refnourl}}">CONTACT US</a>
                         </li>
 

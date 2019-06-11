@@ -48,6 +48,7 @@
                         <li><a href="{{url('/blog')}}{{$refnourl}}">Blog</a></li>
                         <li><a href="{{url('/cartcheckout')}}{{$refnourl}}">My Cart</a></li>
                         <li><a href="{{url('/contact-us')}}{{$refnourl}}">Contact Us</a></li>
+                        <li><a href="{{url('/myaccount/home')}}">My Account</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,12 +59,13 @@
                 <div class="footer-widget">
                     <h3 class="title">Information</h3>
                     <ul>
-                        <li><a href="{{url('/myaccount/home')}}">My Account</a></li>
                         <li><a href="{{url('/privacy-policy')}}{{$refnourl}}">Privacy Policy</a></li>
                         <li><a href="{{url('/terms-conditions')}}{{$refnourl}}">Terms & Conditions</a></li>
                         <li><a href="{{url('/certifications')}}{{$refnourl}}">Certifications</a></li>
                         <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Promotional Offers</a></li>
+                        <li><a href="{{url('/faq')}}{{$refnourl}}">FAQ</a></li>
+
                     </ul>
                 </div>
             </div>

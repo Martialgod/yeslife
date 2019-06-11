@@ -90,7 +90,7 @@
                             {{--Mix the two together and they repel.--}} These two do not mix together.  
                             {{--Water soluble CBD products, like YES.LIFE, will actually deliver the bulk of the advertised milligrams of CBD into your body. Otherwise, you're paying for expensive sewage waste for your toilet. --}}
 
-                            Water-soluble CBD products, like Yes.life, will actually deliver the bulk of the advertised milligrams of {{--CBD into your body and giving you--}}
+                            Water-soluble CBD products, like Yes.Life, will actually deliver the bulk of the advertised milligrams of {{--CBD into your body and giving you--}}
                             CBD into your body giving you the most value for your money.
                         </p>
                        

@@ -33,7 +33,7 @@
     ]) --}}
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section">
+    <div class="page-banner-section section banner100px" >
         <div class="container">
             <div class="row">
                 <div class="col">

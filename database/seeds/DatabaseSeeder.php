@@ -394,7 +394,7 @@ class DatabaseSeeder extends Seeder
            'stat'=> 1
         ]);  */
         
-        DB::table('permalink')->insert([
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 10003,
             'method'=> 'LIST',
             'description'=> 'Slug Description Template',
@@ -403,7 +403,55 @@ class DatabaseSeeder extends Seeder
             'family'=> 'Reports',
             'indexno'=> 2,
             'stat'=>1
-        ]);
+        ]); */
+
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7040,
+            'method'=> 'LIST',
+            'description'=> 'FAQs',
+            'route'=> 'faqs.index',
+            'type'=> 'B',
+            'family'=> 'Settings',
+            'indexno'=> 4,
+            'stat'=>1
+        ]); 
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7041,
+            'method'=> 'POST',
+            'description'=> 'Add New',
+            'route'=> 'faqs.create',
+            'type'=> 'C',
+            'family'=> 'faqs.index',
+            'indexno'=> 0,
+            'stat'=>1
+        ]); 
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7042,
+            'method'=> 'PUT',
+            'description'=> 'Edit',
+            'route'=> 'faqs.edit',
+            'type'=> 'C',
+            'family'=> 'faqs.index',
+            'indexno'=> 1,
+            'stat'=>1
+        ]); 
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7043,
+            'method'=> 'DELETE',
+            'description'=> 'Delete',
+            'route'=> 'faqs.delete',
+            'type'=> 'C',
+            'family'=> 'faqs.index',
+            'indexno'=> 2,
+            'stat'=>1
+        ]); 
+
+
+
 
     }
 

@@ -23,7 +23,7 @@
 
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Yes.Life CBD Store', 
+      'bannerheader'=>'<span style="text-transform:none;"> Yes.Life CBD Store </span>', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Shop'

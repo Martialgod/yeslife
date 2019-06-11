@@ -31,10 +31,12 @@
     <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div">
        
         <div class="container">
-            
+            <br><br>
             <div class="row">
 
                 <div class="row">
+
+
 
                     @foreach($certifications as $k1=> $v1)
 

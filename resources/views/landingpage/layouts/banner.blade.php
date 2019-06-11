@@ -1,12 +1,12 @@
 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
 
 <!-- Page Banner Section Start -->
-<div class="page-banner-section section">
+<div class="page-banner-section section banner100px">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="page-banner text-center">
-                    <h1 style="color:#3295c3;"> {{$bannerheader}} </h1>
+                    <h1 style="color:#3295c3;"> {!! $bannerheader !!} </h1>
                     <ul class="page-breadcrumb">
                         <li style="color:#3295c3;">
                             <a href="{{url($bannerurl)}}{{$refnourl}}">{{$bannerback}}</a>
