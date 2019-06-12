@@ -48,55 +48,6 @@
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-01a.jpg); margin-top: 80px;">
-                        <div class="container">
-                            <div class="row">
-                              
-                                <div class="hero-content-wrap col">
-                                    
-                                    <div class="hero-image" style="width:50%;">
-                                        {{--<img src="/landingpage/assets/images/slider/cbd-circle-flavor.png" alt=""  > --}}
-                                    </div>
-
-                                    <div class="hero-content text-center" >
-                                        
-                                        {{--<h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
-                                        </h2> --}}
-
-                                        <h2 id="" style="color:#fff;">
-                                           NOURISH YOUR BODY <br> WITH NATURE AND <br> LIVE YOUR BEST LIFE.
-                                        </h2>
-
-                                        <p id="" style="color:#fff; text-align:left">
-                                            
-                                            ✓ #1 Most-stable
-                                            ✓ Water-soluble ✓ Highest-absorbing
-                                            <br> 
-                                            ✓ Fast-acting
-                                            ✓ NO addictive chemicals added 
-                                            <br>
-
-                                            <a href="{{url('/shop')}}{{$refnourl}}">
-                                                <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
-                                            </a>
-                                            <br/>
-                                        </p>
-                                    </div><!--END hero-content text-center-->
-                                    
-                                </div><!--END hero-content-wrap col-->
-                                
-                            </div><!--END row -->
-                        </div><!--END container-->
-                    </div><!-- Hero Item End -->
-
-           
-                </div><!--END carousel-item active-->
-
-                <div class="carousel-item ">
-
-                    <!-- Hero Item Start -->
-                    {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
                     <div class="hero-item "  style="background-image: url(/landingpage/assets/images/slider/slide-02.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
@@ -112,13 +63,13 @@
                                         {{--<h2>
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2> --}}
+                                        {{--style="color:#3a95c2; font-size: 45px !important; line-height: 1; font-weight: 300; text-transform: none; "--}}
 
-                                        <h2 id="" style="color:#fbb055 ;">
+                                        <h1 id="" style="color:#fbb055;font-size: 35px !important; line-height: 1; font-weight: 300;">
                                             DON'T SETTLE FOR <br> INFERIOR HEMP CBD OIL!
+                                        </h1>
 
-                                        </h2>
-
-                                        <p id="" style="color:#fff; text-align:left">
+                                        <p id="" class="texs" style="color:#fff; text-align:left">
 
                                             We offer the most effective CBD engineered to work <br> with your body and can help you take back your health with the best nature has to offer.
                                             
@@ -132,9 +83,12 @@
                                             Nourish your body with nature’s best and live your best life.
 
                                             <div class="pull-left">
-                                                <a href="{{url('/shop')}}{{$refnourl}}">
+                                                {{--<a href="{{url('/shop')}}{{$refnourl}}">
                                                     <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
-                                                </a> 
+                                                </a>  --}}
+                                                <a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-success btn-lg" title="" style="background-color:#2da365;border-color: #2da365;">
+                                                    SHOP NOW
+                                                </a>
                                             </div>
                                          
 
@@ -147,46 +101,49 @@
                         </div><!--END container-->
                     </div><!-- Hero Item End -->
  
-                </div><!--END carousel-item-->
+                </div><!--END carousel-item active-->
 
 
                 <div class="carousel-item ">
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-03a.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide_03a.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
-                                <div class="hero-content-wrap col ">
+                                <div class="hero-content-wrap col">
                                     
-                                    
+                                    <div class="hero-image" style="width:50%;">
+                                        {{--<img src="/landingpage/assets/images/slider/cbd-circle-flavor.png" alt=""  > --}}
+                                    </div>
 
                                     <div class="hero-content text-center" >
                                         
                                         {{--<h2>
-                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
-                                        </h2> --}}
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/>
+                                        </h2> --}} 
 
-                                        <h2 id="" style="color:#3a95c2; font-size: 45px !important;">
-                                            HAND IN HAND WITH <br> NATURE AND SCIENCE
+                                        <h2 id="" style="color:#fbb055; text-align: center; font-size: 35px !important; line-height: 1; font-weight: 300;">
+                                           NOURISH YOUR <br> BODY  WITH NATURE <br> AND LIVE YOUR  <br>BEST LIFE.
                                         </h2>
 
-
-                                        <p id="" style="color:#000; text-align:left">
-                                            
-                                            {{--YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
-
+                                        <p id="" style="color:#fff; text-align:center">
                                             <br>
-                                            Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life. --}}
+                                            {{--✓ #1 Most-stable
+                                            ✓ Water-soluble ✓ Highest-absorbing
+                                            <br> 
+                                            ✓ Fast-acting
+                                            ✓ NO addictive chemicals added 
+                                            <br> --}}
 
-
-                                            <div class="pull-left">
-                                                <a href="{{url('/shop')}}{{$refnourl}}">
-                                                    <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
-                                                </a> 
-                                            </div>
-
+                                            {{--<a href="{{url('/shop')}}{{$refnourl}}">
+                                                <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
+                                            </a>--}}
+                                            <a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-success btn-lg" title="" style="background-color:#2da365;border-color: #2da365;">
+                                                SHOP NOW
+                                            </a>
+                                            <br/>
                                         </p>
                                     </div><!--END hero-content text-center-->
                                     
@@ -195,23 +152,68 @@
                             </div><!--END row -->
                         </div><!--END container-->
                     </div><!-- Hero Item End -->
-                  
-               
-                  
 
-                </div><!--END carousel-item-->
+           
+                </div><!--END carousel-item -->
 
 
-                <div class="carousel-item ">
+                <div class="carousel-item">
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide-04a.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide_01.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
                                 <div class="hero-content-wrap col ">
                                     
+                                    <div class="hero-image" style="width:50%;">
+                                        {{--<img src="/landingpage/assets/images/slider/cbd-circle-flavor.png" alt=""  > --}}
+                                    </div>
+
+
+                                    <div class="hero-content text-center" >
+                                        
+                                        {{--<h2>
+                                            <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
+                                        </h2> --}}
+
+                                        <h2 id="" style="color:#3a95c2;text-align: center;font-size: 35px !important; line-height: 1; font-weight: 300;">
+                                            HAND IN HAND WITH <br> NATURE AND <br> SCIENCE
+                                        </h2>
+
+
+                                        <p id="" style="color:#000; text-align:center">
+                                            <br>
+                                            {{--<a href="{{url('/shop')}}{{$refnourl}}">
+                                                <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
+                                            </a> --}}
+                                            <a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-success btn-lg" title="" style="background-color:#2da365;border-color: #2da365;">
+                                                SHOP NOW
+                                            </a>
+
+                                        </p>
+
+                                    </div><!--END hero-content text-center-->
+                                    
+                                </div><!--END hero-content-wrap col-->
+                                
+                            </div><!--END row -->
+                        </div><!--END container-->
+                    </div><!-- Hero Item End -->
+
+                </div><!--END carousel-item-->
+
+ 
+                <div class="carousel-item ">
+
+                    <!-- Hero Item Start -->
+                    {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide_02.jpg); margin-top: 80px;">
+                        <div class="container">
+                            <div class="row">
+                              
+                                <div class="hero-content-wrap col ">
                                     
 
                                     <div class="hero-content text-center" >
@@ -220,24 +222,27 @@
                                             <img src="/landingpage/assets/images/slider/b&w-top-logo_slide.png"/ >
                                         </h2> --}}
 
-                                        <h1 id="" style="color:#3a95c2; font-size: 45px !important; line-height: 1; font-weight: 300; ">
-                                            HEMP CBD OIL PRODUCTS <br> FOR LIFELONG HEALTH <br>AND HEALING
-                                        </h1>
+                                        {{--style="color:#3a95c2; font-size: 45px !important; line-height: 1; font-weight: 300; text-transform: none; "--}}
+                                        <h2 id="" style="color:#3a95c2; text-align: center; text-transform: none; font-size: 35px !important; line-height: 1; font-weight: 300;">
+                                           Not just for humans, <br> <br>PAWSTERITY™.
+                                        </h2>
 
 
-                                        <p id="" style="color:#000; text-align:left">
-                                            
+                                        <p id="" style="color:#000; text-align:center">
+                                            <br>
                                             {{--YES.Life strives to help you transform your health and discover <br> a happier life through the very best products.
 
                                             <br>
                                             Our Promise: to provide natural products as tools to help you to achieve <br> better health, live with more happiness, and transform your life. --}}
 
 
-                                            <div class="pull-left">
-                                                <a href="{{url('/shop')}}{{$refnourl}}">
-                                                    <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
-                                                </a> 
-                                            </div>
+                                            {{--<a href="{{url('/shop')}}{{$refnourl}}">
+                                                <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
+                                            </a> --}}
+                                            <a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-success btn-lg" title="" style="background-color:#8a8c8e;border-color: #8a8c8e;">
+                                                SHOP NOW
+                                            </a>
+                                         
 
                                         </p>
                                     </div><!--END hero-content text-center-->
@@ -275,14 +280,13 @@
 
     
     <!-- Product Section Start -->
-    <div class="product-section section pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20   page-banner-section section">
+    <div class="product-section section pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 page-banner-section section">
 
         <div class="container">
 
 
             @include('landingpage.layouts.yeslife-info-tabs')
 
-           
             <!-- Section Title Start -->
             <div class="row">
                 <div class="col">
@@ -325,7 +329,7 @@
 		                            <!-- Product Action -->
                                     @if( $v->qty > 0 )
                                         <div class="product-action">
-                                            <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                            <button type="submit" id="" style="background-color: #ffffff ;color:#222222; margin-bottom: 10px; " class="btn btn-default"> 
                                                 <span class="fa fa-shopping-cart" ></span> 
 
                                             </button>
@@ -347,24 +351,25 @@
 		                                <div class="top" style="height: 60px;">
 		                                    <h4 class="title">
 		                                    	<a href="{{url('/shop/'.$v->slug)}}{{$refnourl}}"> 
-		                                    		{{$v->name}} 
+		                                    		{{--$v->name--}}
+                                                    {{$v->groupname}} 
 		                                    	</a>
 		                                    </h4>
 		                                </div>
 
 		                                <!-- Price & Ratting -->
 		                                <div class="bottom">
-		                                    
-		                                    <span class="price">
 
-		                                    	${{$v->cartdiscountedprice}}
-		                                    	
-		                                    	@if( $v->cartdiscountedprice < $v->cartprice )
-		                                    		<span class="old">${{$v->cartprice}}</span>
-		                                    	@endif
+                                            <span class="price">
 
-		                                    </span>
+                                                <b>
+                                                    ${{$v->cartdiscountedprice}}
+                                                    @if( $v->cartdiscountedprice < $v->cartprice )
+                                                        <span class="old">${{$v->cartprice}}</span>
+                                                    @endif
+                                                </b>
 
+                                            </span>
 
 		                                    <span class="ratting">
                                                 <br>
@@ -376,23 +381,30 @@
 
 		                                </div><!--END bottom-->
 
+
                                        
                                         <!-- Product Action -->
                                         @if( $v->qty > 0 )
-                                            <div class="product-action text-center">
+
+                                            <div class="product-action">
+
                                                 <br>
-                                                <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
-                                                    Add to cart
+                                                <div style="text-align: center;">
 
-                                                </button>
+                                                    <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                        Add to cart
 
-                                                <button type="button" onclick="GlobalBuyNow('{{$v->pk_products}}', '1')" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
-                                                    Buy Now
-                                                </button>
+                                                    </button>
 
-                                            </div>
+                                                    <button type="button" onclick="GlobalBuyNow('{{$v->pk_products}}', '1')" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                        Buy Now
+                                                    </button>
 
-                                    
+                                                </div><!--END text-align: center;-->
+                                             
+
+                                            </div>{{--END product-action--}}
+
 
                                         @else
                                             <div class="product-action" class="btn btn-default" >

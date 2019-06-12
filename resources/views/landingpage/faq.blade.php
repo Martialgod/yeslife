@@ -29,7 +29,7 @@
     <!-- Contact Section Start -->
     <div class="blog-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50" id="main-div">
        
-        <div class="container">
+        <div class="container banner-free-sample">
 
             <div class="float-right" style="margin-top: -70px;">
                <div class="sidebar-search"> 

@@ -52,7 +52,7 @@
     <!-- Contact Section Start -->
     <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div">
        
-        <div class="container">
+        <div class="container ">
             
             <div class="row">
                 
@@ -61,10 +61,11 @@
                     <div class="contact-info">
                         <ul>
 
+
                             <li>
                                 <div class="row">
                                     <div class="col-md-2">
-                                      <i style="color:#3a95c2;" class="fa fa-globe fa-3x" aria-hidden="true"></i>
+                                      <i style="color:#3a95c2;" class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-md-10">
                                         <p>
@@ -78,7 +79,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col-md-2">
-                                      <i style="color:#3a95c2;" class="fa fa-phone fa-3x" aria-hidden="true"></i>
+                                      <i style="color:#3a95c2;" class="fa fa-phone fa-2x" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-md-10">
                                         <p>
@@ -92,17 +93,32 @@
                             <li>
                                 <div class="row">
                                     <div class="col-md-2">
-                                      <i style="color:#3a95c2;" class="fa fa-envelope-o fa-3x" aria-hidden="true"></i>
+                                      <i style="color:#3a95c2;" class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-md-10">
                                         <p>
-                                            info@yes.life <br>
+                                            info@yes.life 
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </li>
+
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                      <i style="color:#3a95c2;" class="fa fa-globe fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p>
                                             https://yes.life
                                         </p>
                                     </div>
                                     
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                 </div><!-- Contact Info End -->

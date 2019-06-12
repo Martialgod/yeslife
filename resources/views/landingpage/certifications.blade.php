@@ -1,6 +1,6 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Certifications')
+@section('title', 'YesLife Certificates')
 
 @section('meta')
 
@@ -21,10 +21,10 @@
 
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Certifications', 
+      'bannerheader'=>'Certificates', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'Certifications'
+      'bannercontent'=> 'Certificates'
     ])
 
     <!-- Contact Section Start -->
@@ -43,7 +43,7 @@
                         <div class="col-md-6">
 
 
-                            <a href="{{url('/certifications/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title="" target="_blank">
+                            <a href="{{url('/certificates/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title="" target="_blank">
                                                         
                                 @if( $v1->fk_products != null )
                                     <h4>Product</h4>
@@ -63,7 +63,7 @@
 
                                                 <b>
 
-                                                    <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
+                                                    <a href="{{url('/certificates/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
                                                         {{$v2->lotcode}}
                                                     </a> 
                                               

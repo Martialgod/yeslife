@@ -1,6 +1,6 @@
 @extends('landingpage.layouts.master')
 
-@section('title', 'YesLife Certifications Show')
+@section('title', 'YesLife Certificates Show')
 
 @section('meta')
 
@@ -21,10 +21,10 @@
 
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Certifications', 
+      'bannerheader'=>'Certificates', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'Certifications'
+      'bannercontent'=> 'Certificates'
     ])
 
     <!-- Contact Section Start -->

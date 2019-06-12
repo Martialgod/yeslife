@@ -146,10 +146,15 @@
 
 		        <div class="form-group">
 
-		        	<input type="checkbox" class="" id="cantfindstate" name="cantfindstate" {{ old('cantfindstate') == 'on' ? 'checked' : '' }}>
+		        	{{--<input type="checkbox" class="" id="cantfindstate" name="cantfindstate" {{ old('cantfindstate') == 'on' ? 'checked' : '' }}>
 			    	<label for="cantfindstate">
 			    		Can't find State?<span class="label-required">*</span>  
-			    	</label>
+			    	</label>--}}
+
+			    	<label for="States">
+			    		States<span class="label-required">*</span>  
+			    	</label> 
+
 
 			    	<div id="statesdropdowndiv" {{ old('cantfindstate') == 'on' ? 'hidden' : '' }}>
 		            	<select name="statesdropdown" id="statesdropdown" class="form-control" >

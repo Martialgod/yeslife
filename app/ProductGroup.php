@@ -19,7 +19,7 @@ class ProductGroup extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['name', 'description', 'fk_createdby', 'fk_updatedby', 'stat'];
+    protected $fillable = ['name', 'description', 'description2', 'fk_createdby', 'fk_updatedby', 'stat'];
 
 
     /**

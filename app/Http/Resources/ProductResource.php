@@ -18,6 +18,7 @@ class ProductResource extends Resource
             'productid'=> $this->pk_products,
             'groupname'=> $this->groupname,
             'groupdesc'=> $this->groupdesc,
+            'groupdesc2'=> $this->groupdesc2,
             'flavors'=> $this->flavors,
             'name'=> $this->name,
             'slug'=> $this->slug,
@@ -39,6 +40,7 @@ class ProductResource extends Resource
             'pictxa'=> $this->pictxa,
             'videoshare'=> $this->videoshare,
             'ratings'=> $this->ratings,
+            'ratings2'=> $this->ratings2,
         ];
         //return parent::toArray($request);
     }

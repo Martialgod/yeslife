@@ -4,6 +4,8 @@
 <div class="footer-top-section section bg-dark">
     <div class="container">
         <div class="footer-widget-wrap row">
+
+            
             
             <div class="col mb-40">
                 <div class="footer-widget">
@@ -45,7 +47,7 @@
                         <li><a href="{{url('/about-us')}}{{$refnourl}}">About Us</a></li>
                         <li><a href="#">Benefits</a></li>
                         <li><a href="{{url('/shop')}}{{$refnourl}}">Shop</a></li>
-                        <li><a href="{{url('/blog')}}{{$refnourl}}">Blog</a></li>
+                        <li><a href="{{url('/blog')}}{{$refnourl}}">Blogs</a></li>
                         <li><a href="{{url('/cartcheckout')}}{{$refnourl}}">My Cart</a></li>
                         <li><a href="{{url('/contact-us')}}{{$refnourl}}">Contact Us</a></li>
                         <li><a href="{{url('/myaccount/home')}}">My Account</a></li>
@@ -61,7 +63,7 @@
                     <ul>
                         <li><a href="{{url('/privacy-policy')}}{{$refnourl}}">Privacy Policy</a></li>
                         <li><a href="{{url('/terms-conditions')}}{{$refnourl}}">Terms & Conditions</a></li>
-                        <li><a href="{{url('/certifications')}}{{$refnourl}}">Certifications</a></li>
+                        <li><a href="{{url('/certificates')}}{{$refnourl}}">Certificates</a></li>
                         <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Promotional Offers</a></li>
                         <li><a href="{{url('/faq')}}{{$refnourl}}">FAQ</a></li>

@@ -123,8 +123,8 @@
                                 <div class="product-content">
                                     
                                     <div class="head" >
-                                        <!-- Title-->
-                                        <div class="top" style="height: 60px;">
+                                        <!-- Title--> {{--style="height: 60px;"--}}
+                                        <div class="top" >
                                             <h4 class="title">
                                                 <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}"> 
 
@@ -137,14 +137,13 @@
                                         
                                         <!-- Price & Ratting -->
                                         <div class="bottom" >
-                                            
+
+                                        
                                             <span class="price">
-
-                                                $@{{list.cartdiscountedprice}}
-
-                                                <span ng-if="list.cartdiscountedprice < list.cartprice" class="old">$@{{list.cartprice}}</span> 
-
-
+                                                <b>
+                                                    $@{{list.cartdiscountedprice}}
+                                                    <span ng-if="list.cartdiscountedprice < list.cartprice" class="old">$@{{list.cartprice}}</span> 
+                                                </b>
                                             </span>
 
                                             <span class="ratting">
@@ -152,31 +151,40 @@
                                                 <span ng-bind-html="list.stars_string"></span>
                                             </span>
 
+                                                
                                         </div><!--END bottom-->
-
 
                                        
                                         <!-- Product Action -->
-                                        <div class="product-action text-center" ng-if="list.qty > 0">
-                                            <br>
+                                        <div class="product-action" ng-if="list.qty > 0" >
 
-                                            {{--
-                                            <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
-                                                Add To Cart
+                                            <div style="text-align: center;">
 
-                                            </button> --}}
+                                                <br>
 
-                                            <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  title="">
-                                                Add To Cart
-                                            </a>
+                                                {{--
+                                                <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(list)" > 
+                                                    Add To Cart
+
+                                                </button> --}}
+
+                                                <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  title="">
+                                                    Add To Cart
+                                                </a>
 
 
 
-                                            {{--<button type="button" ng-click="vm.GlobalBuyNow(list)" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
-                                                Buy Now
-                                            </button> --}}
+                                                {{--<button type="button" ng-click="vm.GlobalBuyNow(list)" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                    Buy Now
+                                                </button> --}}
+                                                        
 
-                                        </div>
+                                                
+                                            </div><!--END text-align:center-->
+
+                                           
+
+                                        </div><!--END product-action-->
 
                                         <div class="product-action"  ng-if="list.qty <=0">
                                             <span class="badge badge-danger">Out of stock</span>
@@ -187,7 +195,8 @@
 
                                     <div class="body">
                                     
-                                        <div ng-bind-html="list.description"></div>
+                                        {{--<div ng-bind-html="list.description"></div> --}}
+                                        <div ng-bind-html="list.groupdesc"></div>
 
                                         <br>
 

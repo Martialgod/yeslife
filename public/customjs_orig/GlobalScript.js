@@ -353,6 +353,13 @@ $(".swa-confirm").on("submit", function(e) {
 
 });
 
+function toastr_item_added_to_cart(){
+  //toastr.success('Item added to your cart');
+  toastr.success('Item added to your cart', '', {
+      'iconClass': 'toast-success'
+  }).css("width","100%");
+}
+
 
 //class name
 $('.add-to-cart').submit(function(e){
@@ -369,6 +376,7 @@ $('.add-to-cart').submit(function(e){
 
   addCartCookie(products);
 
+  toastr_item_added_to_cart(); //@GlobalScript.js
 
 
 });//END add-to-cart

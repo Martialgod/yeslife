@@ -211,6 +211,9 @@
 
 			vm.CalculateTotal();
 
+			
+  			toastr_item_added_to_cart(); //@GlobalScript.js
+
 
 		};//END AddToCart
 

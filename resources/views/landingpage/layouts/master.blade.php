@@ -138,6 +138,10 @@
 
     <link href="/select2/select2.min.css" rel="stylesheet" type="text/css" />
 
+    <script type="text/javascript">
+        
+    </script>
+
 
 
     <style type="text/css" media="screen">
@@ -199,6 +203,12 @@
                 font-size: 14px;
             }
 
+            .toast-success {
+                background-color: #2da365;
+                color: #000;
+                font-size: 14px;
+            }
+
             .toast-broadcast .toast-title {
               color: #000;
             }
@@ -208,13 +218,41 @@
             }
 
             .banner100px{
-                margin-bottom: -100px;
+                margin-bottom: -80px;
+            }
+
+
+           .cd-top--is-visible { 
+              visibility: visible;
+              opacity: 1;
+            }
+
+            .cd-top--fade-out {
+              opacity: .5;
+            }
+
+            #backToTop{
+                position: fixed;
+                bottom: 50px;
+                float: right;
+                left: 92%;
+                width: auto;
+                font-size: 14px;
+                background-color: transparent;
+                padding: 2px;
+                border-radius: 4px;
+                z-index: 1000;
+                color:#8a8c8e;
+
             }
 
 
 
 
+
     </style>
+
+
 
 
     @yield('optional_styles')
@@ -224,6 +262,12 @@
 </head>
 
 <body style="" ><!--#f5f7f9-->
+
+    <!-- all your content here --> 
+    <button id="backToTop" class=cd-top text-replace js-cd-top" hidden> 
+        <i class="fa fa-long-arrow-up fa-3x" aria-hidden="true"></i>TOP
+    </button>
+
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M82X8X4"
@@ -262,7 +306,7 @@
 
     <div class="main-wrapper">
 
-
+        
 
         @include('landingpage.layouts.header')
 
@@ -270,17 +314,8 @@
         @yield('content-body')
 
 
-
         @include('landingpage.layouts.subscription')
         
-        
-        {{--<form action="https://app.leaddyno.com/provision" method="post">
-          Enter Email: <input name="email"/ required="">
-          <input type="hidden" name="key" value="4e4aa7fc362a674eec1a9780884d24f3799edc09"/>
-          <input type="submit" value="Join Our Affiliate Program"/>
-        </form> --}}
-    
-
 
         @include('landingpage.layouts.services')
 
@@ -381,9 +416,34 @@
 
     </script>
 
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $('#backToTop').prop('hidden', false);
+            $('#backToTop').fadeOut(0); 
+        });
+        // ===== Scroll to Top ==== 
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 500) {        // If page is scrolled more than 50px
+                $('#backToTop').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#backToTop').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+
+        $('#backToTop').click(function() {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 500);
+        });
+
+
+    </script>
+
     
 
-    @if( session('yeslife_legal_age') != 'yes' )
+    {{--@if( session('yeslife_legal_age') != 'yes' )
 
         <script type="text/javascript">
         
@@ -408,7 +468,7 @@
         </script>
 
 
-    @endif
+    @endif --}}
     
 
 

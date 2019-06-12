@@ -13,6 +13,7 @@
 		var vm = this;
 
 		vm.pk_products = $('#productid').val();
+		vm.fk_productgroup = $('#productgroup').val();
 
 		vm.search = null;
 		vm.mscproducts = [];
@@ -48,7 +49,7 @@
 					vm.currentproduct = data.products;
 					vm.mscflavors = data.flavors;
 
-					vm.totalreviews = data.totalreviews;
+					//vm.totalreviews = data.totalreviews;
 
 					vm.StringifyStars();
 
@@ -81,9 +82,10 @@
 		vm.StringifyStars = function(){
 
 			//format stars
-	
+		
+			//vm.currentproduct.ratings
 			vm.currentproduct.stars_string = '';
-			for( var x = 1; x<=vm.currentproduct.ratings; x++ ){
+			for( var x = 1; x<=vm.currentproduct.ratings2; x++ ){
 				vm.currentproduct.stars_string += '<i class="fa fa-star"></i>';
 			}
 		
@@ -93,16 +95,30 @@
 
 
 		vm.AddToCart = function(list){
-			//console.log(list);
+			
+			if(vm.selectedflavor == null){
+				toastr.error('Please select a flavor');
+				return;
+			}
+
 			var products = {
 				'productid': list.pk_products,
 				'qty': 1,
 			};
 			addCartCookie(products); //@GlobalScript.js
 
+
+  			toastr_item_added_to_cart(); //@GlobalScript.js
+
 		};//END AddToCart
 
 		vm.GlobalBuyNow = function(list){
+
+			if(vm.selectedflavor == null){
+				toastr.error('Please select a flavor');
+				return;
+			}
+
 
 			GlobalBuyNow(list.pk_products,1); //@GlobalScript.js
 
@@ -113,8 +129,11 @@
 		vm.LoadReviews = function(url){
 
 			//console.log(url);
+			
+			//var url = ( url ) ? url : '/shop/'+vm.selectedflavor+'/reviews?v='+Math.random();
+			
+			var url = ( url ) ? url : '/shop/'+vm.fk_productgroup+'/reviews?v='+Math.random();
 
-			var url = ( url ) ? url : '/shop/'+vm.selectedflavor+'/reviews?v='+Math.random();
 
 			vm.mscreviews = [];
 

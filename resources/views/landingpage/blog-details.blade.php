@@ -25,15 +25,15 @@
 @section('content-body')
     
 
-    {{--@include('landingpage.layouts.banner', [
-      'bannerheader'=> 'Blog', 
+    @include('landingpage.layouts.banner', [
+      'bannerheader'=> 'Blogs', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
       'bannercontent'=> 'Blog'
-    ]) --}}
+    ])
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section banner100px" >
+    {{--<div class="page-banner-section section banner100px" >
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -50,7 +50,7 @@
                 </div><!--END col-->
             </div><!--END row-->
         </div><!--END container-->
-    </div><!-- Page Banner Section End -->
+    </div><!-- Page Banner Section End --> --}}
 
 
 

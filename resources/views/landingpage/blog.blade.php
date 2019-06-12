@@ -31,119 +31,85 @@
   
 
 
-    <div class="blog-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50">
+    <div class="blog-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50" style="margin-top: 40px;">
 
         <div class="container">
 
-            <div class="row">
+            @if( count($blogs) > 0 )
 
-                <div class="col-xl-9 col-lg-8 col-12 order-2 order-lg-2 mb-sm-50 mb-xs-50">
-
+                @foreach($blogs as $key=> $a)
 
                     <div class="row">
 
-                        @if( count($blogs) > 0 )
+                        <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50">
 
-                            @foreach( $blogs as $key=> $a )
+                            <h3 class="title">
+                                <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="color:#3a95c2 !important;">
+                                    {{$a->name}}
+                                </a>
+                            </h3>
 
-                                <div class="col-lg-12 col-12 mb-30">
+                            <p>
+                                By {{$a->sourcename}} | {{ date_format( date_create($a->sourcedate), 'd F Y' ) }}
+                            </p>
 
-                                    {{-- 
-                                        #f7eadc
-                                        border: #3295c3 1px solid;border-bottom-style: solid;border-bottom-color: #fbb055;border-left-color:#fbb055; 
-                                    --}}
-                                    <div class="blog-item" style="background-color:#b1eaf9;">
-                                       
-                                        {{--<a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(storagelink/{{$a->pictx}});" >
+                
 
-                                            <img src="{{asset('/storagelink/'.$a->pictx)}}" alt="">
+                            <p style="color:#222222 !important;">
 
-                                        </a> 3a95c2--}}
+                                {!! $a->summary !!}
 
-                                        <a class="image" href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="background-image: url(/landingpage/assets/images/faviconv2-02.png); background-color:#3a95c2;background-size:80%;"  >
+                            </p>
 
-                                            <img src="/landingpage/assets/images/faviconv2-02.png" alt="">
-
-                                        </a>
-
-                                      
-                                        <div class="content" style="margin: -25px auto;" >
-
-                                            <h3 class="title">
-                                                <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" style="color:#222222 !important;">
-                                                    {{$a->name}}
-                                                </a>
-                                            </h3>
-
-                                            <ul class="blog-meta" >
-                                                <li style="color:#222222 !important;">
-                                                    By {{$a->sourcename}}
-                                                </li>
-                                                <li style="color:#222222 !important;">
-                                                    {{ date_format( date_create($a->sourcedate), 'd F Y' ) }}
-                                                </li>
-                                            </ul>
-
-                                            <p style="color:#222222 !important;">
-
-                                                {!! $a->summary !!}
-
-                                            </p>
+                            <p style="color:#fbb055  !important;">
+                                <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" class="read-more" >
+                                    <b> READ MORE... </b>
+                                </a>
+                            </p>
 
 
-
-                                            <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" class="read-more" style="color:#222222 !important;">read more...</a>
-
-                                        </div><!--END content-->
-
-                                    </div><!--END blog-item-->
-
-                                </div><!--END col-lg-6 col-12 mb-30-->
-
-
-
-                            @endforeach
                             
-                        @else
+                            
+                        </div><!--END col-md-6-->
 
-                            <div class="col-md-2"></div>                   
-                            <div class="">     
-                                <img src="/adminpage/images/nosearchfound.png" alt="">
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50" style="margin-bottom: 50px;">
+                            
+                            <a href="{{url('/blog/'.$a->slug)}}{{$refnourl}}" class="read-more" >
+                                <img width="720" height="80%" src="{{asset('/storagelink/'.$a->pictx)}}" alt="">
+                            </a>
 
-                        @endif
+                        </div><!--END col-md-6-->
+
                       
-                        
+
                     </div><!--END row-->
 
+                @endforeach
 
-                    <div class="">
+            @else
 
-                        @if(count($blogs) > 0)
-                     
-                            {{ $blogs->appends(
-                                ['search' => $search,'tags'=> $tags]
-                            )->links() }}
-                         
-                        @endif
-                   
+                <div class="row">
+                    <div class="col-md-4"></div>                   
+                    <div class="col-md-4">     
+                        <img src="/adminpage/images/nosearchfound.png" alt="">
                     </div>
+                </div>
 
+            @endif
 
-                </div><!--END col-lg-8 col-12 order-1 mb-sm-50 mb-xs-50-->
+            <div class="row">
 
-
-
-                <div class="col-xl-3 col-lg-4 col-12 order-1 order-lg-1 pr-30 pr-sm-15 pr-md-15 pr-xs-15">
-                    
-                    @include('landingpage.blog-search')
-
-                    @include('landingpage.blog-tags')
-
-
-                </div><!--END col-lg-4 col-12 order-2 pl-30 pl-sm-15 pl-md-15 pl-xs-15-->
+                <br>
+                @if(count($blogs) > 0)
+             
+                    {{ $blogs->appends(
+                        ['search' => $search,'tags'=> $tags]
+                    )->links() }}
+                 
+                @endif
+           
                 
-            </div><!--END row-->
+            </div>
 
 
         </div><!--END container-->

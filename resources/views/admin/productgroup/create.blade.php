@@ -43,6 +43,12 @@
 		          		            
 		        </div>
 
+		         <div class="form-group">
+	                <label for="description2">Other Description <span class="label-required"></span> </label>
+	                <textarea class="form-control trumbowyg" id="description2" name="description2" placeholder="" style="resize: none;" >{{old('description2')}}</textarea>
+		          		            
+		        </div>
+
 
                 <br>
 		    	@include('admin.layouts.buttonsubmit')

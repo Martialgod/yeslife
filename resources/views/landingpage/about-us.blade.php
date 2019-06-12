@@ -21,12 +21,12 @@
 
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section banner100px">
+    <div class="page-banner-section section banner100px ">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="page-banner text-center">
-                        <h1 style="color:#3295c3; font-size: 42px; text-align: center; text-transform: none;"> 
+                        <h1 style="color:#3295c3; font-size: 42px; text-align: center;"> 
                             About Us
                         </h1>
                     </div><!--END page-banner-->
@@ -52,7 +52,7 @@
         <div class="about-shape one rellax" data-rellax-speed="-5" data-rellax-percentage="0.5"><img src="/landingpage/assets/images/shape/about-shape-1.png" alt=""></div>
         <div class="about-shape two rellax" data-rellax-speed="3" data-rellax-percentage="0.5"><img src="/landingpage/assets/images/shape/about-shape-2.png" alt=""></div>
        
-        <div class="container">
+        <div class="container " >
 
             <div class="row">
 

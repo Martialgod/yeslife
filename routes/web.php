@@ -117,8 +117,8 @@ Route::get('/terms-conditions', 'LandingPageController@terms_conditions');
 Route::get('/privacy-policy', 'LandingPageController@privacy_policy');
 
 // ?refno=33213 -- optional for referral 
-Route::get('/certifications', 'LandingPageController@certifications');
-Route::get('/certifications/{id}/{lotcode?}', 'LandingPageController@certifications_show');
+Route::get('/certificates', 'LandingPageController@certifications');
+Route::get('/certificates/{id}/{lotcode?}', 'LandingPageController@certifications_show');
 
 // ?refno=33213 -- optional for referral 
 Route::get('/free-sample', 'FreeSampleController@index'); 

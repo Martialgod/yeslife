@@ -270,6 +270,16 @@ class ShopController extends Controller
             return redirect('/404');
         }
 
+        //admin or businespartner only
+        if( $products->fk_productgroup == 1 && !Auth::check() ){
+
+           return redirect('/404');
+
+        }else if( $products->fk_productgroup == 1 && Auth::check()  && (Auth::user()->fk_usertype != '1000' && Auth::user()->fk_usertype != '1010')  ){
+            return redirect('/404');
+        }
+
+
         $pricelist = ProductPriceListMstrView::getProductPriceList($products->pluck('pk_products'));
 
         $products = ProductPriceListMstrView::mapProductPriceList($products, $pricelist);
@@ -283,7 +293,10 @@ class ShopController extends Controller
 
         //dd($flavors);
 
-        $gallery = ProductPix::where('fk_products', $products->pk_products)->get();
+        //$gallery = ProductPix::where('fk_products', $products->pk_products)->get();
+        $gallery = Product::where('fk_productgroup', $products->fk_productgroup)
+                ->where('stat', 1)
+                ->pluck('pictxa');
 
         $reviews = ProductReviewMstrView::where('fk_products', $products->pk_products)
         			->orderBy('created_at', 'DESC')->paginate(1);
@@ -358,9 +371,14 @@ class ShopController extends Controller
         //
 
         //active tab
-        $products = ProductMstrView::findOrFail($id);
+        //$products = ProductMstrView::findOrFail($id);
 
-        $reviews = ProductReviewMstrView::where('fk_products', $products->pk_products)
+        //review per item
+        /*$reviews = ProductReviewMstrView::where('fk_products', $products->pk_products)
+                    ->orderBy('created_at', 'DESC')->paginate(10); */
+
+        //review per group
+        $reviews = ProductReviewMstrView::where('fk_productgroup', $id)
                     ->orderBy('created_at', 'DESC')->paginate(10);
 
         return ProductReviewsResource::collection($reviews);
@@ -399,7 +417,7 @@ class ShopController extends Controller
         if( $validator === true ){
 
             //begin transaction
-            $transaction = DB::transaction(function() use($request, $id) {
+            $transaction = DB::transaction(function() use($request, $id, $products) {
 
                 $request['fk_createdby'] = $request['fk_users'];
                 $request['fk_uptadeteby'] = $request['fk_users'];
@@ -418,8 +436,11 @@ class ShopController extends Controller
 
                 return ProductReviewsResource::collection($reviews);*/
 
-                return $this->apireviews($request, $id);
+                //per item
+                //return $this->apireviews($request, $id);
 
+                //per group
+                return $this->apireviews($request, $products->fk_productgroup);
 
 
             });//END transaction

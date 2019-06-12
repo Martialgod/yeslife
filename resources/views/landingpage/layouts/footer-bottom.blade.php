@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row align-items-center">
             
+            
             <div class="copyright col-lg-6 col-12">
                 <p>Copyright &copy; <a href="#">yes.life</a>, All Rights Reserved</p>
 

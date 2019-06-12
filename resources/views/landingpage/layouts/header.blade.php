@@ -43,7 +43,7 @@
                         @endif
                         
 
-                        <li><a href="{{url('/blog')}}{{$refnourl}}">BLOG</a></li>
+                        <li><a href="{{url('/blog')}}{{$refnourl}}">BLOGS</a></li>
 
                         @php
                             if( !$refnourl ){
