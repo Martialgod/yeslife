@@ -323,7 +323,7 @@
 
 		                            <!-- Image -->
 		                            <a href="{{url('/shop/'.$v->slug)}}{{$refnourl}}" class="image">
-		                            	<img style="" src="{{asset('/storagelink/'.$v->pictxa)}}"alt="">
+		                            	<img style="" height="260px" src="{{asset('/storagelink/'.$v->pictxa)}}"alt="">
 		                            </a>
 
 		                            <!-- Product Action -->

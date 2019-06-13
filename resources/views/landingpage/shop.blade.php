@@ -81,13 +81,13 @@
                         <div class="col-xl-4 col-lg-4 col-sm-6 col-12 mb-30"  ng-repeat="list in vm.mscproducts">
                             
                             {{--product-item grid--}}
-                            <div id="div-product-item" class="product-item list">
+                            <div id="div-product-item" class="product-item list" >
                                 
                                 <!-- Image -->
                                 <div class="product-image">
                                     <!-- Image -->
                                     <a ng-href="{{url('/shop/')}}/@{{list.slug}}{{$refnourl}}"> 
-                                        <img style="" ng-src="{{asset('/storagelink')}}/@{{list.pictxa}}" alt="">
+                                        <img style="" height="260px" ng-src="{{asset('/storagelink')}}/@{{list.pictxa}}" alt="">
                                     </a>
 
 
@@ -132,12 +132,20 @@
                                                     {{--@{{list.name}}--}}
                                                     @{{list.groupname}} 
 
+
                                                 </a>
                                             </h4>
                                         </div>
                                         
                                         <!-- Price & Ratting -->
                                         <div class="bottom" >
+
+                                            <span class="price">
+                                                <b>
+                                                    $@{{list.cartdiscountedprice}}
+                                                    <span ng-if="list.cartdiscountedprice < list.cartprice" class="old">$@{{list.cartprice}}</span> 
+                                                </b>
+                                            </span>
 
                                             <span class="ratting">
                                                 <br>
@@ -148,20 +156,6 @@
                                                 
                                         </div><!--END bottom-->
 
-                                         <!-- Price & Ratting -->
-                                        <div class="bottom" >
-
-                                            <span class="price">
-                                                <b>
-                                                    $@{{list.cartdiscountedprice}}
-                                                    <span ng-if="list.cartdiscountedprice < list.cartprice" class="old">$@{{list.cartprice}}</span> 
-                                                </b>
-                                            </span>
-
-                                           
-
-                                                
-                                        </div><!--END bottom-->
 
                                        
                                         <!-- Product Action -->
