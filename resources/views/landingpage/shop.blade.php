@@ -116,6 +116,7 @@
                                         </div>
                                     </div>
 
+
                  
                                 </div><!--END product-image-->
 
@@ -138,7 +139,18 @@
                                         <!-- Price & Ratting -->
                                         <div class="bottom" >
 
-                                        
+                                            <span class="ratting">
+                                                <br>
+                                                <span ng-bind-html="list.stars_string"></span>
+                                            </span>
+
+                                          
+                                                
+                                        </div><!--END bottom-->
+
+                                         <!-- Price & Ratting -->
+                                        <div class="bottom" >
+
                                             <span class="price">
                                                 <b>
                                                     $@{{list.cartdiscountedprice}}
@@ -146,10 +158,7 @@
                                                 </b>
                                             </span>
 
-                                            <span class="ratting">
-                                                <br>
-                                                <span ng-bind-html="list.stars_string"></span>
-                                            </span>
+                                           
 
                                                 
                                         </div><!--END bottom-->
