@@ -116,7 +116,7 @@ class ShopController extends Controller
         }
 
 
-        $products->where('stat', 1);
+        $products->where('stat', 1)->where('groupstat', 1);
 
 
         if( $shoptype == 'businesspartners' ){

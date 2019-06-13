@@ -123,9 +123,9 @@
                                 <!-- Content -->
                                 <div class="product-content">
                                     
-                                    <div class="head" >
+                                    <div class="head">
                                         <!-- Title--> {{--style="height: 60px;"--}}
-                                        <div class="top" >
+                                        <div class="top" style="height: 80px;" >
                                             <h4 class="title">
                                                 <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}"> 
 
