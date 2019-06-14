@@ -217,10 +217,7 @@
               color: #000;
             }
 
-            .banner100px{
-                margin-bottom: -80px;
-            }
-
+         
 
            .cd-top--is-visible { 
               visibility: visible;
@@ -245,9 +242,6 @@
                 color:#8a8c8e;
 
             }
-
-
-
 
 
     </style>

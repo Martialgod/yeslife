@@ -20,10 +20,10 @@
 @section('content-body')
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'FAQ', 
+      'bannerheader'=>'<span style="text-transform:none;">FAQs</span>', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'FAQ'
+      'bannercontent'=> 'FAQs'
     ])
 
     <!-- Contact Section Start -->

@@ -63,10 +63,10 @@
                     <ul>
                         <li><a href="{{url('/privacy-policy')}}{{$refnourl}}">Privacy Policy</a></li>
                         <li><a href="{{url('/terms-conditions')}}{{$refnourl}}">Terms & Conditions</a></li>
-                        <li><a href="{{url('/certificates')}}{{$refnourl}}">Certificates</a></li>
+                        <li><a href="{{url('/certifications')}}{{$refnourl}}">Certifications</a></li>
                         <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Promotional Offers</a></li>
-                        <li><a href="{{url('/faq')}}{{$refnourl}}">FAQ</a></li>
+                        <li><a href="{{url('/faqs')}}{{$refnourl}}">FAQs</a></li>
 
                     </ul>
                 </div>

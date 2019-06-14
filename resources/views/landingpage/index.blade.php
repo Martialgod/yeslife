@@ -86,7 +86,7 @@
                                                 {{--<a href="{{url('/shop')}}{{$refnourl}}">
                                                     <img src="/landingpage/assets/images/30-days-btn-02.png" alt="" />
                                                 </a>  --}}
-                                                <a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-success btn-lg" title="" style="background-color:#2da365;border-color: #2da365;">
+                                                <a href="{{url('/shop')}}{{$refnourl}}" class="btn btn-success btn-lg" title="" style="background-color:#2da365;border-color: #2da365; "> 
                                                     SHOP NOW
                                                 </a>
                                             </div>
@@ -108,7 +108,7 @@
 
                     <!-- Hero Item Start -->
                     {{--url(/landingpage/assets/images/slider/slider-bg-1.jpg) --}}
-                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide_03a.jpg); margin-top: 80px;">
+                    <div class="hero-item" style="background-image: url(/landingpage/assets/images/slider/slide_03b.jpg); margin-top: 80px;">
                         <div class="container">
                             <div class="row">
                               
@@ -371,13 +371,13 @@
 
                                             </span>
 
-		                                    <span class="ratting">
+		                                    {{--<span class="ratting">
                                                 <br>
 		                                    	@for( $i=0; $i<$v->ratings; $i++ )
 		                                    		<i class="fa fa-star"></i>
 		                                    	@endfor
 		    
-		                                    </span>
+		                                    </span>--}}
 
 		                                </div><!--END bottom-->
 
@@ -391,13 +391,13 @@
                                                 <br>
                                                 <div style="text-align: center;">
 
-                                                    <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
-                                                        Add to cart
+                                                    <button type="submit" id="" style="background-color: #feeeda;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                        ADD TO CART
 
                                                     </button>
 
-                                                    <button type="button" onclick="GlobalBuyNow('{{$v->pk_products}}', '1')" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
-                                                        Buy Now
+                                                    <button type="button" onclick="GlobalBuyNow('{{$v->pk_products}}', '1')" style="background-color:#feeeda;color:#222222; margin-bottom: 10px;" class="btn btn-default"  > 
+                                                        BUY NOW
                                                     </button>
 
                                                 </div><!--END text-align: center;-->
@@ -407,9 +407,11 @@
 
 
                                         @else
-                                            <div class="product-action" class="btn btn-default" >
+
+                                            <div class="product-action " style="text-align: center;" class="btn btn-default" >
                                                 <span class="badge badge-danger">Out of stock</span>
                                             </div>
+
                                         @endif
 
 

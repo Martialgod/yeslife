@@ -39,7 +39,7 @@ class OrderBroadcast extends Model
 	    	->where('users.id', '<>', 1000) //do not include Super Administrator
 	    	->where('users.id', '<>', $ordermstr->fk_users) //do not include the owner of the order
 	    	->orderBy('fullname', 'ASC')
-	    	->paginate(50); //50
+	    	->paginate(10); //10
 
 	   return $unbroadcastusers;
    

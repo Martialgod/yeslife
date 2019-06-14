@@ -92,11 +92,15 @@
 
                                 <div class="product-slider single-product-thumb-slider-syn ">
 
-                                    @foreach($gallery as $v)
-                                        <div class="item">
-                                            <img style="" ng-src="{{asset('/storagelink/'.$v)}}" alt="">
-                                        </div>
-                                    @endforeach
+                                        @foreach($gallery as $v)
+
+                                            <div class="item" style="height: 110px;">
+                                                <img style="" height="100%" width="100%" ng-src="{{asset('/storagelink/'.$v)}}" alt="">
+                                            </div>
+
+                                        @endforeach
+
+                                        <div class="item"></div>
 
                                 </div><!--END product-slider-->
 
@@ -129,16 +133,16 @@
                                     <!-- Price & Ratting -->
                                     <div class="bottom" >
                                         
-                                        <span class="ratting">
+                                        <!--<span class="ratting">
                                             <span ng-bind-html="vm.currentproduct.stars_string"> </span>
                                             
                                             {{--totalreviews--}}
                                             <span ng-if="vm.mscreviews.length > 0"> 
                                                 &nbsp; (@{{vm.mscreviews.length}} Reviews)
-                                            </span>
+                                            </span> 
 
-                                            <span ng-if="vm.mscreviews.length == 0"> (Be the first to review this product) </span>
-                                        </span>
+                                            <span ng-if="vm.mscreviews.length == 0"> (Be the first to review this product) </span> 
+                                        </span> -->
 
                                     </div><!--END bottom-->
 
@@ -164,6 +168,7 @@
                                         <div ng-bind-html="vm.currentproduct.description"></div>
                                     @else
                                         <div ng-bind-html="vm.currentproduct.groupdesc"></div>
+                                        <div ng-bind-html="vm.currentproduct.groupdesc2"></div>
                                     @endif
 
                                     <hr style="border-color:#fbb055; border-width: 3px;">
@@ -185,21 +190,19 @@
 
                                     @endif
 
-                                    
+         
                                     <br>
-                                    	
                                     <!-- Product Action -->
                                     <div class="product-action " ng-if="vm.currentproduct.qty > 0">
-                                        <br>
-
-                                        <button type="submit" id="" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(vm.currentproduct)" ng-disabled="vm.selectedflavor == null" > 
-                                            Add To Cart
+                                        
+                                        <button type="submit" id="" style="background-color:#feeeda;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-click="vm.AddToCart(vm.currentproduct)" ng-disabled="vm.selectedflavor == null" > 
+                                            ADD TO CART
 
                                         </button>
 
 
-                                        <button type="button" ng-click="vm.GlobalBuyNow(vm.currentproduct)" style="background-color: #ffffff;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-disabled="vm.selectedflavor == null" > 
-                                            Buy Now
+                                        <button type="button" ng-click="vm.GlobalBuyNow(vm.currentproduct)" style="background-color:#feeeda;color:#222222; margin-bottom: 10px;" class="btn btn-default" ng-disabled="vm.selectedflavor == null" > 
+                                            BUY NOW
                                         </button>
                                        
 
@@ -223,18 +226,18 @@
                         
                         <li>
                         	<a class="active" data-toggle="tab" href="#description">
-                        		Description
+                        		<strong> Product Description </strong>
                         	</a>
                         </li>
 
 
-                        <li>
+                        <!--<li>
                         	<a data-toggle="tab" href="#reviews">
                         		{{--Reviews (<span id="totalreviewcount">@{{vm.totalreviews}}</span>)--}}
                                 Reviews (<span id="totalreviewcount">@{{vm.mscreviews.length}})
 
                         	</a>
-                        </li>
+                        </li> -->
 
                     </ul><!--END product-details-tab-list nav-->
 
@@ -246,14 +249,14 @@
                             @if( $products->fk_productgroup == 1 )
                                 <div ng-bind-html="vm.currentproduct.description"></div>
                             @else
-                                <div ng-bind-html="vm.currentproduct.groupdesc2"></div>
+                                <div ng-bind-html="vm.currentproduct.groupdesc3"></div>
                             @endif
 
                         
                         </div><!--END description-->
 
 
-                        <div class="tab-pane " id="reviews">
+                        {{--<div class="tab-pane " id="reviews">
                             
                             <div class="review-list" ng-repeat="list in vm.mscreviews">
 
@@ -267,9 +270,7 @@
 	                                    	</span>
 	                                    </h4>
 	                                    <div class="ratting">
-	                                    	
 	                                    	<span ng-bind-html="list.stars_string"></span>
-	                                    	
 	                                    </div>
 	                                    <div class="desc">
 	                                        <span ng-bind-html="list.comments"></span>
@@ -311,8 +312,7 @@
 				            </div><!--END row mt-20-->
 
 						    <br><br>
-                                
-                            
+
                             <div class="review-form">
 
 					        	@if(Auth::check())
@@ -373,12 +373,9 @@
 
 					        	@endif
 
-
-
-
                             </div><!--END review-form-->
                             
-                        </div><!--END tab-pane-->
+                        </div><!--END tab-pane--> --}}
 
                     </div><!--END product-details-tab-content tab-content-->
 

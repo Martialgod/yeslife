@@ -307,7 +307,7 @@ class LandingPageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function faq()
+    public function faqs()
     {
         //
 
@@ -331,7 +331,7 @@ class LandingPageController extends Controller
 
         $faqreferences = GlobalMessage::findOrFail(3000);
 
-        return view('landingpage.faq', compact('faqs', 'faqreferences', 'search'));
+        return view('landingpage.faqs', compact('faqs', 'faqreferences', 'search'));
 
     
     }//END faq

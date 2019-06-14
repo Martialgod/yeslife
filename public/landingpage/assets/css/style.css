@@ -385,6 +385,11 @@ input::placeholder, textarea::placeholder {
     .page-banner-section {
       padding: 125px 0 35px; } }
 
+ .banner100px{
+        margin-top: -60px;
+        margin-bottom: -140px;
+    }
+
 /*-- Page Banner --*/
 .page-banner h1 {
   font-size: 42px;
@@ -394,15 +399,24 @@ input::placeholder, textarea::placeholder {
   margin-bottom: 10px; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .page-banner h1 {
-      font-size: 36px; } }
+      font-size: 36px; } 
+    } 
   @media only screen and (max-width: 767px) {
     .page-banner h1 {
       font-size: 30px;
-      margin-bottom: 10px; } }
+      margin-bottom: 10px; } 
+    .banner100px {
+      margin-top: 20px !important;
+      margin-bottom: -50px !important; } 
+    }
   @media only screen and (max-width: 575px) {
     .page-banner h1 {
       font-size: 24px;
-      margin-bottom: 10px; } }
+      margin-bottom: 10px; } 
+    .banner100px {
+      margin-top: 20px !important;
+      margin-bottom: -50px !important; } 
+    }
 
 /*-- Page Breadcrumb --*/
 .page-breadcrumb {

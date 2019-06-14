@@ -19,6 +19,7 @@ class ProductResource extends Resource
             'groupname'=> $this->groupname,
             'groupdesc'=> $this->groupdesc,
             'groupdesc2'=> $this->groupdesc2,
+            'groupdesc3'=> $this->groupdesc3,
             'flavors'=> $this->flavors,
             'name'=> $this->name,
             'slug'=> $this->slug,

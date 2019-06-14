@@ -39,14 +39,20 @@
                 </div>
 
                 <div class="form-group">
-	                <label for="description">Product Description <span class="label-required"></span> </label>
+	                <label for="description">Product Description 1<span class="label-required"></span> </label>
 	                <textarea class="form-control trumbowyg" id="description" name="description" placeholder="" style="resize: none;" >{{$productgroup->description}}</textarea>
 		          		            
 		        </div>
 
 		        <div class="form-group">
-	                <label for="description2">Other Description <span class="label-required"></span> </label>
+	                <label for="description2">Product Description 2<span class="label-required"></span> </label>
 	                <textarea class="form-control trumbowyg" id="description2" name="description2" placeholder="" style="resize: none;" >{{$productgroup->description2}}</textarea>
+		          		            
+		        </div>
+
+		        <div class="form-group">
+	                <label for="description3">Product Description 3<span class="label-required"></span> </label>
+	                <textarea class="form-control trumbowyg" id="description3" name="description3" placeholder="" style="resize: none;" >{{$productgroup->description3}}</textarea>
 		          		            
 		        </div>
 

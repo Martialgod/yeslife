@@ -21,7 +21,7 @@
 
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section banner100px ">
+    {{--<div class="page-banner-section section banner100px ">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -33,16 +33,16 @@
                 </div><!--END col-->
             </div><!--END row-->
         </div><!--END container-->
-    </div><!--END page-banner-section section-->
+    </div><!--END page-banner-section section--> --}}
 
 
 
-    {{--@include('landingpage.layouts.banner', [
-      'bannerheader'=>'About Yes.Life', 
+    @include('landingpage.layouts.banner', [
+      'bannerheader'=>'About Us', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'About Us '
-    ]) --}}
+      'bannercontent'=> 'About Us'
+    ])
 
 
 

@@ -51,9 +51,9 @@
 
 					//vm.totalreviews = data.totalreviews;
 
-					vm.StringifyStars();
+					//vm.StringifyStars();
 
-					vm.LoadReviews();
+					//vm.LoadReviews();
 
 
 				}else{
