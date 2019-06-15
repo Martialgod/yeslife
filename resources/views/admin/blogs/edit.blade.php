@@ -86,6 +86,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="minstoread">Minutes To Read <span class="label-required">* </span> </label>
+                    <input type="number" class="form-control" id="minstoread" name="minstoread" placeholder="" required="" value="{{$blogs->minstoread}}" >
+                  
+                </div>
+
+                <div class="form-group">
 				    <label for="stat">Status <span class="label-required">*</span> </label>
 				    <select name="stat" id="stat" class="form-control">
 				        <option value="For Approval" {{ $blogs->stat == 'For Approval' ? 'selected' : '' }}>	

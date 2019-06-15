@@ -50,7 +50,7 @@
                             </h3>
 
                             <p>
-                                By {{$a->sourcename}} | {{ date_format( date_create($a->sourcedate), 'd F Y' ) }}
+                                By {{$a->sourcename}} | {{ date_format( date_create($a->sourcedate), 'd F Y' ) }} | {{$a->minstoread}} min read
                             </p>
 
                 

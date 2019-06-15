@@ -36,13 +36,13 @@
 
 	                <tr>
 	                   	<th>ID</th>
-	                    <th>Slug</th>
 	                    <th>Name</th>
+	                    <th>Minutes</th>
 	                    <th>Status</th>
 	                    <th>Date</th>
 	                    <th>Postedby</th>
 	                    <th></th>
-	              </tr>
+	              	</tr>
 
 	          	</thead>
 	          	
@@ -53,13 +53,14 @@
 	                    <tr>
 	                        <td> {{$a->pk_posts}}  </td>
 
-	                        <td>
+	                        {{--<td>
 	                        	<span data-toggle="tooltip" title="{{$a->slug}}" style="cursor: help;">
                                     {{
                                         (strlen($a->slug)) > 30 ? substr($a->slug,0,30).'..' : $a->slug 
                                     }}
                                 </span>
-	                        </td>
+	                        </td> --}}
+
 
 	                        <td>
 	                        	<span data-toggle="tooltip" title="{{$a->name}}" style="cursor: help;">
@@ -67,6 +68,10 @@
                                         (strlen($a->name)) > 30 ? substr($a->name,0,30).'..' : $a->name 
                                     }}
                                 </span>
+	                        </td>
+
+	                        <td>
+	                        	{{$a->minstoread}}
 	                        </td>
 
 	                        @php

@@ -77,14 +77,90 @@
                                <h1 style="font-size: 30px;"> {{$blogs->name}} </h1>
                             </div>
 
-                            <ul class="blog-meta">
-                                <li>
-                                    By {{$blogs->sourcename}}
-                                </li>
-                                <li >
-                                    {{ date_format( date_create($blogs->sourcedate), 'd F Y' ) }}
-                                </li>
-                            </ul>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                   
+                                    <p>
+                                        By {{$blogs->sourcename}} | {{ date_format( date_create($blogs->sourcedate), 'd F Y' ) }} | {{$blogs->minstoread}} min read
+                                    </p>
+                                    
+                                </div><!--END col-md-6-->
+
+
+                                <div class="col-md-6">
+ 
+                                    <div class="row">
+
+                                        <div class="col-md-3">
+                                            Share on: 
+                                        </div><!--END col-md-4 -->
+                                        
+                                        <div class="col-md-3">
+                                      
+                                            <!-- Load Facebook SDK for JavaScript -->
+                                            <div id="fb-root"></div>
+                                            <script>
+                                                (function(d, s, id) {
+                                                var js, fjs = d.getElementsByTagName(s)[0];
+                                                if (d.getElementById(id)) return;
+                                                js = d.createElement(s); js.id = id;
+                                                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                                }(document, 'script', 'facebook-jssdk'));
+                                            </script>
+
+                                            @if( Auth::check() )
+
+                                                <!-- Your share button code -->
+                                                <div class="fb-share-button" data-href="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-layout="button_count" data-size="large">
+                                                </div>
+
+                                            @else
+
+                                                {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
+                                                <!-- Your share button code --> 
+                                                <div class="fb-share-button" data-href="{{url()->current()}}{{$refnourl}}" data-layout="button_count" data-size="large">
+                                                </div>
+
+                                            @endif
+
+
+                                        </div><!--END col-md-4 -->
+
+                                        <div class="col-md-3">
+
+                                            @if( Auth::check() )
+
+                                                @php 
+                                                    $twittershareurl = url('/').'&refno='.Auth::user()->affiliate_token;
+                                                
+                                                @endphp 
+
+                                                <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-hashtags="yeslife,CBD" > 
+                                                    Tweet
+                                                </a>
+
+                                            @else
+
+                                                {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
+                                                <!-- Your share button code -->
+                                                <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}{{$refnourl}}" data-hashtags="yeslife,CBD"> 
+                                                    Tweet 
+                                                </a>
+
+                                            @endif
+                                            
+                                        </div><!--END col-md-4 -->
+
+                                    </div><!--END row-->
+
+                                </div><!--END col-md-6-->
+
+                            </div><!--END row-->
+
+
+                            <br>
 
                             <div class="desc">
 
@@ -101,68 +177,6 @@
                                     @endforeach
                                     
                                 </div>
-
-
-                      
-                                <div class="share">
-
-                                    <span>Share:</span> 
-
-                                    <!-- Load Facebook SDK for JavaScript -->
-                                    <div id="fb-root"></div>
-                                    <script>
-                                        (function(d, s, id) {
-                                        var js, fjs = d.getElementsByTagName(s)[0];
-                                        if (d.getElementById(id)) return;
-                                        js = d.createElement(s); js.id = id;
-                                        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                                        fjs.parentNode.insertBefore(js, fjs);
-                                        }(document, 'script', 'facebook-jssdk'));
-                                    </script>
-
-                                    @if( Auth::check() )
-
-                                        <!-- Your share button code -->
-                                        <div class="fb-share-button" data-href="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-layout="button_count" data-size="large">
-                                        </div>
-
-                                    @else
-
-                                        {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
-                                        <!-- Your share button code --> 
-                                        <div class="fb-share-button" data-href="{{url()->current()}}{{$refnourl}}" data-layout="button_count" data-size="large">
-                                        </div>
-
-                                    @endif
-
-
-
-                                    @if( Auth::check() )
-
-                                        @php 
-                                            $twittershareurl = url('/').'&refno='.Auth::user()->affiliate_token;
-                                        
-                                        @endphp 
-
-                                        <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-hashtags="yeslife,CBD" > 
-                                            Tweet
-                                        </a>
-
-                                    @else
-
-                                        {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
-                                        <!-- Your share button code -->
-                                        <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}{{$refnourl}}" data-hashtags="yeslife,CBD"> 
-                                            Tweet 
-                                        </a>
-
-                                    @endif
-
-
-
-
-                                </div>
-
 
 
                             </div><!--END blog-footer-->

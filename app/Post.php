@@ -24,7 +24,7 @@ class Post extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['type', 'slug', 'name', 'summary', 'content', 'pictx', 'sourcename', 'sourcedate', 'fk_createdby', 'fk_updatedby', 'stat'];
+    protected $fillable = ['type', 'minstoread', 'slug', 'name', 'summary', 'content', 'pictx', 'sourcename', 'sourcedate', 'fk_createdby', 'fk_updatedby', 'stat'];
 
 
     /**
@@ -34,6 +34,7 @@ class Post extends Model
   
         $common_rule = [
         	'type'   =>  ['required'],
+            'minstoread' =>  ['required','numeric'],
             'slug'   =>  ['required'],
             'name'   =>  ['required'],
             'summary'   =>  ['required', 'max:255'],

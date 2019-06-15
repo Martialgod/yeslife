@@ -79,12 +79,16 @@
                                 	<img style="" ng-src="{{asset('/storagelink')}}/@{{vm.currentproduct.pictxa}}" alt="">
                                 </div>--}}
 
-                                @foreach($gallery as $v)
-                                    <div class="item">
-                                        <img style="" ng-src="{{asset('/storagelink/'.$v)}}" alt="">
-                                    </div>
-                                @endforeach
-
+                                <!--business shop-->
+                                @if( $products->fk_productgroup == 1 )
+                                    <img style="" ng-src="{{asset('/storagelink')}}/@{{vm.currentproduct.pictxa}}" alt="">
+                                @else
+                                    @foreach($gallery as $v)
+                                        <div class="item">
+                                            <img style="" ng-src="{{asset('/storagelink/'.$v)}}" alt="">
+                                        </div>
+                                    @endforeach
+                                @endif
 
                             </div><!--END product-slider-->
 

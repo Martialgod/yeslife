@@ -294,9 +294,15 @@ class ShopController extends Controller
         //dd($flavors);
 
         //$gallery = ProductPix::where('fk_products', $products->pk_products)->get();
-        $gallery = Product::where('fk_productgroup', $products->fk_productgroup)
+        //business shop
+        if( $products->fk_productgroup == 1 ){
+            $gallery = ProductPix::where('fk_products', $products->pk_products)->get();
+        }else{
+            $gallery = Product::where('fk_productgroup', $products->fk_productgroup)
                 ->where('stat', 1)
                 ->pluck('pictxa');
+        }
+
 
         $reviews = ProductReviewMstrView::where('fk_products', $products->pk_products)
         			->orderBy('created_at', 'DESC')->paginate(1);

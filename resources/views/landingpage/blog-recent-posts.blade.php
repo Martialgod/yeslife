@@ -18,6 +18,8 @@
                     <h4 class="title">
                         <a href="{{url('/blog/'.$v->slug)}}"> {{$v->name}} </a>
                     </h4>
+
+
                     <p> {{$v->summary}} </p>
 
                     {{--<p style="font-size:12px;">
