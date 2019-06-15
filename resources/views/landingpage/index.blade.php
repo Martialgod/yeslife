@@ -351,8 +351,8 @@
 		                                <div class="top" style="height: 60px;">
 		                                    <h4 class="title">
 		                                    	<a href="{{url('/shop/'.$v->slug)}}{{$refnourl}}"> 
-		                                    		{{--$v->name--}}
-                                                    {{$v->groupname}} 
+		                                    		{{$v->name}}
+                                                    {{--$v->groupname--}} 
 		                                    	</a>
 		                                    </h4>
 		                                </div>
