@@ -146,7 +146,7 @@
                                                 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
                                                 <!-- Your share button code -->
                                                 <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}{{$refnourl}}" data-hashtags="yeslife,CBD"> 
-                                                    Tweet 
+                                                    Tweet
                                                 </a>
 
                                             @endif

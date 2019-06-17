@@ -53,11 +53,11 @@
                             }
                         @endphp
 
-                        <li><a href="#">PROGRAMS</a>
+                        {{--<li><a href="#">PROGRAMS</a>
                             <ul class="sub-menu">
                                 <li><a href="{{url('/contact-us')}}{{$tempdist}}">BECOME A DISTRIBUTOR</a></li>
                             </ul>
-                        </li>
+                        </li>--}}
 
 
                         <li><a href="{{url('/faqs')}}{{$refnourl}}">FAQs</a></li>

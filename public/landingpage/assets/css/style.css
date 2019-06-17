@@ -725,11 +725,11 @@ input::placeholder, textarea::placeholder {
   display: -ms-flexbox;
   display: flex; }
   .main-menu > ul > li {
-    margin-right: 20px;
+    margin-right: 30px;
     position: static; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .main-menu > ul > li {
-        margin-right: auto; } }
+        margin-right: 20px; } }
     .main-menu > ul > li:last-child {
       margin-right: 0; }
     .main-menu > ul > li > a {
