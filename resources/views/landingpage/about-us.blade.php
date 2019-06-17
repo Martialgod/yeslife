@@ -61,14 +61,14 @@
                     <div class="row">
 
                         <!-- About Image Start col-lg-6 col-12 order-1 order-lg-2 mb-30-->
-                        <div class="col-md-8 order-2 about-us-right-image" style="background-image: url('/landingpage/assets/images/about/about-image-2.jpg');height: 800px; ">
+                        <div class="col-md-8 order-2 about-us-right-image" style="background-image: url('/landingpage/assets/images/about/about-image-3.jpg');">
                         </div><!-- About Image End -->
 
                         
                         <!-- About Content Start -->
                         <div class="col-lg-4 col-12 mr-auto order-2 order-lg-1 mb-30" >
                             <div class="about-content about-content-1">
-                                <br><br><br>
+                                <br><br>
                                 <h2 style="color:#8a8c8e;">Our Company</h2>
                                 <br>
                                 <div class="desc">

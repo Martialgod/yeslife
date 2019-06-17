@@ -18,10 +18,10 @@
                         South Salt Lake, UT 84115
                     </p>
                     <p>
-                        <a href="#"> 1-833-TRY-LIFE  </a> / <a href="#"> 1-833-879-5433 </a>
+                        1-833-TRY-LIFE / 1-833-879-5433 
                     </p>
                     <p>
-                        <a href="#">info@yes.life</a> <br> <a href="https://yes.life">https://yes.life</a>
+                        info@yes.life <br> https://yes.life
                     </p>
 
                     <div class="row col-md-12">
