@@ -87,7 +87,7 @@
                                 <div class="product-image">
                                     <!-- Image -->
                                     <a ng-href="{{url('/shop/')}}/@{{list.slug}}{{$refnourl}}"> 
-                                        <img style="" height="260px" ng-src="{{asset('/storagelink')}}/@{{list.pictxa}}" alt="">
+                                        <img style="" height="250px" ng-src="{{asset('/storagelink')}}/@{{list.pictxa}}" alt="">
                                     </a>
 
 
@@ -106,7 +106,7 @@
                                     </div>
 
                                     <div class="product-action" ng-if="list.qty <=0">
-                                        <div class="product-action" lass="btn btn-default" >
+                                        <div class="product-action" class="btn btn-default" >
                                             <span class="badge badge-danger">Out of stock</span>
                                         </div>
                                     </div>
@@ -117,11 +117,11 @@
 
 
                                 <!-- Content -->
-                                <div class="product-content">
+                                <div class="product-content ">
                                     
                                     <div class="head">
-                                        <!-- Title--> {{--style="height: 60px;"--}}
-                                        <div class="top" style="height: 80px;" >
+                                        <!-- Title--> {{--id="top-product-content" style="height: 80px;"--}}
+                                        <div class="top">
                                             <h4 class="title">
                                                 <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}"> 
 
@@ -161,26 +161,26 @@
 
 
                                         
-                                <!-- Product Action -->
-                                <div class="product-action" ng-if="list.qty > 0" >
+                                    <!-- Product Action -->
+                                    <div class="product-action" ng-if="list.qty > 0" >
 
-                                    <div style="text-align: center;">
+                                        <div style="text-align: center;">
 
-                                        <br>
+                                            <br>
 
-                                        <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}" style="background-color: #feeeda;color:#222222; margin-bottom: 10px;" class="btn btn-default col-md-11 btn-orage"  title="">
-                                            ADD TO CART
-                                        </a>
+                                            <a href="{{url('/shop')}}/@{{list.slug}}{{$refnourl}}" style="background-color: #feeeda;color:#222222; margin-bottom: 10px;" class="btn btn-default col-md-11 btn-orage"  title="">
+                                                ADD TO CART
+                                            </a>
 
-                                    </div><!--END text-align:center-->
+                                        </div><!--END text-align:center-->
 
-                                   
+                                       
 
-                                </div><!--END product-action-->
+                                    </div><!--END product-action-->
 
-                                <div class="product-action"  ng-if="list.qty <=0">
-                                    <span class="badge badge-danger">Out of stock</span>
-                                </div>
+                                    <div class="product-action"  ng-if="list.qty <=0">
+                                        <span class="badge badge-danger">Out of stock</span>
+                                    </div>
 
 
                                 </div><!--END product-content-->
@@ -358,8 +358,16 @@
                 }, 1000);
 
             }
-           
 
+
+        });
+
+        $('#btn-view-mode-grid').on('click', function(){
+            $('.top').css({height: '80'});
+        });
+
+        $('#btn-view-mode-list').on('click', function(){
+            $('.top').css({height: 'auto'});
         });
 
 

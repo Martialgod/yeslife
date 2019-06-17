@@ -453,7 +453,7 @@
                     <div class="banner">
                     	<a href="{{url('/shop')}}{{$refnourl}}">
                     	   {{--<img src="/landingpage/assets/images/banner/offer_page-V3.jpg" alt=""> --}}
-                    	   <img src="/landingpage/assets/images/banner/offer_page-V5.jpg" alt=""> 
+                    	   <img src="/landingpage/assets/images/banner/offer_page-V6.jpg" alt=""> 
                         </a>
                     </div>
                 </div>

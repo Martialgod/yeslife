@@ -52,7 +52,8 @@
 
                 @foreach($faqs as $key=> $v)
 
-                    <div class="card  table-responsive" style="border:none; width: 100%">
+                    <div class="card  table-responsive" style="border:none; margin-bottom: 10px;">
+                        
                         <div class="card-header" id="heading{{$v->pk_faqs}}" style="border:;border-bottom-color:#fbb055 ;">
                           <h5 class="mb-0" style="color:#3a95c2;">
                             <a class="btn btn-link " data-toggle="collapse" data-target="#collapse{{$v->pk_faqs}}" aria-expanded="true" aria-controls="collapse{{$v->pk_faqs}}">
@@ -64,11 +65,13 @@
                           </h5>
                         </div>
 
-                        <div id="collapse{{$v->pk_faqs}}" class="collapse " aria-labelledby="heading{{$v->pk_faqs}}" data-parent="#accordionFAQ">
+
+                        <div id="collapse{{$v->pk_faqs}}" class="collapse" aria-labelledby="heading{{$v->pk_faqs}}" data-parent="#accordionFAQ">
                             <div class="card-body">
                                 {!! $v->answer !!}
                             </div>
                         </div>
+
 
                     </div><!--END card-->
 
@@ -99,6 +102,7 @@
 @section('optional_scripts')
 
 	<script type="text/javascript">
+
 		
 	</script>
 

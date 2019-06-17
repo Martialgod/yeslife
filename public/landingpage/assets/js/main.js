@@ -34,7 +34,7 @@ $('.header-mini-cart').on('click', function (e) {
 -----------------------------------*/
 var mainMenuNav = $('.main-menu');
 mainMenuNav.meanmenu({
-    meanScreenWidth: '991',
+    meanScreenWidth: '991', //991
     meanMenuContainer: '.mobile-menu',
     meanMenuClose: '<span class="menu-close"></span>',
     meanMenuOpen: '<span class="menu-bar"></span>',
