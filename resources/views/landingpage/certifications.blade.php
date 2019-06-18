@@ -31,80 +31,129 @@
     <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div">
        
         <div class="container">
-            <br><br>
-            <div class="row">
+           
 
-                <div class="row">
-
+            {{--<div class="row">
 
 
-                    @foreach($certifications as $k1=> $v1)
+                @foreach($certifications as $k1=> $v1)
 
-                        <div class="col-md-6">
-
-
-                            <a href="{{url('/certifications/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title="" target="_blank">
-                                                        
-                                @if( $v1->fk_products != null )
-                                    <h4>Product</h4>
-                                @endif
-                                
-                                <h4> {{$v1->productname}} </h4>
-
-                                <h5>Lot Code</h5>
-                                <hr>
-                                <div style="margin-top: -50px;">
-
-                                    <ul>
-
-                                        @foreach($v1->gallery as $k2 => $v2)
-
-                                            <li style="font-size: 20px; color:#58595b;">
-
-                                                <b>
-
-                                                    <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
-                                                        {{$v2->lotcode}}
-                                                    </a> 
-                                              
-                                                </b>
+                    <div class="col-md-6">
 
 
-                                            </li>
+                        <a href="{{url('/certifications/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title="" target="_blank">
+                                                    
+                            @if( $v1->fk_products != null )
+                                <h4>Product</h4>
+                            @endif
+                            
+                            <h4> {{$v1->productname}} </h4>
 
-                                        @endforeach
-                                        
-                                    </ul>
+                            <h5>Lot Code</h5>
+                            <hr>
+                            <div style="margin-top: -50px;">
+
+                                <ul>
+
+                                    @foreach($v1->gallery as $k2 => $v2)
+
+                                        <li style="font-size: 20px; color:#58595b;">
+
+                                            <b>
+
+                                                <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" target="_blank">
+                                                    {{$v2->lotcode}}
+                                                </a> 
+                                          
+                                            </b>
+
+
+                                        </li>
+
+                                    @endforeach
                                     
-                                </div>
+                                </ul>
                                 
-                            </a>
-                                   
+                            </div>
+                            
+                        </a>
+                               
 
-                            <br><br>
+                        <br><br>
+
+                    </div>
+
+                @endforeach
+
+            </div> --}}
+
+
+            {{--<div class="col-md-8">
+
+                <p>
+                    {!! $globalmessage->content !!}
+                </p>
+                
+            </div> --}}
+        
+        
+            <div class="accordion " id="accordionCertifications">
+
+                @foreach($certifications as $key=> $v1)
+
+                    <div class="card table-responsive" style="border:none; margin-bottom: 10px;">
+                        
+                        <div class="card-header" id="heading{{$v1->pk_certifications}}" style="border:;border-bottom-color:#fff ;">
+                          <h5 class="mb-0" style="color:#3a95c2;">
+
+                            {{--<a class="btn btn-link " data-toggle="collapse" data-target="#collapse{{$v1->pk_certifications}}" aria-expanded="true" aria-controls="collapse{{$v1->pk_certifications}}">
+
+                                {{$v1->productname}} 
+
+                            </a> --}}
+
+                            <a href="{{url('/certifications/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title=""> 
+                                {{$v1->productname}} 
+                            </a>
+
+                          </h5>
+                        </div>
+
+
+                        <div id="collapse{{$v1->pk_certifications}}" class="collapse show" aria-labelledby="heading{{$v1->pk_certifications}}" data-parent="#accordionCertifications">
+                            
+                            <div class="card-body">
+
+                                @foreach($v1->gallery as $k2 => $v2)
+
+                                    <li style="font-size: 20px; color:#58595b;">
+
+                                        <b>
+
+                                            <a href="{{url('/certifications/'.$v2->fk_certificatemstr.'/'.$v2->lotcode)}}{{$refnourl}}" title="" >
+                                                {{$v2->lotcode}}
+                                            </a> 
+                                      
+                                        </b>
+
+
+                                    </li>
+
+                                @endforeach
+                                
+                               
+                            </div>
 
                         </div>
 
 
+                    </div><!--END card-->
+
+                @endforeach
 
 
-                    @endforeach
+            </div><!--END accordion-->
 
-                </div>
-
-
-                {{--<div class="col-md-8">
-
-                    <p>
-                        {!! $globalmessage->content !!}
-                    </p>
-                    
-                </div> --}}
-            
-        
-                <br>
-                
-            </div><!--END row-->
         
         </div><!--END container-->
         

@@ -69,10 +69,21 @@
 
                     @endforeach
 
-
                 </div>
 
+
+
             </div><!--END row-->
+
+            <br>
+
+            <div class=" text-center" style="text-align: center !important;">
+               
+                <a href="{{url('/certifications')}}{{$refnourl}}" class="btn btn-round btn-lg"> 
+                    Go Back
+                </a>
+                
+            </div>
         
         </div><!--END container-->
         

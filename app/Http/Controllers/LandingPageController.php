@@ -241,7 +241,7 @@ class LandingPageController extends Controller
 
         $this->setActiveTab();
 
-        $certifications = CertificationMstrView::where('stat', 1)->orderBy('fk_products', 'DESC')->get();
+        $certifications = CertificationMstrView::where('stat', 1)->orderBy('productname', 'ASC')->get();
 
         $gallery = CertificationDtl::getCertificatesGallery($certifications->pluck('pk_certificatemstr'));
 

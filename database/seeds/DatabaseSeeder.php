@@ -412,8 +412,8 @@ class DatabaseSeeder extends Seeder
             'description'=> 'FAQs',
             'route'=> 'faqs.index',
             'type'=> 'B',
-            'family'=> 'Settings',
-            'indexno'=> 4,
+            'family'=> 'Posts',
+            'indexno'=> 2,
             'stat'=>1
         ]); 
 
