@@ -14,7 +14,7 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="Yes Life CBD: Best CBD Oil, Pet CBD and Deep Relief Gel" />
     <meta property="og:description"   content="Yes.Life provides the Best Absorbing water soluble CBD Products on the market. YesNano™ technology was created to help you transform your health and discover a happier life." />
-    <meta property="og:image"         content="/landingpage/assets/images/favicon3.png" />
+    <meta property="og:image"         content="/landingpage/assets/images/main-logo.png" />
 
 
 @endsection
