@@ -217,10 +217,7 @@
               color: #000;
             }
 
-            .banner100px{
-                margin-bottom: -80px;
-            }
-
+         
 
            .cd-top--is-visible { 
               visibility: visible;
@@ -231,7 +228,7 @@
               opacity: .5;
             }
 
-           /* #backToTop{
+            #backToTop{
                 position: fixed;
                 bottom: 50px;
                 float: right;
@@ -244,47 +241,7 @@
                 z-index: 1000;
                 color:#8a8c8e;
 
-            }*/
-
-            #backToTop {
-              display: inline-block;
-              background-color: #FF9800;
-              width: 50px;
-              height: 50px;
-              text-align: center;
-              border-radius: 4px;
-              position: fixed;
-              bottom: 30px;
-              right: 30px;
-              transition: background-color .3s, 
-                opacity .5s, visibility .5s;
-              opacity: 0;
-              visibility: hidden;
-              z-index: 1000;
             }
-            #backToTop::after {
-              content: "\f077";
-              font-family: FontAwesome;
-              font-weight: normal;
-              font-style: normal;
-              font-size: 2em;
-              line-height: 50px;
-              color: #fff;
-            }
-            #backToTop:hover {
-              cursor: pointer;
-              background-color: #333;
-            }
-            #backToTop:active {
-              background-color: #555;
-            }
-            #backToTop.show {
-              opacity: 1;
-              visibility: visible;
-            }
-
-
-
 
 
     </style>
@@ -301,11 +258,10 @@
 <body style="" ><!--#f5f7f9-->
 
     <!-- all your content here --> 
-   <!-- <button id="backToTop" class=cd-top text-replace js-cd-top" hidden> 
-        <i class="fa fa-long-arrow-up fa-3x" aria-hidden="true"></i>TOP 
-    </button> -->
+    <button id="backToTop" class=cd-top text-replace js-cd-top" hidden> 
+        <i class="fa fa-long-arrow-up fa-3x" aria-hidden="true"></i>TOP
+    </button>
 
-    <a id="backToTop"></a>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M82X8X4"
@@ -457,7 +413,7 @@
 
     <script type="text/javascript">
 
-        /*$(document).ready(function(){
+        $(document).ready(function(){
             $('#backToTop').prop('hidden', false);
             $('#backToTop').fadeOut(0); 
         });
@@ -474,21 +430,6 @@
             $('body,html').animate({
                 scrollTop : 0                       // Scroll to top of body
             }, 500);
-        });*/
-
-        var btn = $('#backToTop');
-
-        $(window).scroll(function() {
-          if ($(window).scrollTop() > 300) {
-            btn.addClass('show');
-          } else {
-            btn.removeClass('show');
-          }
-        });
-
-        btn.on('click', function(e) {
-          e.preventDefault();
-          $('html, body').animate({scrollTop:0}, '300');
         });
 
 
