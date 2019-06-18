@@ -224,7 +224,7 @@
 
                                         {{--style="color:#3a95c2; font-size: 45px !important; line-height: 1; font-weight: 300; text-transform: none; "--}}
                                         <h2 id="" style="color:#3a95c2; text-align: center; text-transform: none; font-size: 35px !important; line-height: 1; font-weight: 300;">
-                                           Not just for humans, <br> <br>PAWSTERITY™.
+                                            NOT JUST FOR HUMANS, <br> <br>PAWSTERITY™.
                                         </h2>
 
 

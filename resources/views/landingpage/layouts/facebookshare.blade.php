@@ -13,7 +13,7 @@
 @if( Auth::check() )
 
 	<!-- Your share button code -->
-	<div class="fb-share-button" data-href="{{url('/')}}?refno={{Auth::user()->affiliate_token}}" data-layout="button_count" data-size="large">
+	<div class="fb-share-button" data-href="{{url('/')}}?refno={{Auth::user()->affiliate_token}}" data-layout="button_count" data-size="large"> 
 	</div>
 
 @else

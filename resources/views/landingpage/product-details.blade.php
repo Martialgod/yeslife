@@ -180,11 +180,11 @@
                                     @if( count($flavors) > 0 )
 
                                         <div class="product-short">
-                                            <b>Flavor </b> &nbsp;&nbsp;
+                                            <b>Select Flavor </b> &nbsp;&nbsp;
                                             <select id="shop_flavor" class="form-control col-md-6" ng-model="vm.selectedflavor" ng-change="vm.ShowProduct(vm.selectedflavor)"  >
-                                                <option value="" disabled="" selected >
+                                                {{--<option value="" disabled="" selected >
                                                     Select Flavor
-                                                </option>
+                                                </option> --}}
                                                 <option ng-repeat="vf in vm.mscflavors" value="@{{vf.pk_products}}" >
                                                     @{{vf.flavor}}
                                                 </option>
@@ -247,7 +247,7 @@
 
                     <div class="product-details-tab-content tab-content">
                         
-                        <div class="tab-pane active" id="description">
+                        <div class="tab-pane active" id="description" style="margin-top: -30px;">
 
                             {{--business shop case of 12--}}
                             @if( $products->fk_productgroup == 1 )
