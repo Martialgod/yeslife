@@ -28,7 +28,7 @@
 
     <form method="POST" class="jqvalidate-form swa-confirm"  action="{{url('/admin/terms/'.$globalmessage->pk_globalmessage)}}" enctype="multipart/form-data" >
 
-		{{method_field('PUT')}}
+		{{method_field('POST')}}
 	    {{ csrf_field() }}
 
 	    <div class="form-group">

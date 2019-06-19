@@ -213,10 +213,10 @@ Route::get('admin/home', 'HomeController@index')->name('admin.home');
 
 
 Route::get('/admin/privacy', 'HomeController@privacyindex')->name('privacy.index');
-Route::put('/admin/privacy/{id}', 'HomeController@privacyupdate');
+Route::post('/admin/privacy/{id}', 'HomeController@privacyupdate');
 
 Route::get('/admin/terms', 'HomeController@termsindex')->name('terms.index');
-Route::put('/admin/terms/{id}', 'HomeController@termsupdate');
+Route::post('/admin/terms/{id}', 'HomeController@termsupdate');
 
 
 Route::get('admin/404', function(){

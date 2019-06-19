@@ -407,7 +407,7 @@ class DatabaseSeeder extends Seeder
 
 
      
-        /*DB::table('permalink')->insert([
+        DB::table('permalink')->insert([
             'pk_permalink'=> 7040,
             'method'=> 'LIST',
             'description'=> 'FAQs',
@@ -449,7 +449,7 @@ class DatabaseSeeder extends Seeder
             'family'=> 'faqs.index',
             'indexno'=> 2,
             'stat'=>1
-        ]); */
+        ]); 
 
         DB::table('permalink')->insert([
             'pk_permalink'=> 7050,
