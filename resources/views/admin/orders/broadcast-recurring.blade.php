@@ -473,10 +473,7 @@
                 </tr>
               </table>
 
-              <p>
-                @include('admin.layouts.email-unsubscribed-footer')
-              </p>
-
+           
               <p>
                 @include('admin.layouts.email-noreply-disclaimer')
               </p>

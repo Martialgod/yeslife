@@ -38,7 +38,7 @@ class OrderRecurringMstrView extends Model
 	        Log::useFiles(storage_path().'/logs/'.$logfile);
 	        Log::info('Request cycle BroadCastRecurringOrders Started...');
 
-	        //retrieve orders for approval or recurring orders
+	        //retrieve orders for approval or recurring orders for all users
 	        $ordermstr = DB::SELECT("
 	            SELECT a.*,
 	            b.email, b.fullname
@@ -78,7 +78,7 @@ class OrderRecurringMstrView extends Model
 
 
 	        //set in BroadCastRecurringOrders
-            Log::info('broadcasting abandonedcart to ' .implode(", ", $arrcustemail));
+            Log::info('broadcasting recurring orders to ' .implode(", ", $arrcustemail));
 
 
 	        //set in BroadCastNewOrders

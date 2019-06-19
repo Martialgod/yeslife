@@ -30,12 +30,16 @@
         {{-- <button id="paymentSubmit" type="button">Submit</button> --}}
 
 
-      <div class="row" style="margin-top: -50px;">
-          <a href="#" class="place-order btn btn-lg btn-round custom-default-btn pull-left" ng-click="vm.ShowCart()">
+        <div class="" style="margin-top: -50px;">
+
+
+          <a href="#" class="place-order btn btn-round custom-default-btn col-md-6" ng-click="vm.ShowCart()">
             Back to Cart 
           </a>
+      
+          <button type="submit" id="paymentSubmit" class="place-order btn btn-round col-md-6">Place order</button>
 
-          <button type="submit" id="paymentSubmit" class="place-order btn btn-lg btn-round">Place order</button>
+          
         </div>
       
     </div><!--END checkout-cart-total-->

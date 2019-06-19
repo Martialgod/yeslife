@@ -722,7 +722,7 @@
 
         	//console.log(donation); return;
         	
-        	
+        	/*
         	//bypass rallypay
         	vm.paymentapi = {
         		amount: 100,
@@ -738,7 +738,7 @@
         	};
 	        //console.log(donation);
 	        vm.SubmitCart();
-        	return;  
+        	return;  */
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js

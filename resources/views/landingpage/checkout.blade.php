@@ -131,13 +131,12 @@
 
                    		@if( !Auth::check() )
 
-                   			<div class="check-box">
+                        <div class="check-box">
                            <input type="checkbox" id="isnewaccount" name="isnewaccount" >
                            <label for="isnewaccount">Create an Account?</label>
-                       	</div>
+                        </div>
 
-
-                       	<div id="isnewaccountdiv" hidden>
+                       	<div class="" id="isnewaccountdiv" hidden>
 
 										    	{{--<div id="divbillingusername" class="form-group">
 										        	<label for="billinguname">Username <span class="label-required">*</span> </label>
@@ -168,11 +167,16 @@
 
                    		@endif
 
+                   </div><!--END col-12 mb-20-->
+
+
+                   <div class="col-12 mb-20"> 
 
                       {{--
                         determine if user is approving recurring order through checkout
                         //recurring = order trxno
                         this is only applicable for logged in user
+                        !$recurring && Auth::check()
                       --}}
                       @if( !$recurring && Auth::check() )
 
@@ -180,7 +184,6 @@
                           <input type="checkbox" name="isrecurring" id="isrecurring" >
                           <label for="isrecurring">Recurring Order?</label>
                         </div>
-
 
                         <div id="isrecurringdiv" hidden >
 
@@ -222,9 +225,6 @@
 
                       @endif
 
-                      
-
-               
                    </div><!--END col-12 mb-20-->
 
                     <div class="col-12 mb-20">
