@@ -207,12 +207,12 @@
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>First Name*</label> --}}
-                                           <input type="text" class="form-control" id="billingfname" name="billingfname" placeholder="Firstname" required="" maxlength="255" value="">
+                                           <input type="text" class="form-control" id="billingfname" name="billingfname" placeholder="First Name" required="" maxlength="255" value="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>Last Name*</label> --}}
-                                           <input type="text" class="form-control" id="billinglname" name="billinglname" placeholder="Lastname" required="" maxlength="255" value="">
+                                           <input type="text" class="form-control" id="billinglname" name="billinglname" placeholder="Last Name" required="" maxlength="255" value="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
