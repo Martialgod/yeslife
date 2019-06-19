@@ -1,6 +1,6 @@
 <!-- Service Section Start -->
 <div class="service-section section pl-15 pr-15 pl-lg-30 pr-lg-30 pl-md-30 pr-md-30">
-    <div class="service-container">
+    <div class="service-container" >
 
         <br>
 

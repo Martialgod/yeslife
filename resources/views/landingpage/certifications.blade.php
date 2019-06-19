@@ -112,8 +112,8 @@
 
                             </a> --}}
 
-                            <a href="{{url('/certifications/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title=""> 
-                                {{$v1->productname}} 
+                            <a href="{{url('/certifications/'.$v1->pk_certificatemstr)}}{{$refnourl}}" title="" style="font-size: 20px; "> 
+                                {{$v1->productname}}
                             </a>
 
                           </h5>
@@ -124,9 +124,10 @@
                             
                             <div class="card-body">
 
+
                                 @foreach($v1->gallery as $k2 => $v2)
 
-                                    <li style="font-size: 20px; color:#58595b;">
+                                    <li style="font-size: 18px; color:#58595b;">
 
                                         <b>
 
