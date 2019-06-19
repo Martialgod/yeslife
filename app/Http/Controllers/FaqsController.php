@@ -32,7 +32,7 @@ class FaqsController extends Controller
     }
 
     public function setActiveTab(){
-        session()->flash('parent_tab', 'Settings');
+        session()->flash('parent_tab', 'Posts');
         session()->flash('child_tab', $this->menu_group);
     }
 
@@ -291,8 +291,6 @@ class FaqsController extends Controller
             $request['fk_updatedby'] = Auth::id();
 
             $globalmessage->update($request->all());
-            
-            //remove gallery
 
             session()->flash('success', "record has been updated!");
             return redirect()->back();

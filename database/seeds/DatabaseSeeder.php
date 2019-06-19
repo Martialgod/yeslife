@@ -406,7 +406,8 @@ class DatabaseSeeder extends Seeder
         ]); */
 
 
-        DB::table('permalink')->insert([
+     
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 7040,
             'method'=> 'LIST',
             'description'=> 'FAQs',
@@ -448,9 +449,29 @@ class DatabaseSeeder extends Seeder
             'family'=> 'faqs.index',
             'indexno'=> 2,
             'stat'=>1
+        ]); */
+
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7050,
+            'method'=> 'LIST',
+            'description'=> 'Privacy Policy',
+            'route'=> 'privacy.index',
+            'type'=> 'B',
+            'family'=> 'Posts',
+            'indexno'=> 3,
+            'stat'=>1
         ]); 
 
-
+        DB::table('permalink')->insert([
+            'pk_permalink'=> 7060,
+            'method'=> 'LIST',
+            'description'=> 'Terms and Conditions',
+            'route'=> 'terms.index',
+            'type'=> 'B',
+            'family'=> 'Posts',
+            'indexno'=> 4,
+            'stat'=>1
+        ]); 
 
 
     }

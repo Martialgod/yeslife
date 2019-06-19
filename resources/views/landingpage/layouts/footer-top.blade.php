@@ -64,7 +64,7 @@
                         <li><a href="{{url('/privacy-policy')}}{{$refnourl}}">Privacy Policy</a></li>
                         <li><a href="{{url('/terms-conditions')}}{{$refnourl}}">Terms & Conditions</a></li>
                         <li><a href="{{url('/certifications')}}{{$refnourl}}">Certifications</a></li>
-                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="{{url('/terms-conditions#return-policy')}}{{$refnourl}}">Return Policy</a></li>
                         <li><a href="#">Promotional Offers</a></li>
                         <li><a href="{{url('/faqs')}}{{$refnourl}}">FAQs</a></li>
 

@@ -206,7 +206,9 @@ class LandingPageController extends Controller
 
         $this->setActiveTab();
 
-        return view('landingpage.terms-conditions');
+        $globalmessage = GlobalMessage::findOrFail(5000);
+
+        return view('landingpage.terms-conditions', compact('globalmessage'));
 
     
     }//END terms_conditions
@@ -222,8 +224,10 @@ class LandingPageController extends Controller
         //
 
         $this->setActiveTab();
+
+        $globalmessage = GlobalMessage::findOrFail(4000);
    
-        return view('landingpage.privacy-policy');
+        return view('landingpage.privacy-policy', compact('globalmessage'));
 
     
     }//END privacy_policy
