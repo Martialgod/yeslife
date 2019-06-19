@@ -3,7 +3,7 @@
 @section('title', 'Admin Privacy Policy Page')
 
 @section('optional_styles')
-	<link rel="stylesheet" href="/trumbowyg/dist/ui/trumbowyg.min.css">
+	<link rel="stylesheet" href="/trumbowyg/dist/ui/trumbowyg.min.csss">
 @endsection
 
 
@@ -52,7 +52,7 @@
 
 @section('optional_scripts')
 
-	<script src="/trumbowyg/dist/trumbowyg.min.js"></script>
+	<script src="/trumbowyg/dist/trumbowyg.min.jss"></script>
 
     <script type="text/javascript">
         $('.trumbowyg').trumbowyg();
