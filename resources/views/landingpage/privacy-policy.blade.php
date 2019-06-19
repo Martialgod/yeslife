@@ -46,13 +46,13 @@
 
                             <h3 class="title">OUR COMMITMENT TO PRIVACY</h3>
 
-                            <p>
+                            <p align="justify">
                             Yes.Life values its customers ("you") and we respect your privacy. In general, we collect certain personal information about you so that we can provide you the services you request, improve your shopping experience and communicate with you about our products, services, contests, and promotions. As described in this policy, we may share your information with our affiliated companies and, under certain circumstances, with third parties that provide services on our behalf or with whom we have partnered to offer a particular product or service. This Privacy Policy ("Policy") describes the personal information we collect about you, why we collect it, how we use it and under what circumstances we share it with third parties. This Policy also describes the decisions you can make about how you provide your personal information to us.
                             </p>
 
                             <h3 class="title">CUSTOMER RATINGS &amp; REVIEWS AND STORIES</h3>
 
-                            <p style="margin-left:20px;">
+                            <p style="margin-left:30px;" align="justify">
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Information We Collect <br>
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Using Information We Collect <br>
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Sharing Information We Collect <br>
@@ -67,11 +67,11 @@
 
                             <h3 class="title">INFORMATION WE COLLECT</h3>
 
-                            <p>
+                            <p align="justify">
                             We may collect personal information from you, such as your name, email address, postal address, phone number, gender, birthday, and product preferences when engaging in any of the activities listed below:
                             </p>
 
-                            <p style="margin-left:20px;">
+                            <p style="margin-left:30px;" align="justify">
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Place an order from our website <br>
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Make a purchase at one of our Yes.Life affiliated distributors <br>
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Return an item or make an exchange from a previous purchase <br>
@@ -85,17 +85,17 @@
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Participate in Yes.Life social media including ratings &amp; reviews and stories <br>
                             </p>
 
-                            <p>
+                            <p align="justify">
                             We maintain a record of your product interests and the purchases you make. We may combine all of this information with information about you that we acquire from our joint marketing partners, from unrelated third parties, and our other brands.
                             </p>
 
                             <h3 class="title">USING INFORMATION WE COLLECT</h3>
 
-                            <p>
+                            <p align="justify">
                             To provide you with the best possible customer experience, we may use your personal information in the following ways:
                             </p>
 
-                            <p style="margin-left:20px;">
+                            <p style="margin-left:30px;" align="justify">
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> To process and fulfill your order, including to send you emails to confirm your order status and shipment <br>
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> To communicate with you and to send you information by email, postal mail, telephone, text message, or other means about our products, services, contests, and promotions, unless you have directed us not to contact you with promotional communications <br>
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> To administer and fulfill our contests and other promotions <br>
@@ -111,9 +111,9 @@
                             </p>
 
                             <h3 class="title">SHARING INFORMATION WE COLLECT</h3>
-                            <p> We may share your personal information in the following ways: </p>
+                            <p align="justify"> We may share your personal information in the following ways: </p>
 
-                            <p style="margin-left:20px;">
+                            <p style="margin-left:30px;" align="justify">
 
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> We may share your information with our service providers who manage our customer information and perform services on our behalf, such as fulfilling promotions, sending communications to our customers, conducting surveys, etc. We do not authorize any of these service providers to make any other use or disclosure of your information. <br>
 
@@ -130,28 +130,28 @@
                             </p>
 
                             <h3 class="title">YOUR DECISIONS ON RECEIVING MARKETING COMMUNICATIONS</h3>
-                            <p>
+                            <p align="justify">
                             We want to communicate with you only if you want to hear from us. Yes.Life provides a choice in communication for customers so you can receive information from us at your discretion. We communicate with our customers through promotional email, mailings (postal) and telephone. If you would like to be removed from our promotional email, mailings (postal) or telephone lists, please contact us by calling Customer Care at 1-833-TRY-LIFE / 1-833-879-5433 or by sending an email to info@yes.life. You may also write to us at:
                             </p>
 
-                            <p style="margin-left:20px;"> 
-                            Yes.Life <br>
-                            3855 S 500 W Suite D  <br>
-                            South Salt Lake, UT 84115  <br>
+                            <p style="margin-left:30px;" align="justify"> 
+                            <img src="/landingpage/assets/images/main-logo.png" alt="" width="150"> <br>
+                            &nbsp;&nbsp;3855 S 500 W Suite D  <br>
+                            &nbsp;&nbsp;South Salt Lake, UT 84115  <br>
                             </p>
 
-                            <p>
+                            <p align="justify">
                             Please specify from which list(s) - "Do Not Email", "Do Not Mail", or "Do Not Call" - you would like to be removed from. Please note that requests by email or phone may take up to ten business days to process and request by mail (postal) may take up to six to eight weeks to process.
                             Alternatively, if you do not want to receive promotional emails (i.e. not order-related) that notify you of new product arrivals, exclusive offers, upcoming events and the like, simply click the unsubscribe link provided at the bottom of any Yes.Life email. Please note, however, that this is for email only.
                             </p>
 
 
                             <h3 class="title">OPT-OUT OF SHARING INFORMATION</h3>
-                            <p>
+                            <p align="justify">
                             As noted above, we may share your information with our affiliated companies, when we partner with another company in a joint marketing program or if you purchase Yes.Life products through our website or by placing an order by phone or mail. If you want to opt-out of any sharing of your information with such entities, please contact us at:
                             </p>
 
-                            <p style="margin-left:20px;"> 
+                            <p style="margin-left:30px;" align="justify"> 
                             Yes.Life Customer Care <br>
                             3855 S 500 W Suite D  <br>
                             South Salt Lake, UT 84115  <br>
@@ -160,13 +160,13 @@
 
 
                             <h3 class="title">OUR USE OF COOKIES AND TRACKING PIXELS</h3>
-                            <p>
+                            <p align="justify">
                             We regularly use browser tracking cookies. A cookie is a small text file that is placed on your hard disk by a website. Cookies are uniquely assigned to you and can only be read by a website or web server in the domain that issued the cookie to you. Cookies cannot be used to run programs or deliver viruses to your computer.
                             We use cookies to improve your shopping experience. For example, we use cookies to:
                             </p>
 
 
-                            <p style="margin-left:20px;">
+                            <p style="margin-left:30px;" align="justify">
 
                             <img src="/landingpage/assets/images/mini-logo.png" alt=""> Recognize you when you return to one of our websites <br>
 
@@ -182,26 +182,26 @@
 
                             </p>
 
-                            <p>
+                            <p align="justify">
                             Cookies are also used to review how visitors to our website navigate our site or interact with our email advertising. Third-party companies assist in the collection and analysis of this data. Your name, street address or credit card number is not accessed by or shared with other companies.
                             You have the ability to accept or decline cookies. You can refuse cookies by turning them off in your browser. If you decide to block cookies, our websites might not function correctly. For example, if you do not allow cookies at all, you might not be able to view some of our websites or use certain features like adding products to your shopping cart, which may impact your shopping experience with us. If you refuse cookies and wish to place an order from our website, please call Customer Care at 1-833-879-5433.
                             We also use tracking pixels (i.e. Google Analytics) to aid in measuring and tracking where our website traffic is coming from and to track the performance of our site. Finally, we use remarking pixels from Facebook and Google to aid in customized, targeted follow-up advertising.
-                            We work with a variety of advertising and third-party companies that use tracking technologies (including cookies and pixel tags) on our websites in order to provide tailored advertisements on our behalf and on behalf of other advertisers on the internet. These advertising companies collect anonymous information about your visits to our websites, our advertising, other advertising websites or interaction with our email and other communications. This technology allows them to develop Yes.Life advertising and marketing about goods and offers that may be of interest to you. For more information about this practice and to understand your options, please visit http://www.aboutads.info.
+                            We work with a variety of advertising and third-party companies that use tracking technologies (including cookies and pixel tags) on our websites in order to provide tailored advertisements on our behalf and on behalf of other advertisers on the internet. These advertising companies collect anonymous information about your visits to our websites, our advertising, other advertising websites or interaction with our email and other communications. This technology allows them to develop Yes.Life advertising and marketing about goods and offers that may be of interest to you. For more information about this practice and to understand your options, please visit <a href=" http://www.aboutads.info" target="_blank"> http://www.aboutads.info. </a>
                             </p>
 
 
                             <h3 class="title">HOW WE RESPOND TO DO NOT TRACK SIGNALS</h3>
 
-                            <p>
+                            <p align="justify">
                             We may enable tracking technologies to collect personal information about your online activities over time and across different websites. We use this information to better understand your preferences and send you marketing and other promotional materials that may be of interest to you.
                             Your web browser may enable you to indicate your preference as to whether you wish to allow websites to collect personal information about your online activities over time and across different websites. At this time our site does not respond to the preferences you may have set in your web browser regarding the collection of such personal information, and our site may continue to collect personal information from you both while you browse and after you leave Yes.Life in the manner described in this Privacy Policy. We do not treat users differently if they have indicated that they do not wish to allow our websites to collect their personal information over time and across different websites.
-                            We may enable third parties to collect personal information in connection with our sites. As described above, we work with a variety of advertising and third-party companies that use tracking technologies on our websites in order to provide tailored advertisements on our behalf and on behalf of other advertisers on the internet. For more information about this practice and to understand your options, please visit http://www.aboutads.info. This policy does not apply to, and we are not responsible for, any collection of personal information by third parties on our sites.
+                            We may enable third parties to collect personal information in connection with our sites. As described above, we work with a variety of advertising and third-party companies that use tracking technologies on our websites in order to provide tailored advertisements on our behalf and on behalf of other advertisers on the internet. For more information about this practice and to understand your options, please visit <a href="http://www.aboutads.info" target="_blank"> http://www.aboutads.info. </a> This policy does not apply to, and we are not responsible for, any collection of personal information by third parties on our sites.
                             </p>
 
 
                             <h3 class="title">SECURITY</h3>
 
-                            <p>
+                            <p align="justify">
                             We do our best to provide you with a safe shopping experience. We have in place certain physical, electronic, contractual, and managerial safeguards to protect the security and privacy of your personal information.
                             When you enter your personal information on our websites, we use Secure Sockets Layer (SSL) technology to protect your information as it is transmitted to us. To make sure you are accessing our secure server before you submit personal financial information, look at the lower left-hand corner of your browser. If you see an unbroken key or a closed lock (depending upon your browser), then SSL is active. To double-check for security, look at the URL or Location line of your browser. If you have accessed a secure server, the first characters of the address in that line should change from "http" to "https."
                             If for any reason you cannot access the secure server, or if you're not quite comfortable shopping online at any of our websites, please feel free to place your order with us through Customer Care at 1-833-879-5433.
@@ -210,7 +210,7 @@
 
 
                             <h3 class="title">LINKS TO OTHER SITES</h3>
-                            <p>
+                            <p align="justify">
                             Occasionally we provide links on our websites to other sites we think you will enjoy. These sites operate independently of us and have established their privacy and security policies. For the best online experience, we strongly encourage you to review these policies at any site you visit. We are not responsible for the content or practices of any linked websites which are provided solely for the convenience and information of our visitors.
                             </p>
 

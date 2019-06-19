@@ -81,7 +81,7 @@
 
                             <div class="col-xl-6 col-lg-6 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50" >
       
-                                <img width="100%" src="/landingpage/assets/images/micropage/sayingyestolife.jpg" alt="" >
+                                <img width="100%" src="/landingpage/assets/images/micropage/start-saying.jpg" alt="" >
                                 
                             </div><!--col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50-->
 
