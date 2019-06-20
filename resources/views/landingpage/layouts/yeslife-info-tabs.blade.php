@@ -67,9 +67,9 @@
                             
                             <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs ">
                              
-                                <p style="font-size: 18px;">
-                                    <span style="color:#3a95c2;">Yes.</span>
-                                    <span style="color:#fbb055;">Life</span> strives to help you transform your health and re-discover a happier life through the best product line on the market. We provide only the finest for our best customers. Yes.Life CBD will not only help you achieve wholistic health goals, but also sustain that lifestyle. Wait no more! Take that first step towards the quality of life you deserve.
+                                <p style="font-size: 18px;" align="justify" >
+                                    <span style="color:#3a95c2;">Yes.</span><span style="color:#fbb055;">Life</span>
+                                     strives to help you transform your health and re-discover a happier life through the best product line on the market. We provide only the finest for our best customers. Yes.Life CBD will not only help you achieve wholistic health goals, but also sustain that lifestyle. Wait no more! Take that first step towards the quality of life you deserve.
                                     
                                     <br><br>
 
@@ -96,7 +96,7 @@
 
                             <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
                              
-                                <p style="font-size: 18px;">
+                                <p style="font-size: 18px;" align="justify">
                                     CBD – or “cannabidiol” – is a chemical found in the hemp plant. It has a myriad of positive effects on the human body, from decreasing inflammation, to aiding in anxious feelings, to easing general discomfort. Science is still learning of new benefits every day: the ones listed here are merely the tip of the iceberg.
                                 </p>
 
@@ -123,7 +123,7 @@
                             
                             <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
                                
-                                <p style="font-size: 18px;">
+                                <p style="font-size: 18px;" align="justify">
                                     Hemp CBD is an oil - humans are water. These two do not mix together. Water-soluble CBD products, like Yes.Life, will actually deliver the bulk of the advertised milligrams of CBD into your body giving you the most value for your money.
 
                                     <br><br>
@@ -156,7 +156,7 @@
                             
                             <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
 
-                                <p style="font-size: 18px;">
+                                <p style="font-size: 18px;" align="justify">
                                     Our Hemp CBD Oil is not only water-soluble, but also nano-sized. Our <span style="color:#3a95c2">YesNano™ Technology</span> helps the CBD supplement reach your bloodstream and actually produce positive effects. Because of our higher absorption rate, our 250 mg of Yes.Life CBD is equivalent to nearly 3000 mg of the competitor's CBD.
                                 </p>
                                
@@ -182,11 +182,10 @@
                             
                             <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
 
-                                <p style="font-size: 18px;">
+                                <p style="font-size: 18px;" align="justify">
                                    Our Hemp CBD Oil is extracted from Hemp plants grown and cultivated in the United States of America. Even the extraction itself is carried out in the USA. We are a homegrown American company hoping to deliver the best products to those wanting to say YES to LIFE again.
                                </p>
                                
-
                                 
                             </div><!--END col-md-6-->
 
