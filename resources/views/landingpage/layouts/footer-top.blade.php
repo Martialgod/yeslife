@@ -24,15 +24,15 @@
                         info@yes.life <br> https://yes.life
                     </p>
 
-                    <div class="row col-md-12">
-                                        
+                    {{--<div class="row col-md-12">
+
                         @include('landingpage.layouts.facebookshare')
 
                         &nbsp;&nbsp;&nbsp;
 
                         @include('landingpage.layouts.twittershare')
 
-                    </div>
+                    </div>--}}
 
                   
 
@@ -93,34 +93,107 @@
             
             <div class="col mb-40">
                 <div class="footer-widget">
-                    <h3 class="title">Follow us</h3>
-                    <ul>
 
-                        <li>
+                    <h3 class="title">Follow us</h3>
+
+                    <span>
+
+                        <a href="https://www.facebook.com/iamyeslife" target="_blank">
+                            {{--<i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Facebook --}}
+                            <img src="/landingpage/assets/images/social/fb-blue.png" width="30px"></img> 
+                        </a>
+
+                        <a href="https://twitter.com/iamyeslife" target="_blank">
+                            {{--<i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; Twitter --}}
+                            <img src="/landingpage/assets/images/social/twitter-blue.png" width="30px"></img>
+                        </a>
+
+                        <a href="https://www.pinterest.com/iamyeslife/" target="_blank">
+                           {{--<i class="fa fa-pinterest-p" aria-hidden="true"></i> &nbsp;  Pinterest--}}
+                           <img src="/landingpage/assets/images/social/pinterest-blue.png" width="30px"></img>
+                        </a>
+
+                    </span>
+
+                
+
+                    <span>
+                        
+                        <a href="https://www.youtube.com/channel/UCT1-KDYOP0RsLRlwucHUIYA" target="_blank">
+                            {{--<i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp; Youtube--}}
+                            <img src="/landingpage/assets/images/social/youtube-blue.png" width="30px"></img>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/i-am-yes-life/" target="_blank">
+                            {{--<i class="fa fa-linkedin" aria-hidden="true"></i> &nbsp; Linkedin--}}
+                            <img src="/landingpage/assets/images/social/linkedin-blue.png" width="30px"></img>
+                        </a>
+
+                        <a href="https://www.instagram.com/iamyeslife/ " target="_blank">
+                            {{--<i class="fa fa-instagram" aria-hidden="true"></i> &nbsp; Instagram--}}
+                            <img src="/landingpage/assets/images/social/insta-blue.png" width="30px"></img>
+                        </a>
+
+
+                    </span>
+
+                    <h3 class="title">Share On</h3>
+
+
+                    <div class="row col-md-12">
+
+                        @include('landingpage.layouts.facebookshare')
+
+                        &nbsp;&nbsp;&nbsp;
+
+                        @include('landingpage.layouts.twittershare')
+
+                    </div>
+                    
+                    {{--<ul>
+
+                        <li style="height: 20px;">
+
                             <a href="https://www.facebook.com/iamyeslife" target="_blank">
-                                <i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Facebook
+                                <i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Facebook 
                             </a>
+
+
                         </li>
 
-                        <li>
+                        <li style="height: 20px;">
                             <a href="https://twitter.com/iamyeslife" target="_blank">
                                 <i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; Twitter
+                                
                             </a>
                         </li>
 
-                        <li>
+                        <li style="height: 20px;">
                             <a href="https://www.pinterest.com/iamyeslife/" target="_blank">
                                <i class="fa fa-pinterest-p" aria-hidden="true"></i> &nbsp;  Pinterest
                             </a>
                         </li>
 
-                        <li>
+                        <li style="height: 20px;">
                             <a href="https://www.youtube.com/channel/UCT1-KDYOP0RsLRlwucHUIYA" target="_blank">
                                 <i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp; Youtube
                             </a>
                         </li>
 
-                    </ul>
+                        <li style="height: 20px;">
+                            <a href="https://www.linkedin.com/company/i-am-yes-life/" target="_blank">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i> &nbsp; Linkedin
+                            </a>
+                        </li>
+
+
+                        <li style="height: 20px;">
+                            <a href="https://www.instagram.com/iamyeslife/ " target="_blank">
+                                <i class="fa fa-instagram" aria-hidden="true"></i> &nbsp; Instagram
+                            </a>
+                        </li>
+                    </ul> --}}
+
                 </div>
             </div>
 

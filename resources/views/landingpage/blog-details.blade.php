@@ -94,14 +94,16 @@
  
                                     <div class="row">
 
-                                        <div class="col-md-3">
-                                            Share on: 
+                                        <div class="col-md-4">
+                                           
                                         </div><!--END col-md-4 -->
                                         
-                                        <div class="col-md-3">
-                                      
+                                        <div class="col-md-8">
+
+                                            Share on:  &nbsp;
+
                                             <!-- Load Facebook SDK for JavaScript -->
-                                            <div id="fb-root"></div>
+                                            {{--<div id="fb-root"></div>
                                             <script>
                                                 (function(d, s, id) {
                                                 var js, fjs = d.getElementsByTagName(s)[0];
@@ -110,27 +112,27 @@
                                                 js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
                                                 fjs.parentNode.insertBefore(js, fjs);
                                                 }(document, 'script', 'facebook-jssdk'));
-                                            </script>
+                                            </script> --}}
 
                                             @if( Auth::check() )
 
                                                 <!-- Your share button code -->
-                                                <div class="fb-share-button" data-href="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-layout="button_count" data-size="large">
-                                                </div>
+                                                {{--<div class="fb-share-button" data-href="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-layout="button_count" data-size="large">
+                                                </div> --}}
+
+                                                <a href="https://www.facebook.com/sharer/sharer.php?app_id=408958203012847&u={{url()->current()}}?refno={{Auth::user()->affiliate_token}}/&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')"><img src="/landingpage/assets/images/social/fb-blue.png" width="30px"></img></a>
 
                                             @else
 
                                                 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
                                                 <!-- Your share button code --> 
-                                                <div class="fb-share-button" data-href="{{url()->current()}}{{$refnourl}}" data-layout="button_count" data-size="large">
-                                                </div>
+                                                {{--<div class="fb-share-button" data-href="{{url()->current()}}{{$refnourl}}" data-layout="button_count" data-size="large">
+                                                </div> --}}
+
+                                                <a href="https://www.facebook.com/sharer/sharer.php?app_id=408958203012847&u={{url()->current()}}{{$refnourl}}/&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')"><img src="/landingpage/assets/images/social/fb-blue.png" width="30px"></img></a>
 
                                             @endif
 
-
-                                        </div><!--END col-md-4 -->
-
-                                        <div class="col-md-3">
 
                                             @if( Auth::check() )
 
@@ -139,21 +141,27 @@
                                                 
                                                 @endphp 
 
-                                                <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-hashtags="yeslife,CBD" > 
-                                                    Tweet
+                                                {{--class="twitter-share-button"--}}
+                                                <a class="" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}?refno={{Auth::user()->affiliate_token}}" data-hashtags="yeslife,CBD" > 
+                                                    <img src="/landingpage/assets/images/social/twitter-blue.png" width="30px"></img>
                                                 </a>
+
 
                                             @else
 
                                                 {{--$refnourl initialized at App/Providers/AppServiceProvider.php--}}
-                                                <!-- Your share button code -->
-                                                <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}{{$refnourl}}" data-hashtags="yeslife,CBD"> 
-                                                    Tweet
+                                                <!-- Your share button code class="twitter-share-button"-->
+                                                <a class="" href="https://twitter.com/intent/tweet" data-size="large" data-text="{{$blogs->name}}" data-url="{{url()->current()}}{{$refnourl}}" data-hashtags="yeslife,CBD"> 
+                                                     <img src="/landingpage/assets/images/social/twitter-blue.png" width="30px"></img>
+                                                </a>
                                                 </a>
 
                                             @endif
                                             
+
+
                                         </div><!--END col-md-4 -->
+
 
                                     </div><!--END row-->
 
