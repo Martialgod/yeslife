@@ -21,10 +21,10 @@
 
 
 	@include('landingpage.layouts.banner', [
-      'bannerheader'=>'Certifications', 
+      'bannerheader'=>'QUALITY AND SAFETY', 
       'bannerurl'=> '/',
       'bannerback'=> 'Home',
-      'bannercontent'=> 'Certifications'
+      'bannercontent'=> 'QUALITY AND SAFETY'
     ])
 
     <!-- Contact Section Start -->

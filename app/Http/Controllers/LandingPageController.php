@@ -12,9 +12,13 @@ use Exception;
 
 use App\PDOErr;
 
+use App\Category;
+
 use App\Product;
 use App\ProductMstrView;
 use App\ProductPix;
+
+use App\ProductGroup;
 
 use App\ProductPriceListMstrView;
 
@@ -134,10 +138,62 @@ class LandingPageController extends Controller
         $orders = OrderMstrView::where('trxno', $trxno)
                     ->where('stat', 1)
                     ->first();
-
+    
         if( !$orders ){
             return redirect('/404');
         }
+
+        if(session('yeslife_order_from') == 'Free-Sample'){
+
+
+            if( $orders->issubscribed == 1 || $orders->istext == 1 ){
+
+                $email = $orders->email;
+                $email = '1234@gmail.com';
+                $list_id = env('MAILCHIMP_LIST');
+                $api_key = env('MAILCHIMP_APIKEY');
+
+                $data_center = substr($api_key,strpos($api_key,'-')+1);
+
+                $url = 'https://'. $data_center .'.api.mailchimp.com/3.0/lists/'. $list_id .'/members';
+
+                $json = json_encode([
+                   'email_address' => $email,
+                   /*'first_name'=> $orders->billingfname,
+                   'last_name'=> $orders->billinglname,
+                   'address'=> [
+                        'address1'=> $orders->billingaddress1,
+                        'address2'=> $orders->billingaddress2,
+                        'city'=> $orders->billingcity,
+                        'province'=> $orders->billingstate,
+                        'province_code'=> '',
+                        'postal_code'=> $orders->billingzip,
+                        'country'=> $orders->billingcountry,
+                        'country_code'=> ''
+                   ], */
+                   'status'        => 'subscribed', //pass 'subscribed' or 'pending'
+                ]);
+
+                //dd($json);
+
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $api_key);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+                $result = curl_exec($ch);
+                $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                curl_close($ch);
+                //echo $status_code;
+
+
+            }
+
+        }
+
 
         $orderdtls = OrderDtlView::where('fk_ordermstr', $orders->pk_ordermstr)->get();
 
@@ -245,7 +301,38 @@ class LandingPageController extends Controller
 
         $this->setActiveTab();
 
-        $certifications = CertificationMstrView::where('stat', 1)->orderBy('productname', 'ASC')->get();
+        $category = Category::select('pk_category', 'description')
+            ->where('stat', 1)
+            ->orderBy('indexno', 'ASC')
+            ->get()
+            ->toArray();
+
+        //others
+        $category [] =  ['pk_category'=> -1, 'description'=> 'Other Certificates'];
+
+        $certifications = CertificationMstrView::select();
+
+        //filter
+        $currentcat = ( request()->cat ) ? request()->cat : null;
+
+        //empty then retrieve default category
+        if( !$currentcat ){
+            
+            $currentcat = ( count($category) > 0 ) ? $category[0]['pk_category'] : null;
+
+        }
+
+
+        if( $currentcat == -1 ){
+            //retrieve other certificates
+            $certifications->whereNull('fk_category');
+        }else{
+            //retrieve specific certificates
+            $certifications->where('fk_category', $currentcat);
+        }
+
+
+        $certifications = $certifications->where('stat', 1)->orderBy('productname', 'ASC')->get();
 
         $gallery = CertificationDtl::getCertificatesGallery($certifications->pluck('pk_certificatemstr'));
 
@@ -253,7 +340,7 @@ class LandingPageController extends Controller
 
         $globalmessage = GlobalMessage::findOrFail(2000);
 
-        return view('landingpage.certifications', compact('certifications', 'globalmessage'));
+        return view('landingpage.certifications', compact('certifications', 'globalmessage', 'category', 'currentcat'));
 
     
     }//END certifications
