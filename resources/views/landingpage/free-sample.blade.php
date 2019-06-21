@@ -4,7 +4,7 @@
 
 @section('meta')
 
-    <meta name="robots" content="follow, noindex" />
+    <meta name="robots" content="follow, index" />
     <meta name="description" content="Yes.Life is offering free CBD samples. For a limited time get our free cbd sample pack that includes both our high-absorbing cbd oil and Relieve Hemp CBD gel that works great for pain relief!">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
