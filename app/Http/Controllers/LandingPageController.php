@@ -149,7 +149,7 @@ class LandingPageController extends Controller
             if( $orders->issubscribed == 1 || $orders->istext == 1 ){
 
                 $email = $orders->email;
-                $email = '1234@gmail.com';
+                //$email = '1234@gmail.com';
                 $list_id = env('MAILCHIMP_LIST');
                 $api_key = env('MAILCHIMP_APIKEY');
 
