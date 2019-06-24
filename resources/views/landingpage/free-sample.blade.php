@@ -67,7 +67,7 @@
 
 
     <!-- Contact Section Start  page-banner-section section-->
-    <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix page-banner-section" id="main-div"  ng-app="app" ng-controller="FreeSampleController as vm" ng-cloak  >
+    <div class="contact-section section position-relative pt-90 pb-60 pt-lg-80 pb-lg-50 pt-md-70 pb-md-40 pt-sm-60 pb-sm-30 pt-xs-50 pb-xs-20 fix" id="main-div"  ng-app="app" ng-controller="FreeSampleController as vm" ng-cloak style="background-color: #FFFEFA;"  >
        
         <div class="container" >
 
