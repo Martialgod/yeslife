@@ -93,7 +93,8 @@ class OrderMstr extends Model
         return  static::where('trxno', $fk_recurring)
                 ->where('isapproved', 0)
                 ->where('stat', 1)
-                ->where('fk_users', $fk_users)
+                ->where('fk_recurring', '<>', null)
+                //->where('fk_users', $fk_users)
                 ->first();
     }//END isUnApproveRecurring
 

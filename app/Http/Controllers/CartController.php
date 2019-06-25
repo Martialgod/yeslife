@@ -98,18 +98,22 @@ class CartController extends Controller
         //recurring = order trxno
         $recurring = ( request()->recurring ) ? request()->recurring : null; 
 
+        $recurringorder = OrderMstr::isUnApproveRecurring($recurring);
 
-        //check if user is logged in
-        if( session('yeslife_virtual_user_id') || Auth::check() ){
+        //check if user is logged in Auth::check()
+        if( session('yeslife_virtual_user_id') || Auth::check() || $recurringorder ){
 
             //check for admin login-as virtual user 
             //Generated @AppServiceProvider.php
             if( session('yeslife_virtual_user_id') ){
                 //use credentials for virtual user
                 $dbusers = UserMstrView::findOrFail(session('yeslife_virtual_user_id'));
-            }else{
-                //use default logged in user
+            }elseif(Auth::check()){
+                //retrieve user details of currently logged in user
                 $dbusers = UserMstrView::findOrFail(Auth::id());
+            }else{
+                //retrieve user details for recurring orders
+                $dbusers = UserMstrView::findOrFail($recurringorder->fk_users);
             }
 
             $states = State::getStateByCountry($dbusers->fk_country);
@@ -180,14 +184,6 @@ class CartController extends Controller
 
             //dd($users);
 
-            /*$recurring = OrderMstr::where('trxno', $recurring)
-                ->where('isapproved', 0)
-                ->where('stat', 1)
-                ->where('fk_users', Auth::id())
-                ->first();*/
-
-            $recurring = OrderMstr::isUnApproveRecurring($recurring, Auth::id());
-
 
         }//END Auth::check()
 
@@ -199,7 +195,7 @@ class CartController extends Controller
         //trigger where the success page came from
         session()->put('yeslife_order_from', 'Cart-Checkout');
 
-        return view('landingpage.cart', compact('users', 'country', 'states', 'iscustomstate', 'recurring'));
+        return view('landingpage.cart', compact('users', 'country', 'states', 'iscustomstate', 'recurringorder'));
     
     }//END index
 
@@ -219,16 +215,21 @@ class CartController extends Controller
 
         //determine if user is approving recurring order through checkout
         //recurring = order trxno
-        $recurringtrxno = ($request->recurringtrxno) ? $request->recurringtrxno : null; 
+        $recurringtrxno = ($request->recurringtrxno) ? $request->recurringtrxno : 'empty'; 
+
+        $mscstates = State::getStateByCountry(229); //default USA
 
         //retrieve the recurring order for approval
-        if( (  $isloggedin != 'no' || Auth::check() ) && $recurringtrxno != null ){
+        //(  $isloggedin != 'no' || Auth::check() ) && $recurringtrxno != null
+        if( $recurringtrxno != 'empty' ){
 
-            $ordermstr = OrderMstr::where('trxno', $recurringtrxno)
+            /*$ordermstr = OrderMstr::where('trxno', $recurringtrxno)
                         ->where('isapproved', 0)
                         ->where('stat', 1)
                         ->where('fk_users', $isloggedin)
-                        ->first();
+                        ->first(); */
+
+            $ordermstr = OrderMstr::isUnApproveRecurring($recurringtrxno);
 
             //check if the order is still not approved
             if( $ordermstr ){
@@ -261,12 +262,13 @@ class CartController extends Controller
                 $pricelist = ProductPriceListMstrView::getProductPriceList($products->pluck('pk_products'));
 
                 //jsusertype = manual setting of usertype since ajax request invalidate Auth::check()
-                $jsusertype = Auth::user()->fk_usertype;
+                //$jsusertype = Auth::user()->fk_usertype;
+                $jsusertype = User::getUserType($ordermstr->fk_users);
                 $products = ProductPriceListMstrView::mapProductPriceList($products, $pricelist, $jsusertype);
 
                 $products = ProductResource::collection($products);
 
-                return $products;
+                return ['cart'=>$products, 'mscstates'=> $mscstates];
 
                 //return '1';
 
@@ -397,9 +399,6 @@ class CartController extends Controller
         $products = ProductPriceListMstrView::mapProductPriceList($products, $pricelist, $jsusertype);
 
         $products = ProductResource::collection($products);
-
-
-        $mscstates = State::getStateByCountry(229); //default USA
 
         return ['cart'=>$products, 'mscstates'=> $mscstates];
     

@@ -208,5 +208,12 @@ class User extends Authenticatable
     }//END getReferrer
 
 
+    //get usertype
+    public static function getUserType($id){
+
+        return static::where('id', $id)->pluck('fk_usertype')->first();
+
+    }//END getReferrer
+
 
 }//END class

@@ -178,7 +178,7 @@
                         this is only applicable for logged in user
                         !$recurring && Auth::check()
                       --}}
-                      @if( !$recurring && Auth::check() )
+                      @if( !$recurringorder  )
 
                         <div class="check-box">
                           <input type="checkbox" name="isrecurring" id="isrecurring" >
@@ -216,6 +216,7 @@
                           </div><!--END col-md-6 col-12 mb-20--> --}}
                          
                           <div>
+                            <br>
                             <label>And it should end on</label>
                             <input type="date" name="enddate" id="enddate" class="form-control">
                             

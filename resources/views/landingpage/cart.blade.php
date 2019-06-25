@@ -41,15 +41,14 @@
            
             {{--
                 determine if user is approving recurring order through checkout
-                    //recurring = order trxno
             --}}
-            @if( $recurring )
+            @if( $recurringorder )
 
                 <div class="alert alert-danger" ng-if="vm.mscproducts.length > 0" style="font-size: 12px; margin-top: -20px;">
-                    This is a recurring transaction checkout process...
+                    This is a recurring checkout process...
                 </div>
 
-                <input type="hidden" id="recurringtrxno" name="recurringtrxno" value="{{$recurring->trxno}}" >
+                <input type="hidden" id="recurringtrxno" name="recurringtrxno" value="{{$recurringorder->trxno}}" >
 
             @endif
                     

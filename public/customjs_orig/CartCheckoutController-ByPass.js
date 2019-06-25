@@ -54,6 +54,8 @@
 			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
 			//showCustomizeLoading(); //@GlobalScript.js
 			
+			//console.log(vm.recurringtrxno );
+			
 			//'api/cart'
 			$http.post('/cart', {
 				cart: cart, 
@@ -469,9 +471,11 @@
                 		console.log("Purchase successfully sent to LeadDyno");
 
                 		//if not a recurring checkout process then assume we checkout base on items added to the cart
-	                	if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
+	                	/*if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
 	                		deleteAllCartCookies(); //@GlobalScript.js
-	                	}
+	                	}*/
+
+	                	deleteAllCartCookies(); //@GlobalScript.js
 
 	                	//go to checkout success page;
 	                	if( vm.referrer_token != null && vm.referrer_token != '' ){
@@ -722,7 +726,7 @@
 
         	//console.log(donation); return;
         	
-        	/*
+        	
         	//bypass rallypay
         	vm.paymentapi = {
         		amount: 100,
@@ -738,7 +742,7 @@
         	};
 	        //console.log(donation);
 	        vm.SubmitCart();
-        	return;  */
+        	return;  
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js

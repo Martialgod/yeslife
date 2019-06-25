@@ -46,7 +46,7 @@ class OrderRecurringMstrView extends Model
 	            INNER JOIN users b 
 	            ON a.fk_users = b.id 
 	            WHERE a.isapproved = 0 AND a.isdeclined = 0 AND a.stat = 1
-	            AND b.stat = 1
+	            -- AND b.stat = 1
 	        ");
 
 	        $arrcustemail = []; //bcc copy

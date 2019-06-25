@@ -431,7 +431,7 @@
                         <p>
                           <br>
 
-                          <a href="{{url('/myaccount/orders/'.$ordermstr->trxno)}}" target="_blank" title="" style="text-decoration: none;"> 
+                          <a href="{{url('/cartcheckout?recurring='.$ordermstr->trxno)}}" target="_blank" title="" style="text-decoration: none;"> 
                             Approve Now! 
                           </a>
 
