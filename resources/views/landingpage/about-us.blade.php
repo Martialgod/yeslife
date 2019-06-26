@@ -55,7 +55,7 @@
         <div class="container" >
 
 
-           <div class="about-us-right-image" style="margin-top: -70px;">
+            <div class="about-us-right-image" style="margin-top: -70px;">
 
                 <img src="/landingpage/assets/images/about/about-image-4.jpg" width="100%" height="800" alt="">
 
@@ -97,11 +97,12 @@
 
             <!-- About Content Start -->
             <div class="row abount-content-mobile" style="display:none;" >
-                <div class="about-content about-content-1">
-          
+               
+                <div class="about-content about-content-1" >
+            
                     <h2 style="color:#fbb055;">Our Company</h2>
                     <br>
-                    <div class="desc">
+                    <div class="desc" >
                         
                         <p>
                             We focus on providing the natural solutions that are known to work.
@@ -122,6 +123,7 @@
                     </div>
                                                
                 </div><!--END about-content about-content-1-->
+
             </div><!-- About Content End -->
             
 
@@ -176,20 +178,20 @@
                     <br><br>
                     <h2>Our Cause</h2>
                     <br>
-                    <p style="font-family: Univers">
+                    <p align="justify">
                         It began with seeing the amazing benefits of CBD in our own lives. Unfortunately, there was so much different information and noise out there – “Is this true?” – “Is this false?” – “What am I reading!?” – we didn’t know what to believe. With so many different products at different price points to compound it all, our heads were spinning. We were lost.
                         
                     </p>      
 
-                    <p>
+                    <p align="justify">
                         But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, Yes.Life emerged. Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
                     </p>  
 
-                    <p>
+                    <p align="justify">
                         Our cause stems from making our customers’ lives better. We listen to your needs and empower them to discover better health through the right products – the products nature gave us first – with the help of smarter science. 
                     </p>
 
-                    <p>
+                    <p align="justify">
                         That’s it.
                     </p>
 
@@ -211,7 +213,7 @@
                     <br><br>
                     <h2 style="text-align: center;color:#fff !important;"> About our YESNANO™ TECHNOLOGY </h2>
                     <br>
-                    <p style="color:#fff !important;">
+                    <p style="color:#fff !important;" align="justify">
                         Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YesNano™ Technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible.
                     </p>
                     <br>

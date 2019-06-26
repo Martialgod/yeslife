@@ -407,7 +407,7 @@ class DatabaseSeeder extends Seeder
 
 
      
-        DB::table('permalink')->insert([
+        /*DB::table('permalink')->insert([
             'pk_permalink'=> 7040,
             'method'=> 'LIST',
             'description'=> 'FAQs',
@@ -470,6 +470,21 @@ class DatabaseSeeder extends Seeder
             'type'=> 'B',
             'family'=> 'Posts',
             'indexno'=> 4,
+            'stat'=>1
+        ]); */
+
+        DB::table('coupons')->insert([
+            'pk_coupons'=> 20,
+            'code'=> 'RCRNG-ORDER',
+            'name'=> 'Recurring Order Discount',
+            'description'=> 'Special Coupon Applicable for recurring orders',
+            'type'=> 'Rated',
+            'amount'=> '20.00',
+            'effective_at'=> \Carbon\Carbon::now(),
+            'expired_at'=> null,
+            'applies_to'=> 'All',
+            'max_use'=> 0,
+            'created_at'=> \Carbon\Carbon::now(),
             'stat'=>1
         ]); 
 

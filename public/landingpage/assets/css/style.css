@@ -914,7 +914,7 @@ input::placeholder, textarea::placeholder {
   position: relative; }
 
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 768px){
   .banner-free-sample {
     padding-top: 100px; }
   .free-sample-shipping{
@@ -4975,7 +4975,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .about-image-overlay {
   width:30%;
-  - height:80%;
+  -height:80%;
   background:;
   border:10px solid #8a8c8e;
   position:absolute;
