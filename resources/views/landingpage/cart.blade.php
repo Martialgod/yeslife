@@ -199,9 +199,8 @@
                                         <p>Coupon(s) </p>
                                         <p ng-repeat="list in vm.msccoupons ">
 
-                                            <i class="fa fa-trash-o text-danger" ng-click="vm.RemoveCoupons(list)" style="cursor: pointer;"></i>
-                                            &nbsp;
-
+                                            <i ng-hide="vm.IsRecurringCoupons(list)" class="fa fa-trash-o text-danger" ng-click="vm.RemoveCoupons(list)" style="cursor: pointer;" > &nbsp; </i>
+                                            
                                             @{{list.code}}
 
                                             <span style="color:red" ng-if="list.type == 'Fixed'"> 

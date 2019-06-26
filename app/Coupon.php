@@ -127,4 +127,13 @@ class Coupon extends Model
 
 
 
+
+    public static function getRecurringCoupon(){
+
+        return static::where('pk_coupons', 20)->where('stat', 1)->get();
+
+    }//END getActiveCoupon
+    
+
+
 }

@@ -25,6 +25,7 @@
 		vm.mscproducts = [];
 
 		vm.msccoupons = [];
+		vm.recurringcoupons = [];
 
 		vm.mscstates = [];
 		vm.selectedstates = {};
@@ -44,6 +45,23 @@
 		vm.referrer_token = $('#referrer_token').val();
 		vm.yeslife_referrer_id = $('#yeslife_referrer_id').val();
 		//console.log(vm.yeslife_referrer_id);
+		
+		vm.IsRecurringCoupons = function(list){
+
+			var flag = false;
+
+        	vm.recurringcoupons.forEach(function(item1, index1){
+        	
+        		if( list.pk_coupons == item1.pk_coupons ){
+        			flag = true;
+        			return;
+        		}
+
+        	}); //END recurringcoupons
+
+        	return flag;
+
+		}; //END IsRecurringCoupons
 
 		vm.LoadCart = function(){
 	
@@ -77,7 +95,11 @@
 
                 	vm.mscproducts = data.cart;
                 	vm.mscstates = data.mscstates;
+                	vm.recurringcoupons = data.recurringcoupons;
 
+                	vm.recurringcoupons.forEach(function(item1, index1){
+                		vm.msccoupons.push(item1);
+                	}); //END recurringcoupons
 
                		vm.SetSelectedStates();
                 	//vm.CalculateTotal();
@@ -728,7 +750,7 @@
         	
         	
         	//bypass rallypay
-        	/*vm.paymentapi = {
+        	vm.paymentapi = {
         		amount: 100,
             	currency: 'usd',
             	email: 'test@gmail.com',
@@ -742,7 +764,7 @@
         	};
 	        //console.log(donation);
 	        vm.SubmitCart();
-        	return;  */
+        	return;  
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js

@@ -24,6 +24,8 @@ use App\ProductPriceListMstrView;
 use App\OrderMstr;
 use App\OrderDtl;
 
+use App\Coupon;
+
 use App\User;
 use App\UserCart;
 use App\UserMstrView;
@@ -268,7 +270,9 @@ class CartController extends Controller
 
                 $products = ProductResource::collection($products);
 
-                return ['cart'=>$products, 'mscstates'=> $mscstates];
+                $recurringcoupons = Coupon::getRecurringCoupon();
+
+                return ['cart'=>$products, 'mscstates'=> $mscstates, 'recurringcoupons'=> $recurringcoupons ];
 
                 //return '1';
 
@@ -400,7 +404,7 @@ class CartController extends Controller
 
         $products = ProductResource::collection($products);
 
-        return ['cart'=>$products, 'mscstates'=> $mscstates];
+        return ['cart'=>$products, 'mscstates'=> $mscstates, 'recurringcoupons'=> [] ];
     
     }//END apiindex
 
