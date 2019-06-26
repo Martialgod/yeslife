@@ -52,10 +52,10 @@
         <div class="about-shape one rellax" data-rellax-speed="-5" data-rellax-percentage="0.5"><img src="/landingpage/assets/images/shape/about-shape-1.png" alt=""></div>
         <div class="about-shape two rellax" data-rellax-speed="3" data-rellax-percentage="0.5"><img src="/landingpage/assets/images/shape/about-shape-2.png" alt=""></div>
        
-        <div class="container " >
+        <div class="container" >
 
 
-            <div class="about-us-right-image" style="margin-top: -70px;">
+           <div class="about-us-right-image" style="margin-top: -70px;">
 
                 <img src="/landingpage/assets/images/about/about-image-4.jpg" width="100%" height="800" alt="">
 
@@ -85,13 +85,11 @@
                         </p>
 
 
-                        <img src="/landingpage/assets/images/faviconv3.png" width="25%" alt="">
+                        <img src="/landingpage/assets/images/faviconv3.png" width="20%" alt="">
                     
 
                     </div>
 
-
-   
                 </div>
 
             </div><!--END col-md-12-->

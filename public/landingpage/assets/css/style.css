@@ -4974,13 +4974,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 .about-image-overlay {
-  -width:40%;
-  -height:80%;
+  width:30%;
+  - height:80%;
   background:;
   border:10px solid #8a8c8e;
   position:absolute;
   top:5%;
-  left:28%;
+  left:35%;
   display:inline-block;
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
