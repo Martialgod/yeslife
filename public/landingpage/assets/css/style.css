@@ -4971,22 +4971,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 
-.about-image {
-    position:relative;
-    display:inline-block;
-    width: 100%;
-}
+
+
 .about-image-overlay {
-    display:none;
-}
-.about-image-overlay {
-  width:40%;
-  height:90%;
-  background:#;
+  -width:40%;
+  -height:80%;
+  background:;
   border:10px solid #8a8c8e;
   position:absolute;
   top:5%;
-  left:30%;
+  left:28%;
   display:inline-block;
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
@@ -4994,6 +4988,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   text-align:center;
   color:#fff;
   padding:12px;
-  font-size:16px;
-  font-weight: bold;
+  font-size:20px;
 }

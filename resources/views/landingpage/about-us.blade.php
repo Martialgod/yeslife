@@ -54,53 +54,54 @@
        
         <div class="container " >
 
-            <div class="col-lg-12 about-us-right-image" style="background-color: yellow">
 
-                <div class="about-image">
+            <div class="about-us-right-image" style="margin-top: -70px;">
 
-                    <div class="" >
-                        <img src="/landingpage/assets/images/about/about-image-3.jpg" width="100%" alt="">
+                <img src="/landingpage/assets/images/about/about-image-4.jpg" width="100%" height="800" alt="">
+
+                <div class="about-image-overlay">
+
+                    <div style="background-color: #58595b; height:100%;">
+                        <br>
+                        <h2 style="color:#fbb055;">Our Company</h2>
+                        <br>
+          
+                        <p>
+                            We focus on providing the <br> natural solutions that are  <br> known to work.
+                        </p>
+
+                        <p>
+                            We focus on smart science, <br> high quality products, and <br> being honest.
+                        </p>
+
+                        <p>
+                            We focus on those seeking <br> better health, no matter what <br> challenges they may face in it.  
+                        </p>
+                        
+
+                        <p>
+                            At Yes.Life, we focus on you  <br> saying YES to LIFE again. 
+                            
+                        </p>
+
+
+                        <img src="/landingpage/assets/images/faviconv3.png" width="25%" alt="">
+                    
+
                     </div>
 
-                    <div class="about-image-overlay" style="text-transform: uppercase;">
 
-                        <div style="margin:1px; background-color: #58595b; height: 98%; padding: 10px;">
-                            <br>
-                            <h2 style="color:#fff;">Our Company</h2>
-                            <br>
-              
-                            <p>
-                                We focus on providing the natural solutions that are known to work.
-                            </p>
-
-                            <p>
-                                We focus on smart science, high quality products, and being honest.
-                            </p>
-
-                            <p>
-                                We focus on those seeking better health, no matter what challenges they may face in it.  
-                            </p>
-                            
-                            <p>
-                               At Yes.Life, we focus on you saying YES to LIFE again. 
-                            </p>
-                            
-                        </div>
-       
-                    </div>
-
-
+   
                 </div>
-                
-              
+
             </div><!--END col-md-12-->
 
 
             <!-- About Content Start -->
-            <div class="row abount-content-mobile" style="border-top: 15px solid #8a8c8e;border-bottom: 15px solid #8a8c8e;background-color: #b1eaf9; display:none;" >
+            <div class="row abount-content-mobile" style="display:none;" >
                 <div class="about-content about-content-1">
           
-                    <h2 style="color:#8a8c8e;">Our Company</h2>
+                    <h2 style="color:#fbb055;">Our Company</h2>
                     <br>
                     <div class="desc">
                         

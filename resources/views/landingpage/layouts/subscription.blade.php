@@ -9,9 +9,9 @@
                 
                 <div class="subscribe-wrap">
                     
-                    <h3>Special <span>Offers</span> for Subscription</h3>
-                    <h2>GET INSTANT DISCOUNT FOR MEMBERSHIP</h2>
-                    <p>Subscribe to our newsletter and get all fresh information about our latest products, promotions, offers and discounts.</p>
+                    <h3  style="color:#fff !important;">Special <span>Offers</span> for Subscription</h3>
+                    <h2  style="color:#fff !important;">GET INSTANT DISCOUNT FOR MEMBERSHIP</h2>
+                    <p  style="color:#fff !important;">Subscribe to our newsletter and get all fresh information about our latest products, promotions, offers and discounts.</p>
                     
                     {{--id:mc-form  class:--}}
                     <form id="form-subscription" id="form-subscription" class="subscribe-form"  method="POST" action="#" >
@@ -23,7 +23,7 @@
                         <input type="hidden" readonly="" id="refno_subs" name="refno_subs" value="{{session('yeslife_referrer_id')}}">
 
                         <input id="subemail" name="subemail" type="email" required="" placeholder="Enter your email here" />
-                        <button id="mc-submit">submit</button>
+                        <button id="mc-submit" style="color:#fff !important;">submit</button>
 
                     </form>
 
