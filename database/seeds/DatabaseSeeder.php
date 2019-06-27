@@ -473,7 +473,7 @@ class DatabaseSeeder extends Seeder
             'stat'=>1
         ]); */
 
-        DB::table('coupons')->insert([
+        /*DB::table('coupons')->insert([
             'pk_coupons'=> 20,
             'code'=> 'RCRNG-ORDER',
             'name'=> 'Recurring Order Discount',
@@ -486,7 +486,7 @@ class DatabaseSeeder extends Seeder
             'max_use'=> 0,
             'created_at'=> \Carbon\Carbon::now(),
             'stat'=>1
-        ]); 
+        ]); */
 
 
     }
