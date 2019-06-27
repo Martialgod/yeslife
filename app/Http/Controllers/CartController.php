@@ -110,12 +110,12 @@ class CartController extends Controller
             if( session('yeslife_virtual_user_id') ){
                 //use credentials for virtual user
                 $dbusers = UserMstrView::findOrFail(session('yeslife_virtual_user_id'));
-            }elseif(Auth::check()){
-                //retrieve user details of currently logged in user
-                $dbusers = UserMstrView::findOrFail(Auth::id());
-            }else{
+            }elseif( $recurringorder ){
                 //retrieve user details for recurring orders
                 $dbusers = UserMstrView::findOrFail($recurringorder->fk_users);
+            }else{
+                //by default retrieve user details of currently logged in user 
+                $dbusers = UserMstrView::findOrFail(Auth::id());
             }
 
             $states = State::getStateByCountry($dbusers->fk_country);
