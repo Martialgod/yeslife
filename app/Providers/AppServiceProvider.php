@@ -71,9 +71,11 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('landingpage.layouts.master', function($view){
 
            
-            $toastrbroadcast = \App\OrderMstr::where('fk_users', '<>', '1000')
+            /*$toastrbroadcast = \App\OrderMstr::where('fk_users', '<>', '1000')
                             ->inRandomOrder()
-                            ->first();
+                            ->first(); */
+
+            $toastrbroadcast = \App\OrderMstr::toastrBroadcastOrders();
 
             //dd($toastrbroadcast);
             
@@ -83,19 +85,12 @@ class AppServiceProvider extends ServiceProvider
 
             if( $toastrbroadcast ){
                 
-                //45 = free sample id on live db
-                //32 = free sample id on training db
-                $tempdtls = \App\OrderDtlView::where('fk_ordermstr', $toastrbroadcast->pk_ordermstr)
-                            ->whereNotIn('fk_products', [45, 32])
-                            ->get();
+                $toastrbroadcastcount = 1;
 
-                if( count($tempdtls) > 0 ){
+                $toastrbroadcastmstr = $toastrbroadcast->billingfname.' '.ucfirst(substr($toastrbroadcast->billinglname, 0, 1)).' from '.ucfirst($toastrbroadcast->billingstate).' bought the following: <br> ';
 
-                    $toastrbroadcastcount = 1;
+                $tempdtls = \App\OrderDtlView::where('fk_ordermstr', $toastrbroadcast->pk_ordermstr)->get();
 
-                    $toastrbroadcastmstr = $toastrbroadcast->billingfname.' '.ucfirst(substr($toastrbroadcast->billinglname, 0, 1)).' from '.ucfirst($toastrbroadcast->billingstate).' bought the following: <br> ';
-
-                }
 
                 foreach($tempdtls as $key => $v){
 

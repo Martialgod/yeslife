@@ -106,5 +106,28 @@ class OrderMstr extends Model
     }
 
 
+    public static function toastrBroadcastOrders(){
+
+        //45 = free sample id on live db
+        //32 = free sample id on training db
+        $result = DB::SELECT("
+            SELECT a.* 
+            FROM ordermstr a 
+            INNER JOIN orderdtls b 
+            ON a.pk_ordermstr = b.fk_ordermstr
+            WHERE b.fk_products not in (32, 45)
+            ORDER BY RAND()
+            LIMIT 1
+        ");
+
+        if(count($result)){
+            return $result[0];
+        }else{
+            return null;
+        }
+
+    }
+
+
 
 }//END class
