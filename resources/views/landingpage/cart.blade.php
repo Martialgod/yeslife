@@ -50,6 +50,10 @@
 
                 <input type="hidden" id="recurringtrxno" name="recurringtrxno" value="{{$recurringorder->trxno}}" >
 
+            @else 
+
+                <input type="hidden" id="recurringtrxno" name="recurringtrxno" value="empty" >
+
             @endif
                     
 

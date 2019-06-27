@@ -67,14 +67,18 @@
 	
 			var cart = getCartCookies(); //@GlobalScript.js
 
-			deleteAllCartCookies();
-
 			//console.log(cart);
 
 			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
 			//showCustomizeLoading(); //@GlobalScript.js
 			
 			//console.log(vm.recurringtrxno );
+			if( vm.recurringtrxno != 'empty' ){
+				//remove existing cart cookies. this will be overriden once we retrieve the recurring items
+				cart.forEach(function(item1, index1){
+					removeCartCookie(item1.productid);
+				});
+			}
 			
 			//'api/cart'
 			$http.post('/cart', {
@@ -114,6 +118,7 @@
                 	});//END mscproducts
 
                 	updateCartCookieCount();//GlobalScript.js
+
 
                 }else{
 
@@ -166,19 +171,25 @@
 			}
 
 			//if not a recurring checkout process then assume we checkout base on items added to the cart
-        	if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
-        		
+        	/*if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
         		var products = {
 					'productid': list.productid,
 					'qty': list.selectedqty,
 				};
-
 				//re initialize cart cookie to prevent double qty update in addCartCookie
     			document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
-
 				addCartCookie(products); //@GlobalScript.js
+        	}//END vm.recurringtrxno == undefined */
 
-        	}//END vm.recurringtrxno == undefined
+        	var products = {
+				'productid': list.productid,
+				'qty': list.selectedqty,
+			};
+
+			//re initialize cart cookie to prevent double qty update in addCartCookie
+			document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
+
+			addCartCookie(products); //@GlobalScript.js
 
 			vm.CalculateTotal();
 
@@ -396,8 +407,10 @@
 
 		        	}//END vm.recurringtrxno == undefined */
 
-					//remove from cookie
+		        	//remove from cookie
 					removeCartCookie( list.productid ); //@GlobalScript.js
+
+					
 
 				}//END item1.productid == list.productid 
 
@@ -753,7 +766,7 @@
         	
         	
         	//bypass rallypay
-        	/*vm.paymentapi = {
+        	vm.paymentapi = {
         		amount: 100,
             	currency: 'usd',
             	email: 'test@gmail.com',
@@ -767,7 +780,7 @@
         	};
 	        //console.log(donation);
 	        vm.SubmitCart();
-        	return;  */
+        	return;  
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js
