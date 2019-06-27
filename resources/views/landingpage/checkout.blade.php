@@ -46,7 +46,8 @@
 
                    <div class="col-md-6 col-12 mb-20">
                        <label>Email Address*</label>
-                       <input type="email" class="form-control" id="billingemail" name="billingemail" placeholder="Email" required="" maxlength="255" value="{{$users['email']}}" {{ ( Auth::check() ) ? 'readonly="readonly"' : '' }} >
+                       {{--<input type="email" class="form-control" id="billingemail" name="billingemail" placeholder="Email" required="" maxlength="255" value="{{$users['email']}}" {{ ( Auth::check() ) ? 'readonly="readonly"' : '' }} >--}}
+                       <input type="email" class="form-control" id="billingemail" name="billingemail" placeholder="Email" required="" maxlength="255" value="{{$users['email']}}" {{ ( $users['email'] != '' ) ? 'readonly="readonly"' : '' }} >
                    </div>
 
                    <div class="col-md-6 col-12 mb-20">
