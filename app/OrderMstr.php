@@ -105,4 +105,6 @@ class OrderMstr extends Model
         DB::statement("CALL usp_insertRecurringOrders();");
     }
 
+
+
 }//END class

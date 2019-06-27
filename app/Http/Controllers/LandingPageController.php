@@ -146,55 +146,55 @@ class LandingPageController extends Controller
         if(session('yeslife_order_from') == 'Free-Sample'){
 
 
-            if( $orders->issubscribed == 1 || $orders->istext == 1 ){
+            /*if( $orders->issubscribed == 1 || $orders->istext == 1 ){
 
-                $email = $orders->email;
-                //$email = '7777@gmail.com';
-                $list_id = env('MAILCHIMP_LIST');
-                $api_key = env('MAILCHIMP_APIKEY');
+            }*/
 
-                $data_center = substr($api_key,strpos($api_key,'-')+1);
+            $email = $orders->email;
+            //$email = '7777@gmail.com';
+            $list_id = env('MAILCHIMP_LIST');
+            $api_key = env('MAILCHIMP_APIKEY');
 
-                $url = 'https://'. $data_center .'.api.mailchimp.com/3.0/lists/'. $list_id .'/members';
+            $data_center = substr($api_key,strpos($api_key,'-')+1);
 
-                $json = json_encode([
-                   'email_address' => $email,
-                   'merge_fields'  => [
-                        'FNAME'     => $orders->billingfname,
-                        'LNAME'     => $orders->billinglname
-                    ],
-                   /*'first_name'=> $orders->billingfname,
-                   'last_name'=> $orders->billinglname,
-                   'address'=> [
-                        'address1'=> $orders->billingaddress1,
-                        'address2'=> $orders->billingaddress2,
-                        'city'=> $orders->billingcity,
-                        'province'=> $orders->billingstate,
-                        'province_code'=> '',
-                        'postal_code'=> $orders->billingzip,
-                        'country'=> $orders->billingcountry,
-                        'country_code'=> ''
-                   ], */
-                   'status'        => 'subscribed', //pass 'subscribed' or 'pending'
-                ]);
+            $url = 'https://'. $data_center .'.api.mailchimp.com/3.0/lists/'. $list_id .'/members';
 
-                //dd($json);
+            $json = json_encode([
+               'email_address' => $email,
+               'merge_fields'  => [
+                    'FNAME'     => $orders->billingfname,
+                    'LNAME'     => $orders->billinglname
+                ],
+               /*'first_name'=> $orders->billingfname,
+               'last_name'=> $orders->billinglname,
+               'address'=> [
+                    'address1'=> $orders->billingaddress1,
+                    'address2'=> $orders->billingaddress2,
+                    'city'=> $orders->billingcity,
+                    'province'=> $orders->billingstate,
+                    'province_code'=> '',
+                    'postal_code'=> $orders->billingzip,
+                    'country'=> $orders->billingcountry,
+                    'country_code'=> ''
+               ], */
+               'status'        => 'subscribed', //pass 'subscribed' or 'pending'
+            ]);
 
-                $ch = curl_init($url);
-                curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $api_key);
-                curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-                $result = curl_exec($ch);
-                $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                curl_close($ch);
-                //echo $status_code;
+            //dd($json);
 
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $api_key);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+            $result = curl_exec($ch);
+            $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            //echo $status_code;
 
-            }
 
         }
 

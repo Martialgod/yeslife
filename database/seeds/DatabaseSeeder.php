@@ -479,7 +479,7 @@ class DatabaseSeeder extends Seeder
             'name'=> 'Recurring Order Discount',
             'description'=> 'Special Coupon Applicable for recurring orders',
             'type'=> 'Rated',
-            'amount'=> '20.00',
+            'amount'=> '15.00',
             'effective_at'=> \Carbon\Carbon::now(),
             'expired_at'=> null,
             'applies_to'=> 'All',
