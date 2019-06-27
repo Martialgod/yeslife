@@ -89,12 +89,15 @@ class AppServiceProvider extends ServiceProvider
 
                 $toastrbroadcastmstr = $toastrbroadcast->billingfname.' '.ucfirst(substr($toastrbroadcast->billinglname, 0, 1)).' from '.ucfirst($toastrbroadcast->billingstate).' bought the following: <br> ';
 
-                $tempdtls = \App\OrderDtlView::where('fk_ordermstr', $toastrbroadcast->pk_ordermstr)->get();
-
+                //45 = free sample id on live db
+                //32 = free sample id on training db
+                $tempdtls = \App\OrderDtlView::where('fk_ordermstr', $toastrbroadcast->pk_ordermstr)
+                            ->whereNotIn('fk_products', [32, 45])
+                            ->get();
 
                 foreach($tempdtls as $key => $v){
 
-                    $toastrbroadcastdtls.= round($tempdtls[0]->qty).' bottle(s) of '.$tempdtls[0]->name.'<br>';
+                    $toastrbroadcastdtls.= round($v->qty).' bottle(s) of '.$v->name.'<br>';
 
                 }
 
