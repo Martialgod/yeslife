@@ -287,7 +287,7 @@
 
     </style>
 
-
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/fd43a58c0196c02d18943fb38/ae8e24929525fceb390d21e38.js");</script>
 
 
     @yield('optional_styles')
