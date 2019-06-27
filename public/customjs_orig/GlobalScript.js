@@ -488,6 +488,7 @@ function countCartCookies() {
     if( key[0].indexOf('yeslifecart_') !== -1 ){
       //count++;
       count+= ( !isNaN(key[1]) ) ? parseFloat(key[1]) : 0;
+      //console.log( key[0] + ' = ' + key[1]);
     }
 
   }//END for
@@ -733,7 +734,7 @@ function deleteAllCartCookies() {
     var key = multiple[i].split("=");
     //remove cookies with cart
     if( key[0].indexOf('yeslifecart_') !== -1 ){
-      console.log(key[0]);
+      //console.log(key[0]);
       document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/"; //set expiry
     }
     

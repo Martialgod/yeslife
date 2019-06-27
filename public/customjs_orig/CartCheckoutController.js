@@ -67,6 +67,8 @@
 	
 			var cart = getCartCookies(); //@GlobalScript.js
 
+			deleteAllCartCookies();
+
 			//console.log(cart);
 
 			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
@@ -387,14 +389,15 @@
 					vm.mscproducts.splice(index1, 1);
 
 					//if not a recurring checkout process then assume we checkout base on items added to the cart
-		        	if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
+		        	/*if( vm.recurringtrxno == undefined || vm.recurringtrxno == '' ){
 		        		
 		        		//remove from cookie
 						removeCartCookie( list.productid ); //@GlobalScript.js
 
-		        	}//END vm.recurringtrxno == undefined
+		        	}//END vm.recurringtrxno == undefined */
 
-					
+					//remove from cookie
+					removeCartCookie( list.productid ); //@GlobalScript.js
 
 				}//END item1.productid == list.productid 
 
@@ -750,7 +753,7 @@
         	
         	
         	//bypass rallypay
-        	vm.paymentapi = {
+        	/*vm.paymentapi = {
         		amount: 100,
             	currency: 'usd',
             	email: 'test@gmail.com',
@@ -764,7 +767,7 @@
         	};
 	        //console.log(donation);
 	        vm.SubmitCart();
-        	return;  
+        	return;  */
 
         	//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
         	showCustomizeLoading(); //@GlobalScript.js
