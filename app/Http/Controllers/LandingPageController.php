@@ -34,6 +34,8 @@ use App\Faq;
 
 use App\User;
 
+use App\MailChimpClass;
+
 use Mail;
 
 use App\Mail\SendSubsConfirmation;
@@ -152,7 +154,14 @@ class LandingPageController extends Controller
 
             }*/
 
-            $email = $orders->email;
+            $mailchimp = new MailChimpClass();
+            $mailchimp->storeSubscriber([
+                'email'=> $orders->email,
+                'fname'=> $orders->billingfname,
+                'lname'=> $orders->billinglname,
+            ]);
+
+            /*$email = $orders->email;
             //$email = '7777@gmail.com';
             $list_id = env('MAILCHIMP_LIST');
             $api_key = env('MAILCHIMP_APIKEY');
@@ -167,18 +176,6 @@ class LandingPageController extends Controller
                     'FNAME'     => $orders->billingfname,
                     'LNAME'     => $orders->billinglname
                 ],
-               /*'first_name'=> $orders->billingfname,
-               'last_name'=> $orders->billinglname,
-               'address'=> [
-                    'address1'=> $orders->billingaddress1,
-                    'address2'=> $orders->billingaddress2,
-                    'city'=> $orders->billingcity,
-                    'province'=> $orders->billingstate,
-                    'province_code'=> '',
-                    'postal_code'=> $orders->billingzip,
-                    'country'=> $orders->billingcountry,
-                    'country_code'=> ''
-               ], */
                'status'        => 'subscribed', //pass 'subscribed' or 'pending'
             ]);
 
@@ -195,7 +192,7 @@ class LandingPageController extends Controller
             $result = curl_exec($ch);
             $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
-            //echo $status_code;
+            //echo $status_code; */
 
 
         }
@@ -561,6 +558,14 @@ class LandingPageController extends Controller
             Mail::to($users->email, $users->email)->later($when, new SendSubsConfirmation($users));
 
             //Mail::to($users->email, $users->email)->send(new SendSubsConfirmation($users));
+            
+
+            $mailchimp = new MailChimpClass();
+            $mailchimp->storeSubscriber([
+                'email'=> $users->email,
+                'fname'=> $users->fname,
+                'lname'=> $users->lname,
+            ]);
          
             return 'success';
 

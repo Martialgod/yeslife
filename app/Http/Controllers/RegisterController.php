@@ -22,6 +22,8 @@ use App\Country;
 
 use App\PasswordReset;
 
+use App\MailChimpClass;
+
 use Mail;
 
 use App\Mail\SendRegistrationCouponCode;
@@ -332,7 +334,8 @@ class RegisterController extends Controller
                 $request['password'] = bcrypt($request->password);
                 $request['fullname'] = $request->fname.' '.$request->lname;
                 $request['stat'] = 1;  //default stat
-                
+
+    
                 //dd($request->all());
 
                 $users = User::create($request->all()); //insert all $request
@@ -345,6 +348,19 @@ class RegisterController extends Controller
                 $when = Carbon::now()->addMinutes(1);
                 Mail::to($request->email, $request->email)->later($when, new SendRegistrationCouponCode($users));
 
+
+                if( $users->issubscribed == 1 || $users->istext == 1 ){
+
+                    $mailchimp = new MailChimpClass();
+                    $mailchimp->storeSubscriber([
+                        'email'=> $users->email,
+                        'fname'=> $users->fname,
+                        'lname'=> $users->lname,
+                    ]);
+
+                }
+
+             
                 session()->flash('success', "Registration completed!");
                 return redirect()->back();
 
@@ -385,6 +401,8 @@ class RegisterController extends Controller
                 $request['fk_referredby'] = $refno;
 
             }*/
+
+            //dd($request->all());
 
             if( User::where('uname', $request->uname)->first() ){
                 return redirect()->back()->withInput()->withErrors(['Username already exists']);
@@ -428,6 +446,19 @@ class RegisterController extends Controller
             //email to the customer
             $when = Carbon::now()->addMinutes(1);
             Mail::to($request->email, $request->email)->later($when, new SendRegistrationCouponCode($users));
+
+            if( $request->istext == 1 || $request->issubscribed == 1 ){
+
+                $mailchimp = new MailChimpClass();
+                $mailchimp->storeSubscriber([
+                    'email'=> $users->email,
+                    'fname'=> $users->fname,
+                    'lname'=> $users->lname,
+                ]);
+
+            }
+           
+         
 
             session()->flash('success', "Registration completed!");
             return redirect()->back();
