@@ -126,7 +126,9 @@ class Coupon extends Model
     
 
 
-
+    public static function getFirstOrderCoupon(){
+        return static::where('pk_coupons', 13)->where('stat', 1)->first();
+    }
 
     public static function getRecurringCoupon(){
 

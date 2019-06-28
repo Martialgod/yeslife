@@ -37,7 +37,7 @@
 			<div class="error-right">
 		    	
 		    	<p>
-		    		Please check your email for your default login credentials and your 20% subscription code.
+		    		Please check your email for your default login credentials and your 10% subscription code.
 		    		
 		    	</p>
 

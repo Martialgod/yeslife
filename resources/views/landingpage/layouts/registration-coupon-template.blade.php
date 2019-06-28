@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>20% Registration Coupon</title>
+    <title>10% Registration Coupon</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -333,7 +333,7 @@
 
             <!-- START CENTERED WHITE CONTAINER -->
             <span class="preheader">
-              20% Registration Code
+              10% Registration Code
             </span>
             
             <table role="presentation" class="main">
@@ -357,7 +357,7 @@
 
 
                         <p>
-                          You can now login to your Yes.Life account and avail your one-time 20% registration coupon code <b> EBxG13 </b>.
+                          You can now login to your Yes.Life account and avail your one-time 10% registration coupon code <b> EBxG13 </b>.
                         </p>
 
            

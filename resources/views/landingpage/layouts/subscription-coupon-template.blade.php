@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>20% Subscription Coupon</title>
+    <title>10% Subscription Coupon</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -370,7 +370,7 @@
                         </p>
 
                         <p>
-                          20% subscription coupon: <b> EBxG13 </b>
+                          10% subscription coupon: <b> EBxG13 </b>
                           
                         </p>
 

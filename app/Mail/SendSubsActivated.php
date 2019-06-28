@@ -37,7 +37,7 @@ class SendSubsActivated extends Mailable
     public function build()
     {
         return $this->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'))
-            ->subject('20% Subscription Discount!')
+            ->subject('10% Subscription Discount!')
             ->view('landingpage.layouts.subscription-coupon-template');
     
     }

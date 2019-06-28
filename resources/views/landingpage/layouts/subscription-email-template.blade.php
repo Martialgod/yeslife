@@ -356,7 +356,7 @@
                         </p>
 
                         <p>
-                          As a special gift to you today, please confirm your email address by clicking the link below, and we will immediately send you a one-time 20% OFF your first order coupon!!  
+                          As a special gift to you today, please confirm your email address by clicking the link below, and we will immediately send you a one-time 10% OFF your first order coupon!!  
 
                         </p>
 

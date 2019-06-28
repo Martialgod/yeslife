@@ -28,6 +28,8 @@ use App\OrderDtlView;
 use App\CertificationMstrView;
 use App\CertificationDtl;
 
+use App\Coupon;
+
 use App\Faq;
 
 use App\User;
@@ -491,7 +493,7 @@ class LandingPageController extends Controller
         $users = User::findOrFail($id);
 
         $user = $users;
-        
+
         return view('landingpage.layouts.registration-coupon-template', compact('user'));
 
 

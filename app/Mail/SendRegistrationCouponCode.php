@@ -37,7 +37,7 @@ class SendRegistrationCouponCode extends Mailable
     public function build()
     {
         return $this->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'))
-            ->subject('20% Registration Discount!')
+            ->subject('10% Registration Discount!')
             ->view('landingpage.layouts.registration-coupon-template');
     
     }
