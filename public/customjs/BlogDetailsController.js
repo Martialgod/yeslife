@@ -1,1 +1,127 @@
-angular.module("app",["AppServices"]).constant("API_URL","/mail").config(["$httpProvider",function(e){e.defaults.headers.common["X-Requested-With"]="XMLHttpRequest"}]).controller("BlogDetailsController",["$http","SQLSTATEFactory","API_URL","GlobalFactory",function(e,o,s,t){var n=this;n.pk_posts=$("#postid").val(),n.search=null,n.mscreviews=[],n.navlinks={},n.meta={},n.LoadReviews=function(o){o=o||"/blog/"+n.pk_posts+"/reviews?v="+Math.random(),n.mscreviews=[],e.get(o).then(function(e){var o=e.data;n.navlinks=o.links,n.meta=o.meta,n.mscreviews=o.data,hideCustomizeLoading()},function(e){swal("Opps!","Something went wrong!","error"),console.log(e.data),hideCustomizeLoading()})},n.PostReviews=function(o){o.preventDefault(),$("#form-reviews").valid()&&(showCustomizeLoading(),e.post("/blog/"+n.pk_posts+"/reviews",$("#form-reviews").serializeArray()).then(function(e){console.log(e);var o=e.data;n.navlinks=o.links,n.meta=o.meta,n.mscreviews=o.data,hideCustomizeLoading(),$("#comments").val(""),swal("Success","Your comment has been posted!","success")},function(e){console.log(e),swal("Opps!","Errors found! <br> Please see logs","error"),hideCustomizeLoading()}))},showCustomizeLoadingNoIcon(),setTimeout(function(){n.LoadReviews()},500)}]);
+(function(){
+
+	var app = angular.module('app', ['AppServices'])
+			.constant('API_URL', '/mail')//define constant API_URL to be used in linking angular and laravel
+			//to enable laravel request()->ajax()
+			.config(['$httpProvider', function($httpProvider){
+					$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+				}]); 
+
+
+	app.controller('BlogDetailsController', ['$http', 'SQLSTATEFactory', 'API_URL', 'GlobalFactory', function($http, SQLSTATEFactory, API_URL, GlobalFactory ){
+
+		var vm = this;
+
+		vm.pk_posts = $('#postid').val();
+
+		vm.search = null;
+		vm.mscreviews = [];
+		vm.navlinks = {};
+		vm.meta = {};
+
+
+		vm.LoadReviews = function(url){
+
+			//console.log(url);
+
+			var url = ( url ) ? url : '/blog/'+vm.pk_posts+'/reviews?v='+Math.random();
+
+			vm.mscreviews = [];
+
+			$http.get(url).then(function(response){
+				
+				//success
+				//console.log(response);
+
+				var data = response.data;
+
+				vm.navlinks = data.links;
+				vm.meta = data.meta;
+
+				vm.mscreviews = data.data;
+
+				//@customjs/AppServices.js
+				//GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
+				hideCustomizeLoading(); //@GlobalScript.js
+
+
+			}, function(response){
+
+				//error
+				swal('Opps!', 'Something went wrong!', 'error');
+				console.log(response.data);
+
+				//@customjs/AppServices.js
+				//GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
+				hideCustomizeLoading(); //@GlobalScript.js
+
+			});
+
+
+		};//END LoadReviews
+
+
+
+		vm.PostReviews = function($event){
+
+			$event.preventDefault();
+
+			//jquery validate
+			if(!$('#form-reviews').valid()){
+				return;
+			}
+
+			//GlobalFactory.blockUICustom('#main-div'); //this GlobalFactory
+			showCustomizeLoading(); //@GlobalScript.js
+
+			$http.post('/blog/'+vm.pk_posts+'/reviews', $('#form-reviews').serializeArray() )
+            .then(function(response){
+
+                console.log(response);
+                var data = response.data;
+                //console.log(data);
+
+                vm.navlinks = data.links;
+				vm.meta = data.meta;
+
+				vm.mscreviews = data.data;
+
+                //GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
+                hideCustomizeLoading(); //@GlobalScript.js
+
+                $('#comments').val('');
+
+                swal('Success', 'Your comment has been posted!','success');
+
+            },function(response){
+
+                console.log(response);
+
+                //swal('Opps!', 'Something went wrong!<br> please see log for details', 'error');
+                swal('Opps!', 'Errors found! <br> Please see logs', 'error');
+                //GlobalFactory.unblockUICustom('#main-div'); //this GlobalFactory
+                hideCustomizeLoading(); //@GlobalScript.js
+
+            });//END $http
+
+
+		};//END PostReviews
+
+
+		//showCustomizeLoading(); //@GlobalScript.js
+		showCustomizeLoadingNoIcon(); //@GlobalScript.js
+		setTimeout(function(){
+
+			vm.LoadReviews(); //default load
+
+
+		},500);//END setTimeout
+
+
+
+	}]);//END ShopController
+
+
+
+
+})();//END file

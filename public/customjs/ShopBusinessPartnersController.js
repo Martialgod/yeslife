@@ -1,1 +1,341 @@
-angular.module("app",["AppServices"]).constant("API_URL","/shop").config(["$httpProvider",function(t){t.defaults.headers.common["X-Requested-With"]="XMLHttpRequest"}]).controller("ShopBusinessPartnersController",["$http","SQLSTATEFactory","API_URL","GlobalFactory",function(t,e,o,a){var s=this;s.search=null,s.msccategories=[],s.category="All",s.categorydescription="<h4> All Categories <h4>",s.sortby="default",s.mscproducts=[],s.navlinks={},s.meta={},s.totalamount=0,s.totalnetamount=0,s.LoadCategories=function(){t.get("/shop-categories?v="+Math.random(),{}).then(function(t){var e=t.data;s.msccategories=e,hideCustomizeLoading()},function(t){swal("Opps!","Something went wrong!","error"),console.log(t)})},s.LoadProducts=function(e){e=e||"/shop-search?v="+Math.random(),"All"==s.category?s.categorydescription="<h4> All Categories <h4>":s.msccategories.forEach(function(t,e){s.category==t.pk_category&&(s.categorydescription="<h4>"+t.description+"</h4>"+t.description2)}),s.mscproducts=[],t.post(e,{shoptype:"businesspartners",search:s.search,category:s.category,sortby:s.sortby}).then(function(t){var e=t.data;s.navlinks=e.links,s.meta=e.meta,s.mscproducts=e.data,s.CalculateTotal(),hideCustomizeLoading()},function(t){swal("Opps!","Something went wrong!","error"),console.log(t),hideCustomizeLoading()})},s.MinusPlusQty=function(t,e){e.selectedqty=isNaN(e.selectedqty)||null==e.selectedqty||""==e.selectedqty?0:e.selectedqty,"plus"==t?e.selectedqty++:"minus"==t&&e.selectedqty--,e.selectedqty<=0&&(e.selectedqty=0)},s.UpdateCart=function(t,e){""!=e.selectedqty&&(e.selectedqty=isNaN(e.selectedqty)||null==e.selectedqty||""==e.selectedqty?0:e.selectedqty,e.selectedqty<0&&(e.selectedqty=0))},s.AddToCart=function(t){if(t.selectedqty=isNaN(t.selectedqty)||null==t.selectedqty||""==t.selectedqty?0:t.selectedqty,t.selectedqty>0){var e={productid:t.productid,qty:t.selectedqty};document.cookie="yeslifecart_"+e.productid+"=0; path=/",addCartCookie(e)}else removeCartCookie(t.productid);s.CalculateTotal(),toastr_item_added_to_cart()},s.BulkUpdate=function(){s.mscproducts.forEach(function(t,e){if(t.selectedqty=isNaN(t.selectedqty)||null==t.selectedqty||""==t.selectedqty?0:t.selectedqty,t.selectedqty>0){var o={productid:t.productid,qty:t.selectedqty};document.cookie="yeslifecart_"+o.productid+"=0; path=/",addCartCookie(o)}else removeCartCookie(t.productid)}),s.CalculateTotal()},s.RemoveFromCart=function(t){removeCartCookie(t.productid),t.selectedqty=0,s.CalculateTotal()},s.CalculateTotal=function(){s.totalamount=0,s.totalcoupondiscount=0,s.totaltax=0,s.totalshipcost=0,s.totalnetamount=0,s.mscproducts.forEach(function(t,e){t.totalamount=parseFloat(t.selectedqty)*parseFloat(t.cartdiscountedprice),t.taxamount=0,t.shipamount=0,t.netamount=0,t.netamount=parseFloat(t.totalamount),s.totalamount+=parseFloat(t.totalamount),s.totalnetamount+=parseFloat(t.netamount),t.totalamount=parseFloat(t.totalamount).toFixed(2),t.netamount=parseFloat(t.netamount).toFixed(2)}),s.totalamount=parseFloat(s.totalamount).toFixed(2),s.totalnetamount=parseFloat(s.totalnetamount).toFixed(2)},s.SearchProducts=function(){showCustomizeLoadingNoIcon(),s.mscproducts=[],s.LoadProducts()},showCustomizeLoadingNoIcon(),setTimeout(function(){s.LoadProducts(),setTimeout(function(){s.LoadCategories()},500)},500)}]);
+(function(){
+
+	var app = angular.module('app', ['AppServices'])
+			.constant('API_URL', '/shop')//define constant API_URL to be used in linking angular and laravel
+			//to enable laravel request()->ajax()
+			.config(['$httpProvider', function($httpProvider){
+					$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+				}]); 
+
+
+	app.controller('ShopBusinessPartnersController', ['$http', 'SQLSTATEFactory', 'API_URL', 'GlobalFactory', function($http, SQLSTATEFactory, API_URL, GlobalFactory ){
+
+		var vm = this;
+
+		vm.search = null;
+		vm.msccategories = [];
+		vm.category = 'All';
+		vm.categorydescription =  '<h4> All Categories <h4>';
+		vm.sortby = 'default';
+		vm.mscproducts = [];
+		vm.navlinks = {};
+		vm.meta = {};
+		vm.totalamount = 0;
+		vm.totalnetamount = 0;
+
+		vm.LoadCategories = function(){
+
+			$http.get('/shop-categories?v='+Math.random(), {
+			}).then(function(response){
+				
+				//success
+				//console.log(response);
+
+				var data = response.data;
+
+				vm.msccategories = data;
+
+				hideCustomizeLoading(); //@GlobalScript.js
+
+
+			}, function(response){
+
+				//error
+				swal('Opps!', 'Something went wrong!', 'error');
+				console.log(response);
+
+			});
+
+		}; //END LoadCategories
+
+		vm.LoadProducts = function(url){
+
+			//showCustomizeLoading(); //@GlobalScript.js
+
+			var url = ( url ) ? url : '/shop-search?v='+Math.random();
+
+			//console.log(vm.sortby);
+			
+			
+			if( vm.category == 'All' ){
+
+				vm.categorydescription = '<h4> All Categories <h4>';
+
+			}else{
+				vm.msccategories.forEach(function(item1, index1){
+
+					if( vm.category == item1.pk_category ){
+
+						vm.categorydescription = '<h4>'+item1.description+'</h4>'+item1.description2;
+
+					}
+
+				}); 
+
+			}//END vm.category != 'All'
+
+			vm.mscproducts = [];
+
+			$http.post(url, {
+				'shoptype': 'businesspartners', //display all items not by group
+				'search': vm.search,
+				'category': vm.category,
+				'sortby': vm.sortby,
+			}).then(function(response){
+				
+				//success
+				//console.log(response);
+
+				var data = response.data;
+
+				vm.navlinks = data.links;
+				vm.meta = data.meta;
+
+				vm.mscproducts = data.data;
+
+				vm.CalculateTotal();
+
+
+				hideCustomizeLoading(); //@GlobalScript.js
+
+
+			}, function(response){
+
+				//error
+				swal('Opps!', 'Something went wrong!', 'error');
+				console.log(response);
+
+				hideCustomizeLoading(); //@GlobalScript.js
+
+			});
+
+
+		};//END LoadProducts
+
+
+
+		vm.MinusPlusQty = function(type, list){
+
+			list.selectedqty = ( isNaN(list.selectedqty) || list.selectedqty == undefined || list.selectedqty == '' ) ? 0 : list.selectedqty;
+
+			if( type == 'plus' ){
+				list.selectedqty++;
+			}
+			else if( type == 'minus' ){
+
+				list.selectedqty--;
+
+			}
+
+			if( list.selectedqty <= 0 ){
+				list.selectedqty = 0;
+			}
+
+
+
+		};//END MinusPlusQty
+
+
+		vm.UpdateCart = function(type, list){
+
+			//type = plus, minus, ''
+			
+			//console.log(type + list);
+
+			if( list.selectedqty != ''){
+
+				list.selectedqty = ( isNaN(list.selectedqty) || list.selectedqty == undefined || list.selectedqty == '' ) ? 0 : list.selectedqty;
+
+				if( list.selectedqty < 0 ){
+					list.selectedqty = 0;
+				}
+
+
+			}else{
+
+				
+
+			}//END list.selectedqty != '' 
+
+			
+			/*if( list.selectedqty > 0 ){
+
+				var products = {
+					'productid': list.productid,
+					'qty': list.selectedqty,
+				};
+
+				//re initialize cart cookie to prevent double qty update in addCartCookie
+				document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
+
+				addCartCookie(products); //@GlobalScript.js
+
+			}else{
+
+				removeCartCookie( list.productid ); //@GlobalScript.js
+
+			} */
+
+			//vm.CalculateTotal();
+	
+
+		}; //END UpdateCart
+
+
+
+		vm.AddToCart = function(list){
+
+			//console.log(list.selectedqty);
+			
+
+			list.selectedqty = ( isNaN(list.selectedqty) || list.selectedqty == undefined || list.selectedqty == '' ) ? 0 : list.selectedqty;
+
+
+			if( list.selectedqty > 0 ){
+
+				var products = {
+					'productid': list.productid,
+					'qty': list.selectedqty,
+				};
+
+				//re initialize cart cookie to prevent double qty update in addCartCookie
+				document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
+
+				addCartCookie(products); //@GlobalScript.js
+
+			}else{
+
+				removeCartCookie( list.productid ); //@GlobalScript.js
+
+			} 
+
+			vm.CalculateTotal();
+
+			
+  			toastr_item_added_to_cart(); //@GlobalScript.js
+
+
+		};//END AddToCart
+
+
+		vm.BulkUpdate = function(){
+
+
+			vm.mscproducts.forEach(function(item1, index1){
+
+				//console.log(item1.selectedqty);
+
+				item1.selectedqty = ( isNaN(item1.selectedqty) || item1.selectedqty == undefined || item1.selectedqty == '' ) ? 0 : item1.selectedqty;
+
+				if( item1.selectedqty > 0 ){
+
+					var products = {
+						'productid': item1.productid,
+						'qty': item1.selectedqty,
+					};
+
+					//re initialize cart cookie to prevent double qty update in addCartCookie
+					document.cookie = "yeslifecart_"+products.productid+"=0; path=/";
+
+					addCartCookie(products); //@GlobalScript.js
+
+				}else{
+
+					removeCartCookie( item1.productid ); //@GlobalScript.js
+
+				} 
+
+
+			});
+
+			vm.CalculateTotal();
+
+
+		};//END BulkUpdate
+
+		
+
+
+		vm.RemoveFromCart = function(list){
+
+
+    		//remove from cookie
+			removeCartCookie( list.productid ); //@GlobalScript.js
+
+			list.selectedqty = 0;
+
+			vm.CalculateTotal();
+
+		};//END RemoveFromCart
+
+
+		vm.CalculateTotal = function(){
+
+			vm.totalamount = 0;
+			vm.totalcoupondiscount = 0;
+			vm.totaltax = 0;
+			vm.totalshipcost = 0;
+			vm.totalnetamount = 0;
+
+
+            vm.mscproducts.forEach(function(item1, index1){
+
+            	item1.totalamount = parseFloat(item1.selectedqty) * parseFloat(item1.cartdiscountedprice);
+
+    			item1.taxamount = 0;
+
+    			item1.shipamount = 0;
+
+    			item1.netamount = 0;
+
+				item1.netamount = parseFloat(item1.totalamount);
+
+				vm.totalamount += parseFloat(item1.totalamount);
+
+				vm.totalnetamount += parseFloat(item1.netamount);
+
+				//format to 2decimal places
+				item1.totalamount = parseFloat(item1.totalamount).toFixed(2);
+    			item1.netamount = parseFloat(item1.netamount).toFixed(2);
+
+            });//END vm.mscproducts
+
+            //format to 2decimal places
+            vm.totalamount = parseFloat(vm.totalamount).toFixed(2);
+            vm.totalnetamount = parseFloat(vm.totalnetamount).toFixed(2);
+
+		};//END CalculateTotal
+		
+
+
+		vm.SearchProducts = function(){
+			//showCustomizeLoading(); //@GlobalScript.js
+			showCustomizeLoadingNoIcon(); //@GlobalScript.js
+			vm.mscproducts = []; //reinitialize
+			vm.LoadProducts(); // default search. no url
+
+		};//END RemoveFromCart
+
+	
+		//showCustomizeLoading(); //@GlobalScript.js
+		showCustomizeLoadingNoIcon(); //@GlobalScript.js
+		setTimeout(function(){
+
+			vm.LoadProducts(); //default load
+
+			setTimeout(function(){
+				vm.LoadCategories(); //default load
+			},500);//END setTimeout
+
+
+		},500);//END setTimeout
+
+		
+
+
+	}]);//END ShopController
+
+
+
+
+})();//END file

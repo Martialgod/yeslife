@@ -1,1 +1,72 @@
-$(document).ready(function(){$("#form-contact").on("submit",function(e){if(e.preventDefault(),null==$("#subject").val()||""==$("#subject").val())return $("#errsubject").prop("hidden",!1),void $("#subject").focus();$("#errsubject").prop("hidden",!0),$("#form-contact").valid()&&(showCustomizeLoading(),$.ajax({type:"POST",url:"/api/contact-us",data:{data:$(this).serializeArray()},success:function(e){"success"==e?(swal("Success!","thank you for reaching us!","success"),$("#message").val("")):swal("Opps!","Something went wrong! Please Try Again","error"),hideCustomizeLoading()},error:function(e){console.log(e),console.log("error"),hideCustomizeLoading()}}))})});
+$(document).ready(function(){
+
+
+    $('#form-contact').on('submit', function(e){
+            
+        //already validated using jquery validate; form with class jqvalidate-form
+        //initialize @layout master.blade.php
+
+        e.preventDefault();
+
+
+        if( $('#subject').val() == undefined || $('#subject').val() == '' ){
+            $('#errsubject').prop('hidden', false);
+            $('#subject').focus();
+            return;
+
+        } $('#errsubject').prop('hidden', true);
+
+        //jquery validate
+        if(!$('#form-contact').valid()){
+            return;
+        }   
+
+       
+        //$.blockUI('#main-div');
+        showCustomizeLoading(); //@GlobalScript.js
+
+
+        $.ajax({
+            type: "POST",
+            url: '/api/contact-us', //store on post
+            data: {
+                'data': $(this).serializeArray()
+            }, // 
+            success: function(data){
+                
+                //console.log(data);
+
+                if( data == 'success' ){
+
+                    // Display a success toast, with a title
+                    swal('Success!', 'thank you for reaching us!', 'success');
+                    
+                    //$('#subject').val('');
+                    $('#message').val('');
+
+                }else{
+
+                    swal('Opps!', 'Something went wrong! Please Try Again', 'error');
+                    
+                }
+
+                //$.unblockUI('#main-div');
+                hideCustomizeLoading(); //@GlobalScript.js
+
+            },
+            error: function(data){
+                console.log(data);
+                console.log('error');
+
+                //$.unblockUI('#main-div');
+                hideCustomizeLoading(); //@GlobalScript.js
+
+            }
+
+        });//END $.ajax
+
+
+    });//END #form-contact
+
+
+});
