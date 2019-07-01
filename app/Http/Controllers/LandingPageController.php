@@ -541,6 +541,8 @@ class LandingPageController extends Controller
 
             $users =  User::create($request->all());
 
+            //return $users;
+
             $users->update([
                 'affiliate_token'=> MyHelperClass::generateRandomString(10).''.$users->id
             ]);
@@ -559,12 +561,12 @@ class LandingPageController extends Controller
 
             //Mail::to($users->email, $users->email)->send(new SendSubsConfirmation($users));
             
-
+            //by default fname and lname are empty. prevent mailchimp from throwing an error
             $mailchimp = new MailChimpClass();
             $mailchimp->storeSubscriber([
                 'email'=> $users->email,
-                'fname'=> $users->fname,
-                'lname'=> $users->lname,
+                'fname'=> '',
+                'lname'=> '',
             ]);
          
             return 'success';
