@@ -22,7 +22,7 @@ use App\Country;
 
 use App\PasswordReset;
 
-use App\MailChimpClass;
+use Newsletter; //MailChimp Library
 
 use Mail;
 
@@ -351,12 +351,19 @@ class RegisterController extends Controller
 
                 if( $users->issubscribed == 1 || $users->istext == 1 ){
 
-                    $mailchimp = new MailChimpClass();
+                    /*$mailchimp = new MailChimpClass();
                     $mailchimp->storeSubscriber([
                         'email'=> $users->email,
                         'fname'=> $users->fname,
                         'lname'=> $users->lname,
-                    ]);
+                    ]); */
+
+                    //laravel Mailchimp library
+                    //3rd params is the default list name
+                    Newsletter::subscribe($users->email, 
+                        [ 'FNAME'=> $users->fname, 'LNAME'=> $users->lname ], '', 
+                        [ 'tags'=> ['subscriber'] ]
+                    );
 
                 }
 
@@ -449,12 +456,19 @@ class RegisterController extends Controller
 
             if( $request->istext == 1 || $request->issubscribed == 1 ){
 
-                $mailchimp = new MailChimpClass();
+                /*$mailchimp = new MailChimpClass();
                 $mailchimp->storeSubscriber([
                     'email'=> $users->email,
                     'fname'=> $users->fname,
                     'lname'=> $users->lname,
-                ]);
+                ]); */
+
+                //laravel Mailchimp library
+                //3rd params is the default list name
+                Newsletter::subscribe($users->email, 
+                    [ 'FNAME'=> $users->fname, 'LNAME'=> $users->lname ], '', 
+                    [ 'tags'=> ['subscriber'] ]
+                );
 
             }
            

@@ -34,7 +34,9 @@ use App\Faq;
 
 use App\User;
 
-use App\MailChimpClass;
+//use Newsletter; //MailChimp Library
+use Newsletter;
+
 
 use Mail;
 
@@ -147,55 +149,36 @@ class LandingPageController extends Controller
             return redirect('/404');
         }
 
-        if(session('yeslife_order_from') == 'Free-Sample'){
+        $tags = ['buyer'];
+
+        if(session('yeslife_order_from') != 'Free-Sample'){
+
+            //normal check out
+            if( $orders->issubscribed == 1 || $orders->istext == 1 ){
+
+                $tags [] = 'subscriber';
+
+            }
 
 
-            /*if( $orders->issubscribed == 1 || $orders->istext == 1 ){
+        }else{
 
-            }*/
+            //default free-sample
 
-            $mailchimp = new MailChimpClass();
-            $mailchimp->storeSubscriber([
-                'email'=> $orders->email,
-                'fname'=> $orders->billingfname,
-                'lname'=> $orders->billinglname,
-            ]);
+        }//END session('yeslife_order_from') != 'Free-Sample'
 
-            /*$email = $orders->email;
-            //$email = '7777@gmail.com';
-            $list_id = env('MAILCHIMP_LIST');
-            $api_key = env('MAILCHIMP_APIKEY');
+        $email = $orders->email;
 
-            $data_center = substr($api_key,strpos($api_key,'-')+1);
+        //laravel Mailchimp library
+        //3rd params is the default list name
+        Newsletter::subscribe($email, 
+            [ 'FNAME'=> $orders->billingfname, 'LNAME'=> $orders->billinglname ], '', 
+            [ 'tags'=> $tags ]
+        );
 
-            $url = 'https://'. $data_center .'.api.mailchimp.com/3.0/lists/'. $list_id .'/members';
+        //Get some member info, returns an array described in the official docs
+        //dd(Newsletter::getMember($email));
 
-            $json = json_encode([
-               'email_address' => $email,
-               'merge_fields'  => [
-                    'FNAME'     => $orders->billingfname,
-                    'LNAME'     => $orders->billinglname
-                ],
-               'status'        => 'subscribed', //pass 'subscribed' or 'pending'
-            ]);
-
-            //dd($json);
-
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $api_key);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-            $result = curl_exec($ch);
-            $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_close($ch);
-            //echo $status_code; */
-
-
-        }
 
 
         $orderdtls = OrderDtlView::where('fk_ordermstr', $orders->pk_ordermstr)->get();
@@ -561,13 +544,13 @@ class LandingPageController extends Controller
 
             //Mail::to($users->email, $users->email)->send(new SendSubsConfirmation($users));
             
-            //by default fname and lname are empty. prevent mailchimp from throwing an error
-            $mailchimp = new MailChimpClass();
-            $mailchimp->storeSubscriber([
-                'email'=> $users->email,
-                'fname'=> '',
-                'lname'=> '',
-            ]);
+            //laravel Mailchimp library
+            //3rd params is the default list name
+            Newsletter::subscribe($users->email, 
+                [ 'FNAME'=> '', 'LNAME'=> '' ], '', 
+                [ 'tags'=> ['subscriber'] ]
+            );
+
          
             return 'success';
 

@@ -185,6 +185,8 @@ return [
 
         'Aloha\Twilio\Support\Laravel\ServiceProvider',
 
+
+
     ],
 
     /*
@@ -241,6 +243,9 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
         'Twilio' => 'Aloha\Twilio\Support\Laravel\Facade',
+
+        'Newsletter' => 'Spatie\Newsletter\NewsletterFacade',
+
 
     ],
 
