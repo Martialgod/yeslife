@@ -125,15 +125,43 @@
                 </div><!--END about-content about-content-1-->
 
             </div><!-- About Content End -->
-            
+
+   
+
+            <br><br>
+            <div class="col-md-12" style="background-color: #BFC1C2;" >
+                <div class="about-us-right-image ribbon ribbon-top-left-nanotech">
+                    <span>
+                        <img src="/landingpage/assets/images/YESLIFE_Logo_color.png" width="" alt="">
+                    </span>
+                </div>
+                <br>
+                <div class="row">
+                    
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <h2 style="text-align: center;color:#af2424 !important;"> About our YESNANO™ TECHNOLOGY </h2>
+               
+                        <p style="color:" align="justify">
+                            Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YesNano™ Technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible.
+                        </p>
+                        <br>
+                    </div><!--END col-md-10-->
+                </div><!--END row-->
+               
+            </div><!--END col-md-12-->
+            <br>
 
             <div class="row">
 
                 {{--<div class="col-md-12" style="border-top: 15px solid #8a8c8e;border-bottom: 15px solid #8a8c8e;background-color: #b1eaf9; " >
+
                     <div class="row">
+
                         <!-- About Image Start col-lg-6 col-12 order-1 order-lg-2 mb-30-->
                         <div class="col-md-8 order-2 about-us-right-image" style="background-image: url('/landingpage/assets/images/about/about-image-3.jpg');">
                         </div><!-- About Image End -->
+
                         
                         <!-- About Content Start -->
                         <div class="col-lg-4 col-12 mr-auto order-2 order-lg-1 mb-30" >
@@ -146,9 +174,11 @@
                                     <p>
                                         We focus on providing the natural solutions that are known to work.
                                     </p>
+
                                     <p>
                                         We focus on smart science, high quality products, and being honest.
                                     </p>
+
                                     <p>
                                         We focus on those seeking better health, no matter what challenges they may face in it.  
                                     </p>
@@ -156,62 +186,90 @@
                                     <p>
                                        At Yes.Life, we focus on you saying YES to LIFE again. 
                                     </p>
+
                                 </div>
                                                            
                             </div><!--END about-content about-content-1-->
                         </div><!-- About Content End -->
                         
-                    </div><!--END row-->
-                </div><!--END col-md-12--> --}}
 
+                    </div><!--END row-->
+
+
+                </div><!--END col-md-12--> --}}
 
                 <div class="col-md-12 ">
                     <br><br>
                     <h2>Our Cause</h2>
                     <br>
-                    <p align="justify">
-                        It began with seeing the amazing benefits of CBD in our own lives. Unfortunately, there was so much different information and noise out there – “Is this true?” – “Is this false?” – “What am I reading!?” – we didn’t know what to believe. With so many different products at different price points to compound it all, our heads were spinning. We were lost.
-                        
-                    </p>      
+
+                    <h3 align="center" style="color:#3a95c2;text-transform: none;">
+                        It began with seeing the amazing benefits of CBD in our own lives. 
+                    </h3>
 
                     <p align="justify">
-                        But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, Yes.Life emerged. Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
+                        Unfortunately, there was so much different information and noise out there – 
+                        
+                    </p>     
+
+                    <p align="justify">
+                        “Is this true?” 
+                        <br>
+                        “Is this false?”
+                        <br>
+                        “What am I reading!?”
+                    </p> 
+
+                    <p align="justify">
+                        we didn’t know what to believe. 
+                        <br>
+                        With so many different products at different price points to compound it all, our heads were spinning. 
+                    </p>
+
+                    <h4 align="justify" style="color:#58595b;text-transform: none;">
+                        We were lost.
+                    </h4>
+
+                    <p align="justify">
+                        But we needed to know. We saw enough to believe there was something to CBD, and so we began digging for the truth. After months of hard work, Yes.Life emerged.
                     </p>  
 
+                    <h4 align="justify" style="color:#58595b;text-transform: none;">
+                        <i>
+                            Now, we hope to act as a light amidst the darkness of CBD misinformation and lies. Beyond this, we want to provide natural products that truly do work.
+                        </i>
+                    </h4>
+          
                     <p align="justify">
-                        Our cause stems from making our customers’ lives better. We listen to your needs and empower them to discover better health through the right products – the products nature gave us first – with the help of smarter science. 
+                        <i style="color:#3a95c2;">
+                            Our cause stems from making our customers’ lives better. 
+                        </i>
+                        We listen to your needs and empower them to discover better health through the right products – the products nature gave us first – with the help of smarter science. 
                     </p>
 
                     <p align="justify">
                         That’s it.
                     </p>
 
-                    <p>
-                       
-                        Honest. Simple. Natural.
-                        
-                    </p>  
 
+                    <h3>
+                       <span style="color:#58595b;">Honest.</span> 
+                       <span style="color:#fbb055;">Simple.</span> 
+                       <span style="color:#3a95c2;">Natural.</span> 
+                    </h3>
+
+                    <br>
                     <p>
-                        Yes.Life
+                        <img src="/landingpage/assets/images/main-logo.png" width="" alt="">
                     </p>  
 
                     <br>
    
                 </div><!--END col-md-12-->
 
-                <div class="col-md-12" style="background-color: #8a8c8e;" >
-                    <br><br>
-                    <h2 style="text-align: center;color:#fff !important;"> About our YESNANO™ TECHNOLOGY </h2>
-                    <br>
-                    <p style="color:#fff !important;" align="justify">
-                        Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YesNano™ Technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible.
-                    </p>
-                    <br>
-                </div>
-                <br>
 
                 <!--
+
                 <div class="row about-us-videos" style="margin-top: 60px !important; margin: auto;">
                     
                     <div class="col-md-4">
@@ -221,7 +279,9 @@
                         <br>
                         <b>Revitalize Your Pets Life With CBD Oil</b>
                     </div>
+
                    
+
                     <div class="col-md-4">
                         <iframe width="" height="" src="https://www.youtube.com/embed/imZ62RUy8Sk" allowfullscreen>
                             Your browser doesn't support iframes
@@ -229,6 +289,7 @@
                         <br>
                         <b> Hemp - The Miracle Plant! </b>
                     </div>
+
                     <div class="col-md-4">
                         <iframe width="" height="" src="https://www.youtube.com/embed/eetXu157S7A" allowfullscreen>
                             Your browser doesn't support iframes
@@ -247,11 +308,14 @@
 
 
     {{--<div class="section position-relative pt-70 pb-70 pt-md-60 pb-md-60 pt-sm-50 pb-sm-50 pt-xs-50 pb-xs-50 fix" style="background-color: #8a8c8e !important; padding: 50px;"> 
+
         <h2 style="text-align: center;color:#fff !important;"> About our YES Nano Technology </h2>
         <br>
         <p style="color:#fff !important;">
             Ordinary oils clump together, especially in the presence of water. By targeting the "packing" sizes of our CBD oils, we have managed to prevent such clumping with what we call YES Nano technology. We have shrunken down the packing sizes of the oils,  allowing them to mix with water and, as a result, our CBD products can both absorb into and mix with the human body! This technology provides you with the vast benefits of CBD as quickly and efficiently as possible
         </p>
+
+
     </div> --}}
     
 
@@ -267,3 +331,9 @@
 
 @endsection
 
+
+
+    
+
+
+                    

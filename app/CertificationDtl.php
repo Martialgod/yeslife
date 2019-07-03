@@ -29,7 +29,7 @@ class CertificationDtl extends Model
   
         $common_rule = [
         	'lotcode' 	   => ['required', 'max:255'],
-        	'pictx'        =>  ['required', 'mimes:jpg,jpeg,png,pdf', 'max:1000kb' ], //500kb
+        	'pictx'        =>  ['required', 'mimes:jpg,jpeg,png,pdf', 'max:3000kb' ], //3mb
         ];
 
 
@@ -61,7 +61,7 @@ class CertificationDtl extends Model
         	'pictx.required' => 'File is required',
             'pictx.image' => 'File must be an image',
             'pictx.mimes' => 'File must be a type of jpeg,jpg,png,pdf',
-            'pictx.max'=> 'File size must be under 1000kb',
+            'pictx.max'=> 'File size must be under 3mb',
         ];
     }
 

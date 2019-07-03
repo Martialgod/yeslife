@@ -176,6 +176,8 @@ class LandingPageController extends Controller
             [ 'tags'=> $tags ]
         );
 
+        //Newsletter::delete($email);
+
         //Get some member info, returns an array described in the official docs
         //dd(Newsletter::getMember($email));
 
