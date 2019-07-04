@@ -34,9 +34,7 @@ use App\Faq;
 
 use App\User;
 
-//use Newsletter; //MailChimp Library
-use Newsletter;
-
+use Newsletter; //MailChimp Library
 
 use Mail;
 
@@ -149,7 +147,8 @@ class LandingPageController extends Controller
             return redirect('/404');
         }
 
-        $tags = ['buyer'];
+
+        $tags = [];
 
         if(session('yeslife_order_from') != 'Free-Sample'){
 
@@ -160,10 +159,10 @@ class LandingPageController extends Controller
 
             }
 
-
         }else{
 
             //default free-sample
+            $tags [] = 'subscriber';
 
         }//END session('yeslife_order_from') != 'Free-Sample'
 
@@ -176,11 +175,23 @@ class LandingPageController extends Controller
             [ 'tags'=> $tags ]
         );
 
-        //Newsletter::delete($email);
+        if(OrderMstrView::isfirsttime_buyer($email)){
+
+            // Add tags for a member in a given list, any new tags will be created
+            Newsletter::addTags(['first time buyer'], $email);
+
+        }else{
+
+            // Remove tags for a member in a given list
+            Newsletter::removeTags(['first time buyer'], $email);
+
+            // Add tags for a member in a given list, any new tags will be created
+            Newsletter::addTags(['buyer'], $email);
+
+        }//END if
 
         //Get some member info, returns an array described in the official docs
-        //dd(Newsletter::getMember($email));
-
+        //dd(Newsletter::getMember($email)); 
 
 
         $orderdtls = OrderDtlView::where('fk_ordermstr', $orders->pk_ordermstr)->get();
