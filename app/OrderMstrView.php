@@ -48,6 +48,19 @@ class OrderMstrView extends Model
 
     }//END isfirsttimer_freesample
 
+
+    public static function isfirsttime_buyer($email){
+
+        $result = static::where('email', $email)->where('stat', 1)->first();
+
+        if( !$result ){
+            return 1;
+        }
+        return 0;
+
+    }//END isfirsttime_buyer
+
+
     
 
 }
