@@ -154,7 +154,7 @@
             <div class="row">
 
                 <div class="col-md-12">
-                    <img src="/landingpage/assets/images/about/yeslife-about-our-cause.jpg" alt="">
+                    <img src="/landingpage/assets/images/about/yeslife-about-our-cause.png" alt="">
                 </div>
 
                 <div class="col-md-12 " style="">
