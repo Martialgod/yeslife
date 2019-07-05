@@ -357,7 +357,7 @@
 
 
                         <p>
-                          You can now login to your Yes.Life account and avail your one-time 10% registration coupon code <b> EBxG13 </b>.
+                          You can now login to your Yes.Life account and avail your one-time 10% registration coupon code <b> YLSUB10 </b>.
                         </p>
 
            

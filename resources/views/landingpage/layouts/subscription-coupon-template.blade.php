@@ -370,7 +370,7 @@
                         </p>
 
                         <p>
-                          10% subscription coupon: <b> EBxG13 </b>
+                          10% subscription coupon: <b> YLSUB10 </b>
                           
                         </p>
 
