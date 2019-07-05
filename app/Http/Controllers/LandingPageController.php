@@ -226,7 +226,7 @@ class LandingPageController extends Controller
             Newsletter::removeTags(['Non-Subscriber'], $email);
 
             // Add tags for a member in a given list, any new tags will be created
-            Newsletter::addTags(['Subscriber'], $email);
+            Newsletter::addTags(['Subscriber', 'Free Sample'], $email);
 
         }//END session('yeslife_order_from') != 'Free-Sample'
 
