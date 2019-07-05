@@ -62,8 +62,10 @@ class OrderMstrView extends Model
             INNER JOIN products d 
             ON b.fk_products = d.pk_products
             WHERE c.email = '$email'
-            AND d.fk_productgroup = 10
+            AND d.fk_productgroup <> 10
         ");
+
+        //return $result;
 
         if( count($result) > 1 ){
             return 0;
