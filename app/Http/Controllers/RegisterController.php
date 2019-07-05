@@ -368,7 +368,7 @@ class RegisterController extends Controller
 
                     // Email already exists on MailChimp. need to manually add tags 
                     // Add tags for a member in a given list, any new tags will be created
-                    Newsletter::addTags(['Online', 'Registered'], $users->email);
+                    Newsletter::addTags(['Online', 'Registered', 'Subscriber'], $users->email);
 
                     // Remove tags for a member in a given list
                     Newsletter::removeTags(['Non-Subscriber'], $users->email);
@@ -388,7 +388,7 @@ class RegisterController extends Controller
                     Newsletter::addTags(['Online', 'Non-Subscriber'], $users->email);
 
                     // Remove tags for a member in a given list
-                    Newsletter::removeTags(['Subscriber', 'Registered'], $users->email);
+                    Newsletter::removeTags(['Subscriber'], $users->email);
 
                 }
 
@@ -498,7 +498,7 @@ class RegisterController extends Controller
                
                 // Email already exists on MailChimp. need to manually add tags 
                 // Add tags for a member in a given list, any new tags will be created
-                Newsletter::addTags(['Online', 'Registered'], $users->email);
+                Newsletter::addTags(['Online', 'Registered', 'Subscriber'], $users->email);
 
                 // Remove tags for a member in a given list
                 Newsletter::removeTags(['Non-Subscriber'], $users->email);
@@ -521,7 +521,7 @@ class RegisterController extends Controller
                 Newsletter::addTags(['Online', 'Non-Subscriber'], $users->email);
 
                 // Remove tags for a member in a given list
-                Newsletter::removeTags(['Subscriber', 'Registered'], $users->email);
+                Newsletter::removeTags(['Subscriber'], $users->email);
 
             }
            

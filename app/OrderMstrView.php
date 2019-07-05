@@ -53,7 +53,7 @@ class OrderMstrView extends Model
 
         $result = static::where('email', $email)->where('stat', 1)->first();
 
-        if( !$result ){
+        if( is_null($result) ){
             return 1;
         }
         return 0;

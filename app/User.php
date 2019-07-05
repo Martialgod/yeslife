@@ -215,5 +215,18 @@ class User extends Authenticatable
 
     }//END getReferrer
 
+    public static function isRegisteredUser($email){
+
+        $result = static::where('email', $email)->where('stat', 1)->first();
+
+        if( !is_null($result) ){
+            return 1;
+        }
+        return 0;
+
+    }//END isRegisteredUser
+
+
+
 
 }//END class

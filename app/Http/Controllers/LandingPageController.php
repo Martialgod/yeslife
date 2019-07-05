@@ -152,6 +152,8 @@ class LandingPageController extends Controller
 
         $email = $orders->email;
         //$email = 'ttt@gmail.com';
+        //dd(OrderMstrView::isfirsttime_buyer($email));
+        //dd(User::isRegisteredUser($email));
 
         //laravel Mailchimp library
         //3rd params is the default list name
@@ -173,12 +175,12 @@ class LandingPageController extends Controller
                 Newsletter::removeTags(['Non-Subscriber'], $email);
 
                 // Add tags for a member in a given list, any new tags will be created
-                Newsletter::addTags(['Registered', 'Subscriber'], $email);
+                Newsletter::addTags(['Subscriber'], $email);
 
             }else{
 
                 // Remove tags for a member in a given list
-                Newsletter::removeTags(['Registered', 'Subscriber'], $email);
+                Newsletter::removeTags(['Subscriber'], $email);
 
                 // Add tags for a member in a given list, any new tags will be created
                 Newsletter::addTags(['Non-Subscriber'], $email);
@@ -200,7 +202,21 @@ class LandingPageController extends Controller
                 Newsletter::addTags(['Buyer'], $email);
 
             }//END if isfirsttime_buyer
-            
+
+
+            if(User::isRegisteredUser($email)){
+
+                // Add tags for a member in a given list, any new tags will be created
+                Newsletter::addTags(['Registered'], $email);
+
+            }else{
+
+                // Remove tags for a member in a given list
+                Newsletter::removeTags(['Registered'], $email);
+
+
+            }//END if isRegisteredUser
+
 
         }else{
 
