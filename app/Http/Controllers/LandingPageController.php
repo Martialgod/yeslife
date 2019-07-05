@@ -154,6 +154,14 @@ class LandingPageController extends Controller
         //$email = 'serolf@archwayent.com';
         //dd(OrderMstrView::isfirsttime_buyer($email));
         //dd(User::isRegisteredUser($email));
+        
+        /*$mchip = new MailChimpClass();
+        $mchip->storeSubscriber([
+            'email'=> $email,
+            'fname'=> $orders->billingfname,
+            'lname'=> $orders->billinglname,
+        ]);*/
+       
 
         //laravel Mailchimp library
         //3rd params is the default list name
@@ -231,12 +239,6 @@ class LandingPageController extends Controller
         }//END session('yeslife_order_from') != 'Free-Sample'
 
       
-        /*$mchip = new MailChimpClass();
-        $mchip->storeSubscriber([
-            'email'=> $email,
-            'fname'=> $orders->billingfname,
-            'lname'=> $orders->billinglname,
-        ]); */
        
 
         //Get some member info, returns an array described in the official docs
