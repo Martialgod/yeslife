@@ -51,12 +51,24 @@ class OrderMstrView extends Model
 
     public static function isfirsttime_buyer($email){
 
-        $result = static::where('email', $email)->where('stat', 1)->first();
+        //10 = FREE Sample! Product Group
+        $result = DB::SELECT("
+            SELECT a.pk_ordermstr
+            FROM ordermstr a 
+            INNER JOIN orderdtls b 
+            ON a.pk_ordermstr = b.fk_ordermstr 
+            INNER JOIN users c 
+            ON a.fk_users = c.id
+            INNER JOIN products d 
+            ON b.fk_products = d.pk_products
+            WHERE c.email = '$email'
+            AND d.fk_productgroup = 10
+        ");
 
-        if( is_null($result) ){
-            return 1;
+        if( count($result) > 1 ){
+            return 0;
         }
-        return 0;
+        return 1;
 
     }//END isfirsttime_buyer
 

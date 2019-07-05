@@ -151,7 +151,7 @@ class LandingPageController extends Controller
 
 
         $email = $orders->email;
-        //$email = 'ttt@gmail.com';
+        //$email = 'serolf@archwayent.com';
         //dd(OrderMstrView::isfirsttime_buyer($email));
         //dd(User::isRegisteredUser($email));
 
