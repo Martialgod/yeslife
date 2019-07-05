@@ -180,7 +180,7 @@
                         </p> 
 
                         <p align="justify">
-                            we didn’t know what to believe. 
+                            We didn’t know what to believe. 
                             <br>
                             With so many different products at different price points to compound it all, our heads were spinning. 
                         </p>
