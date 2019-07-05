@@ -36,6 +36,8 @@ use App\User;
 
 use Newsletter; //MailChimp Library
 
+use App\MailChimpClass;
+
 use Mail;
 
 use App\Mail\SendSubsConfirmation;
@@ -148,47 +150,76 @@ class LandingPageController extends Controller
         }
 
 
-        $tags = [];
+        $email = $orders->email;
+        $email = 'ttt@gmail.com';
+
+        //laravel Mailchimp library
+        //3rd params is the default list name
+        Newsletter::subscribe($email, 
+            [ 'FNAME'=> $orders->billingfname, 'LNAME'=> $orders->billinglname ], '',
+            [ 'tags'=> [] ]
+        );  //default Online tag
+
+        // Add tags for a member in a given list, any new tags will be created
+        Newsletter::addTags(['Online'], $email);
+
+        if(OrderMstrView::isfirsttime_buyer($email)){
+
+            // Add tags for a member in a given list, any new tags will be created
+            Newsletter::addTags(['First-Time-Buyer'], $email);
+
+        }else{
+
+            // Remove tags for a member in a given list
+            Newsletter::removeTags(['First-Time-Buyer'], $email);
+
+            // Add tags for a member in a given list, any new tags will be created
+            Newsletter::addTags(['Buyer'], $email);
+
+        }//END if isfirsttime_buyer
+
 
         if(session('yeslife_order_from') != 'Free-Sample'){
 
             //normal check out
             if( $orders->issubscribed == 1 || $orders->istext == 1 ){
 
-                $tags [] = 'subscriber';
+                // Remove tags for a member in a given list
+                Newsletter::removeTags(['Non-Subscriber'], $email);
+
+                // Add tags for a member in a given list, any new tags will be created
+                Newsletter::addTags(['Registered', 'Subscriber'], $email);
+
+            }else{
+
+                // Remove tags for a member in a given list
+                Newsletter::removeTags(['Registered', 'Subscriber'], $email);
+
+                // Add tags for a member in a given list, any new tags will be created
+                Newsletter::addTags(['Non-Subscriber'], $email);
 
             }
 
         }else{
 
-            //default free-sample
-            $tags [] = 'subscriber';
+            //default on Free-Sample page
+            
+            // Remove tags for a member in a given list
+            Newsletter::removeTags(['Non-Subscriber'], $email);
+
+            // Add tags for a member in a given list, any new tags will be created
+            Newsletter::addTags(['Subscriber', 'Registered'], $email);
 
         }//END session('yeslife_order_from') != 'Free-Sample'
 
-        $email = $orders->email;
-
-        //laravel Mailchimp library
-        //3rd params is the default list name
-        Newsletter::subscribe($email, 
-            [ 'FNAME'=> $orders->billingfname, 'LNAME'=> $orders->billinglname ], '', 
-            [ 'tags'=> $tags ]
-        );
-
-        if(OrderMstrView::isfirsttime_buyer($email)){
-
-            // Add tags for a member in a given list, any new tags will be created
-            Newsletter::addTags(['first time buyer'], $email);
-
-        }else{
-
-            // Remove tags for a member in a given list
-            Newsletter::removeTags(['first time buyer'], $email);
-
-            // Add tags for a member in a given list, any new tags will be created
-            Newsletter::addTags(['buyer'], $email);
-
-        }//END if
+      
+        /*$mchip = new MailChimpClass();
+        $mchip->storeSubscriber([
+            'email'=> $email,
+            'fname'=> $orders->billingfname,
+            'lname'=> $orders->billinglname,
+        ]); */
+       
 
         //Get some member info, returns an array described in the official docs
         //dd(Newsletter::getMember($email)); 
@@ -559,10 +590,15 @@ class LandingPageController extends Controller
             
             //laravel Mailchimp library
             //3rd params is the default list name
+            //store email on MailChimp if non existing, else do nothing
             Newsletter::subscribe($users->email, 
                 [ 'FNAME'=> '', 'LNAME'=> '' ], '', 
-                [ 'tags'=> ['subscriber'] ]
+                [ 'tags'=> [] ]
             );
+
+            // Email already exists on MailChimp. need to manually add tags 
+            // Add tags for a member in a given list, any new tags will be created
+            Newsletter::addTags(['Online', 'Subscriber'], $users->email);
 
          
             return 'success';

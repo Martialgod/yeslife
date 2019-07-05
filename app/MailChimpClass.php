@@ -10,7 +10,7 @@ class MailChimpClass{
 
 	public function __construct(){
 
-		$this->list_id = env('MAILCHIMP_LIST');
+		$this->list_id = env('MAILCHIMP_LIST_ID');
 		$this->api_key = env('MAILCHIMP_APIKEY');
 
 	}
@@ -20,17 +20,21 @@ class MailChimpClass{
 
         $data_center = substr($this->api_key,strpos($this->api_key,'-')+1);
 
-        $url = 'https://'. $data_center .'.api.mailchimp.com/3.0/lists/'. $this->list_id .'/members';
+        //dd($this->api_key);
 
-        $obj['email'] = 'vvvbv@gmail.com';
+        $url = 'https://'. $data_center .'.api.mailchimp.com/3.0/lists/'. $this->list_id .'/members/';
+
+        //dd($url);
+
+        //$obj['email'] = 'vvvbv@gmail.com';
 
         $json = json_encode([
-           'email_address' => $obj['email'],
-           'merge_fields'  => [
+           'email_address'  => $obj['email'],
+           'merge_fields'   => [
                 'FNAME'     => $obj['fname'],
-                'LNAME'     => $obj['lname']
+                'LNAME'     => $obj['lname'],
             ],   
-           'status'        => 'subscribed', //pass 'subscribed' or 'pending'
+           'status'         => 'subscribed', //pass 'subscribed' or 'pending'
         ]);
 
         //dd($json);
@@ -41,6 +45,7 @@ class MailChimpClass{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
         curl_setopt($ch, CURLOPT_POST, 1);
+        //curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
         $result = curl_exec($ch);

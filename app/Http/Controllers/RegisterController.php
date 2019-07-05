@@ -360,10 +360,35 @@ class RegisterController extends Controller
 
                     //laravel Mailchimp library
                     //3rd params is the default list name
+                    //store email on MailChimp if non existing, else do nothing
                     Newsletter::subscribe($users->email, 
                         [ 'FNAME'=> $users->fname, 'LNAME'=> $users->lname ], '', 
-                        [ 'tags'=> ['subscriber'] ]
+                        [ 'tags'=> [] ]
                     );
+
+                    // Email already exists on MailChimp. need to manually add tags 
+                    // Add tags for a member in a given list, any new tags will be created
+                    Newsletter::addTags(['Online', 'Registered'], $users->email);
+
+                    // Remove tags for a member in a given list
+                    Newsletter::removeTags(['Non-Subscriber'], $users->email);
+
+                }else{
+
+                    //laravel Mailchimp library
+                    //3rd params is the default list name
+                    //store email on MailChimp if non existing, else do nothing
+                    Newsletter::subscribe($users->email, 
+                        [ 'FNAME'=> $users->fname, 'LNAME'=> $users->lname ], '', 
+                        [ 'tags'=> [] ]
+                    );
+
+                    // Email already exists on MailChimp. need to manually add tags 
+                    // Add tags for a member in a given list, any new tags will be created
+                    Newsletter::addTags(['Online', 'Non-Subscriber'], $users->email);
+
+                    // Remove tags for a member in a given list
+                    Newsletter::removeTags(['Subscriber', 'Registered'], $users->email);
 
                 }
 
@@ -465,10 +490,38 @@ class RegisterController extends Controller
 
                 //laravel Mailchimp library
                 //3rd params is the default list name
+                //store email on MailChimp if non existing, else do nothing
                 Newsletter::subscribe($users->email, 
                     [ 'FNAME'=> $users->fname, 'LNAME'=> $users->lname ], '', 
-                    [ 'tags'=> ['subscriber'] ]
+                    [ 'tags'=> [] ]
                 );
+               
+                // Email already exists on MailChimp. need to manually add tags 
+                // Add tags for a member in a given list, any new tags will be created
+                Newsletter::addTags(['Online', 'Registered'], $users->email);
+
+                // Remove tags for a member in a given list
+                Newsletter::removeTags(['Non-Subscriber'], $users->email);
+
+
+
+            }else{
+
+                //laravel Mailchimp library
+                //3rd params is the default list name
+                //store email on MailChimp if non existing, else do nothing
+                Newsletter::subscribe($users->email, 
+                    [ 'FNAME'=> $users->fname, 'LNAME'=> $users->lname ], '', 
+                    [ 'tags'=> [] ]
+                );
+
+                
+                // Email already exists on MailChimp. need to manually add tags 
+                // Add tags for a member in a given list, any new tags will be created
+                Newsletter::addTags(['Online', 'Non-Subscriber'], $users->email);
+
+                // Remove tags for a member in a given list
+                Newsletter::removeTags(['Subscriber', 'Registered'], $users->email);
 
             }
            
