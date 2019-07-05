@@ -151,7 +151,7 @@ class LandingPageController extends Controller
 
 
         $email = $orders->email;
-        $email = 'ttt@gmail.com';
+        //$email = 'ttt@gmail.com';
 
         //laravel Mailchimp library
         //3rd params is the default list name
