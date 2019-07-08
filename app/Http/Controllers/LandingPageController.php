@@ -199,12 +199,16 @@ class LandingPageController extends Controller
             if(OrderMstrView::isfirsttime_buyer($email)){
 
                 // Add tags for a member in a given list, any new tags will be created
-                Newsletter::addTags(['First-Time-Buyer'], $email);
+                //Newsletter::addTags(['First-Time-Buyer'], $email);
+                Newsletter::addTags(['First-Time Buyer'], $email);
+                
 
             }else{
 
                 // Remove tags for a member in a given list
-                Newsletter::removeTags(['First-Time-Buyer'], $email);
+                //Newsletter::removeTags(['First-Time-Buyer'], $email);
+                Newsletter::removeTags(['First-Time Buyer'], $email);
+               
 
                 // Add tags for a member in a given list, any new tags will be created
                 Newsletter::addTags(['Buyer'], $email);
