@@ -170,8 +170,7 @@ class LandingPageController extends Controller
             [ 'tags'=> [] ]
         );  //default Online tag
 
-        // Add tags for a member in a given list, any new tags will be created
-        Newsletter::addTags(['Online'], $email);
+        Newsletter::addTags(['Online', 'Buyer'], $email);
 
 
         if(session('yeslife_order_from') != 'Free-Sample'){
@@ -179,18 +178,14 @@ class LandingPageController extends Controller
             //normal check out
             if( $orders->issubscribed == 1 || $orders->istext == 1 ){
 
-                // Remove tags for a member in a given list
                 Newsletter::removeTags(['Non-Subscriber'], $email);
 
-                // Add tags for a member in a given list, any new tags will be created
                 Newsletter::addTags(['Subscriber'], $email);
 
             }else{
 
-                // Remove tags for a member in a given list
                 Newsletter::removeTags(['Subscriber'], $email);
 
-                // Add tags for a member in a given list, any new tags will be created
                 Newsletter::addTags(['Non-Subscriber'], $email);
 
             }
@@ -198,32 +193,23 @@ class LandingPageController extends Controller
 
             if(OrderMstrView::isfirsttime_buyer($email)){
 
-                // Add tags for a member in a given list, any new tags will be created
-                //Newsletter::addTags(['First-Time-Buyer'], $email);
                 Newsletter::addTags(['First-Time Buyer'], $email);
                 
-
             }else{
 
-                // Remove tags for a member in a given list
-                //Newsletter::removeTags(['First-Time-Buyer'], $email);
                 Newsletter::removeTags(['First-Time Buyer'], $email);
-               
 
-                // Add tags for a member in a given list, any new tags will be created
-                Newsletter::addTags(['Buyer'], $email);
+                Newsletter::addTags(['Paid Buyer'], $email);
 
             }//END if isfirsttime_buyer
 
 
             if(User::isRegisteredUser($email)){
 
-                // Add tags for a member in a given list, any new tags will be created
                 Newsletter::addTags(['Registered'], $email);
 
             }else{
 
-                // Remove tags for a member in a given list
                 Newsletter::removeTags(['Registered'], $email);
 
 
@@ -234,16 +220,22 @@ class LandingPageController extends Controller
 
             //default on Free-Sample page
             
-            // Remove tags for a member in a given list
             Newsletter::removeTags(['Non-Subscriber'], $email);
 
-            // Add tags for a member in a given list, any new tags will be created
-            Newsletter::addTags(['Subscriber', 'Free Sample'], $email);
+            Newsletter::addTags(['Subscriber'], $email);
+
+            if(!OrderMstrView::isfirsttime_buyer($email)){
+
+                Newsletter::addTags(['Free Sample'], $email);
+                
+            }else{
+
+
+            }//END if isfirsttime_buyer
+
 
         }//END session('yeslife_order_from') != 'Free-Sample'
 
-      
-       
 
         //Get some member info, returns an array described in the official docs
         //dd(Newsletter::getMember($email)); 
