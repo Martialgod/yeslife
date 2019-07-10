@@ -149,6 +149,8 @@ class LandingPageController extends Controller
             return redirect('/404');
         }
 
+        $orderdtls = OrderDtlView::where('fk_ordermstr', $orders->pk_ordermstr)->get();
+
 
         $email = $orders->email;
         //$email = 'serolf@archwayent.com';
@@ -161,6 +163,13 @@ class LandingPageController extends Controller
             'fname'=> $orders->billingfname,
             'lname'=> $orders->billinglname,
         ]);*/
+
+        /*$mchip = new MailChimpClass();
+        $mchip->storeOrder($orders, $orderdtls);
+
+        dd(OrderMstrView::isfreesample_buyer($orders->email));
+        dd(session('yeslife_order_from'));
+        dd(Newsletter::getMember('slawsonhbc@gmail.com')); */ 
        
 
         //laravel Mailchimp library
@@ -174,6 +183,8 @@ class LandingPageController extends Controller
 
 
         if(session('yeslife_order_from') != 'Free-Sample'){
+
+            Newsletter::removeTags(['Free Sample'], $email);
 
             //normal check out
             if( $orders->issubscribed == 1 || $orders->istext == 1 ){
@@ -224,7 +235,7 @@ class LandingPageController extends Controller
 
             Newsletter::addTags(['Subscriber'], $email);
 
-            if(!OrderMstrView::isfirsttime_buyer($email)){
+            if(OrderMstrView::isfreesample_buyer($email)){
 
                 Newsletter::addTags(['Free Sample'], $email);
                 
@@ -239,9 +250,6 @@ class LandingPageController extends Controller
 
         //Get some member info, returns an array described in the official docs
         //dd(Newsletter::getMember($email)); 
-
-
-        $orderdtls = OrderDtlView::where('fk_ordermstr', $orders->pk_ordermstr)->get();
 
         return view('landingpage.success', compact('orders', 'orderdtls'));
 

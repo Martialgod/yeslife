@@ -270,7 +270,10 @@ class ShopController extends Controller
             return redirect('/404');
         }
 
-        //admin or businespartner only
+        //fk_productgroup = 1 (case of 12)
+        //fk_usertype = 1010 (business partner)
+        //if product is case of 12 and the user visiting the site is not a business partner then redirect the page to 404
+        //only view the case of 12 product to the admin user or to the business partner users
         if( $products->fk_productgroup == 1 && !Auth::check() ){
 
            return redirect('/404');
@@ -294,10 +297,12 @@ class ShopController extends Controller
         //dd($flavors);
 
         //$gallery = ProductPix::where('fk_products', $products->pk_products)->get();
-        //business shop
         if( $products->fk_productgroup == 1 ){
+            //business shop
+            //no product variants/flavors to be displayed on shop details page
             $gallery = ProductPix::where('fk_products', $products->pk_products)->get();
         }else{
+            //normal shop
             $gallery = Product::where('fk_productgroup', $products->fk_productgroup)
                 ->where('stat', 1)
                 ->pluck('pictxa');
@@ -307,6 +312,7 @@ class ShopController extends Controller
         $reviews = ProductReviewMstrView::where('fk_products', $products->pk_products)
         			->orderBy('created_at', 'DESC')->paginate(1);
 
+        //default search products on the sidebar
         $defaultproducts = ProductMstrView::where('stat', 1)
             ->where('pk_products', '<>', $products->pk_products )
             ->where('fk_productgroup', '<>', 1) // do not include business bulk products

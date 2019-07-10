@@ -63,6 +63,7 @@ class OrderMstrView extends Model
             ON b.fk_products = d.pk_products
             WHERE c.email = '$email'
             AND d.fk_productgroup <> 10
+            AND a.stat = 1
         ");
 
         //return $result;
@@ -74,6 +75,45 @@ class OrderMstrView extends Model
 
     }//END isfirsttime_buyer
 
+
+    public static function isfreesample_buyer($email){
+
+        //10 = FREE Sample! Product Group
+        
+        $result1 = DB::SELECT("
+            SELECT a.pk_ordermstr
+            FROM ordermstr a 
+            INNER JOIN orderdtls b 
+            ON a.pk_ordermstr = b.fk_ordermstr 
+            INNER JOIN users c 
+            ON a.fk_users = c.id
+            INNER JOIN products d 
+            ON b.fk_products = d.pk_products
+            WHERE c.email = '$email'
+            AND d.fk_productgroup <> 10
+            AND a.stat = 1
+        ");
+
+        $result2 = DB::SELECT("
+            SELECT a.pk_ordermstr
+            FROM ordermstr a 
+            INNER JOIN orderdtls b 
+            ON a.pk_ordermstr = b.fk_ordermstr 
+            INNER JOIN users c 
+            ON a.fk_users = c.id
+            INNER JOIN products d 
+            ON b.fk_products = d.pk_products
+            WHERE c.email = '$email'
+            AND d.fk_productgroup = 10
+            AND a.stat = 1
+        ");
+
+        if( count($result1) == 0 && count($result2) >= 1 ){
+            return 1;
+        }
+        return 0;
+
+    }//END isfreesample_buyer
 
     
 
