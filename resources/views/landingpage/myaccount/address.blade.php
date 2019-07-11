@@ -150,12 +150,12 @@
 
                                                   <div class="col-md-6 col-5 mb-20">
                                                      <label>First Name*</label>
-                                                     <input type="text" class="form-control" id="shippingfname" name="shippingfname" placeholder="Firstname" required="" maxlength="255" value="{{$users->shippingfname}}">
+                                                     <input type="text" class="form-control" id="shippingfname" name="shippingfname" placeholder="First Name" required="" maxlength="255" value="{{$users->shippingfname}}">
                                                  </div>
 
                                                  <div class="col-md-6 col-5 mb-20">
                                                      <label>Last Name*</label>
-                                                     <input type="text" class="form-control" id="shippinglname" name="shippinglname" placeholder="Lastname" required="" maxlength="255" value="{{$users->shippinglname}}">
+                                                     <input type="text" class="form-control" id="shippinglname" name="shippinglname" placeholder="Last Name" required="" maxlength="255" value="{{$users->shippinglname}}">
                                                  </div>
                                                   
                                               </div>

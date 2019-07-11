@@ -111,12 +111,12 @@
                                                 </div>
 
                                                 <div class="col-lg-6 col-12 mb-30">
-                                                    <label for="fname">Firstname <span class="label-required">*</span></label>
+                                                    <label for="fname">First Name <span class="label-required">*</span></label>
                                                     <input type="text" class="form-control" id="fname" name="fname" placeholder=""  value="{{$users->fname}}" required="" maxlength="255">
                                                 </div>
 
                                                 <div class="col-lg-6 col-12 mb-30">
-                                                    <label for="lname">Lastname <span class="label-required">*</span> </label>
+                                                    <label for="lname">Last Name <span class="label-required">*</span> </label>
                                                     <input type="text" class="form-control" id="lname" name="lname" placeholder="" required="" value="{{$users->lname}}" maxlength="255">
                                                 </div>
 
