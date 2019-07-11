@@ -62,17 +62,23 @@
                           disabled automatically when user currently logged in
                           needs to declare hidden input with the same id and name so that when form is submitted the value will still be submitted
                         --}}
+                        {{--
                         @if( Auth::check() )
                           <input type="hidden" readonly="" name="billingcountry" value="{{$users['fk_country']}}">
-                        @endif
-                       <select name="billingcountry" id="billingcountry" class="form-control" required=""> 
-					                @foreach($country as $key => $v)
-					                    <option value="{{$v->pk_country}}" {{ ($v->pk_country == $users['fk_country'] ) ? 'selected' :'' }}> 
-					                    	{{$v->name}} 
-					                    </option>
-					                @endforeach
+                        @endif --}}
 
-					            </select>
+                        {{--select option for country is disbabled. need to declare hidden input to post the value on submit--}}
+                        <input type="hidden" readonly="" name="billingcountry" value="{{$users['fk_country']}}">
+                        
+                        <select name="billingcountry" id="billingcountry" class="form-control" required="" disabled="" > 
+  					                @foreach($country as $key => $v)
+  					                    <option value="{{$v->pk_country}}" {{ ($v->pk_country == $users['fk_country'] ) ? 'selected' :'' }}> 
+  					                    	{{$v->name}} 
+  					                    </option>
+  					                @endforeach
+
+  					            </select> 
+
                    </div><!--END col-md-6 col-12 mb-20-->
 
                    <div class="col-md-6 col-12 mb-20">
@@ -264,9 +270,14 @@
                        </div>
 
                        <div class="col-md-6 col-12 mb-20">
+
                           <input type="hidden" id="currentshippingcountry" value="{{$users['shippingcountry']}}">
+
+                          {{--select option for country is disbabled. need to declare hidden input to post the value on submit--}}
+                          <input type="hidden" name="shippingcountry" value="{{$users['shippingcountry']}}">
+
                            <label style="padding-bottom: 6px;">Country*</label>
-                           <select name="shippingcountry" id="shippingcountry" class="form-control" required="" >
+                           <select name="shippingcountry" id="shippingcountry" class="form-control" required="" disabled="" >
 							                @foreach($country as $key => $v)
 							                    <option value="{{$v->pk_country}}" {{ ($v->pk_country == $users['shippingcountry']) ? 'selected' :'' }}> 
 							                    	{{$v->name}} 

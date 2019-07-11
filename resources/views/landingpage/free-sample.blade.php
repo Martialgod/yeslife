@@ -229,8 +229,11 @@
                                         <div class="col-md-6 col-12 mb-20">
 
                                            {{--<label style="padding-bottom: 6px;">Country*</label> --}}
+                                           
+                                           {{--select option for country is disbabled. need to declare hidden input to post the value on submit--}}
+                                           <input type="hidden" class="form-control" name="billingcountry" value="229">
 
-                                           <select name="billingcountry" id="billingcountry" class="form-control" required=""> 
+                                           <select name="billingcountry" id="billingcountry" class="form-control" required="" disabled="" > 
                                                 @foreach($country as $key => $v)
                                                     <option value="{{$v->pk_country}}" {{ ($v->pk_country == 229) ? 'selected' :'' }}> 
                                                         {{$v->name}} 
@@ -430,12 +433,12 @@
 
                                       <div class="col-md-6 col-12 mb-20">
                                          {{--<label>First Name*</label> --}}
-                                         <input type="text" class="form-control" id="shippingfname" name="shippingfname" placeholder="Firstname" required="" maxlength="255" value="">
+                                         <input type="text" class="form-control" id="shippingfname" name="shippingfname" placeholder="First Name" required="" maxlength="255" value="">
                                       </div>
 
                                      <div class="col-md-6 col-12 mb-20">
                                          {{--<label>Last Name*</label> --}}
-                                         <input type="text" class="form-control" id="shippinglname" name="shippinglname" placeholder="Lastname" required="" maxlength="255" value="">
+                                         <input type="text" class="form-control" id="shippinglname" name="shippinglname" placeholder="Last Name" required="" maxlength="255" value="">
                                      </div>
 
 
@@ -446,7 +449,11 @@
 
                                       <div class="col-md-6 col-12 mb-20">
                                          {{--<label style="padding-bottom: 6px;">Country*</label> --}}
-                                         <select name="shippingcountry" id="shippingcountry" class="form-control" required="" >
+
+                                          {{--select option for country is disbabled. need to declare hidden input to post the value on submit--}}
+                                          <input type="hidden" class="form-control" name="shippingcountry" value="229">
+
+                                         <select name="shippingcountry" id="shippingcountry" class="form-control" required="" disabled="">
                                               @foreach($country as $key => $v)
                                                   <option value="{{$v->pk_country}}" {{ ($v->pk_country == 229 ) ? 'selected' :'' }}> 
                                                       {{$v->name}} 
