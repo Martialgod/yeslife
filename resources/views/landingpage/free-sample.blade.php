@@ -177,7 +177,7 @@
                 <!-- Contact Form Start -->
                 <div class="col-xl-4 col-lg-4 col-12 order-2 order-lg-2 pr-30 pr-sm-15 pr-md-15 pr-xs-15">
 
-                    <h2 style="text-align: center;">GET YOUR SAMPLE NOW</h2>
+                    <h2 style="text-align: center;">GET YOUR FREE SAMPLE NOW!</h2>
                
                     <br>
                    
@@ -207,22 +207,22 @@
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>First Name*</label> --}}
-                                           <input type="text" class="form-control" id="billingfname" name="billingfname" placeholder="First Name" required="" maxlength="255" value="">
+                                           <input type="text" class="form-control" id="billingfname" name="billingfname" placeholder="First Name*" required="" maxlength="255" value="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>Last Name*</label> --}}
-                                           <input type="text" class="form-control" id="billinglname" name="billinglname" placeholder="Last Name" required="" maxlength="255" value="">
+                                           <input type="text" class="form-control" id="billinglname" name="billinglname" placeholder="Last Name*" required="" maxlength="255" value="">
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>Email Address*</label> --}}
-                                           <input type="email" class="form-control" id="billingemail" name="billingemail" placeholder="Email" required="" maxlength="255" value="" >
+                                           <input type="email" class="form-control" id="billingemail" name="billingemail" placeholder="Email*" required="" maxlength="255" value="" >
                                         </div>
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>Phone no*</label> --}}
-                                           <input type="text" class="form-control" id="billingphone" name="billingphone" placeholder="Phone" required="" maxlength="255" value="">
+                                           <input type="text" class="form-control" id="billingphone" name="billingphone" placeholder="Phone*" required="" maxlength="255" value="">
                                         </div>
 
 
@@ -269,21 +269,23 @@
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>City*</label> --}}
-                                           <input type="text" class="form-control" id="billingcity" name="billingcity" placeholder="City" value="" maxlength="255" required="">
+                                           <input type="text" class="form-control" id="billingcity" name="billingcity" placeholder="City*" value="" maxlength="255" required="">
                                         </div><!--END col-md-6 col-12 mb-20-->
 
                                         <div class="col-md-6 col-12 mb-20">
                                            {{--<label>Zip Code *</label> --}}
-                                           <input type="text" class="form-control" id="billingzip" name="billingzip" placeholder="Zip Code" value="" maxlength="50" required="">
+                                           <input type="text" class="form-control" id="billingzip" name="billingzip" placeholder="Zip Code*" value="" maxlength="50" required="">
                                         </div><!--END col-md-6 col-12 mb-20-->
 
 
                                         <div class="col-12 mb-20">
                                            {{--<label>Address Line 1*</label>--}}
-                                           <input type="text" class="form-control" id="billingaddress1" name="billingaddress1" placeholder="Street address, P.O. box, company name, c/o" value="" maxlength="500" required="">
+                                           <input type="text" class="form-control" id="billingaddress1" name="billingaddress1" placeholder="Street address, P.O. box, company name, c/o*" value="" maxlength="500" required="">
                                            <br>
                                            <input type="text" class="form-control" id="billingaddress2" name="billingaddress2" placeholder="Apartment, suite, unit, building, floor, etc." value="" maxlength="500">
                                         </div><!--END col-md-6 col-12 mb-20-->
+
+                                        @include('landingpage.layouts.required-fields')
 
                                         {{--
                                         @if(!Auth::check())
@@ -332,7 +334,7 @@
                               
                                 <div class="row free-sample-next-step" style="margin: auto; width: 50%; padding: 10px;">
 
-                                  <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
+                                  <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >ORDER NOW</button>
 
 
                                   @if( strpos(url()->current(), 'training.yes.life/free-sample') !== false )
@@ -505,6 +507,10 @@
 
 
                               @include('landingpage.layouts.checkout-disclosure')
+
+
+                              @include('landingpage.layouts.required-fields')
+                              
 
                               <div class="row free-sample-final-step" style="margin: auto; width: 70%; padding: 10px;">
 

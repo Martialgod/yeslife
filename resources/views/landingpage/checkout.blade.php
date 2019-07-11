@@ -326,7 +326,9 @@
 
                </div><!--END divshippingaddress-->
 
-               @include('landingpage.layouts.checkout-disclosure')
+              @include('landingpage.layouts.checkout-disclosure')
+
+              @include('landingpage.layouts.required-fields')
 
             
 
