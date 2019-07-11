@@ -284,11 +284,13 @@
 
         <div class="container">
 
-
             @include('landingpage.layouts.yeslife-info-tabs')
 
+
+            <div class="row webview-prepopular-products" style="margin-top: 150px;"> </div>
+
             <!-- Section Title Start -->
-            <div class="row">
+            <div class="row" style="">
                 <div class="col">
                     <div class="section-title left mb-60 mb-xs-40">
                         
@@ -447,6 +449,9 @@
     <!-- Banner Section Start -->
     <div class="banner-section section pb-90 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
         <div class="container">
+
+            <div class="row" style="margin-top: 90px;"> </div>
+
             
             <div class="row">
                 <div class="col-12">

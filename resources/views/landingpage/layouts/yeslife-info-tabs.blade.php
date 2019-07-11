@@ -14,7 +14,7 @@
 
                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
                        
-                            <p>
+                            <p style="font-size: 24px;">
                                START SAYING <br> YES TO LIFE
                             </p>
                             
@@ -22,7 +22,7 @@
 
                         <a class="nav-item nav-link" id="nav-cbd-tab" data-toggle="tab" href="#nav-cbd" role="tab" aria-controls="nav-cbd" aria-selected="false">
                        
-                            <p>
+                            <p style="font-size: 24px;">
                                 WHAT IS <br> CBD?
                             </p>
                             
@@ -30,7 +30,7 @@
 
                         <a class="nav-item nav-link" id="nav-water-tab" data-toggle="tab" href="#nav-water" role="tab" aria-controls="nav-water" aria-selected="false">
                         
-                            <p>
+                            <p style="font-size: 24px;">
                                 WHY DOES WATER-SOLUBILITY <br> MATTER?
                             </p>
                            
@@ -39,7 +39,7 @@
                         <a class="nav-item nav-link" id="nav-absorption-tab" data-toggle="tab" href="#nav-absorption" role="tab" aria-controls="nav-absorption" aria-selected="false">
                            
 
-                            <p>
+                            <p style="font-size: 24px;">
                                BEST <br> ABSORBING 
                             </p> 
                             
@@ -47,7 +47,7 @@
 
                         <a class="nav-item nav-link" id="nav-usa-tab" data-toggle="tab" href="#nav-usa" role="tab" aria-controls="nav-usa" aria-selected="false">
 
-                            <p>
+                            <p style="font-size: 24px;">
                                 USA <br> PRODUCT
                             </p>
                             
@@ -57,15 +57,16 @@
 
                 </nav>
 
+                <br>
+
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                     
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-                        <div class="row" >
+                        <div class="row">
 
-
-                            
-                            <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs ">
+                            <!--micro-page-tabs -->
+                            <div class="col-xl-3 col-lg-3 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 ">
                              
                                 <p style="font-size: 18px;" align="justify" >
                                     <span style="color:#3a95c2;">Yes.</span><span style="color:#fbb055;">Life</span>
@@ -79,7 +80,7 @@
                                 
                             </div><!--col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50-->
 
-                            <div class="col-xl-6 col-lg-6 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50" >
+                            <div class="col-xl-9 col-lg-9 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50" >
       
                                 <img width="100%" src="/landingpage/assets/images/micropage/start-saying.jpg" alt="" >
                                 
@@ -87,25 +88,22 @@
 
                         </div><!--END row-->
 
-                    
                     </div>
 
                     <div class="tab-pane fade" id="nav-cbd" role="tabpanel" aria-labelledby="nav-cbd-tab">
 
                         <div class="row">
 
-                            <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
+                            <!--micro-page-tabs -->
+                            <div class="col-xl-3 col-lg-3 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50">
                              
                                 <p style="font-size: 18px;" align="justify">
                                     CBD – or “cannabidiol” – is a chemical found in the hemp plant. It has a myriad of positive effects on the human body, from decreasing inflammation, to aiding in anxious feelings, to easing general discomfort. Science is still learning of new benefits every day: the ones listed here are merely the tip of the iceberg.
                                 </p>
 
-                            
-
-                                
                             </div><!--END col-md-6-->
 
-                            <div class="col-xl-6 col-lg-6 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
+                            <div class="col-xl-9 col-lg-9 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
                             
                                 <img width="100%" src="/landingpage/assets/images/micropage/cbd.jpg" alt="">
                                 
@@ -121,7 +119,8 @@
 
                         <div class="row">
                             
-                            <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
+                            <!--micro-page-tabs -->
+                            <div class="col-xl-3 col-lg-3 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50">
                                
                                 <p style="font-size: 18px;" align="justify">
                                     Hemp CBD is an oil - humans are water. These two do not mix together. Water-soluble CBD products, like Yes.Life, will actually deliver the bulk of the advertised milligrams of CBD into your body giving you the most value for your money.
@@ -139,7 +138,7 @@
                                 
                             </div><!--END col-md-6-->
 
-                            <div class="col-xl-6 col-lg-6 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
+                            <div class="col-xl-9 col-lg-9 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
                        
                                 <img width="100%" src="/landingpage/assets/images/micropage/watersolubility.jpg" alt="" >
                             </div><!--END col-md-6-->
@@ -154,7 +153,8 @@
 
                         <div class="row">
                             
-                            <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
+                            <!--micro-page-tabs -->
+                            <div class="col-xl-3 col-lg-3 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50">
 
                                 <p style="font-size: 18px;" align="justify">
                                     Our Hemp CBD Oil is not only water-soluble, but also nano-sized. Our <span style="color:#3a95c2">YesNano™ Technology</span> helps the CBD supplement reach your bloodstream and actually produce positive effects. Because of our higher absorption rate, our 250 mg of Yes.Life CBD is equivalent to nearly 3000 mg of the competitor's CBD.
@@ -164,14 +164,13 @@
                                 
                             </div><!--END col-md-6-->
 
-                            <div class="col-xl-6 col-lg-6 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
+                            <div class="col-xl-9 col-lg-9 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50">
                                 <img width="100%" src="/landingpage/assets/images/micropage/absorbing.jpg" alt="" >
                             </div><!--END col-md-6-->
 
                         </div><!--END row-->
 
 
-                        
                        
                     </div>
 
@@ -180,7 +179,8 @@
 
                         <div class="row ">
                             
-                            <div class="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 micro-page-tabs">
+                            <!--micro-page-tabs -->
+                            <div class="col-xl-3 col-lg-3 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50">
 
                                 <p style="font-size: 18px;" align="justify">
                                    Our Hemp CBD Oil is extracted from Hemp plants grown and cultivated in the United States of America. Even the extraction itself is carried out in the USA. We are a homegrown American company hoping to deliver the best products to those wanting to say YES to LIFE again.
@@ -189,7 +189,7 @@
                                 
                             </div><!--END col-md-6-->
 
-                            <div class="col-xl-6 col-lg-6 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50 " >
+                            <div class="col-xl-9 col-lg-9 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50 " >
                                 <img width="100%" src="/landingpage/assets/images/micropage/usa_products1.jpg" alt="" >
                             </div><!--END col-md-6-->
 

@@ -117,7 +117,7 @@
                     <div class="row">
 
                       <div class="col-md-5">
-                        <img src="/landingpage/assets/images/product/gel-spray-bottle-V4.png" >
+                        <img src="/landingpage/assets/images/product/free-sample-value.png" >
                       </div>
 
                       <div class="col-md-7">
