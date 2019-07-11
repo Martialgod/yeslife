@@ -86,7 +86,8 @@
 
 			}//END vm.category != 'All'
 			
-			//remove active gri class and set default view as list
+			/*//list view
+			//remove active grid class and set default view as list
 			$('#btn-view-mode-grid').removeClass('active');
 			$('#btn-view-mode-list').removeClass('active'); //prevent duplicate 
 			$('#btn-view-mode-list').addClass('active');
@@ -96,7 +97,20 @@
 			$('#div-products').addClass('list');
 
 			$('#div-product-item').removeClass('list'); //prevent duplicate 
-			$('#div-product-item').addClass('list');
+			$('#div-product-item').addClass('list'); */
+
+			//grid view
+			//remove active list class and set default view as grid
+			$('#btn-view-mode-list').removeClass('active');
+			$('#btn-view-mode-grid').removeClass('active'); //prevent duplicate 
+			$('#btn-view-mode-grid').addClass('active');
+
+			$('#div-products').removeClass('list');
+			$('#div-products').removeClass('grid'); //prevent duplicate 
+			$('#div-products').addClass('grid');
+
+			$('#div-product-item').removeClass('grid'); //prevent duplicate 
+			$('#div-product-item').addClass('grid');
 
 
 			//console.log(url);

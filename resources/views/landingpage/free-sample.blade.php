@@ -177,7 +177,7 @@
                 <!-- Contact Form Start -->
                 <div class="col-xl-4 col-lg-4 col-12 order-2 order-lg-2 pr-30 pr-sm-15 pr-md-15 pr-xs-15">
 
-                    <h2 style="text-align: center;">GET YOUR SAMPLE NOW</h2>
+                    <h2 style="text-align: center;">GET YOUR FREE SAMPLE NOW!</h2>
                
                     <br>
                    
@@ -332,7 +332,7 @@
                               
                                 <div class="row free-sample-next-step" style="margin: auto; width: 50%; padding: 10px;">
 
-                                  <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >NEXT STEP</button>
+                                  <button type="button" id="nextstep" class="place-order btn btn-lg btn-round" style="margin-top: -10px;" ng-click="vm.NextStep()" >ORDER NOW</button>
 
 
                                   @if( strpos(url()->current(), 'training.yes.life/free-sample') !== false )
