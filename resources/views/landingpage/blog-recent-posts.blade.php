@@ -8,12 +8,11 @@
         @foreach($recentposts as $key=> $v)
 
             <li class="sidebar-post">
-           
-                <a href="blog-details.html" class="image">
+
+                {{--<a href="blog-details.html" class="images">
                     <img src="{{asset('/storagelink/'.$v->pictx)}}" alt="">
                 </a>
 
-                
                 <div class="content">
                     <h4 class="title">
                         <a href="{{url('/blog/'.$v->slug)}}"> {{$v->name}} </a>
@@ -21,13 +20,31 @@
 
 
                     <p> {{$v->summary}} </p>
+                </div> --}}
 
-                    {{--<p style="font-size:12px;">
-                        By - {{$v->sourcename}}
-                        <br>{{ date_format( date_create($v->sourcedate), 'd M, Y' ) }}
-                    </p> --}}
+                <div class="row">
+                    
+
+                    <div class="col-md-4">
+                        <a href="{{url('/blog/'.$v->slug)}}">
+                            <img src="{{asset('/storagelink/'.$v->pictx)}}" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <h4 class="title">
+                            <a href="{{url('/blog/'.$v->slug)}}"> {{$v->name}} </a>
+                        </h4>
+
+
+                        <p> {{$v->summary}} </p>
+
+                        
+                    </div>
+
+
                 </div>
-
 
 
             </li><!--END sidebar-post-->
