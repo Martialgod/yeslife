@@ -15,7 +15,7 @@
                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
                        
                             <p style="font-size: 24px;">
-                               START SAYING <br> YES TO LIFE TEST
+                               START SAYING <br> YES TO LIFE
                             </p>
                             
                         </a>
