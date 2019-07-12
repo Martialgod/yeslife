@@ -66,7 +66,7 @@
                         <div class="row">
 
                             <!--micro-page-tabs -->
-                            <div class="col-xl-3 col-lg-3 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 ">
+                            <div class="col-xl-4 col-lg-4 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50 ">
                              
                                 <p style="font-size: 18px;" align="justify" >
                                     <span style="color:#3a95c2;">Yes.</span><span style="color:#fbb055;">Life</span>
@@ -80,7 +80,7 @@
                                 
                             </div><!--col-xl-6 col-lg-6 col-12 order-2 order-lg-1 mb-sm-50 mb-xs-50-->
 
-                            <div class="col-xl-9 col-lg-9 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50" >
+                            <div class="col-xl-8 col-lg-8 col-12 order-1 order-lg-2 mb-sm-50 mb-xs-50" >
       
                                 <img width="100%" src="/landingpage/assets/images/micropage/start-saying.jpg" alt="" >
                                 
